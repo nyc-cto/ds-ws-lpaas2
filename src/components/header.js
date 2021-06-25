@@ -27,29 +27,29 @@ const Header = ({ t, i18n }) => {
 
   const testMenuItemsOne = [
     <Link href="#linkOne" key="one">
-      Simple link one
+     {t('nav.dropdownOne.simpleLinkOne')}
     </Link>,
     <Link href="#linkTwo" key="two">
-      Simple link two
+      {t('nav.dropdownOne.simpleLinkTwo')}
     </Link>
   ]; // TODO: href or to?
 
   const testMenuItemsTwo = [
     <Link href="#linkThree" key="one">
-      Simple link three
+      {t('nav.dropdownTwo.simpleLinkThree')}
     </Link>,
     <Link href="#linkFour" key="two">
-      Simple link four
+      {t('nav.dropdownTwo.simpleLinkFour')}
     </Link>
   ];
   // TODO: href or to?
 
   const testMenuItemsThree = [
     <Link href="#linkFive" key="one">
-      Simple link five
+      {t('secondaryLinks.linkOne')}
     </Link>,
     <Link href="#linkSix" key="two">
-      Simple link six
+      {t('secondaryLinks.linkTwo')}
     </Link>
   ];
   // TODO: href or to?
@@ -63,7 +63,7 @@ const Header = ({ t, i18n }) => {
         }}
         menuId="testDropDownOne"
         isOpen={isOpen1[0]}
-        label="Nav Label 1"
+        label={t('nav.dropdownOne.label')}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -81,7 +81,7 @@ const Header = ({ t, i18n }) => {
         }}
         menuId="testDropDownTwo"
         isOpen={isOpen2[0]}
-        label="Nav Label 2"
+        label={t('nav.dropdownTwo.label')}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -91,8 +91,8 @@ const Header = ({ t, i18n }) => {
         id="testDropDownTwo"
       />
     </React.Fragment>,
-    <a href="#two" key="two" className="usa-nav__link"> {/* TODO: doesn't like when I use NavLink instead */}
-      <span>Parent link</span>
+    <a href="#three" key="three" className="usa-nav__link"> {/* TODO: doesn't like when I use NavLink instead */}
+      <span>{t('nav.parentOne')}</span>
     </a>
   ];
 
@@ -108,7 +108,7 @@ const Header = ({ t, i18n }) => {
         />
         <LanguageSwitcher i18n={i18n} />
         <div className="usa-navbar">
-          <Title>Project Title</Title>
+          <Title>{t('title')}</Title>
           <NavMenuButton onClick={onClick} label="Menu" />
         </div>
         <ExtendedNav

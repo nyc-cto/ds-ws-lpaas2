@@ -1,3 +1,20 @@
 {
-  "heading": "Headerr"
+  "title": "Project Title",
+  "nav": {
+    "dropdownOne": {
+      "label": "Nav Label 1",
+      "simpleLinkOne": "Simple link one",
+      "simpleLinkTwo": "Simple link two"
+    },
+    "dropdownTwo": {
+      "label": "Nav Label 2",
+      "simpleLinkThree": "Simple link three",
+      "simpleLinkFour": "Simple link four"
+    },
+    "parentOne": "Parent link"
+  },
+  "secondaryLinks": {
+    "linkOne": "Link one",
+    "linkTwo": "Link two"
+  }
 }
