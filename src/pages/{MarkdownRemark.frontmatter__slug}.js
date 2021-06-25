@@ -3,16 +3,13 @@ import { graphql } from "gatsby";
 
 const Template = ({ data }) => {
   const { markdownRemark } = data;
-  const { frontmatter, html } = markdownRemark;
+  const { frontmatter } = markdownRemark;
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+    <div>
+      <div>
+        <h1>{frontmatter.heroCalloutHeading}</h1>
+        <p>{frontmatter.heroCalloutText}</p>
+        <button>{frontmatter.callToActionButton}</button>
       </div>
     </div>
   );
@@ -21,11 +18,29 @@ const Template = ({ data }) => {
 export const pageQuery = graphql`
   query ($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        lang
         slug
-        title
+        heroImage
+        heroCalloutHeading
+        heroCalloutText
+        callToActionButton
+        taglineHeading
+        taglineText
+        circleImage1
+        circleImage2
+        circleImage3
+        circleImage4
+        graphicHeading1
+        graphicHeading2
+        graphicHeading3
+        graphicHeading4
+        graphicText1
+        graphicText2
+        graphicText3
+        graphicText4
+        sectionHeading
+        sectionText
       }
     }
   }
