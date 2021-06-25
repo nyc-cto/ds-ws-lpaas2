@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "My Gatsby Site",
+    title: "LPaaS 2.0",
   },
   plugins: [
     {
