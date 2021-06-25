@@ -4,11 +4,17 @@ import { GovBanner, Header as HeaderUSWDS } from "@trussworks/react-uswds";
 import { withTranslation } from "react-i18next";
 
 const Header = ({ t, i18n }) => {
+  const govBannerLang = {
+    en: "english",
+    es: "spanish",
+  };
+
   return (
-    <ReactFragment>
+    <HeaderUSWDS basic>
+      <GovBanner language={govBannerLang[i18n.language]} translate="yes" />
       <LanguageSwitcher i18n={i18n} />
       <h1>{t("heading")}</h1>
-    </ReactFragment>
+    </HeaderUSWDS>
   );
 };
 
