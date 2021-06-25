@@ -6,6 +6,7 @@
   "dependencies": {
     "@trussworks/react-uswds": "^2.0.0",
     "gatsby": "^3.8.0",
+    "gatsby-plugin-manifest": "^3.8.0",
     "gatsby-source-filesystem": "^3.8.0",
     "gatsby-transformer-remark": "^4.5.0",
     "i18next": "^20.3.2",
