@@ -4,9 +4,19 @@
   "description": "This is a proposed template repository for applications for future developments. This will help get you set up as you build your application.",
   "main": "index.js",
   "dependencies": {
+    "@trussworks/react-uswds": "^2.0.0",
     "gatsby": "^3.8.0",
+    "gatsby-source-filesystem": "^3.8.0",
+    "gatsby-transformer-remark": "^4.5.0",
+    "i18next": "^20.3.2",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "i18next-http-backend": "^1.2.6",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.11.0",
+    "react-router-dom": "^5.2.0",
+    "sass": "^1.35.1",
+    "uswds": "^2.12.0"
   },
   "devDependencies": {},
   "scripts": {
