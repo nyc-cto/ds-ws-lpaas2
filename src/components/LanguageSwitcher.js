@@ -1,5 +1,6 @@
 import React from "react";
 import { Dropdown, Label } from "@trussworks/react-uswds";
+import * as languageSwitcherStyles from "./LanguageSwitcher.module.css";
 
 function LanguageSwitcher({ i18n }) {
   const currLng = i18n.language;
@@ -14,9 +15,10 @@ function LanguageSwitcher({ i18n }) {
   };
 
   return (
-    <div className="language-switcher">
+    <div className={languageSwitcherStyles.switcher}>
       <Label htmlFor="input-dropdown">Translate</Label>
       <Dropdown
+        className={languageSwitcherStyles.dropdown}
         id="input-dropdown"
         name="input-dropdown"
         defaultValue={currLng}

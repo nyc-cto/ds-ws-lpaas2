@@ -1,0 +1,11 @@
+/* TODO: BEMS convention */
+
+.switcher {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown {
+  margin-left: 5px;
+  width: auto;
+}
