@@ -16,18 +16,22 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const Header = () => {
   const { t, i18n } = useTranslation();
 
+  /* switching between languages in the government banner */
   const govBannerLang = {
     /* TODO: might want to keep in a separate file */
     en: "english",
     es: "spanish",
   };
 
+  /* menu expansion */
   const [expanded, setExpanded] = useState(false);
   const onClick = () => setExpanded((prvExpanded) => !prvExpanded);
 
+  /* nav dropdown expansions */
   const [isOpen1, setIsOpen1] = useState([false]);
   const [isOpen2, setIsOpen2] = useState([false]);
 
+  /* first dropdown items */
   const testMenuItemsOne = [
     <Link to="#linkOne" key="one">
       {t("nav.dropdownOne.simpleLinkOne")}
@@ -37,6 +41,7 @@ const Header = () => {
     </Link>,
   ];
 
+  /* second dropdown items */
   const testMenuItemsTwo = [
     <Link to="#linkThree" key="one">
       {t("nav.dropdownTwo.simpleLinkThree")}
@@ -46,7 +51,8 @@ const Header = () => {
     </Link>,
   ];
 
-  const testMenuItemsThree = [
+  /* links above search button */
+  const secondaryLinks = [
     <Link to="#linkFive" key="one">
       {t("secondaryLinks.linkOne")}
     </Link>,
@@ -55,7 +61,7 @@ const Header = () => {
     </Link>,
   ];
 
-  const testItemsMenu = [
+  const navBarItems = [
     <React.Fragment>
       <NavDropDownButton
         onToggle={() => {
@@ -112,8 +118,8 @@ const Header = () => {
       </div>
       <Router>
         <ExtendedNav
-          primaryItems={testItemsMenu}
-          secondaryItems={testMenuItemsThree}
+          primaryItems={navBarItems}
+          secondaryItems={secondaryLinks}
           mobileExpanded={expanded}
           onToggleMobileNav={onClick}
         >
