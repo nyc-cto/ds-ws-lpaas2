@@ -1,6 +1,6 @@
 ---
 lang: en
-slug: "/content-1"
+slug: "/"
 heroImage: "hero-img.jpg"
 heroCalloutHeading: "Hero callout: Bring attention to a project priority"
 heroCalloutText: "Support the callout with some short explanatory text. You don’t need more than a couple of sentences."

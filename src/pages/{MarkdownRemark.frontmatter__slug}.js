@@ -1,17 +1,21 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Graphic, Hero, Section, Tagline } from "../components/";
 
 const Template = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
   return (
-    <div>
-      <div>
-        <h1>{frontmatter.heroCalloutHeading}</h1>
-        <p>{frontmatter.heroCalloutText}</p>
-        <button>{frontmatter.callToActionButton}</button>
-      </div>
-    </div>
+    <main>
+      <Hero
+        heroCalloutHeading={frontmatter.heroCalloutHeading}
+        heroCalloutText={frontmatter.heroCalloutText}
+        callToActionButton={frontmatter.callToActionButton}
+      />
+      <Tagline />
+      <Graphic />
+      <Section />
+    </main>
   );
 };
 
