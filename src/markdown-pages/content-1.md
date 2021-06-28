@@ -7,6 +7,20 @@ heroCalloutText: "Support the callout with some short explanatory text. You donâ
 callToActionButton: "Call to action"
 taglineHeading: "A tagline highlights your approach"
 taglineText: "The tagline should inspire confidence and interest, focusing on the value that your overall approach offers to your audience. Use a heading typeface and keep your tagline to just a few words, and donâ€™t confuse or mystify. Use the right side of the grid to explain the tagline a bit more. What are your goals? How do you do your work? Write in the present tense, and stay brief here. People who are interested can find details on internal pages."
+images:
+  [
+    "circle-img-1.jpg",
+    "circle-img-2.jpg",
+    "circle-img-3.jpg",
+    "circle-img-4.jpg",
+  ]
+graphicHeadings:
+  [
+    "Graphic headings can vary.",
+    "Stick to 6 or fewer words.",
+    "Never highlight anything without a goal.",
+    "Could also have 2 or 6.",
+  ]
 circleImage1: "circle-img-1.jpg"
 circleImage2: "circle-img-1.jpg"
 circleImage3: "circle-img-1.jpg"

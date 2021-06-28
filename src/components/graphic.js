@@ -1,11 +1,15 @@
 import React from "react";
 import { GridContainer, Grid } from "@trussworks/react-uswds";
 
-const Graphic = () => {
+const Graphic = ({ images, graphicHeadings }) => {
   return (
     <GridContainer>
-      <Grid col>
-        <Grid></Grid>
+      <Grid row>
+        {images.map((image) => (
+          <Grid col={3}>
+            <p>{image}</p>
+          </Grid>
+        ))}
       </Grid>
     </GridContainer>
   );

@@ -12,9 +12,18 @@ const Template = ({ data }) => {
         heroCalloutText={frontmatter.heroCalloutText}
         callToActionButton={frontmatter.callToActionButton}
       />
-      <Tagline />
-      <Graphic />
-      <Section />
+      <Tagline
+        taglineHeading={frontmatter.taglineHeading}
+        taglineText={frontmatter.taglineText}
+      />
+      <Graphic
+        images={frontmatter.images}
+        graphicHeadings={frontmatter.graphicHeadings}
+      />
+      <Section
+        sectionHeading={frontmatter.sectionHeading}
+        sectionText={frontmatter.sectionText}
+      />
     </main>
   );
 };
@@ -31,6 +40,8 @@ export const pageQuery = graphql`
         callToActionButton
         taglineHeading
         taglineText
+        images
+        graphicHeadings
         circleImage1
         circleImage2
         circleImage3
