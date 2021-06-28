@@ -20,6 +20,7 @@ const Template = ({ data }) => {
       <Section
         sectionHeading={frontmatter.sectionHeading}
         sectionText={frontmatter.sectionText}
+        callToActionButton={frontmatter.callToActionButton}
       />
     </main>
   );
