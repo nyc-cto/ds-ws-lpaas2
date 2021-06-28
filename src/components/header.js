@@ -9,9 +9,10 @@ import {
   NavMenuButton,
   Search,
   Title,
-} from "@trussworks/react-uswds"; // TODO: read through documentation of each component to see if used correctly
+} from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import "../styles/Header.css";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -65,6 +66,7 @@ const Header = () => {
     <React.Fragment>
       <NavDropDownButton
         onToggle={() => {
+          /* TODO: should it extend on ENTER or BUTTON_DOWN? */
           setIsOpen2(false);
           setIsOpen1(!isOpen1);
         }}
@@ -83,6 +85,7 @@ const Header = () => {
     <React.Fragment>
       <NavDropDownButton
         onToggle={() => {
+          /* TODO: should it extend on ENTER or BUTTON_DOWN? */
           setIsOpen1(false);
           setIsOpen2(!isOpen2);
         }}
@@ -105,11 +108,13 @@ const Header = () => {
 
   return (
     <HeaderUSWDS extended={true}>
-      {/* <a class="usa-skipnav" href="#main-content">Skip to main content</a> */}
+      <a class="usa-skipnav" href="#main-content">
+        Skip to main content
+      </a>
       <GovBanner
-        // role="banner"
         language={govBannerLang[i18n.language]}
         translate="yes"
+        role="banner"
       />
       <LanguageSwitcher i18n={i18n} />
       <div className="usa-navbar">
@@ -122,11 +127,10 @@ const Header = () => {
           secondaryItems={secondaryLinks}
           mobileExpanded={expanded}
           onToggleMobileNav={onClick}
+          role="navigation"
         >
-          <Search size="small" />
-          {/* <Search size="small" onSubmit={} /> */}
+          <Search id="search" className="search-bar" onSubmit={() => {}} size="small" />
         </ExtendedNav>
-        {/* role="navigation" */}
       </Router>
     </HeaderUSWDS>
   );

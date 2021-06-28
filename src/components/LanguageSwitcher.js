@@ -1,7 +1,7 @@
 import React from "react";
 import { Dropdown, Label } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
-import "./LanguageSwitcher.css";
+import "../styles/LanguageSwitcher.css";
 
 function LanguageSwitcher() {
   const { i18n } = useTranslation();
