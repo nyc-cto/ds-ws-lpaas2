@@ -28,8 +28,8 @@ const Header = () => {
   const onClick = () => setExpanded((prvExpanded) => !prvExpanded);
 
   /* nav dropdown expansions */
-  const [isOpen1, setIsOpen1] = useState([false]);
-  const [isOpen2, setIsOpen2] = useState([false]);
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
 
   /* first dropdown items */
   const testMenuItemsOne = [
@@ -65,36 +65,36 @@ const Header = () => {
     <React.Fragment>
       <NavDropDownButton
         onToggle={() => {
-          setIsOpen2([false]);
-          setIsOpen1([!isOpen1[0]]);
+          setIsOpen2(false);
+          setIsOpen1(!isOpen1);
         }}
         menuId="testDropDownOne"
-        isOpen={isOpen1[0]}
+        isOpen={isOpen1}
         label={t("nav.dropdownOne.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
         key="one"
         items={testMenuItemsOne}
-        isOpen={isOpen1[0]}
+        isOpen={isOpen1}
         id="testDropDownOne"
       />
     </React.Fragment>,
     <React.Fragment>
       <NavDropDownButton
         onToggle={() => {
-          setIsOpen1([false]);
-          setIsOpen2([!isOpen2[0]]);
+          setIsOpen1(false);
+          setIsOpen2(!isOpen2);
         }}
         menuId="testDropDownTwo"
-        isOpen={isOpen2[0]}
+        isOpen={isOpen2}
         label={t("nav.dropdownTwo.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
         key="two"
         items={testMenuItemsTwo}
-        isOpen={isOpen2[0]}
+        isOpen={isOpen2}
         id="testDropDownTwo"
       />
     </React.Fragment>,
