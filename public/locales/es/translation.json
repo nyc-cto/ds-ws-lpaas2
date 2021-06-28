@@ -1,0 +1,20 @@
+{
+  "title": "[es] Project Title",
+  "nav": {
+    "dropdownOne": {
+      "label": "[es] Nav Label 1",
+      "simpleLinkOne": "[es] Simple link one",
+      "simpleLinkTwo": "[es] Simple link two"
+    },
+    "dropdownTwo": {
+      "label": "[es] Nav Label 2",
+      "simpleLinkThree": "[es] Simple link three",
+      "simpleLinkFour": "[es] Simple link four"
+    },
+    "parentOne": "[es] Parent link"
+  },
+  "secondaryLinks": {
+    "linkOne": "[es] Link one",
+    "linkTwo": "[es] Link two"
+  }
+}

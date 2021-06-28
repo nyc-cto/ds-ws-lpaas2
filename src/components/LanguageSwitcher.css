@@ -1,0 +1,9 @@
+.language-switcher {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.translate__dropdown {
+  margin-left: 5px;
+  width: auto;
+}
