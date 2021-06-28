@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import LanguageSwitcher from "./LanguageSwitcher";
+import { Link, NavLink, BrowserRouter as Router } from "react-router-dom";
 import {
   ExtendedNav,
   GovBanner,
   Header as HeaderUSWDS,
-  Link,
   Menu,
   NavDropDownButton,
   NavMenuButton,
   Search,
   Title,
 } from "@trussworks/react-uswds"; // TODO: read through documentation of each component to see if used correctly
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-const Header = ({ t, i18n }) => {
+const Header = () => {
+  const { t, i18n } = useTranslation();
+
   const govBannerLang = {
     /* TODO: might want to keep in a separate file */
     en: "english",
@@ -22,37 +24,36 @@ const Header = ({ t, i18n }) => {
 
   const [expanded, setExpanded] = useState(false);
   const onClick = () => setExpanded((prvExpanded) => !prvExpanded);
+
   const [isOpen1, setIsOpen1] = useState([false]);
   const [isOpen2, setIsOpen2] = useState([false]);
 
   const testMenuItemsOne = [
-    <Link href="#linkOne" key="one">
-     {t('nav.dropdownOne.simpleLinkOne')}
+    <Link to="#linkOne" key="one">
+      {t("nav.dropdownOne.simpleLinkOne")}
     </Link>,
-    <Link href="#linkTwo" key="two">
-      {t('nav.dropdownOne.simpleLinkTwo')}
-    </Link>
-  ]; // TODO: href or to?
+    <Link to="#linkTwo" key="two">
+      {t("nav.dropdownOne.simpleLinkTwo")}
+    </Link>,
+  ];
 
   const testMenuItemsTwo = [
-    <Link href="#linkThree" key="one">
-      {t('nav.dropdownTwo.simpleLinkThree')}
+    <Link to="#linkThree" key="one">
+      {t("nav.dropdownTwo.simpleLinkThree")}
     </Link>,
-    <Link href="#linkFour" key="two">
-      {t('nav.dropdownTwo.simpleLinkFour')}
-    </Link>
+    <Link to="#linkFour" key="two">
+      {t("nav.dropdownTwo.simpleLinkFour")}
+    </Link>,
   ];
-  // TODO: href or to?
 
   const testMenuItemsThree = [
-    <Link href="#linkFive" key="one">
-      {t('secondaryLinks.linkOne')}
+    <Link to="#linkFive" key="one">
+      {t("secondaryLinks.linkOne")}
     </Link>,
-    <Link href="#linkSix" key="two">
-      {t('secondaryLinks.linkTwo')}
-    </Link>
+    <Link to="#linkSix" key="two">
+      {t("secondaryLinks.linkTwo")}
+    </Link>,
   ];
-  // TODO: href or to?
 
   const testItemsMenu = [
     <React.Fragment>
@@ -63,7 +64,7 @@ const Header = ({ t, i18n }) => {
         }}
         menuId="testDropDownOne"
         isOpen={isOpen1[0]}
-        label={t('nav.dropdownOne.label')}
+        label={t("nav.dropdownOne.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -81,7 +82,7 @@ const Header = ({ t, i18n }) => {
         }}
         menuId="testDropDownTwo"
         isOpen={isOpen2[0]}
-        label={t('nav.dropdownTwo.label')}
+        label={t("nav.dropdownTwo.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -91,26 +92,25 @@ const Header = ({ t, i18n }) => {
         id="testDropDownTwo"
       />
     </React.Fragment>,
-    <a href="#three" key="three" className="usa-nav__link"> {/* TODO: doesn't like when I use NavLink instead */}
-      <span>{t('nav.parentOne')}</span>
-    </a>
+    <NavLink to="#three" key="three">
+      <span>{t("nav.parentOne")}</span>
+    </NavLink>,
   ];
 
   return (
-    <React.Fragment>
-      {/* <div className={`usa-overlay ${expanded ? "is-visible" : ""}`}></div> */}
-      <HeaderUSWDS extended={true}>
-        {/* <a class="usa-skipnav" href="#main-content">Skip to main content</a> */}
-        <GovBanner
-          // role="banner"
-          language={govBannerLang[i18n.language]}
-          translate="yes"
-        />
-        <LanguageSwitcher i18n={i18n} />
-        <div className="usa-navbar">
-          <Title>{t('title')}</Title>
-          <NavMenuButton onClick={onClick} label="Menu" />
-        </div>
+    <HeaderUSWDS extended={true}>
+      {/* <a class="usa-skipnav" href="#main-content">Skip to main content</a> */}
+      <GovBanner
+        // role="banner"
+        language={govBannerLang[i18n.language]}
+        translate="yes"
+      />
+      <LanguageSwitcher i18n={i18n} />
+      <div className="usa-navbar">
+        <Title>{t("title")}</Title>
+        <NavMenuButton onClick={onClick} label="Menu" />
+      </div>
+      <Router>
         <ExtendedNav
           primaryItems={testItemsMenu}
           secondaryItems={testMenuItemsThree}
@@ -121,9 +121,9 @@ const Header = ({ t, i18n }) => {
           {/* <Search size="small" onSubmit={} /> */}
         </ExtendedNav>
         {/* role="navigation" */}
-      </HeaderUSWDS>
-    </React.Fragment>
+      </Router>
+    </HeaderUSWDS>
   );
 };
 
-export default withTranslation("Header")(Header);
+export default Header;
