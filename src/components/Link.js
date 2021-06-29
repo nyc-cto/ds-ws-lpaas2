@@ -20,15 +20,21 @@ const Link = ({
   // Assumed file download link structure
   const file = /\.[0-9a-z]+$/i.test(to);
 
-  if (variant === "nav") {
-    // Navigation link
-    return (
-      // TODO: there's no special attribute/component that Gatsby has for navigation, so should Gatsby links be used here?
-      <USWDSLink href={to} variant="nav" {...other}>
-        {children}
-      </USWDSLink>
-    );
-  } else if (internal) {
+  if (internal) {
+    if (variant === "nav") {
+      // Navigation link
+      return (
+        <GatsbyLink
+          to={to}
+          className="usa-link usa-link--nav"
+          activeClassName={activeClassName}
+          partiallyActive={partiallyActive}
+          {...other}
+        >
+          {children}
+        </GatsbyLink>
+      );
+    }
     if (file) {
       // Use for file downloads
       return (
@@ -54,12 +60,19 @@ const Link = ({
       </GatsbyLink>
     );
   }
-  return (
-    // Use USWDS Link for other/external links
-    <USWDSLink href={to} variant="external" {...other}>
-      {children}
-    </USWDSLink>
-  );
+  // external
+  else {
+    return (
+      <USWDSLink
+        href={to}
+        variant={variant !== "nav" && "external" /* if not nav link, set it to be regular external link */} 
+        className={variant === "nav" && "usa-link usa-link--external usa-link--nav" /* if nav link, set it to be both external and link */}
+        {...other}
+      >
+        {children}
+      </USWDSLink>
+    );
+  }
 };
 
 export default Link;
