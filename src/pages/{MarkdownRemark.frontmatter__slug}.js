@@ -29,6 +29,7 @@ export const pageQuery = graphql`
         slug
         hero {
           image
+          imageDescription
           heading
           text
         }
@@ -39,6 +40,7 @@ export const pageQuery = graphql`
         }
         graphics {
           image
+          imageDescription
           heading
           text
         }

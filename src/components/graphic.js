@@ -8,7 +8,7 @@ const Graphic = ({ graphics }) => {
         {graphics.map((graphic) => {
           return (
             <Grid mobile={{ col: "fill" }} tablet={{ col: 6 }}>
-              <img src={graphic.image} alt="" />
+              <img src={graphic.image} alt={graphic.imageDescription} />
               <h2>{graphic.heading}</h2>
               <p>{graphic.text}</p>
             </Grid>
