@@ -1,22 +1,19 @@
 import React from "react";
 import { GridContainer, Grid } from "@trussworks/react-uswds";
 
-const Graphic = ({graphicsSection}) => {
+const Graphic = ({ graphicsSection }) => {
   return (
     <GridContainer>
       <Grid row>
-        {/* {graphicsSection.map(graphic => {
+        {graphicsSection.map((graphic) => {
           return (
-            <Grid>
-              <h2>graphic.graphicImage</h2>
-              <p>graphic.graphicText</p>
+            <Grid mobile={{ col: "fill" }} tablet={{ col: 6 }}>
+              <img src={graphic.graphicImage} alt="" />
+              <h2>{graphic.graphicHeading}</h2>
+              <p>{graphic.graphicText}</p>
             </Grid>
-          )
-        })} */}
-        {/* <p>{graphicsSection.map(graphic => <p>{graphic}</p>)}</p> */}
-        
-        <p>{graphicsSection}</p>
-        <Grid></Grid>
+          );
+        })}
       </Grid>
     </GridContainer>
   );

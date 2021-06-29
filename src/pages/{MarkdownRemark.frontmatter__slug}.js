@@ -38,7 +38,11 @@ export const pageQuery = graphql`
         callToActionButton
         taglineHeading
         taglineText
-        graphicsSection 
+        graphicsSection {
+          graphicImage
+          graphicHeading
+          graphicText
+        }
         sectionHeading
         sectionText
       }
