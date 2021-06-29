@@ -7,18 +7,39 @@ heroCalloutText: "Support the callout with some short explanatory text. You don�
 callToActionButton: "Call to action"
 taglineHeading: "A tagline highlights your approach"
 taglineText: "The tagline should inspire confidence and interest, focusing on the value that your overall approach offers to your audience. Use a heading typeface and keep your tagline to just a few words, and don’t confuse or mystify. Use the right side of the grid to explain the tagline a bit more. What are your goals? How do you do your work? Write in the present tense, and stay brief here. People who are interested can find details on internal pages."
-circleImage1: "circle-img-1.jpg"
-circleImage2: "circle-img-1.jpg"
-circleImage3: "circle-img-1.jpg"
-circleImage4: "circle-img-1.jpg"
-graphicHeading1: "Graphic headings can vary."
-graphicHeading2: "Stick to 6 or fewer words."
-graphicHeading3: "Never highlight anything without a goal."
-graphicHeading4: "Could also have 2 or 6."
-graphicText1: "Graphic headings can be used a few different ways, depending on what your landing page is for. Highlight your values, specific program areas, or results."
-graphicText2: "Keep body text to about 30 words. They can be shorter, but try to be somewhat balanced across all four. It creates a clean appearance with good spacing."
-graphicText3: "For anything you want to highlight here, understand what your users know now, and what activity or impression you want from them after they see it."
-graphicText4: "In addition to your goal, find out your users’ goals. What do they want to know or do that supports your mission? Use these headings to show these."
+graphicsSection: [test1, test2]
+  # 
+  # test1: test one
+  # test2: test two
+
+  # - test1: test one
+  # - test2: test two
+  
+  # - test1: test one
+  # -test2: test two
+# graphicsSection:
+#   [
+#     [
+#       graphicImage: "circle-img-1.jpg",
+#       graphicHeading: "Graphic headings can vary.",
+#       graphicText: "Graphic headings can be used a few different ways, depending on what your landing page is for. Highlight your values, specific program areas, or results.",
+#     ],
+#       [
+#       graphicImage: "circle-img-2.jpg",
+#       graphicHeading: "Stick to 6 or fewer words.",
+#       graphicText: "Keep body text to about 30 words. They can be shorter, but try to be somewhat balanced across all four. It creates a clean appearance with good spacing.",
+#     ],
+#       [
+#       graphicImage: "circle-img-3.jpg",
+#       graphicHeading: "Never highlight anything without a goal.",
+#       graphicText: "For anything you want to highlight here, understand what your users know now, and what activity or impression you want from them after they see it.",
+#     ],
+#       [
+#       graphicImage: "circle-img-4.jpg",
+#       graphicHeading: "Could also have 2 or 6.",
+#       graphicText: "In addition to your goal, find out your users’ goals. What do they want to know or do that supports your mission? Use these headings to show these.",
+#     ],
+#   ]
 sectionHeading: "Section heading"
 sectionText: "Everything up to this point should help people understand your agency or project: who you are, your goal or mission, and how you approach it. Use this section to encourage them to act. Describe why they should get in touch here, and use an active verb on the button below. “Get in touch,” “Learn more,” and so on."
 ---

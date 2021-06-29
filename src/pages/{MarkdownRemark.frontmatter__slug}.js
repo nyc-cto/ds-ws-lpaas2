@@ -16,7 +16,7 @@ const Template = ({ data }) => {
         taglineHeading={frontmatter.taglineHeading}
         taglineText={frontmatter.taglineText}
       />
-      <Graphic />
+      <Graphic graphicsSection={frontmatter.graphicsSection} />
       <Section
         sectionHeading={frontmatter.sectionHeading}
         sectionText={frontmatter.sectionText}
@@ -38,18 +38,7 @@ export const pageQuery = graphql`
         callToActionButton
         taglineHeading
         taglineText
-        circleImage1
-        circleImage2
-        circleImage3
-        circleImage4
-        graphicHeading1
-        graphicHeading2
-        graphicHeading3
-        graphicHeading4
-        graphicText1
-        graphicText2
-        graphicText3
-        graphicText4
+        graphicsSection 
         sectionHeading
         sectionText
       }
