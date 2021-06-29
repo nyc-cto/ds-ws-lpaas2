@@ -1,7 +1,7 @@
 import React from "react";
 import { Dropdown, Label } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
-import "./LanguageSwitcher.css";
+import "../styles/LanguageSwitcher.css";
 
 function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -20,7 +20,7 @@ function LanguageSwitcher() {
     <div className="language-switcher">
       <Label htmlFor="input-dropdown">Translate</Label>
       <Dropdown
-        className="translate__dropdown"
+        className="language-switcher__dropdown"
         id="input-dropdown"
         name="input-dropdown"
         defaultValue={currLng}
