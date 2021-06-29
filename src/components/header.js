@@ -117,7 +117,7 @@ const Header = () => {
           translate="yes"
           role="banner"
         />
-        <LanguageSwitcher i18n={i18n} />
+        <LanguageSwitcher />
         <div className="usa-navbar">
           <Title>{t("title")}</Title>
           <NavMenuButton onClick={onClick} label="Menu" />
@@ -131,7 +131,7 @@ const Header = () => {
         >
           <Search
             id="search"
-            className="search-bar"
+            className="header__search"
             onSubmit={() => {}}
             size="small"
           />

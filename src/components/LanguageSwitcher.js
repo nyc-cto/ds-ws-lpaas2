@@ -20,7 +20,7 @@ function LanguageSwitcher() {
     <div className="language-switcher">
       <Label htmlFor="input-dropdown">Translate</Label>
       <Dropdown
-        className="translate__dropdown"
+        className="language-switcher__dropdown"
         id="input-dropdown"
         name="input-dropdown"
         defaultValue={currLng}
