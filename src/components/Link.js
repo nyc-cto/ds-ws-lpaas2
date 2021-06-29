@@ -1,4 +1,5 @@
-import { Link as USWDSLink} from "@trussworks/react-uswds"; // TODO: use Link and NavLink from Gatsby and USWDS instead
+import React from "react";
+import { Link as USWDSLink } from "@trussworks/react-uswds";
 import { Link as GatsbyLink } from "gatsby";
 
 // Pass only activeClassName and partiallyActive to GatsbyLink
@@ -8,6 +9,7 @@ const Link = ({
   to,
   activeClassName,
   partiallyActive,
+  variant,
   fileType,
   size,
   ...other
@@ -15,17 +17,27 @@ const Link = ({
   // Assumes that any internal link will start with exactly one slash, and that anything else is external.
   const internal = /^\/(?!\/)/.test(to);
 
-  // For file downloads
+  // Assumed file download link structure
   const file = /\.[0-9a-z]+$/i.test(to);
 
-  if (internal) {
+  if (variant === "nav") {
+    // Navigation link
+    return (
+      // TODO: there's no special attribute/component that Gatsby has for navigation, so should Gatsby links be used here?
+      <USWDSLink href={to} variant="nav" {...other}>
+        {children}
+      </USWDSLink>
+    );
+  } else if (internal) {
     if (file) {
+      // Use for file downloads
       return (
-        // Use for file downloads
-        <USWDSLink to={to} {...other}>
+        <USWDSLink href={to} {...other}>
+          {/* TODO: Download attribute available but not sure what it does or is for */}
+          {/* TODO: Should file download links be wrapped with Gatsby as well? Not sure if there's preprocessing there. */}
           {children}
           {/* Show file type and size for links to non-HTML content */}
-          {`[${fileType.toUpperCase()}, ${size}]`}{" "}
+          {`[${fileType.toUpperCase()}, ${size}]`}
         </USWDSLink>
       );
     }
@@ -43,10 +55,9 @@ const Link = ({
     );
   }
   return (
-    // Use USWDS Link for others
-    <USWDSLink to={to} {...other}>
+    // Use USWDS Link for other/external links
+    <USWDSLink href={to} variant="external" {...other}>
       {children}
-      {"(external link)"}
     </USWDSLink>
   );
 };

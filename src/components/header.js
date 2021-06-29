@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink, BrowserRouter as Router } from "react-router-dom"; // TODO: use Link and NavLink from Gatsby and USWDS instead
+import { BrowserRouter as Router } from "react-router-dom";
 import {
   ExtendedNav,
   GovBanner,
@@ -12,9 +12,12 @@ import {
 } from "@trussworks/react-uswds";
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 import { useTranslation } from "react-i18next";
+
+import Link from "./Link";
 import LanguageSwitcher from "./LanguageSwitcher";
+
 import "../styles/Header.css";
-import "@reach/skip-nav/styles.css"; // this will show/hide the link on focus
+import "@reach/skip-nav/styles.css"; // this will show/hide the SkipNavLink on focus
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -28,7 +31,7 @@ const Header = () => {
 
   /* menu expansion */
   const [expanded, setExpanded] = useState(false);
-  const onClick = () => setExpanded((prvExpanded) => !prvExpanded);
+  const onClick = () => setExpanded((prevExpanded) => !prevExpanded);
 
   /* nav dropdown expansions */
   const [isOpen1, setIsOpen1] = useState(false);
@@ -70,7 +73,7 @@ const Header = () => {
         onToggle={() => {
           /* TODO: should it extend on ENTER or BUTTON_DOWN? */
           setIsOpen2(false);
-          setIsOpen1(!isOpen1);
+          setIsOpen1((prevOpen) => !prevOpen);
         }}
         menuId="testDropDownOne"
         isOpen={isOpen1}
@@ -89,7 +92,7 @@ const Header = () => {
         onToggle={() => {
           /* TODO: should it extend on ENTER or BUTTON_DOWN? */
           setIsOpen1(false);
-          setIsOpen2(!isOpen2);
+          setIsOpen2((prevOpen) => !prevOpen);
         }}
         menuId="testDropDownTwo"
         isOpen={isOpen2}
@@ -103,9 +106,9 @@ const Header = () => {
         id="testDropDownTwo"
       />
     </React.Fragment>,
-    <NavLink to="#three" key="three">
+    <Link variant="nav" to="#three" key="three">
       <span>{t("nav.parentOne")}</span>
-    </NavLink>,
+    </Link>,
   ];
 
   return (
