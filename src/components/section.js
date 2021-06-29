@@ -6,8 +6,8 @@ const Section = ({ section, callToActionButton }) => {
     <GridContainer>
       <Grid row>
         <Grid>
-          <h2>{section.sectionHeading}</h2>
-          <p>{section.sectionText}</p>
+          <h2>{section.heading}</h2>
+          <p>{section.text}</p>
           <Button>{callToActionButton}</Button>
         </Grid>
       </Grid>

@@ -6,8 +6,8 @@ const Hero = ({ hero, callToActionButton }) => {
       <GridContainer>
         <Grid row>
           <Grid className="usa-hero__callout">
-            <h1 className="usa-hero__heading">{hero.heroCalloutHeading}</h1>
-            <p>{hero.heroCalloutText}</p>
+            <h1 className="usa-hero__heading">{hero.heading}</h1>
+            <p>{hero.text}</p>
             <Button>{callToActionButton}</Button>
           </Grid>
         </Grid>

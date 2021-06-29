@@ -6,8 +6,8 @@ const Tagline = ({tagline}) => {
     <GridContainer>
       <Grid row>
         <Grid>
-          <h2>{tagline.taglineHeading}</h2>
-          <p>{tagline.taglineText}</p>
+          <h2>{tagline.heading}</h2>
+          <p>{tagline.text}</p>
         </Grid>
       </Grid>
     </GridContainer>

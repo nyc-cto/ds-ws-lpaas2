@@ -28,23 +28,23 @@ export const pageQuery = graphql`
         lang
         slug
         hero {
-          heroImage
-          heroCalloutHeading
-          heroCalloutText
+          image
+          heading
+          text
         }
         callToActionButton
         tagline {
-          taglineHeading
-          taglineText
+          heading
+          text
         }
         graphics {
-          graphicImage
-          graphicHeading
-          graphicText
+          image
+          heading
+          text
         }
         section {
-          sectionHeading
-          sectionText
+          heading
+          text
         }
       }
     }
