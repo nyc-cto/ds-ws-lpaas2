@@ -8,18 +8,13 @@ const Template = ({ data }) => {
   return (
     <main>
       <Hero
-        heroCalloutHeading={frontmatter.heroCalloutHeading}
-        heroCalloutText={frontmatter.heroCalloutText}
+        hero={frontmatter.hero}
         callToActionButton={frontmatter.callToActionButton}
       />
-      <Tagline
-        taglineHeading={frontmatter.taglineHeading}
-        taglineText={frontmatter.taglineText}
-      />
-      <Graphic graphicsSection={frontmatter.graphicsSection} />
+      <Tagline tagline={frontmatter.tagline} />
+      <Graphic graphics={frontmatter.graphics} />
       <Section
-        sectionHeading={frontmatter.sectionHeading}
-        sectionText={frontmatter.sectionText}
+        section={frontmatter.section}
         callToActionButton={frontmatter.callToActionButton}
       />
     </main>
@@ -32,19 +27,25 @@ export const pageQuery = graphql`
       frontmatter {
         lang
         slug
-        heroImage
-        heroCalloutHeading
-        heroCalloutText
+        hero {
+          heroImage
+          heroCalloutHeading
+          heroCalloutText
+        }
         callToActionButton
-        taglineHeading
-        taglineText
-        graphicsSection {
+        tagline {
+          taglineHeading
+          taglineText
+        }
+        graphics {
           graphicImage
           graphicHeading
           graphicText
         }
-        sectionHeading
-        sectionText
+        section {
+          sectionHeading
+          sectionText
+        }
       }
     }
   }
