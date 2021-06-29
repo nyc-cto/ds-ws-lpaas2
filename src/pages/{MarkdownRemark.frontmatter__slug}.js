@@ -1,6 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { Graphic, Hero, Section, Tagline } from "../components/";
+import "@trussworks/react-uswds/lib/uswds.css";
+import "@trussworks/react-uswds/lib/index.css";
 
 const Template = ({ data }) => {
   const { markdownRemark } = data;
