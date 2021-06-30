@@ -35,7 +35,7 @@ const Link = ({
         </GatsbyLink>
       );
     }
-    if (file) {
+    else if (file) {
       // Use for file downloads
       return (
         <USWDSLink href={to} {...other}>
