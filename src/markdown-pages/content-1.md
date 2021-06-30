@@ -1,5 +1,6 @@
 ---
-lang: en
+lang: "en"
+templateKey: "index-page"
 slug: "/content-1"
 hero:
   image: "hero-img.jpg"
