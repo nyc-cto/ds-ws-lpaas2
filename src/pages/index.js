@@ -6,12 +6,12 @@ import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
 const Home = ({ data }) => {
-  const { markdownRemark } = data;
-  const { frontmatter } = markdownRemark;
+  // const { markdownRemark } = data;
+  // const { frontmatter } = markdownRemark;
   return (
     <div>
       <Header />
-      <main>
+      {/* <main>
         <GridContainer>
           <Hero hero={frontmatter.hero} buttons={frontmatter.buttons} />
           <Tagline tagline={frontmatter.tagline} />
@@ -21,7 +21,7 @@ const Home = ({ data }) => {
             buttons={frontmatter.buttons}
           />
         </GridContainer>
-      </main>
+      </main> */}
     </div>
   );
 };
