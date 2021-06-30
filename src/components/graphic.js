@@ -9,7 +9,7 @@ const Graphic = ({ graphics }) => {
           graphics.map((graphic) => {
             return (
               <Grid tablet={{col: 6}} className="usa-media-block">
-                {
+                { graphic?.image &&
                   <img
                     src={graphic.image}
                     alt={graphic.imageDescription}
