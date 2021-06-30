@@ -1,11 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { GridContainer } from "@trussworks/react-uswds";
-import { Graphic, Header, Hero, Section, Tagline } from "../components/";
+import { Graphic, Header, Hero, Section, Tagline } from "../components";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
-const Home = ({ data }) => {
+const Landing = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
   return (
@@ -27,8 +27,8 @@ const Home = ({ data }) => {
 };
 
 export const pageQuery = graphql`
-  query Home($lang: String!) {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" }, lang: { eq: $lang }  }) {
+  query Landing($lang: String!) {
+    markdownRemark(frontmatter: { templateKey: { eq: "landing-page" }, lang: { eq: $lang }  }) {
       frontmatter {
         lang
         slug
@@ -60,4 +60,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Home;
+export default Landing;

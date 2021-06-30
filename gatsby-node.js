@@ -11,13 +11,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   });
 };
 
-exports.onPostBuild = () => {
-  fs.copySync(
-    path.join(__dirname, "/src/locales"),
-    path.join(__dirname, "/public/locales")
-  );
-};
-
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
@@ -77,7 +70,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value: lang === "en" ? value : `/${lang}/`,
+      // value: lang === "en" ? value : `/${lang}/`,
+      value: `/${lang}/`,
       context: {
         lang,
       },

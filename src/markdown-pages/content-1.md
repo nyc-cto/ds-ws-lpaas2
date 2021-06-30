@@ -1,7 +1,7 @@
 ---
 lang: en
-templateKey: index-page
-slug: /content-1
+templateKey: landing-page
+slug: /landing
 hero:
   image: hero-img.jpg
   imageDescription: Description
