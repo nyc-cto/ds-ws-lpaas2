@@ -1,24 +1,23 @@
 import React from "react";
 import { Link as USWDSLink } from "@trussworks/react-uswds";
 import { Link as GatsbyLink } from "gatsby";
+import classNames from "classnames";
 
-// Pass only activeClassName and partiallyActive to GatsbyLink
-// Pass only fileType and size to file downloads
 const Link = ({
   children,
   to,
-  activeClassName,
-  partiallyActive,
+  className,
+  activeClassName, // Pass only to GatsbyLink
+  partiallyActive, // Pass only to GatsbyLink
   variant,
-  fileType,
-  size,
+  fileType, // Pass only to file downloads
+  size, // Pass only to file downloads
   ...other
 }) => {
-  // Assumes that any internal link will start with exactly one slash, and that anything else is external.
-  const internal = /^\/(?!\/)/.test(to);
+  const internal = /^\/(?!\/)/.test(to); // Assumes that any internal link will start with exactly one slash, and that anything else is external
+  const file = /\.[0-9a-z]+$/i.test(to); // Assumed file download link structure
 
-  // Assumed file download link structure
-  const file = /\.[0-9a-z]+$/i.test(to);
+  console.log(className);
 
   if (internal) {
     if (variant === "nav") {
@@ -26,7 +25,7 @@ const Link = ({
       return (
         <GatsbyLink
           to={to}
-          className="usa-link usa-link--nav"
+          className={classNames("usa-link", "usa-link--nav", className)} // quoted classes are always included while className is included if it has a truthy value
           activeClassName={activeClassName}
           partiallyActive={partiallyActive}
           {...other}
@@ -34,11 +33,10 @@ const Link = ({
           {children}
         </GatsbyLink>
       );
-    }
-    else if (file) {
+    } else if (file) {
       // Use for file downloads
       return (
-        <USWDSLink href={to} {...other}>
+        <USWDSLink href={to} className={className ? className : ""} {...other}>
           {/* TODO: Download attribute available but not sure what it does or is for */}
           {/* TODO: Should file download links be wrapped with Gatsby as well? Not sure if there's preprocessing there. */}
           {children}
@@ -51,7 +49,7 @@ const Link = ({
       // Use Gatsby Link for internal links
       <GatsbyLink
         to={to}
-        className="usa-link" // TODO: would this technically be considered hard-coding? What if USWDS decides to change the class name to something else?
+        className={classNames("usa-link", className)} // usa-link is always included while className is included if it has a truthy value
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
         {...other}
@@ -59,14 +57,22 @@ const Link = ({
         {children}
       </GatsbyLink>
     );
-  }
-  // external
-  else {
+  } else {
+    // external
     return (
       <USWDSLink
         href={to}
-        variant={variant !== "nav" ? "external" : undefined /* if not nav link, set it to be regular external link */} 
-        className={variant === "nav" ? "usa-link--external usa-link--nav" : "" /* if nav link, set it to be both external and link */}
+        variant={
+          variant !== "nav"
+            ? "external"
+            : undefined /* if not nav link, set it to be regular external link */
+        }
+        className={classNames(
+          {
+            "usa-link--external usa-link--nav": variant === "nav",
+          },
+          className
+        )} /* className is included if it has a truthy value, and if nav link, set it to be both external and nav link */
         {...other}
       >
         {children}
