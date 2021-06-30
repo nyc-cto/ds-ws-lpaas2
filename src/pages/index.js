@@ -11,10 +11,13 @@ import {
   Address,
   Footer as FooterUSWDS,
   FooterNav,
+  Grid,
   Logo,
   SocialLinks,
 } from "@trussworks/react-uswds";
 import Link from "../components/Link";
+
+import logoImg from "../../public/static/favicon.ico";
 
 function Home() {
   return (
@@ -57,21 +60,22 @@ function Home() {
               />
             }
             secondary={
-              <div className="grid-row grid-gap">
+              <Grid row gap>
                 <Logo
                   size="medium"
                   image={
                     <img
                       className="usa-footer__logo-img"
-                      alt="img alt text"
-                      // src={logoImg}
+                      // alt=""
+                      src={logoImg}
                     />
                   }
                   heading={
                     <p className="usa-footer__logo-heading">Name of Agency</p>
                   }
                 />
-                <div className="usa-footer__contact-links mobile-lg:grid-col-6">
+                {/* TODO: continue from here */}
+                <Grid className="usa-footer__contact-links mobile-lg:grid-col-6">
                   <SocialLinks
                     links={[
                       <a
@@ -125,8 +129,9 @@ function Home() {
                       </a>,
                     ]}
                   />
-                </div>
-              </div>
+                  {/* TODO: end here */}
+                </Grid>
+              </Grid>
             }
           ></FooterUSWDS>
         </React.Fragment>
