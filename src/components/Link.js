@@ -65,8 +65,8 @@ const Link = ({
     return (
       <USWDSLink
         href={to}
-        variant={variant !== "nav" && "external" /* if not nav link, set it to be regular external link */} 
-        className={variant === "nav" && "usa-link--external usa-link--nav" /* if nav link, set it to be both external and link */}
+        variant={variant !== "nav" ? "external" : undefined /* if not nav link, set it to be regular external link */} 
+        className={variant === "nav" ? "usa-link--external usa-link--nav" : "" /* if nav link, set it to be both external and link */}
         {...other}
       >
         {children}
