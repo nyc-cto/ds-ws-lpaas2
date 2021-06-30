@@ -13,13 +13,17 @@ const Landing = ({ data }) => {
       <Header />
       <main>
         <GridContainer>
-          <Hero hero={frontmatter.hero} buttons={frontmatter.buttons} />
-          <Tagline tagline={frontmatter.tagline} />
-          <Graphic graphics={frontmatter.graphics} />
-          <Section
-            section={frontmatter.section}
-            buttons={frontmatter.buttons}
-          />
+          {frontmatter.hero && (
+            <Hero hero={frontmatter.hero} buttons={frontmatter.buttons} />
+          )}
+          {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
+          {frontmatter.graphics && <Graphic graphics={frontmatter.graphics} />}
+          {frontmatter.section && (
+            <Section
+              section={frontmatter.section}
+              buttons={frontmatter.buttons}
+            />
+          )}
         </GridContainer>
       </main>
     </div>
@@ -28,7 +32,9 @@ const Landing = ({ data }) => {
 
 export const pageQuery = graphql`
   query Landing($lang: String!) {
-    markdownRemark(frontmatter: { templateKey: { eq: "landing-page" }, lang: { eq: $lang }  }) {
+    markdownRemark(
+      frontmatter: { templateKey: { eq: "landing-page" }, lang: { eq: $lang } }
+    ) {
       frontmatter {
         lang
         slug

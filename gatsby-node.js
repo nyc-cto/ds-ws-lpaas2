@@ -1,7 +1,15 @@
-const _ = require("lodash");
 const fs = require("fs-extra");
 const path = require("path");
+const _ = require("lodash");
 const { createFilePath } = require("gatsby-source-filesystem");
+
+exports.onPostBuild = () => {
+  console.log("Copying locales");
+  fs.copySync(
+    path.join(__dirname, "/src/locales"),
+    path.join(__dirname, "/public/locales")
+  );
+};
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({

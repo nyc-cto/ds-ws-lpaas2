@@ -4,12 +4,16 @@ import { Grid } from "@trussworks/react-uswds";
 const Tagline = ({ tagline }) => {
   return (
     <Grid row>
-      <Grid>
-        <h2>{tagline.heading}</h2>
-      </Grid>
-      <Grid>
-        <p>{tagline.text}</p>
-      </Grid>
+      {tagline?.heading && (
+        <Grid>
+          <h2>{tagline.heading}</h2>
+        </Grid>
+      )}
+      {tagline?.text && (
+        <Grid>
+          <p>{tagline.text}</p>
+        </Grid>
+      )}
     </Grid>
   );
 };

@@ -5,9 +5,9 @@ const Section = ({ section, buttons }) => {
   return (
       <Grid row>
         <Grid>
-          <h2>{section.heading}</h2>
-          <p>{section.text}</p>
-          <Button>{buttons.callToAction}</Button>
+          {section?.heading && <h2>{section.heading}</h2>}
+          {section?.text && <p>{section.text}</p>}
+          {buttons?.callToAction && <Button>{buttons.callToAction}</Button>}
         </Grid>
       </Grid>
   );
