@@ -1,6 +1,7 @@
 {
   "title": "[es] Project Title",
   "nav": {
+    "dropdown": [],
     "dropdownOne": {
       "label": "[es] Nav Label 1",
       "simpleLinkOne": "[es] Simple link one",
@@ -13,6 +14,7 @@
     },
     "parentOne": "[es] Parent link"
   },
+  "secondaryLink": [],
   "secondaryLinks": {
     "linkOne": "[es] Link one",
     "linkTwo": "[es] Link two"
