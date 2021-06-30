@@ -10,16 +10,13 @@ const Link = ({
   activeClassName, // Pass only to GatsbyLink
   partiallyActive, // Pass only to GatsbyLink
   variant,
-  fileType, // Pass only to file downloads
-  size, // Pass only to file downloads
   ...other
 }) => {
-  const internal = /^\/(?!\/)/.test(to); // Assumes that any internal link will start with exactly one slash, and that anything else is external
-  const file = /\.[0-9a-z]+$/i.test(to); // Assumed file download link structure
+  const isInternal = /^\/(?!\/)/.test(to); // Assumes that any internal link will start with exactly one slash, and that anything else is external
 
   console.log(className);
 
-  if (internal) {
+  if (isInternal) {
     if (variant === "nav") {
       // Navigation link
       return (
@@ -33,18 +30,7 @@ const Link = ({
           {children}
         </GatsbyLink>
       );
-    } else if (file) {
-      // Use for file downloads
-      return (
-        <USWDSLink href={to} className={className ? className : ""} {...other}>
-          {/* TODO: Download attribute available but not sure what it does or is for */}
-          {/* TODO: Should file download links be wrapped with Gatsby as well? Not sure if there's preprocessing there. */}
-          {children}
-          {/* Show file type and size for links to non-HTML content */}
-          {`[${fileType.toUpperCase()}, ${size}]`}
-        </USWDSLink>
-      );
-    }
+    } 
     return (
       // Use Gatsby Link for internal links
       <GatsbyLink
