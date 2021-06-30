@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { I18nextProvider } from "react-i18next";
 import Header from "../components/Header";
 import i18next from "../components/i18n";
+
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
@@ -13,6 +14,7 @@ import {
   Logo,
   SocialLinks,
 } from "@trussworks/react-uswds";
+import Link from "../components/Link";
 
 function Home() {
   return (
@@ -29,7 +31,7 @@ function Home() {
           accuracy, relevance, timeliness or completeness of the information
           contained in non-government website links.
         </div>
-        
+
         {/* TODO: Footer to be added later to Footer.js */}
         <React.Fragment>
           <FooterUSWDS
@@ -39,18 +41,18 @@ function Home() {
               <FooterNav
                 size="medium"
                 links={[
-                  <a className="usa-footer__primary-link" href="#">
+                  <Link className="usa-footer__primary-link" to="#">
                     Primary Link
-                  </a>,
-                  <a className="usa-footer__primary-link" href="#">
+                  </Link>,
+                  <Link className="usa-footer__primary-link" to="#">
                     Primary Link
-                  </a>,
-                  <a className="usa-footer__primary-link" href="#">
+                  </Link>,
+                  <Link className="usa-footer__primary-link" to="#">
                     Primary Link
-                  </a>,
-                  <a className="usa-footer__primary-link" href="#">
+                  </Link>,
+                  <Link className="usa-footer__primary-link" to="#">
                     Primary Link
-                  </a>,
+                  </Link>,
                 ]}
               />
             }
