@@ -1,20 +1,16 @@
 import React from "react";
-import { GridContainer, Grid } from "@trussworks/react-uswds";
+import { Grid } from "@trussworks/react-uswds";
 
 const Tagline = ({ tagline }) => {
   return (
-    <GridContainer>
-      <Grid row>
-        <Grid>
-          <Grid>
-            <h2>{tagline.heading}</h2>
-          </Grid>
-          <Grid>
-            <p>{tagline.text}</p>
-          </Grid>
-        </Grid>
+    <Grid row>
+      <Grid>
+        <h2>{tagline.heading}</h2>
       </Grid>
-    </GridContainer>
+      <Grid>
+        <p>{tagline.text}</p>
+      </Grid>
+    </Grid>
   );
 };
 

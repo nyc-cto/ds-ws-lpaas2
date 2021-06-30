@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { GridContainer } from "@trussworks/react-uswds";
 import { Graphic, Hero, Section, Tagline } from "../components/";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
@@ -9,16 +10,15 @@ const Template = ({ data }) => {
   const { frontmatter } = markdownRemark;
   return (
     <main>
-      <Hero
-        hero={frontmatter.hero}
-        callToActionButton={frontmatter.callToActionButton}
-      />
-      <Tagline tagline={frontmatter.tagline} />
-      <Graphic graphics={frontmatter.graphics} />
-      <Section
-        section={frontmatter.section}
-        callToActionButton={frontmatter.callToActionButton}
-      />
+      <GridContainer>
+        <Hero
+          hero={frontmatter.hero}
+          buttons={frontmatter.buttons}
+        />
+        <Tagline tagline={frontmatter.tagline} />
+        <Graphic graphics={frontmatter.graphics} />
+        <Section section={frontmatter.section} buttons={frontmatter.buttons} />
+      </GridContainer>
     </main>
   );
 };
@@ -35,7 +35,9 @@ export const pageQuery = graphql`
           heading
           text
         }
-        callToActionButton
+        buttons {
+          callToAction
+        }
         tagline {
           heading
           text

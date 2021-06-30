@@ -1,9 +1,8 @@
 import React from "react";
-import { GridContainer, Grid } from "@trussworks/react-uswds";
+import { Grid } from "@trussworks/react-uswds";
 
 const Graphic = ({ graphics }) => {
   return (
-    <GridContainer>
       <Grid row>
         {graphics.map((graphic) => {
           return (
@@ -18,7 +17,6 @@ const Graphic = ({ graphics }) => {
           );
         })}
       </Grid>
-    </GridContainer>
   );
 };
 
