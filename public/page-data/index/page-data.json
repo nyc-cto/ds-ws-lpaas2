@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-index-js","path":"/","result":{"errors":[{"message":"Variable \"$lang\" of required type \"String!\" was not provided.","locations":[{"line":1,"column":12}]}],"pageContext":{}},"staticQueryHashes":[]}
+{"componentChunkName":"component---src-pages-index-js","path":"/","result":{"pageContext":{}},"staticQueryHashes":[]}
