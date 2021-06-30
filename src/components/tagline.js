@@ -3,14 +3,14 @@ import { Grid } from "@trussworks/react-uswds";
 
 const Tagline = ({ tagline }) => {
   return (
-    <Grid row>
+    <Grid row gap className="usa-section">
       {tagline?.heading && (
-        <Grid>
-          <h2>{tagline.heading}</h2>
+        <Grid tablet={{ col: 4 }}>
+          <h2 className="font-heading-xl">{tagline.heading}</h2>
         </Grid>
       )}
       {tagline?.text && (
-        <Grid>
+        <Grid tablet={{ col: 8 }} className="usa-prose">
           <p>{tagline.text}</p>
         </Grid>
       )}
