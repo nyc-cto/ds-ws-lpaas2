@@ -4,7 +4,9 @@
   "description": "This is a proposed template repository for applications for future developments. This will help get you set up as you build your application.",
   "main": "index.js",
   "dependencies": {
+    "@reach/skip-nav": "^0.15.2",
     "@trussworks/react-uswds": "^2.0.0",
+    "classnames": "^2.3.1",
     "gatsby": "^3.8.0",
     "gatsby-plugin-manifest": "^3.8.0",
     "gatsby-source-filesystem": "^3.8.0",
