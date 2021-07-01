@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { I18nextProvider } from "react-i18next";
 
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import i18next from "../components/i18n";
 
 import "@trussworks/react-uswds/lib/uswds.css";

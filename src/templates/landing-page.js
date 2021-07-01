@@ -4,7 +4,6 @@ import { I18nextProvider } from "react-i18next";
 import { GridContainer } from "@trussworks/react-uswds";
 import {
   Graphic,
-  Header,
   Hero,
   i18next,
   Layout,
