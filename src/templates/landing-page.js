@@ -20,7 +20,7 @@ const Landing = ({ data }) => {
           htmlAttributes={{ lang: i18n.language }}
           defer={false}
         />
-        <Layout>
+        <Layout slug={frontmatter.slug}>
           <main>
             <GridContainer>
               {frontmatter.hero && (

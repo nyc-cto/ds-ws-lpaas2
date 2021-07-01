@@ -4,7 +4,7 @@ import { Dropdown, Label } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 import "../styles/LanguageSwitcher.css";
 
-function LanguageSwitcher() {
+function LanguageSwitcher({ slug }) {
   const { i18n } = useTranslation();
   const currentLang = i18n.language;
 
@@ -18,7 +18,7 @@ function LanguageSwitcher() {
   };
 
   useEffect(() => {
-    navigate(`/${currentLang}`);
+    navigate(`/${currentLang}/${slug}`);
   }, [currentLang]);
 
   return (
