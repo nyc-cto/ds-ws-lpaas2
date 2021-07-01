@@ -13,8 +13,7 @@ import {
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 import { useTranslation } from "react-i18next";
 
-import Link from "./Link";
-import LanguageSwitcher from "./LanguageSwitcher";
+import { LanguageSwitcher, Link } from ".";
 
 import "../styles/Header.css";
 import "@reach/skip-nav/styles.css"; // this will show/hide the SkipNavLink on focus

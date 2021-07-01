@@ -8,7 +8,7 @@ const Graphic = ({ graphics }) => {
         {graphics &&
           graphics.map((graphic) => {
             return (
-              <Grid tablet={{col: 6}} className="usa-media-block">
+              <Grid tablet={{col: 6}} className="usa-media-block" key={graphic.heading}>
                 { graphic?.image &&
                   <img
                     src={graphic.image}

@@ -1,7 +1,15 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { graphql } from "gatsby";
+import { I18nextProvider } from "react-i18next";
 import { GridContainer } from "@trussworks/react-uswds";
-import { Graphic, Header, Hero, Section, Tagline } from "../components";
+import {
+  Graphic,
+  Hero,
+  i18next,
+  Layout,
+  Section,
+  Tagline,
+} from "../components";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
@@ -9,24 +17,29 @@ const Landing = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
   return (
-    <div>
-      <Header />
-      <main>
-        <GridContainer>
-          {frontmatter.hero && (
-            <Hero hero={frontmatter.hero} buttons={frontmatter.buttons} />
-          )}
-          {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
-          {frontmatter.graphics && <Graphic graphics={frontmatter.graphics} />}
-          {frontmatter.section && (
-            <Section
-              section={frontmatter.section}
-              buttons={frontmatter.buttons}
-            />
-          )}
-        </GridContainer>
-      </main>
-    </div>
+    <Suspense fallback="loading">
+      <I18nextProvider i18n={i18next}>
+        <Layout>
+          <main>
+            <GridContainer>
+              {frontmatter.hero && (
+                <Hero hero={frontmatter.hero} buttons={frontmatter.buttons} />
+              )}
+              {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
+              {frontmatter.graphics && (
+                <Graphic graphics={frontmatter.graphics} />
+              )}
+              {frontmatter.section && (
+                <Section
+                  section={frontmatter.section}
+                  buttons={frontmatter.buttons}
+                />
+              )}
+            </GridContainer>
+          </main>
+        </Layout>
+      </I18nextProvider>
+    </Suspense>
   );
 };
 
