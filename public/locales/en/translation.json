@@ -18,5 +18,30 @@
   "secondaryLinks": {
     "linkOne": "Link one",
     "linkTwo": "Link two"
+  },
+  "footer": {
+    "primary": [
+      "Primary Link 1",
+      "Primary Link 2",
+      "Primary Link 3",
+      "Primary Link 4"
+    ],
+    "secondary": {
+      "heading": {
+        "logo": "Name of Agency",
+        "contact": "Agency Contact Center"
+      },
+      "socialLinks": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "youtube": "YouTube",
+        "instagram": "Instagram",
+        "rss": "RSS"
+      },
+      "address": {
+        "phone": "(800) CALL-GOVT",
+        "email": "info@agency.gov"
+      }
+    }
   }
 }
