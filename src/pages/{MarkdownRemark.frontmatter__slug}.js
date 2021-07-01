@@ -1,49 +1,60 @@
-import React from "react";
-import { graphql } from "gatsby";
+// import React from "react";
+// import { graphql } from "gatsby";
+// import { GridContainer } from "@trussworks/react-uswds";
+// import { Graphic, Hero, Section, Tagline } from "../components/";
+// import "@trussworks/react-uswds/lib/uswds.css";
+// import "@trussworks/react-uswds/lib/index.css";
 
-const Template = ({ data }) => {
-  const { markdownRemark } = data;
-  const { frontmatter } = markdownRemark;
-  return (
-    <div>
-      <div>
-        <h1>{frontmatter.heroCalloutHeading}</h1>
-        <p>{frontmatter.heroCalloutText}</p>
-        <button>{frontmatter.callToActionButton}</button>
-      </div>
-    </div>
-  );
-};
+// const Template = ({ data }) => {
+//   const { markdownRemark } = data;
+//   const { frontmatter } = markdownRemark;
+//   return (
+//     <main>
+//       <GridContainer>
+//         <Hero
+//           hero={frontmatter.hero}
+//           buttons={frontmatter.buttons}
+//         />
+//         <Tagline tagline={frontmatter.tagline} />
+//         <Graphic graphics={frontmatter.graphics} />
+//         <Section section={frontmatter.section} buttons={frontmatter.buttons} />
+//       </GridContainer>
+//     </main>
+//   );
+// };
 
-export const pageQuery = graphql`
-  query ($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        lang
-        slug
-        heroImage
-        heroCalloutHeading
-        heroCalloutText
-        callToActionButton
-        taglineHeading
-        taglineText
-        circleImage1
-        circleImage2
-        circleImage3
-        circleImage4
-        graphicHeading1
-        graphicHeading2
-        graphicHeading3
-        graphicHeading4
-        graphicText1
-        graphicText2
-        graphicText3
-        graphicText4
-        sectionHeading
-        sectionText
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query ($id: String!) {
+//     markdownRemark(id: { eq: $id }) {
+//       frontmatter {
+//         lang
+//         slug
+//         hero {
+//           image
+//           imageDescription
+//           heading
+//           text
+//         }
+//         buttons {
+//           callToAction
+//         }
+//         tagline {
+//           heading
+//           text
+//         }
+//         graphics {
+//           image
+//           imageDescription
+//           heading
+//           text
+//         }
+//         section {
+//           heading
+//           text
+//         }
+//       }
+//     }
+//   }
+// `;
 
-export default Template;
+// export default Template;
