@@ -11,11 +11,15 @@ const Landing = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
   const { t } = useTranslation();
-
+  
   return (
     <Suspense fallback="loading">
       <I18nextProvider i18n={i18n}>
-        <Helmet title={t("title")} defer={false} />
+        <Helmet
+          title={t("title")}
+          htmlAttributes={{ lang: i18n.language }}
+          defer={false}
+        />
         <Layout>
           <main>
             <GridContainer>

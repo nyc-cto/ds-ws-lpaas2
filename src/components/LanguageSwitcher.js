@@ -14,7 +14,12 @@ function LanguageSwitcher() {
 
   const handleChange = ({ target }) => {
     i18n.changeLanguage(target.value);
+    //change content
+    //change url
   };
+
+  //update document title (in helmet)
+  //update language in helmet
 
   return (
     <div className="language-switcher">
