@@ -31,13 +31,7 @@
         "logo": "[es] Name of Agency",
         "contact": "[es] Agency Contact Center"
       },
-      "socialLinks": {
-        "facebook": "[es] Facebook",
-        "twitter": "[es] Twitter",
-        "youtube": "[es] YouTube",
-        "instagram": "[es] Instagram",
-        "rss": "[es] RSS"
-      },
+      "socialLinks": ["[es] Facebook", "[es] Twitter", "[es] YouTube", "[es] Instagram", "[es] RSS"],
       "address": {
         "phone": "[es] (800) CALL-GOVT",
         "email": "[es] info@agency.gov"

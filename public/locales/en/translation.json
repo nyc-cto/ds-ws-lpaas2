@@ -31,13 +31,7 @@
         "logo": "Name of Agency",
         "contact": "Agency Contact Center"
       },
-      "socialLinks": {
-        "facebook": "Facebook",
-        "twitter": "Twitter",
-        "youtube": "YouTube",
-        "instagram": "Instagram",
-        "rss": "RSS"
-      },
+      "socialLinks": ["Facebook", "Twitter", "YouTube", "Instagram", "RSS"],
       "address": {
         "phone": "(800) CALL-GOVT",
         "email": "info@agency.gov"

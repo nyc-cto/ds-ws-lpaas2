@@ -15,6 +15,20 @@ import logoImg from "../../public/static/favicon.ico";
 function Footer() {
   const { t } = useTranslation();
   const primaryLinks = ["#", "#", "#", "#"];
+  const socialLinks = {
+    facebook: "#",
+    twitter: "#",
+    youtube: "#",
+    instagram: "#",
+    rss: "#",
+  };
+  const socialLinkTypes = [
+    "facebook",
+    "twitter",
+    "youtube",
+    "instagram",
+    "rss",
+  ];
 
   return (
     <FooterUSWDS
@@ -51,43 +65,21 @@ function Footer() {
           />
           <Grid className="usa-footer__contact-links" mobileLg={{ col: 6 }}>
             <SocialLinks
-              links={[
-                <Link
-                  key="facebook"
-                  className="usa-social-link usa-social-link--facebook"
-                  to="#"
-                >
-                  <span>{t("footer.secondary.socialLinks.facebook")}</span>
-                </Link>,
-                <Link
-                  key="twitter"
-                  className="usa-social-link usa-social-link--twitter"
-                  to="#"
-                >
-                  <span>{t("footer.secondary.socialLinks.twitter")}</span>
-                </Link>,
-                <Link
-                  key="youtube"
-                  className="usa-social-link usa-social-link--youtube"
-                  to="#"
-                >
-                  <span>{t("footer.secondary.socialLinks.youtube")}</span>
-                </Link>,
-                <Link
-                  key="instagram"
-                  className="usa-social-link usa-social-link--instagram"
-                  to="#"
-                >
-                  <span>{t("footer.secondary.socialLinks.instagram")}</span>
-                </Link>,
-                <Link
-                  key="rss"
-                  className="usa-social-link usa-social-link--rss"
-                  to="#"
-                >
-                  <span>{t("footer.secondary.socialLinks.rss")}</span>
-                </Link>,
-              ]}
+              links={Array.from(
+                { length: t("footer.secondary.socialLinks").length },
+                (_, i) => {
+                  const linkType = socialLinkTypes[i];
+                  return (
+                    <Link
+                      key={linkType}
+                      className={`usa-social-link usa-social-link--${linkType}`}
+                      to={socialLinks.linkType}
+                    >
+                      <span>{t("footer.secondary.socialLinks")[i]}</span>
+                    </Link>
+                  );
+                }
+              )}
             />
             <h3 className="usa-footer__contact-heading">
               {t("footer.secondary.heading.contact")}
