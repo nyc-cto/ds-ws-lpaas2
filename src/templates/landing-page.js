@@ -12,7 +12,6 @@ const Landing = ({ data }) => {
   const { frontmatter } = markdownRemark;
   const { t } = useTranslation();
 
-  
   return (
     <Suspense fallback="loading">
       <I18nextProvider i18n={i18n}>
