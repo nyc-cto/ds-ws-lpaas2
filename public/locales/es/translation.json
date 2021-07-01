@@ -1,20 +1,19 @@
 {
-  "title": "[es] Project Title",
-  "nav": {
-    "dropdownOne": {
-      "label": "[es] Nav Label 1",
-      "simpleLinkOne": "[es] Simple link one",
-      "simpleLinkTwo": "[es] Simple link two"
+  "header": {
+    "title": "[es] Project Title",
+    "nav": {
+      "dropdown": [
+        {
+          "label": "[es] Nav label one",
+          "simpleLink": ["[es] Simple link one", "[es] Simple link one"]
+        },
+        {
+          "label": "Nav label two",
+          "simpleLink": ["[es] Simple link three", "[es] Simple link four"]
+        }
+      ],
+      "parent": ["[es] Parent link 1"]
     },
-    "dropdownTwo": {
-      "label": "[es] Nav Label 2",
-      "simpleLinkThree": "[es] Simple link three",
-      "simpleLinkFour": "[es] Simple link four"
-    },
-    "parentOne": "[es] Parent link"
-  },
-  "secondaryLinks": {
-    "linkOne": "[es] Link one",
-    "linkTwo": "[es] Link two"
+    "secondaryLink": ["[es] Link one", "[es] Link two"]
   }
 }

@@ -12,6 +12,7 @@ i18n
     // defaultNS: "translations",
     debug: true,
     fallbackLng: "en",
+    returnObjects: true,
     interpolation: {
       escapeValue: false,
     },

@@ -1,20 +1,19 @@
 {
-  "title": "Project Title",
-  "nav": {
-    "dropdownOne": {
-      "label": "Nav Label 1",
-      "simpleLinkOne": "Simple link one",
-      "simpleLinkTwo": "Simple link two"
+  "header": {
+    "title": "Project Title",
+    "nav": {
+      "dropdown": [
+        {
+          "label": "Nav label one",
+          "simpleLink": ["Simple link one", "Simple link one"]
+        },
+        {
+          "label": "Nav label two",
+          "simpleLink": ["Simple link three", "Simple link four"]
+        }
+      ],
+      "parent": ["Parent link 1"]
     },
-    "dropdownTwo": {
-      "label": "Nav Label 2",
-      "simpleLinkThree": "Simple link three",
-      "simpleLinkFour": "Simple link four"
-    },
-    "parentOne": "Parent link"
-  },
-  "secondaryLinks": {
-    "linkOne": "Link one",
-    "linkTwo": "Link two"
+    "secondaryLink": ["Link one", "Link two"]
   }
 }
