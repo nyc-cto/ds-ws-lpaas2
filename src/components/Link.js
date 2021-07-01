@@ -14,8 +14,6 @@ const Link = ({
 }) => {
   const isInternal = /^\/(?!\/)/.test(to); // Assumes that any internal link will start with exactly one slash, and that anything else is external
 
-  console.log(className);
-
   if (isInternal) {
     if (variant === "nav") {
       // Navigation link
@@ -30,7 +28,7 @@ const Link = ({
           {children}
         </GatsbyLink>
       );
-    } 
+    }
     return (
       // Use Gatsby Link for internal links
       <GatsbyLink
@@ -49,10 +47,8 @@ const Link = ({
       <USWDSLink
         href={to}
         variant={
-          variant !== "nav"
-            ? "external"
-            : undefined /* if not nav link, set it to be regular external link */
-        }
+          variant !== "nav" && "external"
+        } /* if not nav link, set it to be regular external link */
         className={classNames(
           {
             "usa-link--external usa-link--nav": variant === "nav",

@@ -23,7 +23,7 @@ function Footer() {
       primary={
         <FooterNav
           size="medium"
-          links={Array.from({ length: 4 }, (_, i) => {
+          links={Array.from({ length: t("footer.primary").length }, (_, i) => {
             return (
               <Link className="usa-footer__primary-link" to={primaryLinks[i]}>
                 {t("footer.primary")[i]}
@@ -96,10 +96,10 @@ function Footer() {
               size="medium"
               items={[
                 <Link key="phone" to="tel:1-800-555-5555">
-                  {t('footer.secondary.address.phone')}
+                  {t("footer.secondary.address.phone")}
                 </Link>,
                 <Link key="email" to="mailto:info@agency.gov">
-                  {t('footer.secondary.address.email')}
+                  {t("footer.secondary.address.email")}
                 </Link>,
               ]}
               // role=""
