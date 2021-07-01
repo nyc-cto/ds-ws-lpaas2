@@ -11,6 +11,7 @@ const Landing = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
   const { t } = useTranslation();
+
   
   return (
     <Suspense fallback="loading">

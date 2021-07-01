@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHistory, useLocation } from "react-router-dom";
+import { navigate } from "gatsby";
 import { Dropdown, Label } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 import "../styles/LanguageSwitcher.css";
@@ -6,6 +8,9 @@ import "../styles/LanguageSwitcher.css";
 function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const currLng = i18n.language;
+  let history = useHistory();
+  let location = useLocation();
+  console.log("LOCATION", location);
 
   const languages = [
     { code: "en", label: "English" },
@@ -14,9 +19,12 @@ function LanguageSwitcher() {
 
   const handleChange = ({ target }) => {
     i18n.changeLanguage(target.value);
-    //change content
-    //change url
   };
+
+  useEffect(() => {
+    console.log("CURRENT LANG in USEEFFECT", currLng);
+    navigate(`/${currLng}`);
+  }, [currLng]);
 
   //update document title (in helmet)
   //update language in helmet
