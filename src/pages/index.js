@@ -74,45 +74,43 @@ function Home() {
                     <p className="usa-footer__logo-heading">Name of Agency</p>
                   }
                 />
-                {/* TODO: continue from here */}
-                <Grid className="usa-footer__contact-links mobile-lg:grid-col-6">
+                <Grid
+                  className="usa-footer__contact-links"
+                  mobileLg={{ col: 6 }}
+                >
                   <SocialLinks
                     links={[
-                      <a
+                      <Link
                         key="facebook"
-                        className="usa-social-link usa-social-link--facebook"
-                        href="#"
+                        className="usa-social-link--facebook"
+                        to="#"
                       >
                         <span>Facebook</span>
-                      </a>,
-                      <a
+                      </Link>,
+                      <Link
                         key="twitter"
-                        className="usa-social-link usa-social-link--twitter"
-                        href="#"
+                        className="usa-social-link--twitter"
+                        to="#"
                       >
                         <span>Twitter</span>
-                      </a>,
-                      <a
+                      </Link>,
+                      <Link
                         key="youtube"
-                        className="usa-social-link usa-social-link--youtube"
-                        href="#"
+                        className="usa-social-link--youtube"
+                        to="#"
                       >
                         <span>YouTube</span>
-                      </a>,
-                      <a
+                      </Link>,
+                      <Link
                         key="instagram"
-                        className="usa-social-link usa-social-link--instagram"
-                        href="#"
+                        className="usa-social-link--instagram"
+                        to="#"
                       >
                         <span>Instagram</span>
-                      </a>,
-                      <a
-                        key="rss"
-                        className="usa-social-link usa-social-link--rss"
-                        href="#"
-                      >
+                      </Link>,
+                      <Link key="rss" className="usa-social-link--rss" to="#">
                         <span>RSS</span>
-                      </a>,
+                      </Link>,
                     ]}
                   />
                   <h3 className="usa-footer__contact-heading">
@@ -121,15 +119,16 @@ function Home() {
                   <Address
                     size="medium"
                     items={[
-                      <a key="telephone" href="tel:1-800-555-5555">
+                      <Link key="phone" to="tel:1-800-555-5555">
                         (800) CALL-GOVT
-                      </a>,
-                      <a key="email" href="mailto:info@agency.gov">
+                      </Link>,
+                      <Link key="email" to="mailto:info@agency.gov">
                         info@agency.gov
-                      </a>,
+                      </Link>,
                     ]}
+                    // role=""
+                    // about=""
                   />
-                  {/* TODO: end here */}
                 </Grid>
               </Grid>
             }
