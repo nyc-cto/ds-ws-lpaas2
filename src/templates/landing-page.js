@@ -18,7 +18,6 @@ const Landing = ({ data }) => {
         <Helmet
           title={t("title")}
           htmlAttributes={{ lang: i18n.language }}
-          defer={false}
         />
         <Layout slug={frontmatter.slug}>
           <main>
