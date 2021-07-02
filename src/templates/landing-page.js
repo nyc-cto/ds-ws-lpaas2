@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { GridContainer } from "@trussworks/react-uswds";
-import { Graphic, Hero, i18n, Layout, Section, Tagline } from "../components";
+import { Graphic, Hero, i18n, Layout, Section, Tagline } from "../components/index";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
