@@ -1,25 +1,25 @@
 import React, { Suspense } from "react";
 import { graphql } from "gatsby";
-import { I18nextProvider } from "react-i18next";
+import { I18nextProvider, useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 import { GridContainer } from "@trussworks/react-uswds";
-import {
-  Graphic,
-  Hero,
-  i18next,
-  Layout,
-  Section,
-  Tagline,
-} from "../components";
+import { Graphic, Hero, i18n, Layout, Section, Tagline } from "../components";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
 const Landing = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
+  const { t } = useTranslation();
+
   return (
     <Suspense fallback="loading">
-      <I18nextProvider i18n={i18next}>
-        <Layout>
+      <I18nextProvider i18n={i18n}>
+        <Helmet
+          title={t("title")}
+          htmlAttributes={{ lang: i18n.language }}
+        />
+        <Layout slug={frontmatter.slug}>
           <main>
             <GridContainer>
               {frontmatter.hero && (

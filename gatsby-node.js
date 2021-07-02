@@ -74,12 +74,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
     const lang = _.get(node, "frontmatter.lang", "en");
+    const slug = _.get(node, "frontmatter.slug", "landing");
 
     createNodeField({
       name: `slug`,
       node,
       // value: lang === "en" ? value : `/${lang}/`,
-      value: `/${lang}/`,
+      value: `/${lang}/${slug}/`,
       context: {
         lang,
       },

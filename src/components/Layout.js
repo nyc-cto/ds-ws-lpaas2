@@ -1,10 +1,10 @@
 import React from "react";
 import { Footer, Header } from ".";
 
-function Layout({ children }) {
+function Layout({ children, slug }) {
   return (
     <React.Fragment>
-      <Header />
+      <Header slug={slug} />
       {children}
       <Footer />
     </React.Fragment>
