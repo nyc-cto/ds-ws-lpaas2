@@ -9,7 +9,7 @@ import "@trussworks/react-uswds/lib/index.css";
 
 function Home() {
   return (
-    <Suspense fallback="loading">
+    // <Suspense fallback="loading">
       <I18nextProvider i18n={i18next}>
         <Layout>
           {/* TODO: temporary placeholder */}
@@ -24,7 +24,7 @@ function Home() {
           </div>
         </Layout>
       </I18nextProvider>
-    </Suspense>
+    // </Suspense>
   );
 }
 
