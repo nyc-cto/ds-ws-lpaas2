@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+import React from "react";
+// import React, { Suspense } from "react";
 import { I18nextProvider } from "react-i18next";
 
 import Layout from "../components/layout";

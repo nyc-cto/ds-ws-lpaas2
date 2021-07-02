@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+import React from "react";
+// import React, { Suspense } from "react";
 import { graphql } from "gatsby";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
@@ -13,7 +14,7 @@ const Landing = ({ data }) => {
   const { t } = useTranslation();
 
   return (
-    <Suspense fallback="loading">
+    // <Suspense fallback="loading">
       <I18nextProvider i18n={i18n}>
         <Helmet
           title={t("title")}
@@ -39,7 +40,7 @@ const Landing = ({ data }) => {
           </main>
         </Layout>
       </I18nextProvider>
-    </Suspense>
+    // </Suspense>
   );
 };
 
