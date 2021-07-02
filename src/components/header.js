@@ -13,13 +13,12 @@ import {
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 import { useTranslation } from "react-i18next";
 
-import Link from "./Link";
-import LanguageSwitcher from "./LanguageSwitcher";
+import { LanguageSwitcher, Link } from ".";
 
 import "../styles/Header.css";
 import "@reach/skip-nav/styles.css"; // this will show/hide the SkipNavLink on focus
 
-const Header = () => {
+const Header = ({slug}) => {
   const { t, i18n } = useTranslation();
 
   /* switching between languages in the government banner */
@@ -120,7 +119,7 @@ const Header = () => {
           translate="yes"
           role="banner"
         />
-        <LanguageSwitcher />
+        <LanguageSwitcher slug={slug}/>
         <div className="usa-navbar">
           <Title>{t("title")}</Title>
           <NavMenuButton onClick={onClick} label="Menu" />

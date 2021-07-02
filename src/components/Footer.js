@@ -8,7 +8,7 @@ import {
   SocialLinks,
 } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
-import Link from "../components/Link";
+import Link from "./link";
 
 import logoImg from "../../public/static/favicon.ico";
 

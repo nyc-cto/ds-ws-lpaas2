@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { navigate } from "gatsby";
 import { Dropdown, Label } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 import "../styles/LanguageSwitcher.css";
 
-function LanguageSwitcher() {
+function LanguageSwitcher({ slug }) {
   const { i18n } = useTranslation();
-  const currLng = i18n.language;
+  const currentLang = i18n.language;
 
   const languages = [
     { code: "en", label: "English" },
@@ -16,6 +17,10 @@ function LanguageSwitcher() {
     i18n.changeLanguage(target.value);
   };
 
+  useEffect(() => {
+    navigate(`/${currentLang}/${slug}`);
+  }, [currentLang]);
+
   return (
     <div className="language-switcher">
       <Label htmlFor="input-dropdown">Translate</Label>
@@ -23,7 +28,7 @@ function LanguageSwitcher() {
         className="language-switcher__dropdown"
         id="input-dropdown"
         name="input-dropdown"
-        defaultValue={currLng}
+        defaultValue={currentLang}
         onChange={handleChange}
       >
         {languages.map((lng) => {
