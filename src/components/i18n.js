@@ -20,7 +20,7 @@ i18n
         translations: require("../locales/es/translation.json"),
       },
     },
-    load: 'languageOnly',
+    load: 'currentOnly',
     returnObjects: true,
     interpolation: {
       escapeValue: false,
