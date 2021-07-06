@@ -3,7 +3,7 @@ import { Link as USWDSLink } from "@trussworks/react-uswds";
 import { Link as GatsbyLink } from "gatsby";
 import classNames from "classnames";
 
-const Link = ({
+function Link({
   children,
   to,
   className,
@@ -11,7 +11,7 @@ const Link = ({
   partiallyActive, // Pass only to GatsbyLink
   variant,
   ...other
-}) => {
+}) {
   const isInternal = /^\/(?!\/)/.test(to); // Assumes that any internal link will start with exactly one slash, and that anything else is external
 
   if (isInternal) {
@@ -61,6 +61,6 @@ const Link = ({
       </USWDSLink>
     );
   }
-};
+}
 
 export default Link;

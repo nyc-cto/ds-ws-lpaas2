@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Header } from ".";
+import { Footer, Header } from "./index";
 
 function Layout({ children, slug }) {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Button } from "@trussworks/react-uswds";
 
-const Section = ({ section, buttons }) => {
+function Section({ section, buttons }) {
   return (
     <Grid row className="usa-section">
       <Grid>
@@ -15,6 +15,6 @@ const Section = ({ section, buttons }) => {
       </Grid>
     </Grid>
   );
-};
+}
 
 export default Section;

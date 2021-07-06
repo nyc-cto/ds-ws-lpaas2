@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "@trussworks/react-uswds";
 
-const Tagline = ({ tagline }) => {
+function Tagline({ tagline }) {
   return (
     <Grid row gap className="usa-section">
       {tagline?.heading && (
@@ -16,6 +16,6 @@ const Tagline = ({ tagline }) => {
       )}
     </Grid>
   );
-};
+}
 
 export default Tagline;

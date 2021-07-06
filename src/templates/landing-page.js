@@ -8,7 +8,7 @@ import { Graphic, Hero, i18n, Layout, Section, Tagline } from "../components/ind
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
-const Landing = ({ data }) => {
+function Landing({ data }) {
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
   const { t } = useTranslation();

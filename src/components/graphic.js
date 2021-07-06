@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "@trussworks/react-uswds";
 
-const Graphic = ({ graphics }) => {
+function Graphic({ graphics }) {
   return (
     <Grid className="usa-graphic-list usa-section usa-section--dark">
       <Grid row gap className="usa-graphic-list__row">

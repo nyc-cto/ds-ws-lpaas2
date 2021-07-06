@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Button } from "@trussworks/react-uswds";
 
-const Hero = ({ hero, buttons }) => {
+function Hero({ hero, buttons }) {
   return (
     <Grid row className="usa-hero">
       <Grid className="usa-hero__callout">
@@ -11,6 +11,6 @@ const Hero = ({ hero, buttons }) => {
       </Grid>
     </Grid>
   );
-};
+}
 
 export default Hero;
