@@ -8,10 +8,18 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    // ns: ["translations"],
-    // defaultNS: "translations",
+    ns: ["translations"],
+    defaultNS: "translations",
     debug: true,
     fallbackLng: "en",
+    resources: {
+      en: {
+        translations: require("../locales/en/translation.json"),
+      },
+      es: {
+        translations: require("../locales/es/translation.json"),
+      },
+    },
     returnObjects: true,
     interpolation: {
       escapeValue: false,
