@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+import React from "react";
+// import React, { Suspense } from "react";
 import { I18nextProvider } from "react-i18next";
 
 import Layout from "../components/layout";
@@ -9,7 +10,7 @@ import "@trussworks/react-uswds/lib/index.css";
 
 function Home() {
   return (
-    <Suspense fallback="loading">
+    // <Suspense fallback="loading">
       <I18nextProvider i18n={i18next}>
         <Layout>
           {/* TODO: temporary placeholder */}
@@ -24,7 +25,7 @@ function Home() {
           </div>
         </Layout>
       </I18nextProvider>
-    </Suspense>
+    // </Suspense>
   );
 }
 
