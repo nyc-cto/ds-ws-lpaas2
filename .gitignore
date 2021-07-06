@@ -2,4 +2,3 @@ node_modules/
 .DS_Store
 .cache/
 public/
-package-lock.json
