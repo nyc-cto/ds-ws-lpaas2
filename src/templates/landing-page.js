@@ -1,9 +1,10 @@
-import React, { Suspense } from "react";
+import React from "react";
+// import React, { Suspense } from "react";
 import { graphql } from "gatsby";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { GridContainer } from "@trussworks/react-uswds";
-import { Graphic, Hero, i18n, Layout, Section, Tagline } from "../components";
+import { Graphic, Hero, i18n, Layout, Section, Tagline } from "../components/index";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
@@ -13,7 +14,7 @@ const Landing = ({ data }) => {
   const { t } = useTranslation();
 
   return (
-    <Suspense fallback="loading">
+    // <Suspense fallback="loading">
       <I18nextProvider i18n={i18n}>
         <Helmet
           title={t("title")}
@@ -39,7 +40,7 @@ const Landing = ({ data }) => {
           </main>
         </Layout>
       </I18nextProvider>
-    </Suspense>
+    // </Suspense>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+// import { BrowserRouter as Router } from "react-router-dom";
 import {
   ExtendedNav,
   GovBanner,
@@ -112,7 +112,7 @@ const Header = ({slug}) => {
 
   return (
     <HeaderUSWDS extended={true}>
-      <Router>
+      {/* <Router> */}
         <SkipNavLink />
         <GovBanner
           language={govBannerLang[i18n.language]}
@@ -139,7 +139,7 @@ const Header = ({slug}) => {
           />
         </ExtendedNav>
         <SkipNavContent />
-      </Router>
+      {/* </Router> */}
     </HeaderUSWDS>
   );
 };
