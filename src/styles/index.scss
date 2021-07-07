@@ -15,8 +15,12 @@ $theme-hero-image: "#{$theme-image-path}/hero.png";
 // Your custom changes to variables go here
 // Uncomment to see this working
 // $theme-color-primary-darker: 'black';
-@import "./mocto-theme-tokens.scss";
+@import "./mocto-theme.scss";
+@import "./nyc-theme.scss";
+
 
 @import "uswds";
 
-@import "./mocto-custom-classes.scss";
+@import "./custom-classes.scss";
+@import './_header.scss';
+@import './_language-switcher.scss';
