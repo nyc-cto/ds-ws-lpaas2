@@ -3,15 +3,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { GridContainer } from "@trussworks/react-uswds";
-// import { Graphic, Hero, i18n, Layout, Section, Tagline } from "../components/index";
-
-import Graphic from "../components/graphic";
-import Hero from "../components/hero";
-import i18n from "../components/i18n";
-import Layout from "../components/layout";
-import Section from "../components/section";
-import Tagline from "../components/tagline";
+import { Graphic, Hero, i18n, Layout, Section, Tagline } from "../components/";
 
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
