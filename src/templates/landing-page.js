@@ -16,6 +16,8 @@ import Tagline from "../components/tagline";
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
+import '../styles/index.scss'
+
 function Landing({ data }) {
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
