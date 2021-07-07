@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {
   ExtendedNav,
   GovBanner,
+  GridContainer,
   Header as HeaderUSWDS,
   Menu,
   NavDropDownButton,
@@ -121,7 +122,10 @@ function Header({ slug }) {
         translate="yes"
         role="banner"
       />
-      <LanguageSwitcher slug={slug} />
+      <GridContainer>
+        <LanguageSwitcher slug={slug} />
+      </GridContainer>
+
       <div className="usa-navbar">
         <Title>{t("title")}</Title>
         <NavMenuButton onClick={onClick} label="Menu" />
