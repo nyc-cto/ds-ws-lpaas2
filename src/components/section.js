@@ -10,7 +10,7 @@ function Section({ section, buttons }) {
         )}
         {section?.text && <p className="usa-intro">{section.text}</p>}
         {buttons?.callToAction && (
-          <Button className="usa-button--big">{buttons.callToAction}</Button>
+          <Button className="usa-button usa-button--big bg-secondary">{buttons.callToAction}</Button>
         )}
       </Grid>
     </Grid>

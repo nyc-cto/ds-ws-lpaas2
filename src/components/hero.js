@@ -7,7 +7,7 @@ function Hero({ hero, buttons }) {
       <Grid className="usa-hero__callout">
         {hero?.heading && <h1 className="usa-hero__heading">{hero.heading}</h1>}
         {hero?.text && <p>{hero.text}</p>}
-        {buttons?.callToAction && <Button>{buttons.callToAction}</Button>}
+        {buttons?.callToAction && <Button className="usa-button bg-secondary">{buttons.callToAction}</Button>}
       </Grid>
     </Grid>
   );

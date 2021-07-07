@@ -1,36 +1,5 @@
-//MOCTO colors:
-$dark-base: $mocto-dark-base;
-$light-base: $mocto-light-base;
-$cool-accent: $mocto-accent-cold;
-$warm-accent: $mocto-accent-warm;
-
-//NYC colors:
-// $dark-base: $nyc-dark-base;
-// $light-base: $nyc-light-base;
-// $cool-accent: $nyc-accent-cold;
-// $warm-accent: $nyc-accent-warm;
-
-.usa-hero__callout {
-  background-color: $dark-base;
-}
-
-.usa-hero__heading {
-  color: $cool-accent;
-}
-
-.usa-button {
-  background-color: $warm-accent;
-}
-
-.usa-section--dark {
-  background-color: $dark-base;
-  h2 {
-    color: $warm-accent;
-  }
-}
-
 .header__search {
-  min-width: 275px; /* minimum of 27 characters wide */
+  min-width: 275px;
 }
 
 .language-switcher {

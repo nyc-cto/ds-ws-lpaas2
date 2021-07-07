@@ -1,7 +1,12 @@
-$theme-color-primary-family: "blue";
-$theme-text-color: "blue-90";
+$nyc-primary: #0a5796 ;
+$nyc-accent-cool: #81c3de;
+$nyc-secondary: #fb7d3f;
+$nyc-base: #0a5796 ;
+$nyc-base-light: #efefef;
 
-$nyc-dark-base: #0a5796 ;
-$nyc-light-base: #efefef;
-$nyc-accent-cold: #1771b7;
-$nyc-accent-warm: #fb7d3f;
+$theme-color-primary: $nyc-primary;
+$theme-color-primary-darker: $nyc-primary;
+$theme-color-accent-cool: $nyc-accent-cool;
+$theme-color-secondary: $nyc-secondary;
+$theme-color-base: $nyc-base;
+$theme-color-base-light: $nyc-base-light;
