@@ -7,7 +7,7 @@ function Tagline({ tagline }) {
       <Grid row gap>
         {tagline?.heading && (
           <Grid tablet={{ col: 4 }}>
-            <h2 className="font-heading-xl text-primary">{tagline.heading}</h2>
+            <h2 className="font-heading-xl">{tagline.heading}</h2>
           </Grid>
         )}
         {tagline?.text && (

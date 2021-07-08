@@ -10,7 +10,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { Link } from ".";
 
-import logoImg from "../images/favicon.ico";
+import logoImg from "../images/logos/cto_logo_shortform_black.png";
 
 function Footer() {
   const { t } = useTranslation();
