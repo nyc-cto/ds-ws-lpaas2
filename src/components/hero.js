@@ -9,7 +9,7 @@ function Hero({ hero, buttons }) {
           {hero?.heading && (
             <h1 className="usa-hero__heading">{hero.heading}</h1>
           )}
-          {hero?.text && <p>{hero.text}</p>}
+          {hero?.text && <p className="usa-prose">{hero.text}</p>}
           {buttons?.callToAction && (
             <Button className="usa-button bg-secondary">
               {buttons.callToAction}

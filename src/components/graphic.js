@@ -27,7 +27,9 @@ function Graphic({ graphics }) {
                         {graphic.heading}
                       </h2>
                     )}
-                    {graphic?.text && <p>{graphic.text}</p>}
+                    {graphic?.text && (
+                      <p className="usa-prose">{graphic.text}</p>
+                    )}
                   </Grid>
                 </Grid>
               );

@@ -7,6 +7,8 @@ import { Graphic, Hero, i18n, Layout, Section, Tagline } from "../components/";
 
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
+import "@fontsource/libre-baskerville";
+import "@fontsource/space-mono";
 
 import "../styles/index.scss";
 
