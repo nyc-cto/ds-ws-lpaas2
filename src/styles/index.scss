@@ -22,4 +22,4 @@ $theme-hero-image: "#{$theme-image-path}/hero.png";
 @import "uswds";
 
 //Custom styles
-@import "./custom-classes.scss"; 
+@import "./class-overrides.scss"; 
