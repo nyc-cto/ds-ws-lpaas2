@@ -1,30 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import React, { Suspense } from "react";
-import { I18nextProvider } from "react-i18next";
-
-import Layout from "../components/layout";
+import { Redirect, Router } from "@reach/router";
+import { navigate } from "gatsby";
+import { useTranslation } from "react-i18next";
 import i18next from "../components/i18n";
 
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
 function Home() {
+  // TODO: see if { location } prop can be used
+
+  const { i18n } = useTranslation();
+  useEffect(() => {
+    const path = location.pathname;
+    const lang = path.split("/")[1];
+    const route = path.split("/").slice(2);
+    console.log("____LANG___", lang, typeof lang); // debugging for why /es/home/ --> /en/home/ automatically
+    console.log("____i18n___", i18n.language, typeof i18n.language); // debugging for why /es/home/ --> /en/home/ automatically
+    if (lang !== i18n.language) i18n.changeLanguage(lang);
+    navigate(`/${lang}/${route}`);
+  }, [location.pathname]);
+
   return (
     // <Suspense fallback="loading">
-      <I18nextProvider i18n={i18next}>
-        <Layout>
-          {/* TODO: temporary placeholder */}
-          <div>
-            The U.S. government, including the U.S. General Services
-            Administration (the primary sponsoring federal agency of USA.gov),
-            neither endorses nor guarantees in any way the external
-            organizations, services, advice, or products included in these
-            website links. Furthermore, the U.S. government neither controls nor
-            guarantees the accuracy, relevance, timeliness or completeness of
-            the information contained in non-government website links.
-          </div>
-        </Layout>
-      </I18nextProvider>
+    <React.Fragment>
+      <Router>
+        <Redirect from="/" to={`/${i18n.language}/home`} noThrow />
+      </Router>
+    </React.Fragment>
     // </Suspense>
   );
 }
