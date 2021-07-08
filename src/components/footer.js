@@ -74,6 +74,7 @@ function Footer() {
                       key={linkType}
                       className={`usa-social-link usa-social-link--${linkType}`}
                       to={socialLinks.linkType}
+                      tabIndex="0"
                     >
                       <span>{t("footer.secondary.socialLinks")[i]}</span>
                     </Link>
