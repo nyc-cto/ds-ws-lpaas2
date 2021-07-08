@@ -1,14 +1,39 @@
-$mocto-primary: #042d36;
-$mocto-accent-cool: #0bb7c2;
+$mocto-base-lighter: #ccdee2;
+$mocto-base-light: #9ab2b7;
+$mocto-base: #68868c;
+$mocto-base-dark: #365961;
+$mocto-base-darker: #042d36;
+$mocto-base-ink: #001115;
+
+$mocto-primary-lighter: #daf4f6;
+$mocto-primary-light: #72d6dc;
+$mocto-primary: #0bb7c2;
+$mocto-primary-dark: #08888f;
+$mocto-primary-darker: #04595b;
+
+$mocto-secondary-lighter: #fbd9e4;
+$mocto-secondary-light: #ee6d98;
 $mocto-secondary: #e1004b;
-$mocto-base: #042d36;
-$mocto-base-light: #f6f6f6;
+$mocto-secondary-dark: #b20040;
+$mocto-secondary-darker: #720034;
 
-$theme-font-type-sans: 'public-sans';
-$theme-color-primary: $mocto-primary;
-$theme-color-primary-darker: $mocto-primary;
-$theme-color-accent-cool: $mocto-accent-cool;
-$theme-color-secondary: $mocto-secondary;
-$theme-color-base: $mocto-base;
+$theme-color-base-lighter: $mocto-base-lighter;
 $theme-color-base-light: $mocto-base-light;
+$theme-color-base: $mocto-base;
+$theme-color-base-dark: $mocto-base-dark;
+$theme-color-base-darker: $mocto-base-darker;
+$theme-color-base-ink: $mocto-base-ink;
 
+$theme-color-primary-lighter: $mocto-primary-lighter;
+$theme-color-primary-light: $mocto-primary-light;
+$theme-color-primary: $mocto-primary;
+$theme-color-primary-dark: $mocto-primary-dark;
+$theme-color-primary-darker: $mocto-primary-darker;
+
+$theme-color-secondary-lighter: $mocto-secondary-lighter;
+$theme-color-secondary-light: $mocto-secondary-light;
+$theme-color-secondary: $mocto-secondary;
+$theme-color-secondary-dark: $mocto-secondary-dark;
+$theme-color-secondary-darker: $mocto-secondary-darker;
+
+$theme-font-type-sans: "public-sans";

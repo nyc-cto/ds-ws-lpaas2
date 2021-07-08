@@ -11,7 +11,7 @@ function Hero({ hero, buttons }) {
           )}
           {hero?.text && <p className="usa-prose">{hero.text}</p>}
           {buttons?.callToAction && (
-            <Button className="usa-button bg-secondary">
+            <Button className="usa-button">
               {buttons.callToAction}
             </Button>
           )}
