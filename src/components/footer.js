@@ -10,7 +10,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { Link } from ".";
 
-import logoImg from "../images/logos/cto_logo_shortform_black.png";
+import logoImg from "../images/logos/cto_logo_horizontal_white.png";
 
 function Footer() {
   const { t } = useTranslation();
@@ -52,15 +52,10 @@ function Footer() {
             size="medium"
             image={
               <img
-                className="usa-footer__logo-img"
-                // alt={t('')}
+                
+                alt={t("footer.secondary.heading.logo")}
                 src={logoImg}
               />
-            }
-            heading={
-              <p className="usa-footer__logo-heading">
-                {t("footer.secondary.heading.logo")}
-              </p>
             }
           />
           <Grid className="usa-footer__contact-links" mobileLg={{ col: 6 }}>

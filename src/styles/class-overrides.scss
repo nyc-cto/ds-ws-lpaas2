@@ -79,6 +79,27 @@
   }
 }
 
+.usa-footer__primary-section {
+  color: white;
+  background-color: color("base-dark");
+  .usa-link,
+  .usa-link--external,
+  .usa-footer__primary-link {
+    color: white;
+  }
+}
+
+.usa-footer__secondary-section {
+  color: white;
+  background-color: color("base-darker");
+  .usa-link,
+  .usa-link--external {
+    color: white;
+  }
+}
+
+//Custom class names:
+
 .banner__logo {
   display: flex;
   align-items: center;
