@@ -6,7 +6,6 @@ import "../styles/LanguageSwitcher.css";
 
 function LanguageSwitcher({ slug }) {
   const { i18n } = useTranslation();
-  const currentLang = i18n.language;
 
   const languages = [
     { code: "en", label: "English" },
@@ -14,12 +13,10 @@ function LanguageSwitcher({ slug }) {
   ];
 
   const handleChange = ({ target }) => {
-    i18n.changeLanguage(target.value);
+    const newLang = target.value;
+    i18n.changeLanguage(newLang);
+    navigate(`/${newLang}/${slug}`);
   };
-
-  useEffect(() => {
-    navigate(`/${currentLang}/${slug}`);
-  }, [currentLang]);
 
   return (
     <div className="language-switcher">
@@ -28,7 +25,7 @@ function LanguageSwitcher({ slug }) {
         className="language-switcher__dropdown"
         id="input-dropdown"
         name="input-dropdown"
-        defaultValue={currentLang}
+        defaultValue={i18n.language}
         onChange={handleChange}
       >
         {languages.map((lng) => {
