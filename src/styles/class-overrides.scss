@@ -15,7 +15,18 @@
   background-color: color("base-darker");
 }
 
-.usa-nav__primary button[aria-expanded="false"],
+.usa-nav__primary button[aria-expanded="false"] {
+  color: color("disabled-dark");
+  &:hover {
+    color: color("base-darker");
+  }
+  &::after {
+    border-style: solid;
+    border-width: $mocto-button-border-width;
+    border-color: color("secondary");
+  }
+}
+
 .usa-nav__primary > .usa-nav__primary-item > a {
   color: color("disabled-dark");
   &:hover {
@@ -103,4 +114,11 @@
 .banner__logo {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  .usa-accordion__button,
+  .usa-nav__link {
+    color: white;
+    background-color: color("primary");
+    //base-dark background on expand
+  }
 }
