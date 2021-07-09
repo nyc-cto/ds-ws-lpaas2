@@ -40,30 +40,30 @@ function Header({ slug }) {
 
   /* first dropdown items */
   const testMenuItemsOne = [
-    <Link to="#linkOne" key="one">
+    <Link to="/link-one" key="one">
       {t("nav.dropdownOne.simpleLinkOne")}
     </Link>,
-    <Link to="#linkTwo" key="two">
+    <Link to="/link-two" key="two">
       {t("nav.dropdownOne.simpleLinkTwo")}
     </Link>,
   ];
 
   /* second dropdown items */
   const testMenuItemsTwo = [
-    <Link to="#linkThree" key="one">
+    <Link to="/link-three" key="one">
       {t("nav.dropdownTwo.simpleLinkThree")}
     </Link>,
-    <Link to="#linkFour" key="two">
+    <Link to="/link-four" key="two">
       {t("nav.dropdownTwo.simpleLinkFour")}
     </Link>,
   ];
 
   /* links above search button */
   const secondaryLinks = [
-    <Link to="#linkFive" key="one">
+    <Link to="/link-five" key="one">
       {t("secondaryLinks.linkOne")}
     </Link>,
-    <Link to="#linkSix" key="two">
+    <Link to="/link-six" key="two">
       {t("secondaryLinks.linkTwo")}
     </Link>,
   ];
