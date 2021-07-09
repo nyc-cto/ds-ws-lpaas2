@@ -14,11 +14,29 @@
   background-color: color("base-darker");
 }
 
-.usa-nav__primary button[aria-expanded="false"], .usa-nav__primary > .usa-nav__primary-item > a  {
+.usa-nav__primary button[aria-expanded="false"],
+.usa-nav__primary > .usa-nav__primary-item > a {
   color: color("disabled-dark");
+  &:hover {
+    color: color("base-darker");
+  }
 }
 
-.usa-nav__primary button[aria-expanded="false"]:hover, .usa-nav__primary > .usa-nav__primary-item > a:hover {
+.usa-button {
   color: color("base-darker");
+  &:hover {
+    color: color("base-darker");
+    background-color: color("primary");
+    border-style: solid;
+    border-width: $mocto-button-border-width;
+    border-color: color("base-darker");
+  }
+  &:active {
+    color: white;
+    background-color: color("base-darker");
+  }
+  &:disabled {
+    color: white;
+    background-color: color("disabled");
+  }
 }
-
