@@ -1,13 +1,24 @@
 .usa-prose,
-.usa-intro, 
+.usa-intro,
 .font-heading-xl,
 .text-primary,
 .usa-graphic-list__heading,
 .usa-hero__heading {
-  font-family: family('ui')
+  font-family: family("ui");
 }
 
-
-.font-heading-xl {
-  color: color('primary')
+.usa-nav__submenu,
+.usa-nav__primary button[aria-expanded="true"],
+.usa-hero__callout,
+.usa-section--dark {
+  background-color: color("base-darker");
 }
+
+.usa-nav__primary button[aria-expanded="false"], .usa-nav__primary > .usa-nav__primary-item > a  {
+  color: color("disabled-dark");
+}
+
+.usa-nav__primary button[aria-expanded="false"]:hover, .usa-nav__primary > .usa-nav__primary-item > a:hover {
+  color: color("base-darker");
+}
+

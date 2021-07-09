@@ -123,7 +123,7 @@ function Header({ slug }) {
         <LanguageSwitcher slug={slug} />
       </GridContainer>
 
-      <div className="usa-navbar text-primary">
+      <div className="usa-navbar">
         <Title>{t("title")}</Title>
         <NavMenuButton onClick={onClick} label="Menu" />
       </div>
@@ -134,7 +134,6 @@ function Header({ slug }) {
         onToggleMobileNav={onClick}
         role="navigation"
       >
-        <Search id="search" onSubmit={() => {}} size="small" />
       </ExtendedNav>
       <SkipNavContent />
       {/* </Router> */}
