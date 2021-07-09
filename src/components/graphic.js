@@ -18,7 +18,7 @@ function Graphic({ graphics }) {
                     <img
                       src={graphic.image}
                       alt={graphic.imageDescription}
-                      className="usa-media-block__img"
+                      className="usa-media-block__img graphic_image--circle"
                     />
                   )}
                   <Grid className="usa-media-block__body">
