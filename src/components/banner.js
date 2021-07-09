@@ -11,14 +11,16 @@ function Banner({ children }) {
   return (
     <div className="usa-section--dark">
       <GridContainer>
-        <Grid row gap className="banner__logo">
-          <Grid>
-            <div>
-              <img src={nycLogo} alt="NYC" />
-            </div>
-          </Grid>
-          <Grid>
-            <p className="font-heading-xs">{children}</p>
+        <Grid row  className="banner__logo">
+          <Grid row gap className="banner__logo">
+            <Grid>
+              <div>
+                <img src={nycLogo} alt="NYC" />
+              </div>
+            </Grid>
+            <Grid>
+              <p className="font-heading-xs">{children}</p>
+            </Grid>
           </Grid>
           <Grid>
             <LanguageSelector />
