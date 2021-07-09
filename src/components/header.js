@@ -107,7 +107,7 @@ function Header({ slug }) {
         id="testDropDownTwo"
       />
     </React.Fragment>,
-    <Link variant="nav" to="#three" key="three">
+    <Link variant="nav" to="/three" key="three">
       <span>{t("nav.parentOne")}</span>
     </Link>,
   ];
