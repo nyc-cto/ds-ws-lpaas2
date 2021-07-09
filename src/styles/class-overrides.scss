@@ -40,3 +40,40 @@
     background-color: color("disabled");
   }
 }
+
+.usa-button--accent-warm {
+  color: color("base-darker");
+  background-color: color("secondary");
+  &:hover {
+    color: color("base-darker");
+    background-color: color("secondary");
+    border-style: solid;
+    border-width: $mocto-button-border-width;
+    border-color: color("base-darker");
+  }
+  &:active {
+    color: white;
+    background-color: color("secondary-darker");
+  }
+  &:disabled {
+    color: white;
+    background-color: color("disabled");
+  }
+}
+
+.usa-button--inverse {
+  color: color("base-darker");
+  background-color: color("base-light");
+  &:hover {
+    color: color("base-darker");
+    background-color: color("base-lighter");
+  }
+  &:active {
+    color: color("base-darker");
+    background-color: white;
+  }
+  &:disabled {
+    color: color("base-darker");
+    background-color: color("base-dark");
+  }
+}
