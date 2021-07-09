@@ -13,31 +13,52 @@ import i18next from "../components/i18n";
 import Layout from "../components/layout";
 import Section from "../components/section";
 import Tagline from "../components/tagline";
+// import NotFound from "../components/404";
 
 import "@trussworks/react-uswds/lib/uswds.css";
 import "@trussworks/react-uswds/lib/index.css";
 
-function Landing(props) {
-  // TODO: see if { location } prop can be used
-
+function Landing({ data, location }) {
   const { t, i18n } = useTranslation();
+
   useEffect(() => {
-    console.log(location);
     const path = location.pathname;
     const lang = path.split("/")[1];
-    const route = path.split("/").slice(2);
-    console.log("____LANG___", lang, typeof lang); // debugging for why /es/home/ --> /en/home/ automatically
-    console.log("____i18n___", i18n.language, typeof i18n.language); // debugging for why /es/home/ --> /en/home/ automatically
-    if (lang !== i18n.language) i18n.changeLanguage(lang);
-    navigate(`/${lang}/${route}`);
+    const route = path
+      .split("/")
+      .slice(2)
+      .filter((v) => v != "")
+      .join("/");
+
+    if (lang.length === 0 && route.length === 0) {
+      // empty path – check not currently being used
+      navigate(`/${i18n.language}/home`);
+    } else if (lang.length !== 0 && route.length === 0) {
+      // only language given – check not currently being used
+      if (lang !== i18n.language) i18n.changeLanguage(lang);
+      navigate(`/${lang}/home`);
+      // window.location.reload();
+    } else if (lang.length === 0 && route.length !== 0) {
+      // only route given – check not currently being used
+      navigate(`${i18n.language}/${route}`);
+    } else {
+      // both language and route given – only check currently being used
+      if (lang !== i18n.language) i18n.changeLanguage(lang);
+      navigate(`/${lang}/${route}`);
+      // window.location.reload();
+    }
   }, [location.pathname]);
 
-  const { markdownRemark } = props.data;
+  const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
 
   return (
     // <Suspense fallback="loading">
     <React.Fragment>
+      {/* <Router basepath={i18n.language}> */}
+      {/* <Redirect from="/" to={`/${i18n.language}/home`} noThrow /> */}
+      {/* <NotFound default /> */}
+      {/* </Router> */}
       <I18nextProvider i18n={i18next}>
         <Helmet title={t("title")} htmlAttributes={{ lang: i18n.language }} />
         <Layout slug={frontmatter.slug}>
