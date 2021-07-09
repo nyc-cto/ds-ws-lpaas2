@@ -14,7 +14,7 @@ import {
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 import { useTranslation } from "react-i18next";
 
-import { LanguageSwitcher, Link } from ".";
+import { Banner, LanguageSwitcher, Link } from ".";
 
 import "@reach/skip-nav/styles.css"; // this will show/hide the SkipNavLink on focus
 
@@ -114,11 +114,14 @@ function Header({ slug }) {
     <HeaderUSWDS extended={true}>
       {/* <Router> */}
       <SkipNavLink />
-      <GovBanner
+      {/* <GovBanner
         language={govBannerLang[i18n.language]}
         translate="yes"
         role="banner"
-      />
+      /> */}
+      <Banner >
+        {t("banner")}
+      </Banner>
       <GridContainer>
         <LanguageSwitcher slug={slug} />
       </GridContainer>

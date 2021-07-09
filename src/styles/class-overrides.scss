@@ -1,5 +1,6 @@
 .usa-prose,
 .usa-intro,
+.font-heading-xs,
 .font-heading-xl,
 .text-primary,
 .usa-graphic-list__heading,
@@ -76,4 +77,9 @@
     color: color("base-darker");
     background-color: color("base-dark");
   }
+}
+
+.banner__logo {
+  display: flex;
+  align-items: center;
 }
