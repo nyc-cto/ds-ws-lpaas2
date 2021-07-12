@@ -29,23 +29,21 @@ function Landing({ data, location }) {
       .slice(2)
       .filter((v) => v != "")
       .join("/");
-
     if (lang.length === 0 && route.length === 0) {
-      // empty path – check not currently being used
-      navigate(`/${i18n.language}/home`);
+      // empty path 
+      // not currently being used
+      // navigate(`/${i18n.language}/home`);
     } else if (lang.length !== 0 && route.length === 0) {
-      // only language given – check not currently being used
+      // only language given
       if (lang !== i18n.language) i18n.changeLanguage(lang);
-      navigate(`/${lang}/home`);
-      // window.location.reload();
+      // gatsby-node.js handles redirect (i.e. /en/ -> /en/home)
     } else if (lang.length === 0 && route.length !== 0) {
-      // only route given – check not currently being used
-      navigate(`${i18n.language}/${route}`);
+      // only route given
+      // not currently being used
+      // navigate(`${i18n.language}/${route}`);
     } else {
-      // both language and route given – only check currently being used
+      // both language and route given
       if (lang !== i18n.language) i18n.changeLanguage(lang);
-      navigate(`/${lang}/${route}`);
-      // window.location.reload();
     }
   }, [location.pathname]);
 

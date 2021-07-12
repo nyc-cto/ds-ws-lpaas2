@@ -12,7 +12,19 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 };
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
+  createRedirect({
+    fromPath: "/en/",
+    toPath: "/en/home",
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+  createRedirect({
+    fromPath: "/es/",
+    toPath: "/es/home",
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
 
   return graphql(`
     {

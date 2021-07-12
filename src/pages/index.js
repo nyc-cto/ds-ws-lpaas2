@@ -17,27 +17,25 @@ function Home({ location }) {
     const path = location.pathname;
     const lang = path.split("/")[1];
     const route = path
-      .split("/")
-      .slice(2)
-      .filter((v) => v != "")
-      .join("/");
-
+    .split("/")
+    .slice(2)
+    .filter((v) => v != "")
+    .join("/");
     if (lang.length === 0 && route.length === 0) {
-      // empty path – check not currently being used
+      // empty path
       navigate(`/${i18n.language}/home`);
     } else if (lang.length !== 0 && route.length === 0) {
-      // only language given – check not currently being used
-      if (lang !== i18n.language) i18n.changeLanguage(lang);
-      navigate(`/${lang}/home`);
-      // window.location.reload();
+      // only language given
+      // not currently being used
+      // gatsby-node.js handles redirect (i.e. /en/ -> /en/home)
     } else if (lang.length === 0 && route.length !== 0) {
-      // only route given – check not currently being used
-      navigate(`${i18n.language}/${route}`);
+      // only route given 
+      // not currently being used
+      // navigate(`${i18n.language}/${route}`);
     } else {
-      // both language and route given – only check currently being used
-      if (lang !== i18n.language) i18n.changeLanguage(lang);
-      navigate(`/${lang}/${route}`);
-      // window.location.reload();
+      // both language and route given 
+      // not currently being used
+      // if (lang !== i18n.language) i18n.changeLanguage(lang);
     }
   }, [location.pathname]);
 
