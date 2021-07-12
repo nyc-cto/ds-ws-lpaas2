@@ -39,51 +39,37 @@ function Header({ slug }) {
   const [isOpen2, setIsOpen2] = useState(false);
 
   /* first dropdown items */
+  const navDropdownLinks1 = t("header.nav.dropdowns")[0]["simpleLinks"];
+  const navDropdownLength1 = navDropdownLinks1.length;
+  const navDropdownItems1 = Array.from({ length: navDropdownLength1 }, (_, i) => {
+    return (
+      <Link to={"link-" + i} key={i}>
+        {navDropdownLinks1[i]}
+      </Link>
+    );
+  });
 
-  // TODO: was trying to have the links be dynamically created instead of hard-coding but whenever I tried to assign the length it resulted in undefined after the 2nd refresh
-  const testMenuItemsOneLinks = t('header.nav.dropdown')[0]['simpleLink'];
-  // const testMenuItemsOneLength = testMenuItemsOneLinks.length; // assigning results in undefined
-  // console.log(testMenuItemsOneLinks);
-  // console.log(testMenuItemsOneLength);
-  // const testMenuItemsOne = Array.from({ length: testMenuItemsOneLength }, (_, i) => {
-  //     return (
-  //       <Link to={"link" + i} key={i}>
-  //         {testMenuItemsOneLinks[i]}
-  //       </Link>
-  //     );
-  //   });
-
-  /* TODO: try to dynamically create */
-  const testMenuItemsOne = [
-    <Link to="linkOne" key="one">
-      {t("header.nav.dropdowns.0.simpleLinks.0")}
-    </Link>,
-    <Link to="linkTwo" key="two">
-      {t("header.nav.dropdowns.0.simpleLinks.1")}
-    </Link>,
-  ];
-
-  /* TODO: try to dynamically create */
   /* second dropdown items */
-  const testMenuItemsTwo = [
-    <Link to="#linkThree" key="one">
-      {t("header.nav.dropdowns.1.simpleLinks.0")}
-    </Link>,
-    <Link to="#linkFour" key="two">
-      {t("header.nav.dropdowns.1.simpleLinks.1")}
-    </Link>,
-  ];
+  const navDropdownLinks2 = t("header.nav.dropdowns")[1]["simpleLinks"];
+  const navDropdownLength2 = navDropdownLinks2.length;
+  const navDropdownItems2 = Array.from({ length: navDropdownLength2 }, (_, i) => {
+    return (
+      <Link to={"/link-" + (i + navDropdownLength1)} key={i}>
+        {navDropdownLinks2[i]}
+      </Link>
+    );
+  });
 
-  /* TODO: try to dynamically create */
   /* links above search button */
-  const secondaryLinks = [
-    <Link to="#linkFive" key="one">
-      {t("header.secondaryLinks.0")}
-    </Link>,
-    <Link to="#linkSix" key="two">
-      {t("header.secondaryLinks.1")}
-    </Link>,
-  ];
+  const secondaryLinks = t("header.secondaryLinks");
+  const secondaryLinksLength = secondaryLinks.length;
+  const secondaryLinksItems = Array.from({ length: secondaryLinksLength }, (_, i) => {
+    return (
+      <Link to={"/link-" + (i + navDropdownLength2 + navDropdownLength1)} key={i}>
+        {secondaryLinks[i]}
+      </Link>
+    );
+  });
 
   const navBarItems = [
     <React.Fragment>
@@ -92,16 +78,16 @@ function Header({ slug }) {
           setIsOpen2(false);
           setIsOpen1((prevOpen) => !prevOpen);
         }}
-        menuId="testDropDownOne"
+        menuId="navDropDownOne"
         isOpen={isOpen1}
         label={t("header.nav.dropdowns.0.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
         key="one"
-        items={testMenuItemsOne}
+        items={navDropdownItems1}
         isOpen={isOpen1}
-        id="testDropDownOne"
+        id="navDropDownOne"
       />
     </React.Fragment>,
     <React.Fragment>
@@ -110,19 +96,19 @@ function Header({ slug }) {
           setIsOpen1(false);
           setIsOpen2((prevOpen) => !prevOpen);
         }}
-        menuId="testDropDownTwo"
+        menuId="navDropDownTwo"
         isOpen={isOpen2}
         label={t("header.nav.dropdowns.1.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
         key="two"
-        items={testMenuItemsTwo}
+        items={navDropdownItems2}
         isOpen={isOpen2}
-        id="testDropDownTwo"
+        id="navDropDownTwo"
       />
     </React.Fragment>,
-    <Link variant="nav" to="#three" key="three">
+    <Link variant="nav" to="/three" key="3">
       <span>{t("header.nav.parentLinks.0")}</span>
     </Link>,
   ];
@@ -143,7 +129,7 @@ function Header({ slug }) {
       </div>
       <ExtendedNav
         primaryItems={navBarItems}
-        secondaryItems={secondaryLinks}
+        secondaryItems={secondaryLinksItems}
         mobileExpanded={expanded}
         onToggleMobileNav={onClick}
         role="navigation"
