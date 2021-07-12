@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { navigate } from "gatsby";
 import { Grid, Menu, NavDropDownButton } from "@trussworks/react-uswds";
+import { useTranslation } from "react-i18next";
 import FeatherIcon from "feather-icons-react";
 import { Link } from ".";
 import languages from "../constants/languages";
 
-function LanguageSelector({slug}) {
+function LanguageSelector({ slug }) {
+  const { i18n } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const languageMenuItems = languages.map((language) => (
     <Link
       to={`/${language.langKey}/${slug}`}
       onClick={() => {
-        console.log("Change Language", i18n.lang)
-        i18n.changeLanguage(language.langKey) 
+        i18n.changeLanguage(language.langKey);
       }}
       key={language.langKey}
       className="banner__lang-selector-item"
