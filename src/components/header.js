@@ -57,14 +57,7 @@ function Header({ slug }) {
   ];
 
   /* links above search button */
-  const secondaryLinks = [
-    <Link to="#linkFive" key="one">
-      {t("secondaryLinks.linkOne")}
-    </Link>,
-    <Link to="#linkSix" key="two">
-      {t("secondaryLinks.linkTwo")}
-    </Link>,
-  ];
+  const secondaryLinks = [];
 
   const navBarItems = [
     <React.Fragment>
@@ -114,12 +107,8 @@ function Header({ slug }) {
     <HeaderUSWDS extended={true}>
       {/* <Router> */}
       <SkipNavLink />
-      <Banner slug={slug}>
-        {t("banner")}
-      </Banner>
-      <GridContainer>
-        <LanguageSwitcher slug={slug} />
-      </GridContainer>
+      <Banner slug={slug}>{t("banner")}</Banner>
+      <GridContainer>{/* <LanguageSwitcher slug={slug} /> */}</GridContainer>
 
       <div className="usa-navbar">
         <Title>{t("title")}</Title>
@@ -131,8 +120,7 @@ function Header({ slug }) {
         mobileExpanded={expanded}
         onToggleMobileNav={onClick}
         role="navigation"
-      >
-      </ExtendedNav>
+      ></ExtendedNav>
       <SkipNavContent />
       {/* </Router> */}
     </HeaderUSWDS>

@@ -11,8 +11,8 @@ function Banner({ children, slug }) {
   return (
     <div className="usa-section--dark">
       <GridContainer>
-        <Grid row  className="banner__logo">
-          <Grid row gap className="banner__logo">
+        <Grid row className="banner">
+          <Grid row gap className="banner__logo-title">
             <Grid>
               <div>
                 <img src={nycLogo} alt="NYC" />

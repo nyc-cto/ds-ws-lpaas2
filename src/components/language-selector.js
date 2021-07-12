@@ -28,10 +28,10 @@ function LanguageSelector({slug}) {
         onToggle={() => {
           setIsOpen((prevOpen) => !prevOpen);
         }}
-        menuId="languageSelector"
+        menuId="language-selector"
         isOpen={isOpen}
         label={
-          <div className="banner__logo font-heading-xs">
+          <div className="banner__language-selector-label font-heading-xs">
             <FeatherIcon icon="globe" />
             <p>Language</p>
           </div>
@@ -41,7 +41,7 @@ function LanguageSelector({slug}) {
         key="one"
         items={languageMenuItems}
         isOpen={isOpen}
-        id="languageSelector"
+        id="language-selector"
       />
     </Grid>
   );

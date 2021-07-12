@@ -111,7 +111,8 @@
 
 //Custom class names:
 
-.banner__logo {
+.banner,
+.banner__logo-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -123,18 +124,24 @@
   }
 }
 
+.banner__language-selector-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .banner__lang-selector-item {
   text-decoration: none;
   &:hover {
     text-decoration: none;
   }
-    &::after {
-      text-decoration: none;
-  //     //left border
-  //     // border-style: solid;
-  //     // border-width: $mocto-button-border-width;
-  //     // border-color: color("primary");
-    }
+  &::after {
+    text-decoration: none;
+    //     //left border
+    //     // border-style: solid;
+    //     // border-width: $mocto-button-border-width;
+    //     // border-color: color("primary");
+  }
 }
 
 .graphic_image--circle {
