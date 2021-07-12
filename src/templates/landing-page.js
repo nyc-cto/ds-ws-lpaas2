@@ -32,11 +32,10 @@ function Landing({ data, location }) {
     if (lang.length === 0 && route.length === 0) {
       // empty path 
       // not currently being used
-      // navigate(`/${i18n.language}/home`);
+      // navigate(`/${i18n.language}/`);
     } else if (lang.length !== 0 && route.length === 0) {
       // only language given
       if (lang !== i18n.language) i18n.changeLanguage(lang);
-      // gatsby-node.js handles redirect (i.e. /en/ -> /en/home)
     } else if (lang.length === 0 && route.length !== 0) {
       // only route given
       // not currently being used

@@ -14,14 +14,14 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
   createRedirect({
-    fromPath: "/en/",
-    toPath: "/en/home",
+    fromPath: "/en/home",
+    toPath: "/en/",
     isPermanent: true,
     redirectInBrowser: true,
   });
   createRedirect({
-    fromPath: "/es/",
-    toPath: "/es/home",
+    fromPath: "/es/home",
+    toPath: "/es/",
     isPermanent: true,
     redirectInBrowser: true,
   });
@@ -83,8 +83,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      // value: lang === "en" ? value : `/${lang}/`,
-      value: `/${lang}/${slug}/`,
+      value: slug === "home" ? `/${lang}` : `/${lang}/${slug}/`,
       context: {
         lang,
       },
