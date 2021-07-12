@@ -9,6 +9,7 @@
     "@reach/skip-nav": "^0.15.2",
     "@trussworks/react-uswds": "^2.0.0",
     "classnames": "^2.3.1",
+    "feather-icons-react": "^0.4.3",
     "gatsby": "^2.29.3",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-plugin-manifest": "^2.12.0",
