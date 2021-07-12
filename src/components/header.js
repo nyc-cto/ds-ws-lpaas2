@@ -10,8 +10,8 @@ import {
   Search,
   Title,
 } from "@trussworks/react-uswds";
-import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 import { useTranslation } from "react-i18next";
+import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 
 // import { LanguageSwitcher, Link } from "./index";
 import LanguageSwitcher from "./language-switcher";
@@ -39,32 +39,50 @@ function Header({ slug }) {
   const [isOpen2, setIsOpen2] = useState(false);
 
   /* first dropdown items */
+
+  // TODO: was trying to have the links be dynamically created instead of hard-coding but whenever I tried to assign the length it resulted in undefined after the 2nd refresh
+  // const testMenuItemsOneLinks = t('header.nav.dropdown')[0]['simpleLink'];
+  // const testMenuItemsOneLength = testMenuItemsOneLinks.length; // assigning results in undefined
+  // console.log(testMenuItemsOneLinks);
+  // console.log(testMenuItemsOneLength);
+  // const testMenuItemsOneLength = t('header.nav.dropdown')[0]['simpleLink'].length; // assigning results in undefined
+  // const testMenuItemsOne = Array.from({ length: testMenuItemsOneLength }, (_, i) => {
+  //     return (
+  //       <Link to={"link" + i} key={i}>
+  //         {testMenuItemsOneLinks[i]}
+  //       </Link>
+  //     );
+  //   });
+
+  /* TODO: try to dynamically create */
   const testMenuItemsOne = [
-    <Link to="#linkOne" key="one">
-      {t("nav.dropdownOne.simpleLinkOne")}
+    <Link to="linkOne" key="one">
+      {t("header.nav.dropdown.0.simpleLink.0")}
     </Link>,
-    <Link to="#linkTwo" key="two">
-      {t("nav.dropdownOne.simpleLinkTwo")}
+    <Link to="linkTwo" key="two">
+      {t("header.nav.dropdown.0.simpleLink.1")}
     </Link>,
   ];
 
+  /* TODO: try to dynamically create */
   /* second dropdown items */
   const testMenuItemsTwo = [
     <Link to="#linkThree" key="one">
-      {t("nav.dropdownTwo.simpleLinkThree")}
+      {t("header.nav.dropdown.1.simpleLink.0")}
     </Link>,
     <Link to="#linkFour" key="two">
-      {t("nav.dropdownTwo.simpleLinkFour")}
+      {t("header.nav.dropdown.1.simpleLink.1")}
     </Link>,
   ];
 
+  /* TODO: try to dynamically create */
   /* links above search button */
   const secondaryLinks = [
     <Link to="#linkFive" key="one">
-      {t("secondaryLinks.linkOne")}
+      {t("header.secondaryLink.0")}
     </Link>,
     <Link to="#linkSix" key="two">
-      {t("secondaryLinks.linkTwo")}
+      {t("header.secondaryLink.1")}
     </Link>,
   ];
 
@@ -72,13 +90,12 @@ function Header({ slug }) {
     <React.Fragment>
       <NavDropDownButton
         onToggle={() => {
-          /* TODO: should it extend on ENTER or BUTTON_DOWN? */
           setIsOpen2(false);
           setIsOpen1((prevOpen) => !prevOpen);
         }}
         menuId="testDropDownOne"
         isOpen={isOpen1}
-        label={t("nav.dropdownOne.label")}
+        label={t("header.nav.dropdown.0.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -91,13 +108,12 @@ function Header({ slug }) {
     <React.Fragment>
       <NavDropDownButton
         onToggle={() => {
-          /* TODO: should it extend on ENTER or BUTTON_DOWN? */
           setIsOpen1(false);
           setIsOpen2((prevOpen) => !prevOpen);
         }}
         menuId="testDropDownTwo"
         isOpen={isOpen2}
-        label={t("nav.dropdownTwo.label")}
+        label={t("header.nav.dropdown.0.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -108,7 +124,7 @@ function Header({ slug }) {
       />
     </React.Fragment>,
     <Link variant="nav" to="#three" key="three">
-      <span>{t("nav.parentOne")}</span>
+      <span>{t("header.nav.parent.0")}</span>
     </Link>,
   ];
 
