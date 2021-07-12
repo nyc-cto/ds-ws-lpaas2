@@ -7,7 +7,7 @@ import {
 import { LanguageSelector } from ".";
 import nycLogo from "../images/logos/nyc_logo.png";
 
-function Banner({ children }) {
+function Banner({ children, slug }) {
   return (
     <div className="usa-section--dark">
       <GridContainer>
@@ -23,7 +23,7 @@ function Banner({ children }) {
             </Grid>
           </Grid>
           <Grid>
-            <LanguageSelector />
+            <LanguageSelector slug={slug} />
           </Grid>
         </Grid>
       </GridContainer>

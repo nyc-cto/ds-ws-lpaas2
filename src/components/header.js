@@ -114,12 +114,7 @@ function Header({ slug }) {
     <HeaderUSWDS extended={true}>
       {/* <Router> */}
       <SkipNavLink />
-      {/* <GovBanner
-        language={govBannerLang[i18n.language]}
-        translate="yes"
-        role="banner"
-      /> */}
-      <Banner >
+      <Banner slug={slug}>
         {t("banner")}
       </Banner>
       <GridContainer>
