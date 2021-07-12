@@ -1,36 +1,37 @@
-.usa-prose,
-.usa-intro,
-.font-heading-xs,
 .font-heading-xl,
+.font-heading-xs,
 .text-primary,
 .usa-graphic-list__heading,
-.usa-hero__heading {
+.usa-hero__heading,
+.usa-intro,
+.usa-prose {
   font-family: family("ui");
 }
 
-.usa-nav__submenu,
-.usa-nav__primary button[aria-expanded="true"],
 .usa-hero__callout,
+.usa-nav__submenu,
 .usa-section--dark {
   background-color: color("base-darker");
 }
 
-.usa-nav__primary button[aria-expanded="false"] {
-  color: color("disabled-dark");
-  &:hover {
-    color: color("base-darker");
+.usa-nav__primary {
+  button[aria-expanded="true"] {
+    background-color: color("base-darker");
   }
-  &::after {
-    border-style: solid;
-    border-width: $mocto-button-border-width;
-    border-color: color("secondary");
+  button[aria-expanded="false"] {
+    color: color("disabled-dark");
+    &:hover {
+      color: color("base-darker");
+    }
+    &::after {
+      border: $mocto-button-border-width solid color("secondary");
+    }
   }
-}
-
-.usa-nav__primary > .usa-nav__primary-item > a {
-  color: color("disabled-dark");
-  &:hover {
-    color: color("base-darker");
+  .usa-nav__primary-item > a {
+    color: color("disabled-dark");
+    &:hover {
+      color: color("base-darker");
+    }
   }
 }
 
@@ -39,9 +40,7 @@
   &:hover {
     color: color("base-darker");
     background-color: color("primary");
-    border-style: solid;
-    border-width: $mocto-button-border-width;
-    border-color: color("base-darker");
+    border: $mocto-button-border-width solid color("base-darker");
   }
   &:active {
     color: white;
@@ -59,9 +58,7 @@
   &:hover {
     color: color("base-darker");
     background-color: color("secondary");
-    border-style: solid;
-    border-width: $mocto-button-border-width;
-    border-color: color("base-darker");
+    border: $mocto-button-border-width solid color("base-darker");
   }
   &:active {
     color: white;
@@ -130,17 +127,12 @@
   justify-content: space-between;
 }
 
-.banner__lang-selector-item {
+.usa-nav__submenu .usa-nav__submenu-item a {
   text-decoration: none;
   &:hover {
     text-decoration: none;
-  }
-  &::after {
-    text-decoration: none;
-    //     //left border
-    //     // border-style: solid;
-    //     // border-width: $mocto-button-border-width;
-    //     // border-color: color("primary");
+    padding: $mocto-link-padding;
+    border-left: $mocto-link-border-width solid color("primary");
   }
 }
 

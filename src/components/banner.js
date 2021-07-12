@@ -22,7 +22,7 @@ function Banner({ children, slug }) {
               <p className="font-heading-xs">{children}</p>
             </Grid>
           </Grid>
-          <Grid>
+          <Grid className="banner__language-selector-container">
             <LanguageSelector slug={slug} />
           </Grid>
         </Grid>
