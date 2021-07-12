@@ -25,14 +25,11 @@ function LanguageSwitcher({ slug }) {
         className="language-switcher__dropdown"
         id="input-dropdown"
         name="input-dropdown"
+        value={i18n.language}
         onChange={handleChange}
       >
         {languages.map((lng) => {
-          return lng.code === i18n.language ? (
-            <option name="lng" value={lng.code} key={lng.code} selected>
-              {lng.label}
-            </option>
-          ) : (
+          return (
             <option name="lng" value={lng.code} key={lng.code}>
               {lng.label}
             </option>
