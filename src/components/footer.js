@@ -51,48 +51,23 @@ function Footer() {
           <Logo
             size="medium"
             image={
-              <img
-                
-                alt={t("footer.secondary.heading.logo")}
-                src={logoImg}
-              />
+              <img alt={t("footer.secondary.heading.logo")} src={logoImg} className="footer__logo" />
             }
           />
+
           <Grid className="usa-footer__contact-links" mobileLg={{ col: 6 }}>
-            <SocialLinks
-              links={Array.from(
-                { length: t("footer.secondary.socialLinks").length },
-                (_, i) => {
-                  const linkType = socialLinkTypes[i];
-                  return (
-                    <Link
-                      key={linkType}
-                      className={`usa-social-link usa-social-link--${linkType}`}
-                      to={socialLinks.linkType}
-                      tabIndex="0"
-                    >
-                      <span>{t("footer.secondary.socialLinks")[i]}</span>
-                    </Link>
-                  );
-                }
-              )}
-            />
-            <h3 className="usa-footer__contact-heading">
-              {t("footer.secondary.heading.contact")}
-            </h3>
-            <Address
-              size="medium"
-              items={[
-                <Link key="phone" to="tel:1-800-555-5555">
-                  {t("footer.secondary.address.phone")}
-                </Link>,
-                <Link key="email" to="mailto:info@agency.gov">
-                  {t("footer.secondary.address.email")}
-                </Link>,
-              ]}
-              // role=""
-              // about=""
-            />
+            <Grid>
+              <p>{t("footer.copyright")}</p>
+            </Grid>
+            <Grid>
+              <p>{t("footer.trademark")}</p>
+            </Grid>
+            <Grid>
+              <Link>{t("footer.terms")}</Link>
+            </Grid>
+            <Grid>
+              <Link>{t("footer.privacy")}</Link>
+            </Grid>
           </Grid>
         </Grid>
       }

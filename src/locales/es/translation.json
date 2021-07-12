@@ -21,6 +21,10 @@
     "linkTwo": "[es] Link two"
   },
   "footer": {
+    "copyright": "[es] © 2021 City of New York. All Rights Reserved.",
+    "trademark": "[es] NYC is a trademark and service mark of the City of New York.",
+    "terms": "[es] NYC Terms of Use",
+    "privacy": "[es] NYC Privacy Policy",
     "primary": [
       "[es] Primary Link 1",
       "[es] Primary Link 2",
@@ -32,7 +36,13 @@
         "logo": "[es] Name of Agency",
         "contact": "[es] Agency Contact Center"
       },
-      "socialLinks": ["[es] Facebook", "[es] Twitter", "[es] YouTube", "[es] Instagram", "[es] RSS"],
+      "socialLinks": [
+        "[es] Facebook",
+        "[es] Twitter",
+        "[es] YouTube",
+        "[es] Instagram",
+        "[es] RSS"
+      ],
       "address": {
         "phone": "[es] (800) CALL-GOVT",
         "email": "[es] info@agency.gov"

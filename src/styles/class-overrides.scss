@@ -123,6 +123,20 @@
   }
 }
 
+// .banner__lang-selector-item {
+//   &::after {
+//     //left boarder
+//     // border-style: solid;
+//     // border-width: $mocto-button-border-width;
+//     // border-color: color("primary");
+//   }
+// }
+
 .graphic_image--circle {
   border-radius: 50%;
+}
+
+.footer__logo {
+  width: 300px;
+  height: auto;
 }

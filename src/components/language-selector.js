@@ -8,7 +8,7 @@ function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
 
   const languageMenuItems = languages.map((language) => (
-    <Link to={`/${language.langKey}`} key={language.langKey}>
+    <Link to={`/${language.langKey}`} key={language.langKey} className="banner__lang-selector-item">
       {language.lang}
     </Link>
   ));
