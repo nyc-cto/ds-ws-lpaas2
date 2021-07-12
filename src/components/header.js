@@ -41,11 +41,10 @@ function Header({ slug }) {
   /* first dropdown items */
 
   // TODO: was trying to have the links be dynamically created instead of hard-coding but whenever I tried to assign the length it resulted in undefined after the 2nd refresh
-  // const testMenuItemsOneLinks = t('header.nav.dropdown')[0]['simpleLink'];
+  const testMenuItemsOneLinks = t('header.nav.dropdown')[0]['simpleLink'];
   // const testMenuItemsOneLength = testMenuItemsOneLinks.length; // assigning results in undefined
   // console.log(testMenuItemsOneLinks);
   // console.log(testMenuItemsOneLength);
-  // const testMenuItemsOneLength = t('header.nav.dropdown')[0]['simpleLink'].length; // assigning results in undefined
   // const testMenuItemsOne = Array.from({ length: testMenuItemsOneLength }, (_, i) => {
   //     return (
   //       <Link to={"link" + i} key={i}>
@@ -57,10 +56,10 @@ function Header({ slug }) {
   /* TODO: try to dynamically create */
   const testMenuItemsOne = [
     <Link to="linkOne" key="one">
-      {t("header.nav.dropdown.0.simpleLink.0")}
+      {t("header.nav.dropdowns.0.simpleLinks.0")}
     </Link>,
     <Link to="linkTwo" key="two">
-      {t("header.nav.dropdown.0.simpleLink.1")}
+      {t("header.nav.dropdowns.0.simpleLinks.1")}
     </Link>,
   ];
 
@@ -68,10 +67,10 @@ function Header({ slug }) {
   /* second dropdown items */
   const testMenuItemsTwo = [
     <Link to="#linkThree" key="one">
-      {t("header.nav.dropdown.1.simpleLink.0")}
+      {t("header.nav.dropdowns.1.simpleLinks.0")}
     </Link>,
     <Link to="#linkFour" key="two">
-      {t("header.nav.dropdown.1.simpleLink.1")}
+      {t("header.nav.dropdowns.1.simpleLinks.1")}
     </Link>,
   ];
 
@@ -79,10 +78,10 @@ function Header({ slug }) {
   /* links above search button */
   const secondaryLinks = [
     <Link to="#linkFive" key="one">
-      {t("header.secondaryLink.0")}
+      {t("header.secondaryLinks.0")}
     </Link>,
     <Link to="#linkSix" key="two">
-      {t("header.secondaryLink.1")}
+      {t("header.secondaryLinks.1")}
     </Link>,
   ];
 
@@ -95,7 +94,7 @@ function Header({ slug }) {
         }}
         menuId="testDropDownOne"
         isOpen={isOpen1}
-        label={t("header.nav.dropdown.0.label")}
+        label={t("header.nav.dropdowns.0.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -113,7 +112,7 @@ function Header({ slug }) {
         }}
         menuId="testDropDownTwo"
         isOpen={isOpen2}
-        label={t("header.nav.dropdown.0.label")}
+        label={t("header.nav.dropdowns.1.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -124,7 +123,7 @@ function Header({ slug }) {
       />
     </React.Fragment>,
     <Link variant="nav" to="#three" key="three">
-      <span>{t("header.nav.parent.0")}</span>
+      <span>{t("header.nav.parentLinks.0")}</span>
     </Link>,
   ];
 

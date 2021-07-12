@@ -1,26 +1,23 @@
 {
   "title": "[es] Project Title",
-  "nav": {
-    "dropdown": [],
-    "dropdownOne": {
-      "label": "[es] Nav Label 1",
-      "simpleLinkOne": "[es] Simple link one",
-      "simpleLinkTwo": "[es] Simple link two"
+  "header": {
+    "nav": {
+      "dropdowns": [
+        {
+          "label": "[es] Nav Label 1",
+          "simpleLinks": ["[es] Simple link one", "[es] Simple link two"]
+        },
+        {
+          "label": "[es] Nav Label 2",
+          "simpleLinks": ["[es] Simple link three", "[es] Simple link four"]
+        }
+      ],
+      "parentLinks": ["[es] Parent link"]
     },
-    "dropdownTwo": {
-      "label": "[es] Nav Label 2",
-      "simpleLinkThree": "[es] Simple link three",
-      "simpleLinkFour": "[es] Simple link four"
-    },
-    "parentOne": "[es] Parent link"
-  },
-  "secondaryLink": [],
-  "secondaryLinks": {
-    "linkOne": "[es] Link one",
-    "linkTwo": "[es] Link two"
+    "secondaryLinks": ["[es] Link one", "[es] Link two"]
   },
   "footer": {
-    "primary": [
+    "primaryLinks": [
       "[es] Primary Link 1",
       "[es] Primary Link 2",
       "[es] Primary Link 3",
@@ -31,7 +28,13 @@
         "logo": "[es] Name of Agency",
         "contact": "[es] Agency Contact Center"
       },
-      "socialLinks": ["[es] Facebook", "[es] Twitter", "[es] YouTube", "[es] Instagram", "[es] RSS"],
+      "socialLinks": [
+        "[es] Facebook",
+        "[es] Twitter",
+        "[es] YouTube",
+        "[es] Instagram",
+        "[es] RSS"
+      ],
       "address": {
         "phone": "[es] (800) CALL-GOVT",
         "email": "[es] info@agency.gov"
