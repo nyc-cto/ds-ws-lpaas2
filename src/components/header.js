@@ -151,12 +151,12 @@ function Header({ slug }) {
         onToggleMobileNav={onClick}
         role="navigation"
       >
-        <Search
+        {/* <Search
           id="search"
           className="header__search"
           onSubmit={() => {}}
           size="small"
-        />
+        /> */}
       </ExtendedNav>
       <SkipNavContent />
       {/* </Router> */}
