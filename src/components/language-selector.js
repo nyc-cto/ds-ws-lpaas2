@@ -1,74 +1,49 @@
-import React, { useEffect, useState } from "react";
-import { navigate } from "gatsby";
-import { Grid, Link, Menu, NavDropDownButton } from "@trussworks/react-uswds";
-import globe from "../images/logos/globe.png";
+import React, { useState } from "react";
+import { Grid, Menu, NavDropDownButton } from "@trussworks/react-uswds";
+import { useTranslation } from "react-i18next";
+import FeatherIcon from "feather-icons-react";
+import { Link } from ".";
+import languages from "../constants/languages";
 
-function LanguageSelector() {
+function LanguageSelector({ slug }) {
+  const { i18n } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
 
-  //Hard coding here for now - will update soon
-  const testMenuItemsOne = [
-    <Link to="/en/landing" key="en">
-      English
-    </Link>,
-    <Link to="/es/landing" key="es">
-      Español
-    </Link>,
-    <Link to="/en/landing" key="en">
-      שידיי
-    </Link>,
-    <Link to="/en/landing" key="en">
-      Polski
-    </Link>,
-    <Link to="/en/landing" key="en">
-      Français
-    </Link>,
-    <Link to="/en/landing" key="en">
-      中文
-    </Link>,
-    <Link to="/en/landing" key="en">
-      繁体中文
-    </Link>,
-    <Link to="/en/landing" key="en">
-      ودرا
-    </Link>,
-    <Link to="/en/landing" key="en">
-      ةيبرعلا
-    </Link>,
-    <Link to="/en/landing" key="en">
-      Русский
-    </Link>,
-    <Link to="/en/landing" key="en">
-      বাংলা
-    </Link>,
-    <Link to="/en/landing" key="en">
-      한국어
-    </Link>,
-    <Link to="/en/landing" key="en">
-      Kreyòl ayisyen
-    </Link>,
-  ];
+  const languageMenuItems = languages.map((language) => (
+    <Link
+      to={`/${language.langKey}/${slug}`}
+      onClick={() => {
+        i18n.changeLanguage(language.langKey);
+      }}
+      className="banner__lang-selector-item"
+      key={language.langKey}
+    >
+      {language.lang}
+    </Link>
+  ));
 
   return (
     <Grid>
       <NavDropDownButton
+        className="language-selector__nav"
         onToggle={() => {
           setIsOpen((prevOpen) => !prevOpen);
         }}
-        menuId="languageSelector"
+        menuId="language-selector"
         isOpen={isOpen}
         label={
-          <div className="banner__logo font-heading-xs">
-            <img src={globe} />
+          <div className="banner__language-selector-label font-heading-xs">
+            <FeatherIcon icon="globe" />
             <p>Language</p>
           </div>
         }
       />
       <Menu
         key="one"
-        items={testMenuItemsOne}
+        items={languageMenuItems}
         isOpen={isOpen}
-        id="languageSelector"
+        id="language-selector"
       />
     </Grid>
   );

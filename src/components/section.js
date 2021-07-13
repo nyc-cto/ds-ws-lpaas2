@@ -11,7 +11,7 @@ function Section({ section, buttons }) {
           )}
           {section?.text && <p className="usa-intro">{section.text}</p>}
           {buttons?.callToAction && (
-            <Button className="usa-button usa-button--big">
+            <Button className="usa-button--big">
               {buttons.callToAction}
             </Button>
           )}

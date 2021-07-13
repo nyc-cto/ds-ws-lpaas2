@@ -12,13 +12,13 @@ function LanguageSwitcher({ slug }) {
     { code: "es", label: "Spanish" },
   ];
 
-  const handleChange = ({ target }) => {
-    i18n.changeLanguage(target.value);
-  };
+  // const handleChange = ({ target }) => {
+  //   i18n.changeLanguage(target.value);
+  // };
 
-  useEffect(() => {
-    navigate(`/${currentLang}/${slug}`);
-  }, [currentLang]);
+  // useEffect(() => {
+  //   navigate(`/${currentLang}/${slug}`);
+  // }, [currentLang]);
 
   return (
     <div className="language-switcher">
@@ -27,7 +27,7 @@ function LanguageSwitcher({ slug }) {
           <Label htmlFor="input-dropdown">Translate</Label>
           </Grid>
           <Grid >
-          <Dropdown
+          {/* <Dropdown
             className="language-switcher__dropdown"
             id="input-dropdown"
             name="input-dropdown"
@@ -41,7 +41,7 @@ function LanguageSwitcher({ slug }) {
                 </option>
               );
             })}
-          </Dropdown>
+          </Dropdown> */}
           {/* <Button type="submit">Translate</Button> */}
           {/* TODO: good to include a submit button (for accessibility reasons)*/}
         </Grid>
