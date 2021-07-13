@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Grid, Menu, NavDropDownButton } from "@trussworks/react-uswds";
+import { navigate } from "gatsby";
+import { Button, Grid, Menu, NavDropDownButton } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 import FeatherIcon from "feather-icons-react";
 import { Link } from ".";
@@ -11,16 +12,18 @@ function LanguageSelector({ slug }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const languageMenuItems = languages.map((language) => (
-    <Link
-      to={`/${language.langKey}/${slug}`}
+    <Button
       onClick={() => {
         i18n.changeLanguage(language.langKey);
+        navigate(`/${language.langKey}/${slug}`)
       }}
+      type="button"
+      unstyled
       className="banner__lang-selector-item"
       key={language.langKey}
     >
       {language.lang}
-    </Link>
+    </Button>
   ));
   return (
     <Grid>

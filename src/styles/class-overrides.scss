@@ -1,3 +1,8 @@
+// iframe:focus, [href]:focus, [tabindex]:focus, [contentEditable="true"]:focus {
+//   outline: 0.25rem solid color('primary') !important;
+//   outline-offset: 0;
+// }
+
 .font-heading-xl,
 .font-heading-xs,
 .text-primary,
@@ -151,6 +156,19 @@
   //   padding-top: 0;
   //   padding-bottom: 0;
   // }
+}
+
+.usa-button--unstyled {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    background-color: color('base-darker');
+    padding: $mocto-link-padding;
+    border-left: $mocto-link-border-width solid color("primary");
+    line-height: 100%;
+  }
 }
 
 .graphic_image--circle {
