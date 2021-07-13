@@ -1,32 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import React, { Suspense } from "react";
-import { I18nextProvider } from "react-i18next";
-
-import Layout from "../components/layout";
+// import { Redirect, Router } from "@reach/router";
+import { navigate } from "gatsby";
+import { useTranslation } from "react-i18next";
 import i18next from "../components/i18n";
 
-import "@trussworks/react-uswds/lib/uswds.css";
-import "@trussworks/react-uswds/lib/index.css";
+function Home({ location }) {
+  const { i18n } = useTranslation();
 
-function Home() {
-  return (
-    // <Suspense fallback="loading">
-      <I18nextProvider i18n={i18next}>
-        <Layout>
-          {/* TODO: temporary placeholder */}
-          <div>
-            The U.S. government, including the U.S. General Services
-            Administration (the primary sponsoring federal agency of USA.gov),
-            neither endorses nor guarantees in any way the external
-            organizations, services, advice, or products included in these
-            website links. Furthermore, the U.S. government neither controls nor
-            guarantees the accuracy, relevance, timeliness or completeness of
-            the information contained in non-government website links.
-          </div>
-        </Layout>
-      </I18nextProvider>
-    // </Suspense>
-  );
+  // TODO: which method is preferred?
+
+  // method one
+  useEffect(() => {
+    navigate(`/${i18n.language}/`);
+  }, []);
+  return <React.Fragment></React.Fragment>;
+
+  // method two throws an error (there's not a page or function yet at /en) – takes time to load
+  // return (
+  // <Router>
+  {
+    /* <Redirect from="/" to={`/${i18n.language}/`} noThrow/> */
+  }
+  // </Router>
+  // );
 }
 
 export default Home;

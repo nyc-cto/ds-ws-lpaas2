@@ -12,13 +12,13 @@ import logoImg from "../images/logos/cto_logo_horizontal_white.png";
 
 function Footer() {
   const { t } = useTranslation();
-  const primaryLinks = ["#", "#", "#", "#"];
+  const primaryLinks = ["/link-one", "/link-two", "/link-three", "/link-four"];
   const socialLinks = {
-    facebook: "#",
-    twitter: "#",
-    youtube: "#",
-    instagram: "#",
-    rss: "#",
+    facebook: "www.facebook.com",
+    twitter: "www.twitter.com",
+    youtube: "www.youtube.com",
+    instagram: "www.instagram.com",
+    rss: "https://www.google.com/search?q=rss",
   };
   const socialLinkTypes = [
     "facebook",

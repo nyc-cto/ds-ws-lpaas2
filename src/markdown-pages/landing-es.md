@@ -1,7 +1,7 @@
 ---
 lang: es
 templateKey: landing-page
-slug: landing
+slug: home
 hero:
   image: es hero-img.jpg
   imageDescription: es Description

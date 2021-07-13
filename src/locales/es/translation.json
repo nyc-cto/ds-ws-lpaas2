@@ -48,5 +48,6 @@
         "email": "[es] info@agency.gov"
       }
     }
-  }
+  },
+  "notFound": "[es] 404: Page Not Found"
 }

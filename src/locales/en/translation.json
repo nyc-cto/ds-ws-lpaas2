@@ -42,5 +42,6 @@
         "email": "info@agency.gov"
       }
     }
-  }
+  },
+  "notFound": "404: Page Not Found"
 }
