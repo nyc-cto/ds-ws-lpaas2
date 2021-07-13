@@ -91,21 +91,6 @@ function Header({ slug }) {
     );
   });
 
-  /* links above search button */
-  const secondaryLinks = ["link-five", "link-six"];
-  const secondaryLinkLabels = t("header.secondaryLinks");
-  const secondaryLinksLength = secondaryLinks.length;
-  const secondaryLinksItems = Array.from(
-    { length: secondaryLinksLength },
-    (_, i) => {
-      return (
-        <Link to={secondaryLinks[i]} key={i}>
-          {secondaryLinkLabels[i]}
-        </Link>
-      );
-    }
-  );
-
   const navBarItems = [
     <React.Fragment>
       <NavDropDownButton
@@ -161,7 +146,7 @@ function Header({ slug }) {
       </div>
       <ExtendedNav
         primaryItems={navBarItems}
-        secondaryItems={secondaryLinksItems}
+        secondaryItems={[]}
         mobileExpanded={expanded}
         onToggleMobileNav={onClick}
         role="navigation"
