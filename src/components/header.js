@@ -39,40 +39,72 @@ function Header({ slug }) {
   const [isOpen2, setIsOpen2] = useState(false);
 
   /* first dropdown items */
-  const navDropdownLinks1 = ['link-one', 'link-two']
+  const navDropdownLinks1 = ["link-one", "link-two"];
   const navDropdownLinkLabels1 = t("header.nav.dropdowns")[0]["simpleLinks"];
-  const navDropdownLength1 = navDropdownLinks1.length;
-  const navDropdownItems1 = Array.from({ length: navDropdownLength1 }, (_, i) => {
-    return (
-      <Link to={navDropdownLinks1[i]} key={i}>
-        {navDropdownLinkLabels1[i]}
-      </Link>
-    );
-  });
+  const navDropdownLength1 =
+    navDropdownLinks1.length > navDropdownLinkLabels1.length
+      ? navDropdownLinkLabels1.length
+      : navDropdownLinks1.length;
+  const navDropdownItems1 = Array.from(
+    { length: navDropdownLength1 },
+    (_, i) => {
+      return (
+        <Link to={navDropdownLinks1[i]} key={i}>
+          {navDropdownLinkLabels1[i]}
+        </Link>
+      );
+    }
+  );
 
   /* second dropdown items */
-  const navDropdownLinks2 = ['link-three', 'link-four']
+  const navDropdownLinks2 = ["link-three", "link-four"];
   const navDropdownLinkLabels2 = t("header.nav.dropdowns")[1]["simpleLinks"];
-  const navDropdownLength2 = navDropdownLinks2.length;
-  const navDropdownItems2 = Array.from({ length: navDropdownLength2 }, (_, i) => {
+  const navDropdownLength2 =
+    navDropdownLinks2.length > navDropdownLinkLabels2.length
+      ? navDropdownLinkLabels2.length
+      : navDropdownLinks2.length;
+  const navDropdownItems2 = Array.from(
+    { length: navDropdownLength2 },
+    (_, i) => {
+      return (
+        <Link to={navDropdownLinks2[i]} key={i}>
+          {navDropdownLinkLabels2[i]}
+        </Link>
+      );
+    }
+  );
+
+  /* parent links */
+  const parentLinks = ["link-five"];
+  const parentLinksLabels = t("header.nav.parentLinks");
+  const parentLinksLength =
+    parentLinks.length > parentLinksLabels.length
+      ? parentLinksLabels.length
+      : parentLinks.length;
+  const parentLinkItems = parentLinks.map((element, i) => {
     return (
-      <Link to={navDropdownLinks2[i]} key={i}>
-        {navDropdownLinkLabels2[i]}
-      </Link>
+      i < parentLinksLength && (
+        <Link to={element} variant="nav" key={i}>
+          <span>{parentLinksLabels[i]}</span>
+        </Link>
+      )
     );
   });
 
   /* links above search button */
-  const secondaryLinks = ['link-five', 'link-six']
+  const secondaryLinks = ["link-five", "link-six"];
   const secondaryLinkLabels = t("header.secondaryLinks");
   const secondaryLinksLength = secondaryLinks.length;
-  const secondaryLinksItems = Array.from({ length: secondaryLinksLength }, (_, i) => {
-    return (
-      <Link to={secondaryLinks[i]} key={i}>
-        {secondaryLinkLabels[i]}
-      </Link>
-    );
-  });
+  const secondaryLinksItems = Array.from(
+    { length: secondaryLinksLength },
+    (_, i) => {
+      return (
+        <Link to={secondaryLinks[i]} key={i}>
+          {secondaryLinkLabels[i]}
+        </Link>
+      );
+    }
+  );
 
   const navBarItems = [
     <React.Fragment>
@@ -111,10 +143,7 @@ function Header({ slug }) {
         id="navDropDownTwo"
       />
     </React.Fragment>,
-    <Link variant="nav" to="/three" key="3">
-      <span>{t("header.nav.parentLinks.0")}</span>
-    </Link>,
-  ];
+  ].concat(parentLinkItems);
 
   return (
     <HeaderUSWDS extended={true}>
