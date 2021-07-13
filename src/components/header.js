@@ -39,34 +39,37 @@ function Header({ slug }) {
   const [isOpen2, setIsOpen2] = useState(false);
 
   /* first dropdown items */
-  const navDropdownLinks1 = t("header.nav.dropdowns")[0]["simpleLinks"];
+  const navDropdownLinks1 = ['link-one', 'link-two']
+  const navDropdownLinkLabels1 = t("header.nav.dropdowns")[0]["simpleLinks"];
   const navDropdownLength1 = navDropdownLinks1.length;
   const navDropdownItems1 = Array.from({ length: navDropdownLength1 }, (_, i) => {
     return (
-      <Link to={"link-" + i} key={i}>
-        {navDropdownLinks1[i]}
+      <Link to={navDropdownLinks1[i]} key={i}>
+        {navDropdownLinkLabels1[i]}
       </Link>
     );
   });
 
   /* second dropdown items */
-  const navDropdownLinks2 = t("header.nav.dropdowns")[1]["simpleLinks"];
+  const navDropdownLinks2 = ['link-three', 'link-four']
+  const navDropdownLinkLabels2 = t("header.nav.dropdowns")[1]["simpleLinks"];
   const navDropdownLength2 = navDropdownLinks2.length;
   const navDropdownItems2 = Array.from({ length: navDropdownLength2 }, (_, i) => {
     return (
-      <Link to={"/link-" + (i + navDropdownLength1)} key={i}>
-        {navDropdownLinks2[i]}
+      <Link to={navDropdownLinks2[i]} key={i}>
+        {navDropdownLinkLabels2[i]}
       </Link>
     );
   });
 
   /* links above search button */
-  const secondaryLinks = t("header.secondaryLinks");
+  const secondaryLinks = ['link-five', 'link-six']
+  const secondaryLinkLabels = t("header.secondaryLinks");
   const secondaryLinksLength = secondaryLinks.length;
   const secondaryLinksItems = Array.from({ length: secondaryLinksLength }, (_, i) => {
     return (
-      <Link to={"/link-" + (i + navDropdownLength2 + navDropdownLength1)} key={i}>
-        {secondaryLinks[i]}
+      <Link to={secondaryLinks[i]} key={i}>
+        {secondaryLinkLabels[i]}
       </Link>
     );
   });
