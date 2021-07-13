@@ -1,8 +1,3 @@
-// iframe:focus, [href]:focus, [tabindex]:focus, [contentEditable="true"]:focus {
-//   outline: 0.25rem solid color('primary') !important;
-//   outline-offset: 0;
-// }
-
 .font-heading-xl,
 .font-heading-xs,
 .text-primary,
@@ -29,7 +24,7 @@
       color: color("base-darker");
     }
     &::after {
-      border: $mocto-button-border-width solid color("secondary");
+      border: units("2px") solid color("secondary");
     }
   }
   .usa-nav__primary-item > a {
@@ -45,7 +40,7 @@
   &:hover {
     color: color("base-darker");
     background-color: color("primary");
-    border: $mocto-button-border-width solid color("base-darker");
+    border: units("2px") solid color("base-darker");
   }
   &:active {
     color: white;
@@ -63,7 +58,7 @@
   &:hover {
     color: color("base-darker");
     background-color: color("secondary");
-    border: $mocto-button-border-width solid color("base-darker");
+    border: units("2px") solid color("base-darker");
   }
   &:active {
     color: white;
@@ -111,13 +106,6 @@
   }
 }
 
-// .language-selector__nav > .usa-header--extended {
-//   padding-bottom: 0rem;
-//   padding-top: 0rem;
-// }
-
-//Custom class names:
-
 .banner,
 .banner__logo-title {
   display: flex;
@@ -140,22 +128,18 @@
   color: color("base-darker");
   p {
     color: color("base-darker");
-    padding-left: 10px;
+    padding-left: units("105");
   }
 }
 
-.banner__language-selector-container {
+.language-selector__nav {
   .usa-nav__submenu .usa-nav__submenu-item a {
     text-decoration: none;
     &:hover {
-      padding: $mocto-link-padding;
-      border-left: $mocto-link-border-width solid color("primary");
+      padding: units("2px");
+      border-left: units("05") solid color("primary");
     }
   }
-  // div > .usa-header--extended {
-  //   padding-top: 0;
-  //   padding-bottom: 0;
-  // }
 }
 
 .usa-button--unstyled {
@@ -164,10 +148,9 @@
   &:hover {
     color: white;
     text-decoration: none;
-    background-color: color('base-darker');
-    padding: $mocto-link-padding;
-    border-left: $mocto-link-border-width solid color("primary");
-    line-height: 100%;
+    background-color: color("base-darker");
+    padding: units("2px");
+    border-left: units("05") solid color("primary");
   }
 }
 
@@ -176,6 +159,6 @@
 }
 
 .footer__logo {
-  width: 300px;
+  width: units("mobile");
   height: auto;
 }

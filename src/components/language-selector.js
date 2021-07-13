@@ -15,7 +15,7 @@ function LanguageSelector({ slug }) {
     <Button
       onClick={() => {
         i18n.changeLanguage(language.langKey);
-        navigate(`/${language.langKey}/${slug}`)
+        navigate(`/${language.langKey}/${slug}`);
       }}
       type="button"
       unstyled
@@ -26,9 +26,9 @@ function LanguageSelector({ slug }) {
     </Button>
   ));
   return (
-    <Grid>
+    <Grid className="language-selector__nav">
       <NavDropDownButton
-        className="language-selector__nav"
+        className="language-selector__nav-button"
         onToggle={() => {
           setIsOpen((prevOpen) => !prevOpen);
         }}
