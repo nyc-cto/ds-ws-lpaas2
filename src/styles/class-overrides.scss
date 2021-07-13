@@ -106,30 +106,41 @@
   }
 }
 
-.banner,
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  .usa-accordion__button {
+    background-image: none;
+    padding: 0 units("105");
+    p {
+      padding-left: units("105");
+    }
+  }
+  .usa-accordion__button[aria-expanded="false"] {
+    color: color("base-darker");
+    background-color: color("primary");
+    p {
+      color: color("base-darker");
+    }
+  }
+  .usa-accordion__button[aria-expanded="true"] {
+    color: white;
+    background-color: color("primary");
+  }
+}
+
 .banner__logo-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .usa-accordion__button,
-  .usa-nav__link {
-    color: white;
-    background-color: color("primary");
-    button[aria-expanded="true"] {
-      background-color: color("base-darker");
-    }
-  }
 }
 
 .banner__language-selector-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: color("base-darker");
-  p {
-    color: color("base-darker");
-    padding-left: units("105");
-  }
 }
 
 .language-selector__nav {
