@@ -1,0 +1,47 @@
+{
+  "title": "[ru] Project Title",
+  "banner": "[ru] An official website of New York City government",
+  "nav": {
+    "dropdown": [],
+    "dropdownOne": {
+      "label": "[ru] Nav Label 1",
+      "simpleLinkOne": "[ru] Simple link one",
+      "simpleLinkTwo": "[ru] Simple link two"
+    },
+    "dropdownTwo": {
+      "label": "[ru] Nav Label 2",
+      "simpleLinkThree": "[ru] Simple link three",
+      "simpleLinkFour": "[ru] Simple link four"
+    },
+    "parentOne": "[ru] Parent link"
+  },
+  "secondaryLink": [],
+  "secondaryLinks": {
+    "linkOne": "[ru] Link one",
+    "linkTwo": "[ru] Link two"
+  },
+  "footer": {
+    "copyright": "[ru] © 2021 City of New York. All Rights Reserved.",
+    "trademark": "[ru] NYC is a trademark and service mark of the City of New York.",
+    "terms": "[ru] NYC Terms of Use",
+    "privacy": "[ru] NYC Privacy Policy",
+    "primary": [
+      "Primary Link 1",
+      "Primary Link 2",
+      "Primary Link 3",
+      "Primary Link 4"
+    ],
+    "secondary": {
+      "heading": {
+        "logo": "[ru] Name of Agency",
+        "contact": "[ru] Agency Contact Center"
+      },
+      "socialLinks": ["Facebook", "Twitter", "YouTube", "Instagram", "RSS"],
+      "address": {
+        "phone": "[ru] (800) CALL-GOVT",
+        "email": "[ru] info@agency.gov"
+      }
+    }
+  },
+  "notFound": "[ru] 404: Page Not Found"
+}

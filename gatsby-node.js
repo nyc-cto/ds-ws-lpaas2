@@ -3,6 +3,22 @@ const path = require("path");
 const _ = require("lodash");
 const { createFilePath } = require("gatsby-source-filesystem");
 
+const languages = [
+  "ar",
+  "bn",
+  "en",
+  "es",
+  "fr",
+  "ht",
+  "ko",
+  "pl",
+  "ru",
+  "ur",
+  "yi",
+  "zh_HANS",
+  "zh_HANT",
+];
+
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     node: {
@@ -13,18 +29,27 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
-  createRedirect({
-    fromPath: "/en/home",
-    toPath: "/en/",
-    isPermanent: true,
-    redirectInBrowser: true,
-  });
-  createRedirect({
-    fromPath: "/es/home",
-    toPath: "/es/",
-    isPermanent: true,
-    redirectInBrowser: true,
-  });
+  // createRedirect({
+  //   fromPath: "/en/home",
+  //   toPath: "/en/",
+  //   isPermanent: true,
+  //   redirectInBrowser: true,
+  // });
+  // createRedirect({
+  //   fromPath: "/es/home",
+  //   toPath: "/es/",
+  //   isPermanent: true,
+  //   redirectInBrowser: true,
+  // });
+
+  languages.map((lang) =>
+    createRedirect({
+      fromPath: `/${lang}/home`,
+      toPath: `/${lang}/`,
+      isPermanent: true,
+      redirectInBrowser: true,
+    })
+  );
 
   return graphql(`
     {

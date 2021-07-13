@@ -20,11 +20,6 @@ const languages = [
     isRtoL: false,
   },
   {
-    lang: "Español",
-    langKey: "es",
-    isRtoL: false,
-  },
-  {
     lang: "Français",
     langKey: "fr",
     isRtoL: false,
@@ -50,6 +45,11 @@ const languages = [
     isRtoL: false,
   },
   {
+    lang: "Español",
+    langKey: "es",
+    isRtoL: false,
+  },
+  {
     lang: "שידיי",
     langKey: "yi",
     isRtoL: true,
@@ -63,8 +63,7 @@ const languages = [
     lang: "ةيبرعلا",
     langKey: "ar",
     isRtoL: true,
-  }
-]
+  },
+];
 
-
-export default languages 
+export default languages;
