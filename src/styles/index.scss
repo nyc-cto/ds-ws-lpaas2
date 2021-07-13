@@ -12,11 +12,14 @@ $theme-font-path: "../../node_modules/uswds/src/fonts";
 
 $theme-hero-image: "#{$theme-image-path}/hero.png";
 
-// Your custom changes to variables go here
-// Uncomment to see this working
-// $theme-color-primary-darker: 'black';
-@import "./mocto-theme-tokens.scss";
+//Custom changes to variables
+//MOCTO theme:
+@import "./mocto-theme.scss";
+//NYC theme:
+// @import "./nyc-theme.scss";
+
 
 @import "uswds";
 
-@import "./mocto-custom-classes.scss";
+//Custom class overrides 
+@import "./class-overrides.scss"; 

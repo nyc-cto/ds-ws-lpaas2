@@ -1,24 +1,19 @@
 import React, { useState } from "react";
-// import { BrowserRouter as Router } from "react-router-dom";
 import {
   ExtendedNav,
-  GovBanner,
+  GridContainer,
   Header as HeaderUSWDS,
   Menu,
   NavDropDownButton,
   NavMenuButton,
-  Search,
   Title,
 } from "@trussworks/react-uswds";
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 import { useTranslation } from "react-i18next";
 
-// import { LanguageSwitcher, Link } from "./index";
-import LanguageSwitcher from "./language-switcher";
-import Link from "./link";
+import { Banner, LanguageSwitcher, Link } from ".";
 
-import "../styles/Header.css";
-import "@reach/skip-nav/styles.css"; // this will show/hide the SkipNavLink on focus
+import "@reach/skip-nav/styles.css"; 
 
 function Header({ slug }) {
   const { t, i18n } = useTranslation();
@@ -59,14 +54,7 @@ function Header({ slug }) {
   ];
 
   /* links above search button */
-  const secondaryLinks = [
-    <Link to="#linkFive" key="one">
-      {t("secondaryLinks.linkOne")}
-    </Link>,
-    <Link to="#linkSix" key="two">
-      {t("secondaryLinks.linkTwo")}
-    </Link>,
-  ];
+  const secondaryLinks = [];
 
   const navBarItems = [
     <React.Fragment>
@@ -116,12 +104,9 @@ function Header({ slug }) {
     <HeaderUSWDS extended={true}>
       {/* <Router> */}
       <SkipNavLink />
-      <GovBanner
-        language={govBannerLang[i18n.language]}
-        translate="yes"
-        role="banner"
-      />
-      <LanguageSwitcher slug={slug} />
+      <Banner slug={slug}>{t("banner")}</Banner>
+      <GridContainer>{/* <LanguageSwitcher slug={slug} /> */}</GridContainer>
+
       <div className="usa-navbar">
         <Title>{t("title")}</Title>
         <NavMenuButton onClick={onClick} label="Menu" />
@@ -132,16 +117,8 @@ function Header({ slug }) {
         mobileExpanded={expanded}
         onToggleMobileNav={onClick}
         role="navigation"
-      >
-        <Search
-          id="search"
-          className="header__search"
-          onSubmit={() => {}}
-          size="small"
-        />
-      </ExtendedNav>
+      ></ExtendedNav>
       <SkipNavContent />
-      {/* </Router> */}
     </HeaderUSWDS>
   );
 }
