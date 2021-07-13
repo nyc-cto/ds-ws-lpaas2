@@ -1,11 +1,9 @@
 import React from "react";
 import {
-  Address,
   Footer as FooterUSWDS,
   FooterNav,
   Grid,
   Logo,
-  SocialLinks,
 } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 import { Link } from ".";
@@ -51,7 +49,11 @@ function Footer() {
           <Logo
             size="medium"
             image={
-              <img alt={t("footer.secondary.heading.logo")} src={logoImg} className="footer__logo" />
+              <img
+                className="footer__logo"
+                src={logoImg}
+                alt={t("footer.secondary.heading.logo")}
+              />
             }
           />
 

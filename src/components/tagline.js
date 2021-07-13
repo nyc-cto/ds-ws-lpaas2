@@ -11,7 +11,7 @@ function Tagline({ tagline }) {
           </Grid>
         )}
         {tagline?.text && (
-          <Grid tablet={{ col: 8 }} className="usa-prose">
+          <Grid className="usa-prose" tablet={{ col: 8 }}>
             <p>{tagline.text}</p>
           </Grid>
         )}

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { navigate } from "gatsby";
+import React, { useState } from "react";
 import { Grid, Menu, NavDropDownButton } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 import FeatherIcon from "feather-icons-react";
@@ -17,8 +16,8 @@ function LanguageSelector({ slug }) {
       onClick={() => {
         i18n.changeLanguage(language.langKey);
       }}
-      key={language.langKey}
       className="banner__lang-selector-item"
+      key={language.langKey}
     >
       {language.lang}
     </Link>
@@ -27,6 +26,7 @@ function LanguageSelector({ slug }) {
   return (
     <Grid>
       <NavDropDownButton
+        className="language-selector__nav"
         onToggle={() => {
           setIsOpen((prevOpen) => !prevOpen);
         }}

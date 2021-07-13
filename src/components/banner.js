@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  Grid,
-  GridContainer,
-  NavDropDownButton,
-} from "@trussworks/react-uswds";
+import { Grid, GridContainer } from "@trussworks/react-uswds";
 import { LanguageSelector } from ".";
 import nycLogo from "../images/logos/nyc_logo.png";
 

@@ -10,15 +10,15 @@ function Graphic({ graphics }) {
             graphics.map((graphic) => {
               return (
                 <Grid
-                  tablet={{ col: 6 }}
                   className="usa-media-block"
+                  tablet={{ col: 6 }}
                   key={graphic.heading}
                 >
                   {graphic?.image && (
                     <img
+                      className="usa-media-block__img graphic_image--circle"
                       src={graphic.image}
                       alt={graphic.imageDescription}
-                      className="usa-media-block__img graphic_image--circle"
                     />
                   )}
                   <Grid className="usa-media-block__body">

@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-// import { BrowserRouter as Router } from "react-router-dom";
 import {
   ExtendedNav,
-  GovBanner,
   GridContainer,
   Header as HeaderUSWDS,
   Menu,
   NavDropDownButton,
   NavMenuButton,
-  Search,
   Title,
 } from "@trussworks/react-uswds";
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
@@ -16,7 +13,7 @@ import { useTranslation } from "react-i18next";
 
 import { Banner, LanguageSwitcher, Link } from ".";
 
-import "@reach/skip-nav/styles.css"; // this will show/hide the SkipNavLink on focus
+import "@reach/skip-nav/styles.css"; 
 
 function Header({ slug }) {
   const { t, i18n } = useTranslation();
@@ -122,7 +119,6 @@ function Header({ slug }) {
         role="navigation"
       ></ExtendedNav>
       <SkipNavContent />
-      {/* </Router> */}
     </HeaderUSWDS>
   );
 }
