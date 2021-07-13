@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { navigate } from "gatsby";
-import { Dropdown, Label } from "@trussworks/react-uswds";
+import { Dropdown, Grid, Label } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
-import "../styles/LanguageSwitcher.css";
 
 function LanguageSwitcher({ slug }) {
   const { i18n } = useTranslation();
@@ -12,16 +11,16 @@ function LanguageSwitcher({ slug }) {
     { code: "es", label: "Spanish" },
   ];
 
-  const handleChange = ({ target }) => {
-    const newLang = target.value;
-    i18n.changeLanguage(newLang);
-    navigate(`/${newLang}/${slug}`);
-  };
+  // const handleChange = ({ target }) => {
+  //   const newLang = target.value;
+  //   i18n.changeLanguage(newLang);
+  //   navigate(`/${newLang}/${slug}`);
+  // };
 
   return (
     <div className="language-switcher">
-      <Label htmlFor="input-dropdown">Translate</Label>
-      <Dropdown
+      {/* <Label htmlFor="input-dropdown">Translate</Label> */}
+      {/* <Dropdown
         className="language-switcher__dropdown"
         id="input-dropdown"
         name="input-dropdown"
@@ -35,7 +34,7 @@ function LanguageSwitcher({ slug }) {
             </option>
           );
         })}
-      </Dropdown>
+      </Dropdown> */}
       {/* <Button type="submit">Translate</Button> */}
       {/* TODO: good to include a submit button (for accessibility reasons)*/}
     </div>

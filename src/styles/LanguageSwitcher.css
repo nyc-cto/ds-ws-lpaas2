@@ -1,9 +1,0 @@
-.language-switcher {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.language-switcher__dropdown { /* might be possible to use SASS variables to adjust width */
-  margin-left: 5px;
-  width: auto;
-}

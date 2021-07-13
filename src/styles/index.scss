@@ -1,0 +1,25 @@
+/*
+  These are necessary for the image and font urls referenced in the source
+  files to resolve correctly.
+*/
+$theme-image-path: "../../node_modules/uswds/src/img";
+$theme-font-path: "../../node_modules/uswds/src/fonts";
+
+/*
+  The url for the hero image in the source file is not currently prefixed by
+  the $theme-image-path above.
+*/
+
+$theme-hero-image: "#{$theme-image-path}/hero.png";
+
+//Custom changes to variables
+//MOCTO theme:
+@import "./mocto-theme.scss";
+//NYC theme:
+// @import "./nyc-theme.scss";
+
+
+@import "uswds";
+
+//Custom class overrides 
+@import "./class-overrides.scss"; 

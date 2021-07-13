@@ -1,0 +1,158 @@
+.font-heading-xl,
+.font-heading-xs,
+.text-primary,
+.usa-graphic-list__heading,
+.usa-hero__heading,
+.usa-intro,
+.usa-prose {
+  font-family: family("ui");
+}
+
+.usa-hero__callout,
+.usa-nav__submenu,
+.usa-section--dark {
+  background-color: color("base-darker");
+}
+
+.usa-nav__primary {
+  button[aria-expanded="true"] {
+    background-color: color("base-darker");
+  }
+  button[aria-expanded="false"] {
+    color: color("disabled-dark");
+    &:hover {
+      color: color("base-darker");
+    }
+    &::after {
+      border: $mocto-button-border-width solid color("secondary");
+    }
+  }
+  .usa-nav__primary-item > a {
+    color: color("disabled-dark");
+    &:hover {
+      color: color("base-darker");
+    }
+  }
+}
+
+.usa-button {
+  color: color("base-darker");
+  &:hover {
+    color: color("base-darker");
+    background-color: color("primary");
+    border: $mocto-button-border-width solid color("base-darker");
+  }
+  &:active {
+    color: white;
+    background-color: color("base-darker");
+  }
+  &:disabled {
+    color: white;
+    background-color: color("disabled");
+  }
+}
+
+.usa-button--accent-warm {
+  color: color("base-darker");
+  background-color: color("secondary");
+  &:hover {
+    color: color("base-darker");
+    background-color: color("secondary");
+    border: $mocto-button-border-width solid color("base-darker");
+  }
+  &:active {
+    color: white;
+    background-color: color("secondary-darker");
+  }
+  &:disabled {
+    color: white;
+    background-color: color("disabled");
+  }
+}
+
+.usa-button--inverse {
+  color: color("base-darker");
+  background-color: color("base-light");
+  &:hover {
+    color: color("base-darker");
+    background-color: color("base-lighter");
+  }
+  &:active {
+    color: color("base-darker");
+    background-color: white;
+  }
+  &:disabled {
+    color: color("base-darker");
+    background-color: color("base-dark");
+  }
+}
+
+.usa-footer__primary-section {
+  color: white;
+  background-color: color("base-dark");
+  .usa-link,
+  .usa-link--external,
+  .usa-footer__primary-link {
+    color: white;
+  }
+}
+
+.usa-footer__secondary-section {
+  color: white;
+  background-color: color("base-darker");
+  .usa-link,
+  .usa-link--external {
+    color: white;
+  }
+}
+
+.language-selector__nav > .usa-header--extended {
+  padding-bottom: 0rem;
+  padding-top: 0rem;
+}
+
+//Custom class names:
+
+.banner,
+.banner__logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .usa-accordion__button,
+  .usa-nav__link {
+    color: white;
+    background-color: color("primary");
+    button[aria-expanded="true"] {
+      background-color: color("base-darker");
+    }
+  }
+}
+
+.banner__language-selector-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    padding-left: 10px;
+  }
+}
+
+.banner__language-selector-container {
+  .usa-nav__submenu .usa-nav__submenu-item a {
+    text-decoration: none;
+    &:hover {
+      // text-decoration: none;
+      padding: $mocto-link-padding;
+      border-left: $mocto-link-border-width solid color("primary");
+    }
+  }
+}
+
+.graphic_image--circle {
+  border-radius: 50%;
+}
+
+.footer__logo {
+  width: 300px;
+  height: auto;
+}

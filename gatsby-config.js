@@ -3,6 +3,8 @@ module.exports = {
     title: "LPaaS 2.0",
   },
   plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
