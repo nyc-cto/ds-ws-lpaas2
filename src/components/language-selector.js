@@ -3,7 +3,7 @@ import { Grid, Menu, NavDropDownButton } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 import FeatherIcon from "feather-icons-react";
 import { Link } from ".";
-import languages from "../constants/languages";
+import { languages } from "../constants/languages";
 
 function LanguageSelector({ slug }) {
   const { i18n } = useTranslation();
@@ -22,7 +22,6 @@ function LanguageSelector({ slug }) {
       {language.lang}
     </Link>
   ));
-
   return (
     <Grid>
       <NavDropDownButton
@@ -34,7 +33,7 @@ function LanguageSelector({ slug }) {
         isOpen={isOpen}
         label={
           <div className="banner__language-selector-label font-heading-xs">
-            <FeatherIcon icon="globe" />
+            <FeatherIcon icon="globe" size={16} />
             <p>Language</p>
           </div>
         }
