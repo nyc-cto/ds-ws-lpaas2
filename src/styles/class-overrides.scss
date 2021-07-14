@@ -97,6 +97,12 @@
   }
 }
 
+.usa-footer__return-to-top {
+  color: color("base-darker");
+  line-height: $mocto-box-height;
+}
+
+// TODO: do we need this class anymore (usa-footer__secondary-section)?
 .usa-footer__secondary-section {
   color: white;
   background-color: color("base-darker");
