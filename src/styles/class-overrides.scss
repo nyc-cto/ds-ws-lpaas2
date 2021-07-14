@@ -1,27 +1,17 @@
-.font-heading-xl,
-.font-heading-xs,
-.text-primary,
-.usa-graphic-list__heading,
-.usa-hero__heading,
-.usa-intro,
-.usa-prose {
-  font-family: family("ui");
-}
-
 .usa-hero__callout,
 .usa-nav__submenu,
 .usa-section--dark {
-  background-color: color("base-darker");
+  background-color: color("base-dark");
 }
 
 .usa-nav__primary {
   button[aria-expanded="true"] {
-    background-color: color("base-darker");
+    background-color: color("base-dark");
   }
   button[aria-expanded="false"] {
     color: color("disabled-dark");
     &:hover {
-      color: color("base-darker");
+      color: color("base-dark");
     }
     &::after {
       border: units("2px") solid color("secondary");
@@ -30,21 +20,21 @@
   .usa-nav__primary-item > a {
     color: color("disabled-dark");
     &:hover {
-      color: color("base-darker");
+      color: color("base-dark");
     }
   }
 }
 
 .usa-button {
-  color: color("base-darker");
+  color: color("base-dark");
   &:hover {
-    color: color("base-darker");
+    color: color("base-dark");
     background-color: color("primary");
-    border: units("2px") solid color("base-darker");
+    border: units("2px") solid color("base-dark");
   }
   &:active {
     color: white;
-    background-color: color("base-darker");
+    background-color: color("base-dark");
   }
   &:disabled {
     color: white;
@@ -53,12 +43,12 @@
 }
 
 .usa-button--accent-warm {
-  color: color("base-darker");
+  color: color("base-dark");
   background-color: color("secondary");
   &:hover {
-    color: color("base-darker");
+    color: color("base-dark");
     background-color: color("secondary");
-    border: units("2px") solid color("base-darker");
+    border: units("2px") solid color("base-dark");
   }
   &:active {
     color: white;
@@ -71,25 +61,25 @@
 }
 
 .usa-button--inverse {
-  color: color("base-darker");
-  background-color: color("base-light");
+  color: color("base-dark");
+  background-color: color("base-lighter");
   &:hover {
-    color: color("base-darker");
-    background-color: color("base-lighter");
+    color: color("base-dark");
+    background-color: color("base-lightest");
   }
   &:active {
-    color: color("base-darker");
+    color: color("base-dark");
     background-color: white;
   }
   &:disabled {
-    color: color("base-darker");
-    background-color: color("base-dark");
+    color: color("base-dark");
+    background-color: color("base");
   }
 }
 
 .usa-footer__primary-section {
   color: white;
-  background-color: color("base-dark");
+  background-color: color("base");
   .usa-link,
   .usa-link--external,
   .usa-footer__primary-link {
@@ -99,7 +89,7 @@
 
 .usa-footer__secondary-section {
   color: white;
-  background-color: color("base-darker");
+  background-color: color("base-dark");
   .usa-link,
   .usa-link--external {
     color: white;
@@ -119,10 +109,10 @@
     }
   }
   .usa-accordion__button[aria-expanded="false"] {
-    color: color("base-darker");
+    color: color("base-dark");
     background-color: color("primary");
     p {
-      color: color("base-darker");
+      color: color("base-dark");
     }
   }
   .usa-accordion__button[aria-expanded="true"] {
@@ -148,24 +138,24 @@
   text-decoration: none;
 }
 
-.banner__language-selector-item--left {
+.banner__language-selector-item--RtoL {
   display: flex;
   flex-direction: row-reverse;
   button:hover {
     color: white;
     text-decoration: none;
-    background-color: color("base-darker");
-    padding: units("2px");
+    background-color: color("base-dark");
+    padding-right: units("05");
     border-right: units("05") solid color("primary");
   }
 }
 
-.banner__language-selector-item--right {
+.banner__language-selector-item--LtoR {
   button:hover {
     color: white;
     text-decoration: none;
-    background-color: color("base-darker");
-    padding: units("2px");
+    background-color: color("base-dark");
+    padding-left: units("05");
     border-left: units("05") solid color("primary");
   }
 }

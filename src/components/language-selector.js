@@ -15,8 +15,8 @@ function LanguageSelector({ slug }) {
     <div
       className={
         language.isRtoL
-          ? "banner__language-selector-item--left"
-          : "banner__language-selector-item--right"
+          ? "banner__language-selector-item--RtoL"
+          : "banner__language-selector-item--LtoR"
       }
     >
       <Button
