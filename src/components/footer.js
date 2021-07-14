@@ -20,7 +20,7 @@ function Footer() {
       size="medium"
       returnToTop={
         <GridContainer>
-          <Link to="#top" className="usa-footer__return-to-top"> {/* TODO: UPTO HERE, seeing if color matches now*/}
+          <Link to="#top" className="usa-footer__return-to-top">
             Return to top
           </Link>
           {/* TODO: for some reason class name has to be manually added*/}
