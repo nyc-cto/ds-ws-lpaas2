@@ -12,42 +12,55 @@ function LanguageSelector({ slug }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const languageMenuItems = languages.map((language) => (
-    <Button
-      onClick={() => {
-        i18n.changeLanguage(language.langKey);
-        navigate(`/${language.langKey}/${slug}`);
-      }}
-      type="button"
-      unstyled
-      className="banner__lang-selector-item"
-      key={language.langKey}
+    <div
+      className={
+        language.isRtoL
+          ? "banner__language-selector-item--left"
+          : "banner__language-selector-item--right"
+      }
     >
-      {language.lang}
-    </Button>
+      <Button
+        onClick={() => {
+          i18n.changeLanguage(language.langKey);
+          navigate(`/${language.langKey}/${slug}`);
+        }}
+        type="button"
+        unstyled
+        key={language.langKey}
+      >
+        {language.lang}
+      </Button>
+    </div>
   ));
   return (
-    <Grid className="language-selector__nav">
-      <NavDropDownButton
-        className="language-selector__nav-button"
-        onToggle={() => {
-          setIsOpen((prevOpen) => !prevOpen);
-        }}
-        menuId="language-selector"
-        isOpen={isOpen}
-        label={
-          <div className="banner__language-selector-label font-heading-xs">
-            <FeatherIcon icon="globe" size={16} />
-            <p>Language</p>
-          </div>
-        }
-      />
-      <Menu
-        key="one"
-        items={languageMenuItems}
-        isOpen={isOpen}
-        id="language-selector"
-      />
-    </Grid>
+    <React.Fragment>
+      {languageMenuItems.length > 6 ? (
+        <Grid className="language-selector__nav">
+          <NavDropDownButton
+            className="language-selector__nav-button"
+            onToggle={() => {
+              setIsOpen((prevOpen) => !prevOpen);
+            }}
+            menuId="language-selector"
+            isOpen={isOpen}
+            label={
+              <div className="banner__language-selector-label font-heading-xs">
+                <FeatherIcon icon="globe" size={16} />
+                <p>Language</p>
+              </div>
+            }
+          />
+          <Menu
+            key="one"
+            items={languageMenuItems}
+            isOpen={isOpen}
+            id="language-selector"
+          />
+        </Grid>
+      ) : (
+        <Grid>{languageMenuItems}</Grid>
+      )}
+    </React.Fragment>
   );
 }
 

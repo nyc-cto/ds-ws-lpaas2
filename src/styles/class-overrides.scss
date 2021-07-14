@@ -143,20 +143,25 @@
   justify-content: space-between;
 }
 
-.language-selector__nav {
-  .usa-nav__submenu .usa-nav__submenu-item a {
-    text-decoration: none;
-    &:hover {
-      padding: units("2px");
-      border-left: units("05") solid color("primary");
-    }
-  }
-}
-
 .usa-button--unstyled {
   color: white;
   text-decoration: none;
-  &:hover {
+}
+
+.banner__language-selector-item--left {
+  display: flex;
+  flex-direction: row-reverse;
+  button:hover {
+    color: white;
+    text-decoration: none;
+    background-color: color("base-darker");
+    padding: units("2px");
+    border-right: units("05") solid color("primary");
+  }
+}
+
+.banner__language-selector-item--right {
+  button:hover {
     color: white;
     text-decoration: none;
     background-color: color("base-darker");
