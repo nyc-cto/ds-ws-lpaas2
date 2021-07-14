@@ -35,6 +35,36 @@
   }
 }
 
+.usa-link {
+  color: color("base-dark");
+  text-decoration: none;
+  border-bottom: $mocto-link-width solid color("primary");
+  line-height: $mocto-box-height;
+  &:hover {
+    border-bottom-width: $mocto-link-width-expanded;
+  }
+  &:active {
+    border-bottom-color: color("base-dark");
+    border-bottom-width: $mocto-link-width-expanded;
+  }
+  &:visited {
+    color: color("primary-darker");
+    border-bottom-color: color("primary-darker");
+  }
+}
+
+.usa-link--light {
+  /* not currently being used */
+  color: white;
+  &:active {
+    border-bottom-color: white;
+  }
+  &:visited {
+    color: color("primary-lighter");
+    border-bottom-color: color("primary-lighter");
+  }
+}
+
 .usa-button {
   color: color("base-darker");
   &:hover {
