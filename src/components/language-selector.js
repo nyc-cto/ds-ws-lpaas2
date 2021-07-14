@@ -3,13 +3,30 @@ import { navigate } from "gatsby";
 import { Button, Grid, Menu, NavDropDownButton } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 import FeatherIcon from "feather-icons-react";
-import { Link } from ".";
 import { languages } from "../constants/languages";
 
 function LanguageSelector({ slug }) {
   const { i18n } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = (langKey) => {
+    i18n.changeLanguage(langKey);
+    navigate(`/${langKey}/${slug}`);
+  };
+
+  const languageButtonGroup = languages.map((language) => (
+      <Button
+        onClick={() => {
+          handleClick(language.langKey);
+        }}
+        type="button"
+        unstyled
+        key={language.langKey}
+      >
+        {language.lang}
+      </Button>
+  ));
 
   const languageMenuItems = languages.map((language) => (
     <div
@@ -21,8 +38,7 @@ function LanguageSelector({ slug }) {
     >
       <Button
         onClick={() => {
-          i18n.changeLanguage(language.langKey);
-          navigate(`/${language.langKey}/${slug}`);
+          handleClick(language.langKey);
         }}
         type="button"
         unstyled
@@ -34,7 +50,7 @@ function LanguageSelector({ slug }) {
   ));
   return (
     <React.Fragment>
-      {languageMenuItems.length > 6 ? (
+      {languageMenuItems.length > 5 ? (
         <Grid className="language-selector__nav">
           <NavDropDownButton
             className="language-selector__nav-button"
@@ -58,7 +74,7 @@ function LanguageSelector({ slug }) {
           />
         </Grid>
       ) : (
-        <Grid>{languageMenuItems}</Grid>
+        <Grid className= "banner__language-selector-button-group">{languageButtonGroup}</Grid>
       )}
     </React.Fragment>
   );
