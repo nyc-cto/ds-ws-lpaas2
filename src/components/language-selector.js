@@ -16,6 +16,7 @@ function LanguageSelector({ slug }) {
   };
 
   const languageButtonGroup = languages.map((language) => (
+    <div className="banner__language-selector-item">
       <Button
         onClick={() => {
           handleClick(language.langKey);
@@ -26,6 +27,7 @@ function LanguageSelector({ slug }) {
       >
         {language.lang}
       </Button>
+    </div>
   ));
 
   const languageMenuItems = languages.map((language) => (
@@ -74,7 +76,9 @@ function LanguageSelector({ slug }) {
           />
         </Grid>
       ) : (
-        <Grid className= "banner__language-selector-button-group">{languageButtonGroup}</Grid>
+        <Grid className="banner__language-selector-button-group">
+          {languageButtonGroup}
+        </Grid>
       )}
     </React.Fragment>
   );

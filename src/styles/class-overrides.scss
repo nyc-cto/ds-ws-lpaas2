@@ -141,25 +141,29 @@
 .banner__language-selector-item--RtoL {
   display: flex;
   flex-direction: row-reverse;
+  &:hover {
+    padding-right: units("05");
+    border-right: units("05") solid color("primary");
+  }
   .usa-button--unstyled {
     &:hover {
       color: white;
       text-decoration: none;
       background-color: color("base-dark");
-      padding-right: units("05");
-      border-right: units("05") solid color("primary");
     }
   }
 }
 
 .banner__language-selector-item--LtoR {
+  &:hover {
+    padding-left: units("05");
+    border-left: units("05") solid color("primary");
+  }
   .usa-button--unstyled {
     &:hover {
       color: white;
       text-decoration: none;
       background-color: color("base-dark");
-      padding-left: units("05");
-      border-left: units("05") solid color("primary");
     }
   }
 }
@@ -168,14 +172,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  .usa-button--unstyled {
-    padding: units("05");
-    margin: 0 units("05");
+  .banner__language-selector-item {
+    margin: 0 units("105");
     &:hover {
-      color: white;
-      text-decoration: none;
-      background-color: color("base-dark");
       border-top: units("05") solid color("primary");
+    }
+    .usa-button--unstyled {
+      &:hover {
+        color: white;
+        text-decoration: none;
+        background-color: color("base-dark");
+      }
     }
   }
 }
