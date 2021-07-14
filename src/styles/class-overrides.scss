@@ -155,12 +155,13 @@
   text-decoration: none;
 }
 
-@mixin language-selector-hover($direction, $direction) {
+@mixin language-selector($direction, $direction) {
   &:hover {
     padding-#{$direction}: units("05");
     border-#{$direction}: units("05") solid color("primary");
   }
   .usa-button--unstyled {
+    background-color: color("base-dark");
     &:hover {
       color: white;
       text-decoration: none;
@@ -172,17 +173,17 @@
 .banner__language-selector-item--RtoL {
   display: flex;
   flex-direction: row-reverse;
-  @include language-selector-hover("right");
+  @include language-selector("right");
 }
 
 .banner__language-selector-item--LtoR {
-  @include language-selector-hover("left");
+  @include language-selector("left");
 }
 
 .banner__language-selector-button-group {
   @include flex-center-space-between();
   .banner__language-selector-item {
-    @include language-selector-hover("top");
+    @include language-selector("top");
     margin: 0 units("105");
     &:hover {
       padding-top: 0;
