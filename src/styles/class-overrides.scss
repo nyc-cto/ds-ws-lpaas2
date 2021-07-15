@@ -1,3 +1,4 @@
+//set text and background colors for NYC buttons
 @mixin button-theme(
   $text-color,
   $text-hover,
@@ -26,12 +27,14 @@
   }
 }
 
+//set flex with items aligned center and content justified space between
 @mixin flex-center-space-between {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+//set text, background, and border colors for language selector buttons
 @mixin language-selector($direction, $direction) {
   &:hover {
     padding-#{$direction}: units("05");
@@ -47,6 +50,7 @@
   }
 }
 
+//background for hero callout, menus, and graphics section
 .usa-hero__callout,
 .usa-nav__submenu,
 .usa-section--dark {
@@ -149,14 +153,13 @@
   }
 }
 
+//custom NYC banner
 .banner {
   @include flex-center-space-between();
-
   .banner__logo-title,
   .banner__language-selector-label {
     @include flex-center-space-between();
   }
-
   //language nav button
   .usa-accordion__button {
     background-image: none;
@@ -178,25 +181,21 @@
       @include u-bg("primary");
     }
   }
-
-  //change language buttons that look like links
+  //language buttons that look like links
   .usa-button--unstyled {
     @include u-text("accent-cool-lighter");
     text-decoration: none;
   }
-
   //right-to-left language buttons in dropdown menu
   .banner__language-selector-item--RtoL {
     display: flex;
     flex-direction: row-reverse;
     @include language-selector("right");
   }
-
    //left-to-right language buttons in dropdown menu
   .banner__language-selector-item--LtoR {
     @include language-selector("left");
   }
-
   //all language buttons when there are 5 or fewer languages
   .banner__language-selector-button-group {
     @include flex-center-space-between();
@@ -210,6 +209,7 @@
   }
 }
 
+//circular images in graphics section
 .graphic_image--circle {
   border-radius: 50%;
 }
