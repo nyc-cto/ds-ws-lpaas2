@@ -17,6 +17,8 @@ import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 import LanguageSwitcher from "./language-switcher";
 import Link from "./link";
 
+import { header as links } from "../constants/links";
+
 import "../styles/Header.css";
 import "@reach/skip-nav/styles.css"; // this will show/hide the SkipNavLink on focus
 
@@ -39,7 +41,7 @@ function Header({ slug }) {
   const [isOpen2, setIsOpen2] = useState(false);
 
   /* first dropdown items */
-  const navDropdownLinks1 = ["link-one", "link-two"];
+  const navDropdownLinks1 = links.navDropdown1;
   const navDropdownLinkLabels1 = t("header.nav.dropdowns")[0]["simpleLinks"];
   const navDropdownLength1 =
     navDropdownLinks1.length > navDropdownLinkLabels1.length
@@ -56,7 +58,7 @@ function Header({ slug }) {
   });
 
   /* second dropdown items */
-  const navDropdownLinks2 = ["link-three", "link-four"];
+  const navDropdownLinks2 = links.navDropdown2;
   const navDropdownLinkLabels2 = t("header.nav.dropdowns")[1]["simpleLinks"];
   const navDropdownLength2 =
     navDropdownLinks2.length > navDropdownLinkLabels2.length
@@ -73,7 +75,7 @@ function Header({ slug }) {
   });
 
   /* parent links */
-  const parentLinks = ["link-five"];
+  const parentLinks = links.parent;
   const parentLinksLabels = t("header.nav.parentLinks");
   const parentLinksLength =
     parentLinks.length > parentLinksLabels.length

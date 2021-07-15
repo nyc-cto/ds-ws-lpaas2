@@ -9,12 +9,12 @@ import {
 } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
 import Link from "./link";
-
+import { footer as links } from "../constants/links";
 import logoImg from "../images/favicon.ico";
 
 function Footer() {
   const { t } = useTranslation();
-  const primaryLinks = ["#", "#", "#", "#"];
+  const primaryLinks = links.primary;
   const socialLinks = {
     facebook: "#",
     twitter: "#",
@@ -37,13 +37,16 @@ function Footer() {
       primary={
         <FooterNav
           size="medium"
-          links={Array.from({ length: t("footer.primaryLinks").length }, (_, i) => {
-            return (
-              <Link className="usa-footer__primary-link" to={primaryLinks[i]}>
-                {t("footer.primaryLinks")[i]}
-              </Link>
-            );
-          })}
+          links={Array.from(
+            { length: t("footer.primaryLinks").length },
+            (_, i) => {
+              return (
+                <Link className="usa-footer__primary-link" to={primaryLinks[i]}>
+                  {t("footer.primaryLinks")[i]}
+                </Link>
+              );
+            }
+          )}
         />
       }
       secondary={
