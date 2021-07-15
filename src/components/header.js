@@ -40,41 +40,39 @@ function Header({ slug }) {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
 
-  /* first dropdown items */
-  const navDropdownLinks1 = links.navDropdown1;
-  const navDropdownLinkLabels1 = t("header.nav.dropdowns")[0]["simpleLinks"];
-  const navDropdownLength1 =
-    navDropdownLinks1.length > navDropdownLinkLabels1.length
-      ? navDropdownLinkLabels1.length
-      : navDropdownLinks1.length; // take shorter length in case there is a missing link in navDropdownLinks1 or missing label in translation file
-  const navDropdownItems1 = navDropdownLinks1.map((element, i) => {
-    return (
-      i < navDropdownLength1 && (
-        <Link to={element} key={i}>
-          {navDropdownLinkLabels1[i]}
-        </Link>
-      )
-    );
+  /* dynamically creating dropdowns in navigation bar */
+  let dropdowns = [];
+  const dropdownLinks = links.navDropdowns;
+  const constFileLength = dropdownLinks.length;
+  const dropdownLabels = t("header.nav.dropdowns");
+  const translationFileLength = dropdownLabels.length;
+  const length =
+    translationFileLength > constFileLength
+      ? constFileLength
+      : translationFileLength; // take shorter length in case there is missing dropdowns in `../constants/links.js` (constants file) or `../locales/` (translation files)
+  dropdownLinks.map((_, i) => {
+    if (i < length) {
+      const navDropdownLinks = dropdownLinks[i];
+      const navDropdownLinkLabels = t("header.nav.dropdowns")[i]["simpleLinks"];
+      const navDropdownLength =
+        navDropdownLinks.length > navDropdownLinkLabels.length
+          ? navDropdownLinkLabels.length
+          : navDropdownLinks.length; // take shorter length in case there is a missing link in `../constants/links.js` (constants file) or label in  `../locales/` (translation files)
+      dropdowns.push(
+        navDropdownLinks.map((element, i) => {
+          return (
+            i < navDropdownLength && (
+              <Link to={element} key={i}>
+                {navDropdownLinkLabels[i]}
+              </Link>
+            )
+          );
+        })
+      );
+    }
   });
 
-  /* second dropdown items */
-  const navDropdownLinks2 = links.navDropdown2;
-  const navDropdownLinkLabels2 = t("header.nav.dropdowns")[1]["simpleLinks"];
-  const navDropdownLength2 =
-    navDropdownLinks2.length > navDropdownLinkLabels2.length
-      ? navDropdownLinkLabels2.length
-      : navDropdownLinks2.length; // take shorter length in case there is a missing link in navDropdownLinks2 or missing label in translation file
-  const navDropdownItems2 = navDropdownLinks2.map((element, i) => {
-    return (
-      i < navDropdownLength2 && (
-        <Link to={element} key={i}>
-          {navDropdownLinkLabels2[i]}
-        </Link>
-      )
-    );
-  });
-
-  /* parent links */
+  /* dynamically creating parent links */
   const parentLinks = links.parent;
   const parentLinksLabels = t("header.nav.parentLinks");
   const parentLinksLength =
@@ -105,7 +103,7 @@ function Header({ slug }) {
       />
       <Menu
         key="one"
-        items={navDropdownItems1}
+        items={dropdowns[0]}
         isOpen={isOpen1}
         id="navDropDownOne"
       />
@@ -123,7 +121,7 @@ function Header({ slug }) {
       />
       <Menu
         key="two"
-        items={navDropdownItems2}
+        items={dropdowns[1]}
         isOpen={isOpen2}
         id="navDropDownTwo"
       />
