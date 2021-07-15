@@ -1,31 +1,4 @@
-.usa-hero__callout,
-.usa-nav__submenu,
-.usa-section--dark {
-  @include u-bg("base-dark");
-}
-
-.usa-nav__primary {
-  button[aria-expanded="true"] {
-    @include u-bg("base-dark");
-  }
-  button[aria-expanded="false"] {
-    @include u-text("disabled-dark");
-    &:hover {
-      @include u-text("base-dark");
-    }
-    &::after {
-      border: units("2px") solid color("secondary");
-    }
-  }
-  .usa-nav__primary-item > a {
-    @include u-text("disabled-dark");
-    &:hover {
-      @include u-text("base-dark");
-    }
-  }
-}
-
-@mixin set-button-theme(
+@mixin button-theme(
   $text-color,
   $text-hover,
   $text-active,
@@ -53,8 +26,59 @@
   }
 }
 
+@mixin flex-center-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin language-selector($direction, $direction) {
+  &:hover {
+    padding-#{$direction}: units("05");
+    border-#{$direction}: units("05") solid color("primary");
+  }
+  .usa-button--unstyled {
+    @include u-bg("base-dark");
+    &:hover {
+      @include u-text("accent-cool-lighter");
+      text-decoration: none;
+      @include u-bg("base-dark");
+    }
+  }
+}
+
+.usa-hero__callout,
+.usa-nav__submenu,
+.usa-section--dark {
+  @include u-bg("base-dark");
+}
+
+.usa-nav__primary {
+  //nav button when dropdown menu is closed
+  .usa-accordion__button[aria-expanded="false"] {
+    @include u-text("disabled-dark");
+    &:hover {
+      @include u-text("base-dark");
+    }
+    &::after {
+      border: units("2px") solid color("secondary");
+    }
+  }
+  //nav button when dropdown menu is open
+  .usa-accordion__button[aria-expanded="true"] {
+    @include u-bg("base-dark");
+  }
+  .usa-nav__primary-item > a {
+    @include u-text("disabled-dark");
+    &:hover {
+      @include u-text("base-dark");
+    }
+  }
+}
+
+//primary button
 .usa-button {
-  @include set-button-theme(
+  @include button-theme(
     "base-dark",
     "base-dark",
     "accent-cool-lighter",
@@ -67,8 +91,9 @@
   );
 }
 
+//warm button
 .usa-button--accent-warm {
-  @include set-button-theme(
+  @include button-theme(
     "base-dark",
     "base-dark",
     "accent-cool-lighter",
@@ -81,8 +106,9 @@
   );
 }
 
+//inverse button
 .usa-button--inverse {
-  @include set-button-theme(
+  @include button-theme(
     "base-dark",
     "base-dark",
     "base-dark",
@@ -98,104 +124,92 @@
   }
 }
 
+//footer nav links
 .usa-footer__primary-section {
-  color: white;
-  background-color: color("base");
+  @include u-text("accent-cool-lighter");
+  @include u-bg("base");
   .usa-link,
   .usa-link--external,
   .usa-footer__primary-link {
-    color: white;
+    @include u-text("accent-cool-lighter");
   }
 }
 
+//department logo, terms & policies, and copyright & trademarks
 .usa-footer__secondary-section {
-  color: white;
-  background-color: color("base-dark");
+  @include u-text("accent-cool-lighter");
+  @include u-bg("base-dark");
   .usa-link,
   .usa-link--external {
-    color: white;
+    @include u-text("accent-cool-lighter");
   }
-}
-
-@mixin flex-center-space-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .footer__logo {
+    width: units("mobile");
+    height: auto;
+  }
 }
 
 .banner {
   @include flex-center-space-between();
+
+  .banner__logo-title,
+  .banner__language-selector-label {
+    @include flex-center-space-between();
+  }
+
+  //language nav button
   .usa-accordion__button {
     background-image: none;
     padding: 0 units("105");
     p {
       padding-left: units("105");
     }
-  }
-  .usa-accordion__button[aria-expanded="false"] {
-    color: color("base-dark");
-    background-color: color("primary");
-    p {
-      color: color("base-dark");
+    //language nav button when dropdown menu is closed
+    &[aria-expanded="false"] {
+      @include u-text("base-dark");
+      @include u-bg("primary");
+      p {
+        @include u-text("base-dark");
+      }
+    }
+    //language nav button when dropdown menu is open
+    &[aria-expanded="true"] {
+      @include u-text("accent-cool-lighter");
+      @include u-bg("primary");
     }
   }
-  .usa-accordion__button[aria-expanded="true"] {
-    color: white;
-    background-color: color("primary");
-  }
-}
 
-.banner__logo-title,
-.banner__language-selector-label {
-  @include flex-center-space-between();
-}
-
-.usa-button--unstyled {
-  color: white;
-  text-decoration: none;
-}
-
-@mixin language-selector($direction, $direction) {
-  &:hover {
-    padding-#{$direction}: units("05");
-    border-#{$direction}: units("05") solid color("primary");
-  }
+  //change language buttons that look like links
   .usa-button--unstyled {
-    background-color: color("base-dark");
-    &:hover {
-      color: white;
-      text-decoration: none;
-      background-color: color("base-dark");
-    }
+    @include u-text("accent-cool-lighter");
+    text-decoration: none;
   }
-}
 
-.banner__language-selector-item--RtoL {
-  display: flex;
-  flex-direction: row-reverse;
-  @include language-selector("right");
-}
+  //right-to-left language buttons in dropdown menu
+  .banner__language-selector-item--RtoL {
+    display: flex;
+    flex-direction: row-reverse;
+    @include language-selector("right");
+  }
 
-.banner__language-selector-item--LtoR {
-  @include language-selector("left");
-}
+   //left-to-right language buttons in dropdown menu
+  .banner__language-selector-item--LtoR {
+    @include language-selector("left");
+  }
 
-.banner__language-selector-button-group {
-  @include flex-center-space-between();
-  .banner__language-selector-item {
-    @include language-selector("top");
-    margin: 0 units("105");
-    &:hover {
-      padding-top: 0;
+  //all language buttons when there are 5 or fewer languages
+  .banner__language-selector-button-group {
+    @include flex-center-space-between();
+    .banner__language-selector-item {
+      @include language-selector("top");
+      margin: 0 units("105");
+      &:hover {
+        padding-top: 0;
+      }
     }
   }
 }
 
 .graphic_image--circle {
   border-radius: 50%;
-}
-
-.footer__logo {
-  width: units("mobile");
-  height: auto;
 }

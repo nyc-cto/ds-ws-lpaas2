@@ -52,7 +52,7 @@ function LanguageSelector({ slug }) {
   ));
   return (
     <React.Fragment>
-      {languageMenuItems.length > 5 ? (
+      {languageMenuItems.length >= 5 ? (
         <Grid className="language-selector__nav">
           <NavDropDownButton
             className="language-selector__nav-button"
