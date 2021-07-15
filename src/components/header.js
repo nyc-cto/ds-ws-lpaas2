@@ -44,17 +44,16 @@ function Header({ slug }) {
   const navDropdownLength1 =
     navDropdownLinks1.length > navDropdownLinkLabels1.length
       ? navDropdownLinkLabels1.length
-      : navDropdownLinks1.length;
-  const navDropdownItems1 = Array.from(
-    { length: navDropdownLength1 },
-    (_, i) => {
-      return (
-        <Link to={navDropdownLinks1[i]} key={i}>
+      : navDropdownLinks1.length; // take shorter length in case there is a missing link in navDropdownLinks1 or missing label in translation file
+  const navDropdownItems1 = navDropdownLinks1.map((element, i) => {
+    return (
+      i < navDropdownLength1 && (
+        <Link to={element} key={i}>
           {navDropdownLinkLabels1[i]}
         </Link>
-      );
-    }
-  );
+      )
+    );
+  });
 
   /* second dropdown items */
   const navDropdownLinks2 = ["link-three", "link-four"];
@@ -62,17 +61,16 @@ function Header({ slug }) {
   const navDropdownLength2 =
     navDropdownLinks2.length > navDropdownLinkLabels2.length
       ? navDropdownLinkLabels2.length
-      : navDropdownLinks2.length;
-  const navDropdownItems2 = Array.from(
-    { length: navDropdownLength2 },
-    (_, i) => {
-      return (
-        <Link to={navDropdownLinks2[i]} key={i}>
+      : navDropdownLinks2.length; // take shorter length in case there is a missing link in navDropdownLinks2 or missing label in translation file
+  const navDropdownItems2 = navDropdownLinks2.map((element, i) => {
+    return (
+      i < navDropdownLength2 && (
+        <Link to={element} key={i}>
           {navDropdownLinkLabels2[i]}
         </Link>
-      );
-    }
-  );
+      )
+    );
+  });
 
   /* parent links */
   const parentLinks = ["link-five"];
@@ -80,7 +78,7 @@ function Header({ slug }) {
   const parentLinksLength =
     parentLinks.length > parentLinksLabels.length
       ? parentLinksLabels.length
-      : parentLinks.length;
+      : parentLinks.length; // take shorter length in case there is a missing link in parentLinks or missing label in translation file
   const parentLinkItems = parentLinks.map((element, i) => {
     return (
       i < parentLinksLength && (
