@@ -26,10 +26,10 @@
     "terms": "[zh_HANT] NYC Terms of Use",
     "privacy": "[zh_HANT] NYC Privacy Policy",
     "primary": [
-      "Primary Link 1",
-      "Primary Link 2",
-      "Primary Link 3",
-      "Primary Link 4"
+      "[zh_HANT] Primary Link 1",
+      "[zh_HANT] Primary Link 2",
+      "[zh_HANT] Primary Link 3",
+      "[zh_HANT] Primary Link 4"
     ],
     "secondary": {
       "heading": {

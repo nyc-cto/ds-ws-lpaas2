@@ -12,14 +12,10 @@ $theme-font-path: "../../node_modules/uswds/src/fonts";
 
 $theme-hero-image: "#{$theme-image-path}/hero.png";
 
-//Custom changes to variables
-//MOCTO theme:
+//Custom themes
 @import "./mocto-theme.scss";
-//NYC theme:
-// @import "./nyc-theme.scss";
-
 
 @import "uswds";
 
-//Custom class overrides 
+//Class overrides and custom classes
 @import "./class-overrides.scss"; 

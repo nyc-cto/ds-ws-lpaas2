@@ -1,190 +1,215 @@
+//set text and background colors for NYC buttons
+@mixin button-theme(
+  $text-color,
+  $text-hover,
+  $text-active,
+  $text-disabled,
+  $bg,
+  $bg-hover,
+  $bg-active,
+  $bg-disabled,
+  $border-color
+) {
+  @include u-text($text-color);
+  @include u-bg($bg);
+  &:hover {
+    @include u-text($text-hover);
+    @include u-bg($bg-hover);
+    border: units("2px") solid color($border-color);
+  }
+  &:active {
+    @include u-text($text-active);
+    @include u-bg($bg-active);
+  }
+  &:disabled {
+    @include u-text($text-disabled);
+    @include u-bg($bg-disabled);
+  }
+}
+
+//set flex with items aligned center and content justified space between
+@mixin flex-center-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//set text, background, and border colors for language selector buttons
+@mixin language-selector($direction, $direction) {
+  &:hover {
+    padding-#{$direction}: units("05");
+    border-#{$direction}: units("05") solid color("primary");
+  }
+  .usa-button--unstyled {
+    @include u-bg("base-dark");
+    &:hover {
+      @include u-text("accent-cool-lighter");
+      text-decoration: none;
+      @include u-bg("base-dark");
+    }
+  }
+}
+
+//background for hero callout, menus, and graphics section
 .usa-hero__callout,
 .usa-nav__submenu,
 .usa-section--dark {
-  background-color: color("base-dark");
+  @include u-bg("base-dark");
 }
 
 .usa-nav__primary {
-  button[aria-expanded="true"] {
-    background-color: color("base-dark");
-  }
-  button[aria-expanded="false"] {
-    color: color("disabled-dark");
+  //nav button when dropdown menu is closed
+  .usa-accordion__button[aria-expanded="false"] {
+    @include u-text("disabled-dark");
     &:hover {
-      color: color("base-dark");
+      @include u-text("base-dark");
     }
     &::after {
       border: units("2px") solid color("secondary");
     }
   }
+  //nav button when dropdown menu is open
+  .usa-accordion__button[aria-expanded="true"] {
+    @include u-bg("base-dark");
+  }
   .usa-nav__primary-item > a {
-    color: color("disabled-dark");
+    @include u-text("disabled-dark");
     &:hover {
-      color: color("base-dark");
+      @include u-text("base-dark");
     }
   }
 }
 
+//primary button
 .usa-button {
-  color: color("base-dark");
-  &:hover {
-    color: color("base-dark");
-    background-color: color("primary");
-    border: units("2px") solid color("base-dark");
-  }
-  &:active {
-    color: white;
-    background-color: color("base-dark");
-  }
-  &:disabled {
-    color: white;
-    background-color: color("disabled");
-  }
+  @include button-theme(
+    "base-dark",
+    "base-dark",
+    "accent-cool-lighter",
+    "accent-cool-lighter",
+    "primary",
+    "primary",
+    "base-dark",
+    "disabled",
+    "base-dark"
+  );
 }
 
+//warm button
 .usa-button--accent-warm {
-  color: color("base-dark");
-  background-color: color("secondary");
-  &:hover {
-    color: color("base-dark");
-    background-color: color("secondary");
-    border: units("2px") solid color("base-dark");
-  }
-  &:active {
-    color: white;
-    background-color: color("secondary-darker");
-  }
-  &:disabled {
-    color: white;
-    background-color: color("disabled");
-  }
+  @include button-theme(
+    "base-dark",
+    "base-dark",
+    "accent-cool-lighter",
+    "accent-cool-lighter",
+    "secondary",
+    "secondary",
+    "secondary-darker",
+    "disabled",
+    "base-dark"
+  );
 }
 
+//inverse button
 .usa-button--inverse {
-  color: color("base-dark");
-  background-color: color("base-lighter");
+  @include button-theme(
+    "base-dark",
+    "base-dark",
+    "base-dark",
+    "base-dark",
+    "base-lighter",
+    "base-lightest",
+    "accent-cool-lighter",
+    "base-dark",
+    "base-lighter"
+  );
   &:hover {
-    color: color("base-dark");
-    background-color: color("base-lightest");
-  }
-  &:active {
-    color: color("base-dark");
-    background-color: white;
-  }
-  &:disabled {
-    color: color("base-dark");
-    background-color: color("base");
+    border: none;
   }
 }
 
+//footer nav links
 .usa-footer__primary-section {
-  color: white;
-  background-color: color("base");
+  @include u-text("accent-cool-lighter");
+  @include u-bg("base");
   .usa-link,
   .usa-link--external,
   .usa-footer__primary-link {
-    color: white;
+    @include u-text("accent-cool-lighter");
   }
 }
 
+//department logo, terms & policies, and copyright & trademarks
 .usa-footer__secondary-section {
-  color: white;
-  background-color: color("base-dark");
+  @include u-text("accent-cool-lighter");
+  @include u-bg("base-dark");
   .usa-link,
   .usa-link--external {
-    color: white;
+    @include u-text("accent-cool-lighter");
+  }
+  .footer__logo {
+    width: units("mobile");
+    height: auto;
   }
 }
 
+//custom NYC banner
 .banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: fit-content;
+  @include flex-center-space-between();
+  .banner__logo-title,
+  .banner__language-selector-label {
+    @include flex-center-space-between();
+  }
+  //language nav button
   .usa-accordion__button {
     background-image: none;
     padding: 0 units("105");
     p {
       padding-left: units("105");
     }
-  }
-  .usa-accordion__button[aria-expanded="false"] {
-    color: color("base-dark");
-    background-color: color("primary");
-    p {
-      color: color("base-dark");
+    //language nav button when dropdown menu is closed
+    &[aria-expanded="false"] {
+      @include u-text("base-dark");
+      @include u-bg("primary");
+      p {
+        @include u-text("base-dark");
+      }
+    }
+    //language nav button when dropdown menu is open
+    &[aria-expanded="true"] {
+      @include u-text("accent-cool-lighter");
+      @include u-bg("primary");
     }
   }
-  .usa-accordion__button[aria-expanded="true"] {
-    color: white;
-    background-color: color("primary");
-  }
-}
-
-.banner__logo-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.banner__language-selector-label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.usa-button--unstyled {
-  color: white;
-  text-decoration: none;
-}
-
-.banner__language-selector-item--RtoL {
-  display: flex;
-  flex-direction: row-reverse;
+  //language buttons that look like links
   .usa-button--unstyled {
-    &:hover {
-      color: white;
-      text-decoration: none;
-      background-color: color("base-dark");
-      padding-right: units("05");
-      border-right: units("05") solid color("primary");
+    @include u-text("accent-cool-lighter");
+    text-decoration: none;
+  }
+  //right-to-left language buttons in dropdown menu
+  .banner__language-selector-item--RtoL {
+    display: flex;
+    flex-direction: row-reverse;
+    @include language-selector("right");
+  }
+   //left-to-right language buttons in dropdown menu
+  .banner__language-selector-item--LtoR {
+    @include language-selector("left");
+  }
+  //all language buttons when there are 5 or fewer languages
+  .banner__language-selector-button-group {
+    @include flex-center-space-between();
+    .banner__language-selector-item {
+      @include language-selector("top");
+      margin: 0 units("105");
+      &:hover {
+        padding-top: 0;
+      }
     }
   }
 }
 
-.banner__language-selector-item--LtoR {
-  .usa-button--unstyled {
-    &:hover {
-      color: white;
-      text-decoration: none;
-      background-color: color("base-dark");
-      padding-left: units("05");
-      border-left: units("05") solid color("primary");
-    }
-  }
-}
-
-.banner__language-selector-button-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  .usa-button--unstyled {
-    padding: units("05");
-    margin: 0 units("05");
-    &:hover {
-      color: white;
-      text-decoration: none;
-      background-color: color("base-dark");
-      border-top: units("05") solid color("primary");
-    }
-  }
-}
-
+//circular images in graphics section
 .graphic_image--circle {
   border-radius: 50%;
-}
-
-.footer__logo {
-  width: units("mobile");
-  height: auto;
 }
