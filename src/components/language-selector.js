@@ -15,25 +15,12 @@ function LanguageSelector({ slug }) {
     navigate(`/${langKey}/${slug}`);
   };
 
-  const languageButtonGroup = languages.map((language) => (
-    <div className="banner__language-selector-item">
-      <Button
-        onClick={() => {
-          handleClick(language.langKey);
-        }}
-        type="button"
-        unstyled
-        key={language.langKey}
-      >
-        {language.lang}
-      </Button>
-    </div>
-  ));
-
   const languageMenuItems = languages.map((language) => (
     <div
       className={
-        language.isRtoL
+        languages.length <= 5
+          ? "banner__language-selector-item"
+          : language.isRtoL
           ? "banner__language-selector-item--RtoL"
           : "banner__language-selector-item--LtoR"
       }
@@ -52,7 +39,11 @@ function LanguageSelector({ slug }) {
   ));
   return (
     <React.Fragment>
-      {languageMenuItems.length >= 5 ? (
+      {languageMenuItems.length <= 5 ? (
+        <Grid className="banner__language-selector-button-group">
+          {languageMenuItems}
+        </Grid>
+      ) : (
         <Grid className="language-selector__nav">
           <NavDropDownButton
             className="language-selector__nav-button"
@@ -73,10 +64,6 @@ function LanguageSelector({ slug }) {
             items={languageMenuItems}
             isOpen={isOpen}
           />
-        </Grid>
-      ) : (
-        <Grid className="banner__language-selector-button-group">
-          {languageButtonGroup}
         </Grid>
       )}
     </React.Fragment>
