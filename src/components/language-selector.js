@@ -69,10 +69,9 @@ function LanguageSelector({ slug }) {
             }
           />
           <Menu
-            key="one"
+            id="language-selector"
             items={languageMenuItems}
             isOpen={isOpen}
-            id="language-selector"
           />
         </Grid>
       ) : (
