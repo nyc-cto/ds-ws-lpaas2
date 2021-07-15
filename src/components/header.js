@@ -50,14 +50,38 @@ function Header({ slug }) {
     translationFileLength > constFileLength
       ? constFileLength
       : translationFileLength; // take shorter length in case there is missing dropdowns in `../constants/links.js` (constants file) or `../locales/` (translation files)
+  if (translationFileLength !== constFileLength)
+    console.warn(
+      "Different number of dropdowns in /src/constants/link.js and dropdown labels in /src/locales\n",
+      `${constFileLength} dropdown${
+        constFileLength > 1 ? "s" : ""
+      } in /src/constants/link.js\n`,
+      `${translationFileLength} dropdown${
+        translationFileLength > 1 ? "s" : ""
+      } in /src/locales`
+    );
   dropdownLinks.map((_, i) => {
     if (i < length) {
       const navDropdownLinks = dropdownLinks[i];
+      const navDropdownLinksLength = navDropdownLinks.length;
       const navDropdownLinkLabels = t("header.nav.dropdowns")[i]["simpleLinks"];
+      const navDropdownLinkLabelsLength = navDropdownLinkLabels.length;
       const navDropdownLength =
-        navDropdownLinks.length > navDropdownLinkLabels.length
-          ? navDropdownLinkLabels.length
-          : navDropdownLinks.length; // take shorter length in case there is a missing link in `../constants/links.js` (constants file) or label in  `../locales/` (translation files)
+        navDropdownLinksLength > navDropdownLinkLabelsLength
+          ? navDropdownLinkLabelsLength
+          : navDropdownLinksLength; // take shorter length in case there is a missing link in `../constants/links.js` (constants file) or label in  `../locales/` (translation files)
+      if (navDropdownLinksLength !== navDropdownLinkLabelsLength)
+        console.warn(
+          `Different number of links in /src/constants/link.js and link labels in /src/locales for dropdown ${
+            i + 1
+          }\n`,
+          "Links: ",
+          navDropdownLinks,
+          "\n",
+          "Link labels: ",
+          navDropdownLinkLabels,
+          "\n"
+        );
       dropdowns.push(
         navDropdownLinks.map((element, i) => {
           return (
@@ -69,19 +93,31 @@ function Header({ slug }) {
           );
         })
       );
-    }
+    } else dropdowns.push([]);
   });
 
   /* dynamically creating parent links */
   const parentLinks = links.parent;
+  const parentLinksLength = parentLinks.length;
   const parentLinksLabels = t("header.nav.parentLinks");
-  const parentLinksLength =
-    parentLinks.length > parentLinksLabels.length
-      ? parentLinksLabels.length
-      : parentLinks.length; // take shorter length in case there is a missing link in parentLinks or missing label in translation file
+  const parentLinksLabelsLength = parentLinksLabels.length;
+  const parentLength =
+    parentLinksLength > parentLinksLabelsLength
+      ? parentLinksLabelsLength
+      : parentLinksLength; // take shorter length in case there is a missing link in parentLinks or missing label in translation file
+  if (parentLinksLength !== parentLinksLabelsLength)
+    console.warn(
+      "Different number of parent links in /src/constants/link.js and parent labels in /src/locales\n",
+      "Links: ",
+      parentLinks,
+      "\n",
+      "Labels: ",
+      parentLinksLabels,
+      "\n"
+    );
   const parentLinkItems = parentLinks.map((element, i) => {
     return (
-      i < parentLinksLength && (
+      i < parentLength && (
         <Link to={element} variant="nav" key={i}>
           <span>{parentLinksLabels[i]}</span>
         </Link>
