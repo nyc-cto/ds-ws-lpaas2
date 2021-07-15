@@ -1,0 +1,47 @@
+{
+  "title": "[zh_HANT] Project Title",
+  "banner": "[zh_HANT] An official website of New York City government",
+  "nav": {
+    "dropdown": [],
+    "dropdownOne": {
+      "label": "[zh_HANT] Nav Label 1",
+      "simpleLinkOne": "[zh_HANT] Simple link one",
+      "simpleLinkTwo": "[zh_HANT] Simple link two"
+    },
+    "dropdownTwo": {
+      "label": "[zh_HANT] Nav Label 2",
+      "simpleLinkThree": "[zh_HANT] Simple link three",
+      "simpleLinkFour": "[zh_HANT] Simple link four"
+    },
+    "parentOne": "[zh_HANT] Parent link"
+  },
+  "secondaryLink": [],
+  "secondaryLinks": {
+    "linkOne": "[zh_HANT] Link one",
+    "linkTwo": "[zh_HANT] Link two"
+  },
+  "footer": {
+    "copyright": "[zh_HANT] © 2021 City of New York. All Rights Reserved.",
+    "trademark": "[zh_HANT] NYC is a trademark and service mark of the City of New York.",
+    "terms": "[zh_HANT] NYC Terms of Use",
+    "privacy": "[zh_HANT] NYC Privacy Policy",
+    "primary": [
+      "[zh_HANT] Primary Link 1",
+      "[zh_HANT] Primary Link 2",
+      "[zh_HANT] Primary Link 3",
+      "[zh_HANT] Primary Link 4"
+    ],
+    "secondary": {
+      "heading": {
+        "logo": "[zh_HANT] Name of Agency",
+        "contact": "[zh_HANT] Agency Contact Center"
+      },
+      "socialLinks": ["Facebook", "Twitter", "YouTube", "Instagram", "RSS"],
+      "address": {
+        "phone": "[zh_HANT] (800) CALL-GOVT",
+        "email": "[zh_HANT] info@agency.gov"
+      }
+    }
+  },
+  "notFound": "[zh_HANT] 404: Page Not Found"
+}
