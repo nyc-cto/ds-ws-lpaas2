@@ -209,6 +209,12 @@
   }
 }
 
+@media (max-width: units('desktop')) {
+  .banner__language-selector {
+    display: none;
+  }
+}
+
 //circular images in graphics section
 .graphic_image--circle {
   border-radius: 50%;

@@ -38,7 +38,7 @@ function LanguageSelector({ slug }) {
     </div>
   ));
   return (
-    <React.Fragment>
+    <div className="banner__language-selector">
       {languageMenuItems.length <= 5 ? (
         <Grid className="banner__language-selector-button-group">
           {languageMenuItems}
@@ -66,7 +66,7 @@ function LanguageSelector({ slug }) {
           />
         </Grid>
       )}
-    </React.Fragment>
+    </div>
   );
 }
 
