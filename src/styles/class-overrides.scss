@@ -38,14 +38,13 @@
 .usa-link {
   color: color("base-dark");
   text-decoration: none;
-  border-bottom: $mocto-link-width solid color("primary");
-  line-height: $mocto-box-height;
+  border-bottom: units("1px") * 3 solid color("primary");
   &:hover {
-    border-bottom-width: $mocto-link-width-expanded;
+    border-bottom-width: units("1px") * 10;
   }
   &:active {
     border-bottom-color: color("base-dark");
-    border-bottom-width: $mocto-link-width-expanded;
+    border-bottom-width: units("1px") * 10;
   }
   &:visited {
     color: color("primary-darker");
