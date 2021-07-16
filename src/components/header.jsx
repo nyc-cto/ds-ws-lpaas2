@@ -99,7 +99,7 @@ function Header({ slug }) {
       <SkipNavLink />
       <Banner slug={slug}>{t('banner')}</Banner>
       <div className="usa-navbar">
-        <div className="header__logo-title" >
+        <div className="header__logo-title">
           <img className="header__logo" src={ctoLogoShortform} alt="NYC CTO" />
           <Title>{t('title')}</Title>
         </div>
