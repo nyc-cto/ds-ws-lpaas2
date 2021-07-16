@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   ExtendedNav,
   Header as HeaderUSWDS,
@@ -6,23 +7,16 @@ import {
   NavDropDownButton,
   NavMenuButton,
   Title,
-} from "@trussworks/react-uswds";
-import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
-import { useTranslation } from "react-i18next";
+} from '@trussworks/react-uswds';
+import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
+import { useTranslation } from 'react-i18next';
 
-import { Banner, Link } from ".";
+import { Banner, Link } from '.';
 
-import "@reach/skip-nav/styles.css"; 
+import '@reach/skip-nav/styles.css';
 
 function Header({ slug }) {
-  const { t, i18n } = useTranslation();
-
-  /* switching between languages in the government banner */
-  const govBannerLang = {
-    /* TODO: might want to keep in a separate file */
-    en: "english",
-    es: "spanish",
-  };
+  const { t } = useTranslation();
 
   /* menu expansion */
   const [expanded, setExpanded] = useState(false);
@@ -35,20 +29,20 @@ function Header({ slug }) {
   /* first dropdown items */
   const testMenuItemsOne = [
     <Link to="/link-one" key="one">
-      {t("nav.dropdownOne.simpleLinkOne")}
+      {t('nav.dropdownOne.simpleLinkOne')}
     </Link>,
     <Link to="/link-two" key="two">
-      {t("nav.dropdownOne.simpleLinkTwo")}
+      {t('nav.dropdownOne.simpleLinkTwo')}
     </Link>,
   ];
 
   /* second dropdown items */
   const testMenuItemsTwo = [
     <Link to="/link-three" key="one">
-      {t("nav.dropdownTwo.simpleLinkThree")}
+      {t('nav.dropdownTwo.simpleLinkThree')}
     </Link>,
     <Link to="/link-four" key="two">
-      {t("nav.dropdownTwo.simpleLinkFour")}
+      {t('nav.dropdownTwo.simpleLinkFour')}
     </Link>,
   ];
 
@@ -56,7 +50,7 @@ function Header({ slug }) {
   const secondaryLinks = [];
 
   const navBarItems = [
-    <React.Fragment>
+    <>
       <NavDropDownButton
         onToggle={() => {
           /* TODO: should it extend on ENTER or BUTTON_DOWN? */
@@ -65,7 +59,7 @@ function Header({ slug }) {
         }}
         menuId="testDropDownOne"
         isOpen={isOpen1}
-        label={t("nav.dropdownOne.label")}
+        label={t('nav.dropdownOne.label')}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -74,8 +68,8 @@ function Header({ slug }) {
         isOpen={isOpen1}
         id="testDropDownOne"
       />
-    </React.Fragment>,
-    <React.Fragment>
+    </>,
+    <>
       <NavDropDownButton
         onToggle={() => {
           /* TODO: should it extend on ENTER or BUTTON_DOWN? */
@@ -84,7 +78,7 @@ function Header({ slug }) {
         }}
         menuId="testDropDownTwo"
         isOpen={isOpen2}
-        label={t("nav.dropdownTwo.label")}
+        label={t('nav.dropdownTwo.label')}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -93,19 +87,19 @@ function Header({ slug }) {
         isOpen={isOpen2}
         id="testDropDownTwo"
       />
-    </React.Fragment>,
+    </>,
     <Link variant="nav" to="/three" key="three">
-      <span>{t("nav.parentOne")}</span>
+      <span>{t('nav.parentOne')}</span>
     </Link>,
   ];
 
   return (
-    <HeaderUSWDS extended={true}>
+    <HeaderUSWDS extended>
       {/* <Router> */}
       <SkipNavLink />
-      <Banner slug={slug}>{t("banner")}</Banner>
+      <Banner slug={slug}>{t('banner')}</Banner>
       <div className="usa-navbar">
-        <Title>{t("title")}</Title>
+        <Title>{t('title')}</Title>
         <NavMenuButton onClick={onClick} label="Menu" />
       </div>
       <ExtendedNav
@@ -114,10 +108,14 @@ function Header({ slug }) {
         mobileExpanded={expanded}
         onToggleMobileNav={onClick}
         role="navigation"
-      ></ExtendedNav>
+      />
       <SkipNavContent />
     </HeaderUSWDS>
   );
 }
+
+Header.propTypes = {
+  slug: PropTypes.string.isRequired,
+};
 
 export default Header;

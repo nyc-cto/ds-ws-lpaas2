@@ -4,9 +4,9 @@
   "description": "This is a proposed template repository for applications for future developments. This will help get you set up as you build your application.",
   "main": "index.js",
   "dependencies": {
-    "@reach/router": "^1.3.4",
     "@fontsource/libre-baskerville": "^4.5.0",
     "@fontsource/space-mono": "^4.5.0",
+    "@reach/router": "^1.3.4",
     "@reach/skip-nav": "^0.15.2",
     "@trussworks/react-uswds": "^2.0.0",
     "classnames": "^2.3.1",

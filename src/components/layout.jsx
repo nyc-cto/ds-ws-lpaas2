@@ -1,15 +1,20 @@
-import React from "react";
-import { Footer, Header } from ".";
-
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Footer, Header } from '.';
 
 function Layout({ children, slug }) {
   return (
-    <React.Fragment>
+    <>
       <Header slug={slug} />
       {children}
       <Footer />
-    </React.Fragment>
+    </>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.element.isRequired,
+  slug: PropTypes.string.isRequired,
+};
 
 export default Layout;

@@ -1,16 +1,16 @@
-import React from "react";
-import { Grid, GridContainer } from "@trussworks/react-uswds";
+import React from 'react';
+import { Grid, GridContainer } from '@trussworks/react-uswds';
 
 function Tagline({ tagline }) {
   return (
     <GridContainer className="usa-section">
       <Grid row gap>
-        {tagline?.heading && (
+        {tagline.heading && (
           <Grid tablet={{ col: 4 }}>
             <h2 className="font-heading-xl">{tagline.heading}</h2>
           </Grid>
         )}
-        {tagline?.text && (
+        {tagline.text && (
           <Grid className="usa-prose" tablet={{ col: 8 }}>
             <p>{tagline.text}</p>
           </Grid>

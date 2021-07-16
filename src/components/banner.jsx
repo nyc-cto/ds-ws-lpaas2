@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, GridContainer } from '@trussworks/react-uswds';
 import { LanguageSelector } from '.';
 import nycLogo from '../images/logos/nyc_logo.png';
@@ -26,5 +27,10 @@ function Banner({ children, slug }) {
     </div>
   );
 }
+
+Banner.propTypes = {
+  children: PropTypes.element.isRequired,
+  slug: PropTypes.string.isRequired,
+};
 
 export default Banner;
