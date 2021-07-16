@@ -45,7 +45,7 @@ function Header({ slug }) {
       ? constFileLength
       : translationFileLength; // take shorter length in case there is missing dropdowns in `../constants/links.js` (constants file) or `../locales/` (translation files)
   if (translationFileLength !== constFileLength)
-    console.warn(
+    console.error(
       "Different number of dropdowns in /src/constants/link.js and dropdown labels in /src/locales\n",
       `${constFileLength} dropdown${
         constFileLength > 1 ? "s" : ""
@@ -65,7 +65,7 @@ function Header({ slug }) {
           ? navDropdownLinkLabelsLength
           : navDropdownLinksLength; // take shorter length in case there is a missing link in `../constants/links.js` (constants file) or label in  `../locales/` (translation files)
       if (navDropdownLinksLength !== navDropdownLinkLabelsLength)
-        console.warn(
+        console.error(
           `Different number of links in /src/constants/link.js and link labels in /src/locales for dropdown ${
             i + 1
           }\n`,
@@ -100,7 +100,7 @@ function Header({ slug }) {
       ? parentLinksLabelsLength
       : parentLinksLength; // take shorter length in case there is a missing link in parentLinks or missing label in translation file
   if (parentLinksLength !== parentLinksLabelsLength)
-    console.warn(
+    console.error(
       "Different number of parent links in /src/constants/link.js and parent labels in /src/locales\n",
       "Links: ",
       parentLinks,
