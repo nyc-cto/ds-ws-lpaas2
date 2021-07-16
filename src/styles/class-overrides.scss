@@ -27,6 +27,30 @@
   }
 }
 
+@mixin link-theme(
+  $color,
+  $border-bottom-color-active,
+  $color-visited,
+  $border-bottom-color-visited
+) {
+  @include u-text($color);
+  &:active {
+    border-bottom-color: color($border-bottom-color-active);
+  }
+  &:visited {
+    @include u-text($color-visited);
+    border-bottom-color: color($border-bottom-color-visited);
+  }
+}
+
+@mixin link-size {
+  border-bottom-width: units("1px") * 3;
+}
+
+@mixin link-size-expanded {
+  border-bottom-width: units("1px") * 10;
+}
+
 //set flex with items aligned center and content justified space between
 @mixin flex-center-space-between {
   display: flex;
@@ -78,6 +102,35 @@
       @include u-text("base-dark");
     }
   }
+}
+
+.usa-link {
+  @include link-theme(
+    "base-dark",
+    "base-dark",
+    "primary-darker",
+    "primary-darker"
+  );
+  text-decoration: none;
+  @include link-size();
+  border-bottom-style: solid;
+  border-bottom-color: color("primary");
+  &:hover {
+    @include link-size-expanded();
+  }
+  &:active {
+    @include link-size-expanded();
+  }
+}
+
+.usa-link--light {
+  /* not currently being used */
+  @include link-theme(
+    "accent-cool-lighter",
+    "accent-cool-lighter",
+    "primary-lighter",
+    "primary-lighter"
+  );
 }
 
 //primary button
@@ -192,7 +245,7 @@
     flex-direction: row-reverse;
     @include language-selector("right");
   }
-   //left-to-right language buttons in dropdown menu
+  //left-to-right language buttons in dropdown menu
   .banner__language-selector-item--LtoR {
     @include language-selector("left");
   }

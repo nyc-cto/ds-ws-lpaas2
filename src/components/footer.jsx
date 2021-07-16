@@ -21,11 +21,14 @@ function Footer() {
       primary={(
         <FooterNav
           size="medium"
-          links={Array.from({ length: t('footer.primary').length }, (_, i) => (
-            <Link className="usa-footer__primary-link" to={primaryLinks[i]}>
-              {t('footer.primary')[i]}
-            </Link>
-          ))}
+          links={Array.from(
+            { length: t('footer.primaryLinks').length },
+            (_, i) => (
+              <Link className="usa-footer__primary-link" to={primaryLinks[i]}>
+                {t('footer.primaryLinks')[i]}
+              </Link>
+            ),
+          )}
         />
       )}
       secondary={(
