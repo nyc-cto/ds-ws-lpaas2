@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link as USWDSLink } from '@trussworks/react-uswds';
 import { Link as GatsbyLink } from 'gatsby';
 import classNames from 'classnames';
@@ -47,19 +49,30 @@ function Link({
     <USWDSLink
       href={to}
       variant={
-          variant !== 'nav' && 'external'
-        } /* if not nav link, set it to be regular external link */
+        variant !== 'nav' && 'external'
+      } /* if not nav link, set it to be regular external link */
       className={classNames(
         {
           'usa-link--external usa-link--nav': variant === 'nav',
         },
-        className,
-      )} /* className is included if it has a truthy value, and if nav link, set it to be both external and nav link */
+        className
+      )}
+      /* className is included if it has a truthy value */
+      /* if nav link, set it to be both external and nav link */
       {...other}
     >
       {children}
     </USWDSLink>
   );
 }
+
+Link.propTypes = {
+  children: PropTypes.node.isRequired,
+  to: PropTypes.node.isRequired,
+  className: PropTypes.node.isRequired,
+  activeClassName: PropTypes.node.isRequired,
+  partiallyActive: PropTypes.node.isRequired,
+  variant: PropTypes.node.isRequired,
+};
 
 export default Link;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
 
 function Section({ section, buttons }) {
@@ -18,5 +19,10 @@ function Section({ section, buttons }) {
     </GridContainer>
   );
 }
+
+Section.propTypes = {
+  section: PropTypes.node.isRequired,
+  buttons: PropTypes.node.isRequired,
+};
 
 export default Section;

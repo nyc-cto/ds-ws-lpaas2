@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
 
 function Hero({ hero, buttons }) {
@@ -20,5 +21,10 @@ function Hero({ hero, buttons }) {
     </GridContainer>
   );
 }
+
+Hero.propTypes = {
+  hero: PropTypes.node.isRequired,
+  buttons: PropTypes.node.isRequired,
+};
 
 export default Hero;

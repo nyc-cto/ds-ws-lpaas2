@@ -29,7 +29,7 @@ function Banner({ children, slug }) {
 }
 
 Banner.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   slug: PropTypes.string.isRequired,
 };
 
