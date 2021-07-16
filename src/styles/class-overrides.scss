@@ -90,7 +90,7 @@
 .usa-footer__primary-section {
   color: white;
   background-color: color("base-dark");
-  font-family: 'Space Mono';
+  font-family: "Space Mono";
   .usa-link,
   .usa-link--external,
   .usa-footer__primary-link {
@@ -158,7 +158,23 @@
   border-radius: 50%;
 }
 
+.footer {
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .footer__logo {
   width: 300px;
   height: auto;
+}
+
+.footer__copyright-trademark p {
+  margin: 0;
+  padding: 0;
+}
+
+.footer__terms,
+.footer__privacy {
+  margin: 0;
+  padding-top: 36px;
 }

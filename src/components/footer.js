@@ -50,18 +50,18 @@ function Footer() {
               />
             }
           />
-
-          <Grid className="usa-footer__contact-links" mobileLg={{ col: 6 }}>
-            <Grid>
+          <Grid
+            className="usa-footer__contact-links footer"
+            mobileLg={{ col: 6 }}
+          >
+            <Grid className="footer__copyright-trademark">
               <p>{t("footer.copyright")}</p>
-            </Grid>
-            <Grid>
               <p>{t("footer.trademark")}</p>
             </Grid>
-            <Grid>
+            <Grid className="footer__terms">
               <Link>{t("footer.terms")}</Link>
             </Grid>
-            <Grid>
+            <Grid className="footer__privacy">
               <Link>{t("footer.privacy")}</Link>
             </Grid>
           </Grid>
