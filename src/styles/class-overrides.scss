@@ -125,7 +125,12 @@
 
 .usa-link--light {
   /* not currently being used */
-  @include link-theme(white, white, "primary-lighter", "primary-lighter");
+  @include link-theme(
+    "accent-cool-lighter",
+    "accent-cool-lighter",
+    "primary-lighter",
+    "primary-lighter"
+  );
 }
 
 //primary button
