@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   ExtendedNav,
-  GridContainer,
   Header as HeaderUSWDS,
   Menu,
   NavDropDownButton,
@@ -11,7 +10,7 @@ import {
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 import { useTranslation } from "react-i18next";
 
-import { Banner, LanguageSwitcher, Link } from ".";
+import { Banner, Link } from ".";
 
 import "@reach/skip-nav/styles.css"; 
 
@@ -105,8 +104,6 @@ function Header({ slug }) {
       {/* <Router> */}
       <SkipNavLink />
       <Banner slug={slug}>{t("banner")}</Banner>
-      <GridContainer>{/* <LanguageSwitcher slug={slug} /> */}</GridContainer>
-
       <div className="usa-navbar">
         <Title>{t("title")}</Title>
         <NavMenuButton onClick={onClick} label="Menu" />

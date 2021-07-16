@@ -2,6 +2,7 @@ const fs = require("fs-extra");
 const path = require("path");
 const _ = require("lodash");
 const { createFilePath } = require("gatsby-source-filesystem");
+const { languages } = require("./src/constants/languages");
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -13,18 +14,14 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
-  createRedirect({
-    fromPath: "/en/home",
-    toPath: "/en/",
-    isPermanent: true,
-    redirectInBrowser: true,
-  });
-  createRedirect({
-    fromPath: "/es/home",
-    toPath: "/es/",
-    isPermanent: true,
-    redirectInBrowser: true,
-  });
+  languages.map((lang) =>
+    createRedirect({
+      fromPath: `/${lang.langKey}/home`,
+      toPath: `/${lang.langKey}/`,
+      isPermanent: true,
+      redirectInBrowser: true,
+    })
+  );
 
   return graphql(`
     {
@@ -61,7 +58,6 @@ exports.createPages = ({ actions, graphql }) => {
           component: path.resolve(
             `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
           ),
-          // additional data can be passed via context
           context: {
             id,
             lang,

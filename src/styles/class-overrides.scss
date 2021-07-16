@@ -1,36 +1,81 @@
-.font-heading-xl,
-.font-heading-xs,
-.text-primary,
-.usa-graphic-list__heading,
-.usa-hero__heading,
-.usa-intro,
-.usa-prose {
-  font-family: family("ui");
+//set text and background colors for NYC buttons
+@mixin button-theme(
+  $text-color,
+  $text-hover,
+  $text-active,
+  $text-disabled,
+  $bg,
+  $bg-hover,
+  $bg-active,
+  $bg-disabled,
+  $border-color
+) {
+  @include u-text($text-color);
+  @include u-bg($bg);
+  &:hover {
+    @include u-text($text-hover);
+    @include u-bg($bg-hover);
+    border: units("2px") solid color($border-color);
+  }
+  &:active {
+    @include u-text($text-active);
+    @include u-bg($bg-active);
+  }
+  &:disabled {
+    @include u-text($text-disabled);
+    @include u-bg($bg-disabled);
+  }
 }
 
+//set flex with items aligned center and content justified space between
+@mixin flex-center-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//set text, background, and border colors for language selector buttons
+@mixin language-selector($direction, $direction) {
+  &:hover {
+    padding-#{$direction}: units("05");
+    border-#{$direction}: units("05") solid color("primary");
+  }
+  .usa-button--unstyled {
+    @include u-bg("base-dark");
+    &:hover {
+      @include u-text("accent-cool-lighter");
+      text-decoration: none;
+      @include u-bg("base-dark");
+    }
+  }
+}
+
+//background for hero callout, menus, and graphics section
 .usa-hero__callout,
 .usa-nav__submenu,
 .usa-section--dark {
-  background-color: color("base-darker");
+  @include u-bg("base-dark");
 }
 
 .usa-nav__primary {
-  button[aria-expanded="true"] {
-    background-color: color("base-darker");
-  }
-  button[aria-expanded="false"] {
-    color: color("disabled-dark");
+  //nav button when dropdown menu is closed
+  .usa-accordion__button[aria-expanded="false"] {
+    @include u-text("disabled-dark");
     &:hover {
-      color: color("base-darker");
+      @include u-text("base-dark");
     }
     &::after {
-      border: $mocto-button-border-width solid color("secondary");
+      border: units("2px") solid color("secondary");
     }
   }
+  //nav button when dropdown menu is open
+  .usa-accordion__button[aria-expanded="true"] {
+    @include u-bg("base-dark");
+  }
   .usa-nav__primary-item > a {
-    color: color("disabled-dark");
+    @include u-text("disabled-dark");
     &:hover {
-      color: color("base-darker");
+      @include u-text("base-dark");
     }
   }
 }
@@ -64,124 +109,136 @@
   }
 }
 
+//primary button
 .usa-button {
-  color: color("base-darker");
-  &:hover {
-    color: color("base-darker");
-    background-color: color("primary");
-    border: $mocto-button-border-width solid color("base-darker");
-  }
-  &:active {
-    color: white;
-    background-color: color("base-darker");
-  }
-  &:disabled {
-    color: white;
-    background-color: color("disabled");
-  }
+  @include button-theme(
+    "base-dark",
+    "base-dark",
+    "accent-cool-lighter",
+    "accent-cool-lighter",
+    "primary",
+    "primary",
+    "base-dark",
+    "disabled",
+    "base-dark"
+  );
 }
 
+//warm button
 .usa-button--accent-warm {
-  color: color("base-darker");
-  background-color: color("secondary");
-  &:hover {
-    color: color("base-darker");
-    background-color: color("secondary");
-    border: $mocto-button-border-width solid color("base-darker");
-  }
-  &:active {
-    color: white;
-    background-color: color("secondary-darker");
-  }
-  &:disabled {
-    color: white;
-    background-color: color("disabled");
-  }
+  @include button-theme(
+    "base-dark",
+    "base-dark",
+    "accent-cool-lighter",
+    "accent-cool-lighter",
+    "secondary",
+    "secondary",
+    "secondary-darker",
+    "disabled",
+    "base-dark"
+  );
 }
 
+//inverse button
 .usa-button--inverse {
-  color: color("base-darker");
-  background-color: color("base-light");
+  @include button-theme(
+    "base-dark",
+    "base-dark",
+    "base-dark",
+    "base-dark",
+    "base-lighter",
+    "base-lightest",
+    "accent-cool-lighter",
+    "base-dark",
+    "base-lighter"
+  );
   &:hover {
-    color: color("base-darker");
-    background-color: color("base-lighter");
-  }
-  &:active {
-    color: color("base-darker");
-    background-color: white;
-  }
-  &:disabled {
-    color: color("base-darker");
-    background-color: color("base-dark");
+    border: none;
   }
 }
 
+//footer nav links
 .usa-footer__primary-section {
-  color: white;
-  background-color: color("base-dark");
+  @include u-text("accent-cool-lighter");
+  @include u-bg("base");
   .usa-link,
   .usa-link--external,
   .usa-footer__primary-link {
-    color: white;
+    @include u-text("accent-cool-lighter");
   }
 }
 
+//department logo, terms & policies, and copyright & trademarks
 .usa-footer__secondary-section {
-  color: white;
-  background-color: color("base-darker");
+  @include u-text("accent-cool-lighter");
+  @include u-bg("base-dark");
   .usa-link,
   .usa-link--external {
-    color: white;
+    @include u-text("accent-cool-lighter");
+  }
+  .footer__logo {
+    width: units("mobile");
+    height: auto;
   }
 }
 
-.language-selector__nav > .usa-header--extended {
-  padding-bottom: 0rem;
-  padding-top: 0rem;
-}
-
-//Custom class names:
-
-.banner,
-.banner__logo-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .usa-accordion__button,
-  .usa-nav__link {
-    color: white;
-    background-color: color("primary");
-    button[aria-expanded="true"] {
-      background-color: color("base-darker");
+//custom NYC banner
+.banner {
+  @include flex-center-space-between();
+  .banner__logo-title,
+  .banner__language-selector-label {
+    @include flex-center-space-between();
+  }
+  //language nav button
+  .usa-accordion__button {
+    background-image: none;
+    padding: 0 units("105");
+    p {
+      padding-left: units("105");
+    }
+    //language nav button when dropdown menu is closed
+    &[aria-expanded="false"] {
+      @include u-text("base-dark");
+      @include u-bg("primary");
+      p {
+        @include u-text("base-dark");
+      }
+    }
+    //language nav button when dropdown menu is open
+    &[aria-expanded="true"] {
+      @include u-text("accent-cool-lighter");
+      @include u-bg("primary");
     }
   }
-}
-
-.banner__language-selector-label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  p {
-    padding-left: 10px;
-  }
-}
-
-.banner__language-selector-container {
-  .usa-nav__submenu .usa-nav__submenu-item a {
+  //language buttons that look like links
+  .usa-button--unstyled {
+    @include u-text("accent-cool-lighter");
     text-decoration: none;
-    &:hover {
-      // text-decoration: none;
-      padding: $mocto-link-padding;
-      border-left: $mocto-link-border-width solid color("primary");
+  }
+  //right-to-left language buttons in dropdown menu
+  .banner__language-selector-item--RtoL {
+    display: flex;
+    flex-direction: row-reverse;
+    @include language-selector("right");
+  }
+   //left-to-right language buttons in dropdown menu
+  .banner__language-selector-item--LtoR {
+    @include language-selector("left");
+  }
+  //all language buttons when there are 5 or fewer languages
+  .banner__language-selector-button-group {
+    @include flex-center-space-between();
+    .banner__language-selector-item {
+      @include language-selector("top");
+      margin: 0 units("105");
+      &:hover {
+        padding-top: 0;
+      }
     }
   }
 }
 
+//circular images in graphics section
 .graphic_image--circle {
   border-radius: 50%;
-}
-
-.footer__logo {
-  width: 300px;
-  height: auto;
 }

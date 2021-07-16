@@ -20,23 +20,18 @@ const languages = [
     isRtoL: false,
   },
   {
-    lang: "Español",
-    langKey: "es",
-    isRtoL: false,
-  },
-  {
     lang: "Français",
     langKey: "fr",
     isRtoL: false,
   },
   {
-    lang: "한국어",
-    langKey: "ko",
+    lang: "Kreyòl ayisyen",
+    langKey: "ht",
     isRtoL: false,
   },
   {
-    lang: "Kreyòl ayisyen",
-    langKey: "ht",
+    lang: "한국어",
+    langKey: "ko",
     isRtoL: false,
   },
   {
@@ -50,8 +45,13 @@ const languages = [
     isRtoL: false,
   },
   {
-    lang: "שידיי",
-    langKey: "yi",
+    lang: "Español",
+    langKey: "es",
+    isRtoL: false,
+  },
+  {
+    lang: "ةيبرعلا",
+    langKey: "ar",
     isRtoL: true,
   },
   {
@@ -60,11 +60,10 @@ const languages = [
     isRtoL: true,
   },
   {
-    lang: "ةيبرعلا",
-    langKey: "ar",
+    lang: "שידיי",
+    langKey: "yi",
     isRtoL: true,
-  }
-]
+  },
+];
 
-
-export default languages 
+module.exports = { languages };
