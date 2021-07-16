@@ -35,10 +35,10 @@ function Footer() {
       primary={
         <FooterNav
           size="medium"
-          links={Array.from({ length: t("footer.primary").length }, (_, i) => {
+          links={Array.from({ length: t("footer.primaryLinks").length }, (_, i) => {
             return (
               <Link className="usa-footer__primary-link" to={primaryLinks[i]}>
-                {t("footer.primary")[i]}
+                {t("footer.primaryLinks")[i]}
               </Link>
             );
           })}

@@ -12,7 +12,9 @@ import { useTranslation } from "react-i18next";
 
 import { Banner, Link } from ".";
 
-import "@reach/skip-nav/styles.css"; 
+import { header as links } from "../constants/links";
+
+import "@reach/skip-nav/styles.css";
 
 function Header({ slug }) {
   const { t, i18n } = useTranslation();
@@ -32,29 +34,90 @@ function Header({ slug }) {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
 
-  /* first dropdown items */
-  const testMenuItemsOne = [
-    <Link to="/link-one" key="one">
-      {t("nav.dropdownOne.simpleLinkOne")}
-    </Link>,
-    <Link to="/link-two" key="two">
-      {t("nav.dropdownOne.simpleLinkTwo")}
-    </Link>,
-  ];
+  /* dynamically creating dropdowns in navigation bar */
+  let dropdowns = [];
+  const dropdownLinks = links.navDropdowns;
+  const constFileLength = dropdownLinks.length;
+  const dropdownLabels = t("header.nav.dropdowns");
+  const translationFileLength = dropdownLabels.length;
+  const length =
+    translationFileLength > constFileLength
+      ? constFileLength
+      : translationFileLength; // take shorter length in case there is missing dropdowns in `../constants/links.js` (constants file) or `../locales/` (translation files)
+  if (translationFileLength !== constFileLength)
+    console.error(
+      "Different number of dropdowns in /src/constants/link.js and dropdown labels in /src/locales\n",
+      `${constFileLength} dropdown${
+        constFileLength > 1 ? "s" : ""
+      } in /src/constants/link.js\n`,
+      `${translationFileLength} dropdown${
+        translationFileLength > 1 ? "s" : ""
+      } in /src/locales`
+    );
+  dropdownLinks.map((_, i) => {
+    if (i < length) {
+      const navDropdownLinks = dropdownLinks[i];
+      const navDropdownLinksLength = navDropdownLinks.length;
+      const navDropdownLinkLabels = t("header.nav.dropdowns")[i]["simpleLinks"];
+      const navDropdownLinkLabelsLength = navDropdownLinkLabels.length;
+      const navDropdownLength =
+        navDropdownLinksLength > navDropdownLinkLabelsLength
+          ? navDropdownLinkLabelsLength
+          : navDropdownLinksLength; // take shorter length in case there is a missing link in `../constants/links.js` (constants file) or label in  `../locales/` (translation files)
+      if (navDropdownLinksLength !== navDropdownLinkLabelsLength)
+        console.error(
+          `Different number of links in /src/constants/link.js and link labels in /src/locales for dropdown ${
+            i + 1
+          }\n`,
+          "Links: ",
+          navDropdownLinks,
+          "\n",
+          "Link labels: ",
+          navDropdownLinkLabels,
+          "\n"
+        );
+      dropdowns.push(
+        navDropdownLinks.map((element, i) => {
+          return (
+            i < navDropdownLength && (
+              <Link to={element} key={i}>
+                {navDropdownLinkLabels[i]}
+              </Link>
+            )
+          );
+        })
+      );
+    } else dropdowns.push([]);
+  });
 
-  /* second dropdown items */
-  const testMenuItemsTwo = [
-    <Link to="/link-three" key="one">
-      {t("nav.dropdownTwo.simpleLinkThree")}
-    </Link>,
-    <Link to="/link-four" key="two">
-      {t("nav.dropdownTwo.simpleLinkFour")}
-    </Link>,
-  ];
-
-  /* links above search button */
-  const secondaryLinks = [];
-
+  /* dynamically creating parent links */
+  const parentLinks = links.parent;
+  const parentLinksLength = parentLinks.length;
+  const parentLinksLabels = t("header.nav.parentLinks");
+  const parentLinksLabelsLength = parentLinksLabels.length;
+  const parentLength =
+    parentLinksLength > parentLinksLabelsLength
+      ? parentLinksLabelsLength
+      : parentLinksLength; // take shorter length in case there is a missing link in parentLinks or missing label in translation file
+  if (parentLinksLength !== parentLinksLabelsLength)
+    console.error(
+      "Different number of parent links in /src/constants/link.js and parent labels in /src/locales\n",
+      "Links: ",
+      parentLinks,
+      "\n",
+      "Labels: ",
+      parentLinksLabels,
+      "\n"
+    );
+  const parentLinkItems = parentLinks.map((element, i) => {
+    return (
+      i < parentLength && (
+        <Link to={element} variant="nav" key={i}>
+          <span>{parentLinksLabels[i]}</span>
+        </Link>
+      )
+    );
+  });
   const navBarItems = [
     <React.Fragment>
       <NavDropDownButton
@@ -63,58 +126,54 @@ function Header({ slug }) {
           setIsOpen2(false);
           setIsOpen1((prevOpen) => !prevOpen);
         }}
-        menuId="testDropDownOne"
+        menuId="navDropDownOne"
         isOpen={isOpen1}
-        label={t("nav.dropdownOne.label")}
+        label={t("header.nav.dropdowns.0.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
         key="one"
-        items={testMenuItemsOne}
+        items={dropdowns[0]}
         isOpen={isOpen1}
-        id="testDropDownOne"
+        id="navDropDownOne"
       />
     </React.Fragment>,
     <React.Fragment>
       <NavDropDownButton
         onToggle={() => {
-          /* TODO: should it extend on ENTER or BUTTON_DOWN? */
           setIsOpen1(false);
           setIsOpen2((prevOpen) => !prevOpen);
         }}
-        menuId="testDropDownTwo"
+        menuId="navDropDownTwo"
         isOpen={isOpen2}
-        label={t("nav.dropdownTwo.label")}
+        label={t("header.nav.dropdowns.1.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
         key="two"
-        items={testMenuItemsTwo}
+        items={dropdowns[1]}
         isOpen={isOpen2}
-        id="testDropDownTwo"
+        id="navDropDownTwo"
       />
     </React.Fragment>,
-    <Link variant="nav" to="/three" key="three">
-      <span>{t("nav.parentOne")}</span>
-    </Link>,
-  ];
+  ].concat(parentLinkItems);
 
   return (
     <HeaderUSWDS extended={true}>
       {/* <Router> */}
       <SkipNavLink />
-      <Banner slug={slug}>{t("banner")}</Banner>
+      <Banner slug={slug}>{t("header.banner")}</Banner>
       <div className="usa-navbar">
         <Title>{t("title")}</Title>
         <NavMenuButton onClick={onClick} label="Menu" />
       </div>
       <ExtendedNav
         primaryItems={navBarItems}
-        secondaryItems={secondaryLinks}
+        secondaryItems={[]}
         mobileExpanded={expanded}
         onToggleMobileNav={onClick}
         role="navigation"
-      ></ExtendedNav>
+      />
       <SkipNavContent />
     </HeaderUSWDS>
   );
