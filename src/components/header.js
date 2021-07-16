@@ -35,20 +35,20 @@ function Header({ slug }) {
   /* first dropdown items */
   const testMenuItemsOne = [
     <Link to="/link-one" key="one">
-      {t("nav.dropdownOne.simpleLinkOne")}
+      {t("header.nav.dropdowns.0.simpleLinks.0")}
     </Link>,
     <Link to="/link-two" key="two">
-      {t("nav.dropdownOne.simpleLinkTwo")}
+      {t("header.nav.dropdowns.0.simpleLinks.1")}
     </Link>,
   ];
 
   /* second dropdown items */
   const testMenuItemsTwo = [
     <Link to="/link-three" key="one">
-      {t("nav.dropdownTwo.simpleLinkThree")}
+      {t("header.nav.dropdowns.1.simpleLinks.0")}
     </Link>,
     <Link to="/link-four" key="two">
-      {t("nav.dropdownTwo.simpleLinkFour")}
+      {t("header.nav.dropdowns.1.simpleLinks.1")}
     </Link>,
   ];
 
@@ -65,7 +65,7 @@ function Header({ slug }) {
         }}
         menuId="testDropDownOne"
         isOpen={isOpen1}
-        label={t("nav.dropdownOne.label")}
+        label={t("header.nav.dropdowns.0.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -84,7 +84,7 @@ function Header({ slug }) {
         }}
         menuId="testDropDownTwo"
         isOpen={isOpen2}
-        label={t("nav.dropdownTwo.label")}
+        label={t("header.nav.dropdowns.1.label")}
         // isCurrent={true} // TODO: update later
       />
       <Menu
@@ -95,7 +95,7 @@ function Header({ slug }) {
       />
     </React.Fragment>,
     <Link variant="nav" to="/three" key="three">
-      <span>{t("nav.parentOne")}</span>
+      <span>{t("header.nav.parentLinks.0")}</span>
     </Link>,
   ];
 
@@ -103,7 +103,7 @@ function Header({ slug }) {
     <HeaderUSWDS extended={true}>
       {/* <Router> */}
       <SkipNavLink />
-      <Banner slug={slug}>{t("banner")}</Banner>
+      <Banner slug={slug}>{t("header.banner")}</Banner>
       <div className="usa-navbar">
         <Title>{t("title")}</Title>
         <NavMenuButton onClick={onClick} label="Menu" />

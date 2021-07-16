@@ -1,31 +1,34 @@
 {
   "title": "[zh_HANT] Project Title",
-  "banner": "[zh_HANT] An official website of New York City government",
-  "nav": {
-    "dropdown": [],
-    "dropdownOne": {
-      "label": "[zh_HANT] Nav Label 1",
-      "simpleLinkOne": "[zh_HANT] Simple link one",
-      "simpleLinkTwo": "[zh_HANT] Simple link two"
+  "header": {
+    "banner": "[zh_HANT] An official website of New York City government",
+    "nav": {
+      "dropdowns": [
+        {
+          "label": "[zh_HANT] Nav Label 1",
+          "simpleLinks": [
+            "[zh_HANT] Simple link one",
+            "[zh_HANT] Simple link two"
+          ]
+        },
+        {
+          "label": "[zh_HANT] Nav Label 2",
+          "simpleLinks": [
+            "[zh_HANT] Simple link three",
+            "[zh_HANT] Simple link four"
+          ]
+        }
+      ],
+      "parentLinks": ["[zh_HANT] Parent link"]
     },
-    "dropdownTwo": {
-      "label": "[zh_HANT] Nav Label 2",
-      "simpleLinkThree": "[zh_HANT] Simple link three",
-      "simpleLinkFour": "[zh_HANT] Simple link four"
-    },
-    "parentOne": "[zh_HANT] Parent link"
-  },
-  "secondaryLink": [],
-  "secondaryLinks": {
-    "linkOne": "[zh_HANT] Link one",
-    "linkTwo": "[zh_HANT] Link two"
+    "secondaryLinks": ["[zh_HANT] Link one", "[zh_HANT] Link two"]
   },
   "footer": {
     "copyright": "[zh_HANT] © 2021 City of New York. All Rights Reserved.",
     "trademark": "[zh_HANT] NYC is a trademark and service mark of the City of New York.",
     "terms": "[zh_HANT] NYC Terms of Use",
     "privacy": "[zh_HANT] NYC Privacy Policy",
-    "primary": [
+    "primaryLinks": [
       "[zh_HANT] Primary Link 1",
       "[zh_HANT] Primary Link 2",
       "[zh_HANT] Primary Link 3",
@@ -36,7 +39,13 @@
         "logo": "[zh_HANT] Name of Agency",
         "contact": "[zh_HANT] Agency Contact Center"
       },
-      "socialLinks": ["Facebook", "Twitter", "YouTube", "Instagram", "RSS"],
+      "socialLinks": [
+        "[zh_HANT] Facebook",
+        "[zh_HANT] Twitter",
+        "[zh_HANT] YouTube",
+        "[zh_HANT] Instagram",
+        "[zh_HANT] RSS"
+      ],
       "address": {
         "phone": "[zh_HANT] (800) CALL-GOVT",
         "email": "[zh_HANT] info@agency.gov"

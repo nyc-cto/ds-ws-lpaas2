@@ -1,31 +1,28 @@
 {
   "title": "[ru] Project Title",
-  "banner": "[ru] An official website of New York City government",
-  "nav": {
-    "dropdown": [],
-    "dropdownOne": {
-      "label": "[ru] Nav Label 1",
-      "simpleLinkOne": "[ru] Simple link one",
-      "simpleLinkTwo": "[ru] Simple link two"
+  "header": {
+    "banner": "[ru] An official website of New York City government",
+    "nav": {
+      "dropdowns": [
+        {
+          "label": "[ru] Nav Label 1",
+          "simpleLinks": ["[ru] Simple link one", "[ru] Simple link two"]
+        },
+        {
+          "label": "[ru] Nav Label 2",
+          "simpleLinks": ["[ru] Simple link three", "[ru] Simple link four"]
+        }
+      ],
+      "parentLinks": ["[ru] Parent link"]
     },
-    "dropdownTwo": {
-      "label": "[ru] Nav Label 2",
-      "simpleLinkThree": "[ru] Simple link three",
-      "simpleLinkFour": "[ru] Simple link four"
-    },
-    "parentOne": "[ru] Parent link"
-  },
-  "secondaryLink": [],
-  "secondaryLinks": {
-    "linkOne": "[ru] Link one",
-    "linkTwo": "[ru] Link two"
+    "secondaryLinks": ["[ru] Link one", "[ru] Link two"]
   },
   "footer": {
     "copyright": "[ru] © 2021 City of New York. All Rights Reserved.",
     "trademark": "[ru] NYC is a trademark and service mark of the City of New York.",
     "terms": "[ru] NYC Terms of Use",
     "privacy": "[ru] NYC Privacy Policy",
-    "primary": [
+    "primaryLinks": [
       "[ru] Primary Link 1",
       "[ru] Primary Link 2",
       "[ru] Primary Link 3",
@@ -36,7 +33,13 @@
         "logo": "[ru] Name of Agency",
         "contact": "[ru] Agency Contact Center"
       },
-      "socialLinks": ["Facebook", "Twitter", "YouTube", "Instagram", "RSS"],
+      "socialLinks": [
+        "[ru] Facebook",
+        "[ru] Twitter",
+        "[ru] YouTube",
+        "[ru] Instagram",
+        "[ru] RSS"
+      ],
       "address": {
         "phone": "[ru] (800) CALL-GOVT",
         "email": "[ru] info@agency.gov"
