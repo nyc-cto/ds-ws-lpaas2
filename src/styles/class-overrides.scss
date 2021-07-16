@@ -152,6 +152,19 @@
     height: auto;
   }
 }
+.header__logo-title {
+  @include flex-center-space-between();
+  .usa-logo__text {
+    @include u-font-size('body', 'md');
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+  }
+}
+
+.header__logo {
+  width: units('card-lg');
+  height: auto;
+}
 
 //custom NYC banner
 .banner {
