@@ -31,7 +31,7 @@ function Landing({ data, location }) {
     const route = path
       .split('/')
       .slice(2)
-      .filter((v) => v != '')
+      .filter((v) => v !== '')
       .join('/');
     if (lang.length === 0 && route.length === 0) {
       // empty path
@@ -44,9 +44,9 @@ function Landing({ data, location }) {
       // only route given
       // not currently being used
       // navigate(`${i18n.language}/${route}`);
-    } else {
+    } else if (lang !== i18n.language) {
       // both language and route given
-      if (lang !== i18n.language) i18n.changeLanguage(lang);
+      i18n.changeLanguage(lang);
     }
   }, [location.pathname]);
 
@@ -88,8 +88,8 @@ function Landing({ data, location }) {
 }
 
 Landing.propTypes = {
-  data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
+  data: PropTypes.node.isRequired,
+  location: PropTypes.node.isRequired,
 };
 
 export const pageQuery = graphql`

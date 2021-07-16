@@ -10,9 +10,8 @@ import {
 } from '@trussworks/react-uswds';
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import { useTranslation } from 'react-i18next';
-
-import { Banner, Link } from '.';
-
+import { Link } from '.';
+import Banner from './banner';
 import '@reach/skip-nav/styles.css';
 
 function Header({ slug }) {
