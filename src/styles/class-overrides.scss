@@ -8,6 +8,30 @@
   font-family: family("ui");
 }
 
+@mixin link-theme(
+  $color,
+  $border-bottom-color-active,
+  $color-visited,
+  $border-bottom-color-visited
+) {
+  @include u-text($color);
+  &:active {
+    border-bottom-color: color($border-bottom-color-active);
+  }
+  &:visited {
+    @include u-text($color-visited);
+    border-bottom-color: color($border-bottom-color-visited);
+  }
+}
+
+@mixin link-size {
+  border-bottom-width: units("1px") * 3;
+}
+
+@mixin link-size-expanded {
+  border-bottom-width: units("1px") * 10;
+}
+
 .usa-hero__callout,
 .usa-nav__submenu,
 .usa-section--dark {
@@ -36,32 +60,27 @@
 }
 
 .usa-link {
-  color: color("base-dark");
+  @include link-theme(
+    "base-dark",
+    "base-dark",
+    "primary-darker",
+    "primary-darker"
+  );
   text-decoration: none;
-  border-bottom: units("1px") * 3 solid color("primary");
+  @include link-size();
+  border-bottom-style: solid;
+  border-bottom-color: color("primary");
   &:hover {
-    border-bottom-width: units("1px") * 10;
+    @include link-size-expanded();
   }
   &:active {
-    border-bottom-color: color("base-dark");
-    border-bottom-width: units("1px") * 10;
-  }
-  &:visited {
-    color: color("primary-darker");
-    border-bottom-color: color("primary-darker");
+    @include link-size-expanded();
   }
 }
 
 .usa-link--light {
   /* not currently being used */
-  color: white;
-  &:active {
-    border-bottom-color: white;
-  }
-  &:visited {
-    color: color("primary-lighter");
-    border-bottom-color: color("primary-lighter");
-  }
+  @include link-theme(white, white, "primary-lighter", "primary-lighter");
 }
 
 .usa-button {
