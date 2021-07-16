@@ -7,5 +7,5 @@ export const header = {
 };
 
 export const footer = {
-  primary: ["/link-one", "/link-two", "/link-three", "/link-four"],
+  primary: ["link-one", "link-two", "link-three", "link-four"],
 };
