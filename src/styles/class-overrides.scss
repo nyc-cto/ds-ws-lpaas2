@@ -192,17 +192,11 @@
 }
 
 .header__logo-title {
-  @include flex-center-space-between();
   .usa-logo__text {
     @include u-font-size('body', 'md');
     font-family: 'Space Mono', monospace;
     text-transform: uppercase;
   }
-}
-
-.header__logo {
-  width: units('card-lg');
-  height: auto;
 }
 
 //footer nav links
@@ -314,4 +308,33 @@
 //circular images in graphics section
 .graphic_image--circle {
   border-radius: 50%;
+}
+
+@media (max-width: units('desktop')) {
+  .banner__language-selector,
+  .header__title {
+    display: none;
+  }
+  .usa-navbar {
+    @include flex-center-space-between();
+    margin: units(4) 0 units(2) 0;
+    .header__logo {
+      width: units('card');
+      height: auto;
+      padding-left: units(2);
+    }
+    .usa-menu-btn {
+      @include u-bg('secondary');
+    }
+  }
+}
+
+@media (min-width: units('desktop')) {
+  .header__logo-title {
+    @include flex-center-space-between();
+  }
+  .header__logo {
+    width: units('card-lg');
+    height: auto;
+  }
 }

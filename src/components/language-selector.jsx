@@ -42,7 +42,7 @@ function LanguageSelector({ slug }) {
     </div>
   ));
   return (
-    <>
+    <div className="banner__language-selector">
       {languageMenuItems.length <= 5 ? (
         <Grid className="banner__language-selector-button-group">
           {languageMenuItems}
@@ -70,7 +70,7 @@ function LanguageSelector({ slug }) {
           />
         </Grid>
       )}
-    </>
+    </div>
   );
 }
 
