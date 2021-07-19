@@ -5,5 +5,6 @@ export { default as LanguageSelector } from './language-selector';
 // eslint-disable-next-line import/no-cycle
 export { default as Layout } from './layout';
 export { default as Link } from './link';
+export { default as NavDropDown } from './nav-drop-down';
 export { default as Section } from './section';
 export { default as Tagline } from './tagline';

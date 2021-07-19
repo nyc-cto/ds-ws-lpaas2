@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 import {
   ExtendedNav,
   Header as HeaderUSWDS,
-  Menu,
-  NavDropDownButton,
   NavMenuButton,
   Title,
 } from '@trussworks/react-uswds';
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import { useTranslation } from 'react-i18next';
-import { Link } from '.';
+import { Link, NavDropDown } from '.';
 import Banner from './banner';
 import ctoLogoShortform from '../images/logos/cto_logo_shortform_dark.png';
 import { header as links } from '../constants/links';
@@ -19,11 +17,11 @@ import '@reach/skip-nav/styles.css';
 function Header({ slug }) {
   const { t } = useTranslation();
 
-  /* menu expansion */
+  /* menu expansion in mobile view */
   const [expanded, setExpanded] = useState(false);
   const onClick = () => setExpanded((prevExpanded) => !prevExpanded);
 
-  /* dynamically creating dropdowns in navigation bar */
+  /* dynamically store dropdowns in navigation bar */
   const dropdowns = [];
   const dropdownLinks = links.navDropdowns;
   const constFileLength = dropdownLinks.length;
@@ -82,7 +80,7 @@ function Header({ slug }) {
     } else dropdowns.push([]);
   });
 
-  /* dynamically creating parent links */
+  /* dynamically store parent links */
   const parentLinks = links.parent;
   const parentLinksLength = parentLinks.length;
   const parentLinksLabels = t('header.nav.parentLinks');
@@ -110,32 +108,6 @@ function Header({ slug }) {
     ),
   );
 
-  const [open, setOpen] = useState();
-  const navBarItems = dropdowns
-    .map((_, i) => {
-      const id = `navDropDown${i}`;
-      const iStr = i.toString();
-      return (
-        <>
-          <NavDropDownButton
-            onToggle={() => {
-              if (open === id) setOpen(undefined);
-              else setOpen(id);
-            }}
-            menuId={id}
-            isOpen={open === id}
-            label={t(`header.nav.dropdowns.${i}.label`)}
-          />
-          <Menu
-            id={id}
-            isOpen={open === id}
-            items={dropdowns[i]}
-            key={iStr}
-          />
-        </>
-      );
-    }).concat(parentLinkItems);
-
   return (
     <HeaderUSWDS extended>
       {/* <Router> */}
@@ -149,7 +121,7 @@ function Header({ slug }) {
         <NavMenuButton onClick={onClick} label="Menu" />
       </div>
       <ExtendedNav
-        primaryItems={navBarItems}
+        primaryItems={NavDropDown(dropdowns).concat(parentLinkItems)}
         secondaryItems={[]}
         mobileExpanded={expanded}
         onToggleMobileNav={onClick}
