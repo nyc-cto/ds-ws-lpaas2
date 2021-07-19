@@ -211,12 +211,12 @@
   @include u-text('accent-cool-lighter');
   @include u-bg('base');
   margin-top: units(2);
+  padding: units(3) 0;
   .usa-link,
   .usa-link--external,
   .usa-footer__primary-link {
     @include u-text('accent-cool-lighter');
     padding: 0;
-    margin: units(2) 0;
   }
 }
 
