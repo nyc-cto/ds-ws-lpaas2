@@ -44,11 +44,13 @@
 }
 
 @mixin link-size {
-  border-bottom-width: units('1px') * 3;
+  // border-bottom-width: units('1px') * 3;
+  border-bottom-width: units('05');
 }
 
 @mixin link-size-expanded {
-  border-bottom-width: units('1px') * 10;
+  // border-bottom-width: units('1px') * 10;
+  border-bottom-width: units('105');
 }
 
 //set flex with items aligned center and content justified space between
@@ -122,6 +124,9 @@
   &:active {
     @include link-size-expanded();
   }
+  &:visited {
+    border-bottom-color: color('primary');
+  }
 }
 
 .usa-link--light {
@@ -182,20 +187,38 @@
   }
 }
 
+.header__logo-title {
+  @include flex-center-space-between();
+  .usa-logo__text {
+    @include u-font-size('body', 'md');
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+  }
+}
+
+.header__logo {
+  width: units('card-lg');
+  height: auto;
+}
+
 //footer nav links
 .usa-footer__primary-section {
   font-family: 'Space Mono';
   @include u-text('accent-cool-lighter');
   @include u-bg('base');
+  margin-top: units(2);
   .usa-link,
   .usa-link--external,
   .usa-footer__primary-link {
     @include u-text('accent-cool-lighter');
+    padding: 0;
+    margin: units(2) 0;
   }
 }
 
 .usa-footer__return-to-top {
-  color: color('base-darker');
+  @include u-text('base-darker');
+  padding: 0;
 }
 
 //department logo, terms & policies, and copyright & trademarks
@@ -211,23 +234,10 @@
     height: auto;
   }
 }
-.header__logo-title {
-  @include flex-center-space-between();
-  .usa-logo__text {
-    @include u-font-size('body', 'md');
-    font-family: 'Space Mono', monospace;
-    text-transform: uppercase;
-  }
-}
-
-.header__logo {
-  width: units('card-lg');
-  height: auto;
-}
 
 .footer {
-  font-size: 12px;
-  font-weight: bold;
+  @include u-font-size('body', 1);
+  @include u-text('bold');
 }
 
 .footer__copyright-trademark p {
@@ -238,7 +248,7 @@
 .footer__terms,
 .footer__privacy {
   margin: 0;
-  padding-top: 36px;
+  padding-top: units(5);
 }
 
 //custom NYC banner
