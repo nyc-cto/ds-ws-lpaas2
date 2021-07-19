@@ -1,32 +1,40 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 // import React, { Suspense } from "react";
 // import { Redirect, Router } from "@reach/router";
-import { Helmet } from "react-helmet";
-import { graphql, navigate } from "gatsby";
-import { I18nextProvider, useTranslation } from "react-i18next";
-import { GridContainer } from "@trussworks/react-uswds";
-import { Graphic, Hero, i18next, Layout, Section, Tagline } from "../components/";
+import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
+import { I18nextProvider, useTranslation } from 'react-i18next';
+import { GridContainer } from '@trussworks/react-uswds';
+import {
+  Graphic,
+  Hero,
+  i18next,
+  Layout,
+  Section,
+  Tagline,
+} from '../components';
 
-import "@trussworks/react-uswds/lib/uswds.css";
-import "@trussworks/react-uswds/lib/index.css";
-import "@fontsource/libre-baskerville";
-import "@fontsource/space-mono";
+import '@trussworks/react-uswds/lib/uswds.css';
+import '@trussworks/react-uswds/lib/index.css';
+import '@fontsource/libre-baskerville';
+import '@fontsource/space-mono';
 
-import "../styles/index.scss";
+import '../styles/index.scss';
 
 function Landing({ data, location }) {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const path = location.pathname;
-    const lang = path.split("/")[1];
+    const lang = path.split('/')[1];
     const route = path
-      .split("/")
+      .split('/')
       .slice(2)
-      .filter((v) => v != "")
-      .join("/");
+      .filter((v) => v !== '')
+      .join('/');
     if (lang.length === 0 && route.length === 0) {
-      // empty path 
+      // empty path
       // not currently being used
       // navigate(`/${i18n.language}/`);
     } else if (lang.length !== 0 && route.length === 0) {
@@ -36,9 +44,9 @@ function Landing({ data, location }) {
       // only route given
       // not currently being used
       // navigate(`${i18n.language}/${route}`);
-    } else {
+    } else if (lang !== i18n.language) {
       // both language and route given
-      if (lang !== i18n.language) i18n.changeLanguage(lang);
+      i18n.changeLanguage(lang);
     }
   }, [location.pathname]);
 
@@ -47,13 +55,13 @@ function Landing({ data, location }) {
 
   return (
     // <Suspense fallback="loading">
-    <React.Fragment>
+    <>
       {/* <Router basepath={i18n.language}> */}
       {/* <Redirect from="/" to={`/${i18n.language}/home`} noThrow /> */}
       {/* <NotFound default /> */}
       {/* </Router> */}
       <I18nextProvider i18n={i18next}>
-        <Helmet title={t("title")} htmlAttributes={{ lang: i18n.language }} />
+        <Helmet title={t('title')} htmlAttributes={{ lang: i18n.language }} />
         <Layout slug={frontmatter.slug}>
           <main>
             <GridContainer>
@@ -74,10 +82,15 @@ function Landing({ data, location }) {
           </main>
         </Layout>
       </I18nextProvider>
-    </React.Fragment>
+    </>
     // </Suspense>
   );
 }
+
+Landing.propTypes = {
+  data: PropTypes.node.isRequired,
+  location: PropTypes.node.isRequired,
+};
 
 export const pageQuery = graphql`
   query Landing($lang: String!) {

@@ -1,9 +1,13 @@
-import React, { useState } from "react";
-import { navigate } from "gatsby";
-import { Button, Grid, Menu, NavDropDownButton } from "@trussworks/react-uswds";
-import { useTranslation } from "react-i18next";
-import FeatherIcon from "feather-icons-react";
-import { languages } from "../constants/languages";
+/* eslint-disable no-nested-ternary */
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { navigate } from 'gatsby';
+import {
+  Button, Grid, Menu, NavDropDownButton,
+} from '@trussworks/react-uswds';
+import { useTranslation } from 'react-i18next';
+import FeatherIcon from 'feather-icons-react';
+import { languages } from '../constants/languages';
 
 function LanguageSelector({ slug }) {
   const { i18n } = useTranslation();
@@ -19,10 +23,10 @@ function LanguageSelector({ slug }) {
     <div
       className={
         languages.length <= 5
-          ? "banner__language-selector-item"
+          ? 'banner__language-selector-item'
           : language.isRtoL
-          ? "banner__language-selector-item--RtoL"
-          : "banner__language-selector-item--LtoR"
+            ? 'banner__language-selector-item--RtoL'
+            : 'banner__language-selector-item--LtoR'
       }
     >
       <Button
@@ -38,7 +42,7 @@ function LanguageSelector({ slug }) {
     </div>
   ));
   return (
-    <React.Fragment>
+    <>
       {languageMenuItems.length <= 5 ? (
         <Grid className="banner__language-selector-button-group">
           {languageMenuItems}
@@ -52,12 +56,12 @@ function LanguageSelector({ slug }) {
             }}
             menuId="language-selector"
             isOpen={isOpen}
-            label={
+            label={(
               <div className="banner__language-selector-label font-heading-xs">
                 <FeatherIcon icon="globe" size={16} />
                 <p>Language</p>
               </div>
-            }
+            )}
           />
           <Menu
             id="language-selector"
@@ -66,8 +70,12 @@ function LanguageSelector({ slug }) {
           />
         </Grid>
       )}
-    </React.Fragment>
+    </>
   );
 }
+
+LanguageSelector.propTypes = {
+  slug: PropTypes.string.isRequired,
+};
 
 export default LanguageSelector;
