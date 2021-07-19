@@ -1,0 +1,56 @@
+{
+  "title": "[zh_HANS] Project Title",
+  "header": {
+    "banner": "[zh_HANS] An official website of New York City government",
+    "nav": {
+      "dropdowns": [
+        {
+          "label": "[zh_HANS] Nav Label 1",
+          "simpleLinks": [
+            "[zh_HANS] Simple link one",
+            "[zh_HANS] Simple link two"
+          ]
+        },
+        {
+          "label": "[zh_HANS] Nav Label 2",
+          "simpleLinks": [
+            "[zh_HANS] Simple link three",
+            "[zh_HANS] Simple link four"
+          ]
+        }
+      ],
+      "parentLinks": ["[zh_HANS] Parent link"]
+    },
+    "secondaryLinks": ["[zh_HANS] Link one", "[zh_HANS] Link two"]
+  },
+  "footer": {
+    "copyright": "[zh_HANS] © 2021 City of New York. All Rights Reserved.",
+    "trademark": "[zh_HANS] NYC is a trademark and service mark of the City of New York.",
+    "terms": "[zh_HANS] NYC Terms of Use",
+    "privacy": "[zh_HANS] NYC Privacy Policy",
+    "primaryLinks": [
+      "[zh_HANS] Primary Link 1",
+      "[zh_HANS] Primary Link 2",
+      "[zh_HANS] Primary Link 3",
+      "[zh_HANS] Primary Link 4"
+    ],
+    "secondary": {
+      "heading": {
+        "logo": "[zh_HANS] Name of Agency",
+        "contact": "[zh_HANS] Agency Contact Center"
+      },
+      "socialLinks": [
+        "[zh_HANS] Facebook",
+        "[zh_HANS] Twitter",
+        "[zh_HANS] YouTube",
+        "[zh_HANS] Instagram",
+        "[zh_HANS] RSS"
+      ],
+      "address": {
+        "phone": "[zh_HANS] (800) CALL-GOVT",
+        "email": "[zh_HANS] info@agency.gov"
+      }
+    }
+  },
+  "notFound": "[zh_HANS] 404: Page Not Found"
+}

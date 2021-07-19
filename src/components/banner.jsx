@@ -1,7 +1,8 @@
-import React from "react";
-import { Grid, GridContainer } from "@trussworks/react-uswds";
-import { LanguageSelector } from ".";
-import nycLogo from "../images/logos/nyc_logo.png";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Grid, GridContainer } from '@trussworks/react-uswds';
+import { LanguageSelector } from '.';
+import nycLogo from '../images/logos/nyc_logo.png';
 
 function Banner({ children, slug }) {
   return (
@@ -18,7 +19,7 @@ function Banner({ children, slug }) {
               <p className="font-heading-xs">{children}</p>
             </Grid>
           </Grid>
-          <Grid className="banner__language-selector-container">
+          <Grid>
             <LanguageSelector slug={slug} />
           </Grid>
         </Grid>
@@ -26,5 +27,10 @@ function Banner({ children, slug }) {
     </div>
   );
 }
+
+Banner.propTypes = {
+  children: PropTypes.node.isRequired,
+  slug: PropTypes.string.isRequired,
+};
 
 export default Banner;
