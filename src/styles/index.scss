@@ -2,20 +2,15 @@
   These are necessary for the image and font urls referenced in the source
   files to resolve correctly.
 */
-$theme-image-path: "../../node_modules/uswds/src/img";
-$theme-font-path: "../../node_modules/uswds/src/fonts";
+$theme-image-path: '../../node_modules/uswds/src/img';
+$theme-font-path: '../../node_modules/uswds/src/fonts';
 
-/*
-  The url for the hero image in the source file is not currently prefixed by
-  the $theme-image-path above.
-*/
-
-$theme-hero-image: "#{$theme-image-path}/hero.png";
+$theme-hero-image: '../images/cto_hero.png';
 
 //Custom themes
-@import "./mocto-theme.scss";
+@import './mocto-theme.scss';
 
-@import "uswds";
+@import 'uswds';
 
 //Class overrides and custom classes
-@import "./class-overrides.scss"; 
+@import './class-overrides.scss';

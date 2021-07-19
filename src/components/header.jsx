@@ -12,8 +12,8 @@ import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import { useTranslation } from 'react-i18next';
 import { Link } from '.';
 import Banner from './banner';
+import ctoLogoShortform from '../images/logos/cto_logo_shortform_dark.png';
 import { header as links } from '../constants/links';
-
 import '@reach/skip-nav/styles.css';
 
 function Header({ slug }) {
@@ -159,7 +159,10 @@ function Header({ slug }) {
       <SkipNavLink />
       <Banner slug={slug}>{t('header.banner')}</Banner>
       <div className="usa-navbar">
-        <Title>{t('title')}</Title>
+        <div className="header__logo-title">
+          <img className="header__logo" src={ctoLogoShortform} alt="NYC CTO" />
+          <Title>{t('title')}</Title>
+        </div>
         <NavMenuButton onClick={onClick} label="Menu" />
       </div>
       <ExtendedNav
