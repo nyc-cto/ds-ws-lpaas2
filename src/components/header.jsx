@@ -23,10 +23,6 @@ function Header({ slug }) {
   const [expanded, setExpanded] = useState(false);
   const onClick = () => setExpanded((prevExpanded) => !prevExpanded);
 
-  /* nav dropdown expansions */
-  const [isOpen1, setIsOpen1] = useState(false);
-  const [isOpen2, setIsOpen2] = useState(false);
-
   /* dynamically creating dropdowns in navigation bar */
   const dropdowns = [];
   const dropdownLinks = links.navDropdowns;
@@ -113,45 +109,32 @@ function Header({ slug }) {
     </Link>
     ),
   );
-  const navBarItems = [
-    <>
-      <NavDropDownButton
-        onToggle={() => {
-          /* TODO: should it extend on ENTER or BUTTON_DOWN? */
-          setIsOpen2(false);
-          setIsOpen1((prevOpen) => !prevOpen);
-        }}
-        menuId="navDropDownOne"
-        isOpen={isOpen1}
-        label={t('header.nav.dropdowns.0.label')}
-        // isCurrent={true} // TODO: update later
-      />
-      <Menu
-        key="one"
-        items={dropdowns[0]}
-        isOpen={isOpen1}
-        id="navDropDownOne"
-      />
-    </>,
-    <>
-      <NavDropDownButton
-        onToggle={() => {
-          setIsOpen1(false);
-          setIsOpen2((prevOpen) => !prevOpen);
-        }}
-        menuId="navDropDownTwo"
-        isOpen={isOpen2}
-        label={t('header.nav.dropdowns.1.label')}
-        // isCurrent={true} // TODO: update later
-      />
-      <Menu
-        key="two"
-        items={dropdowns[1]}
-        isOpen={isOpen2}
-        id="navDropDownTwo"
-      />
-    </>,
-  ].concat(parentLinkItems);
+
+  const [open, setOpen] = useState();
+  const navBarItems = dropdowns
+    .map((_, i) => {
+      const id = `navDropDown${i}`;
+      const iStr = i.toString();
+      return (
+        <>
+          <NavDropDownButton
+            onToggle={() => {
+              if (open === id) setOpen(undefined);
+              else setOpen(id);
+            }}
+            menuId={id}
+            isOpen={open === id}
+            label={t(`header.nav.dropdowns.${i}.label`)}
+          />
+          <Menu
+            id={id}
+            isOpen={open === id}
+            items={dropdowns[i]}
+            key={iStr}
+          />
+        </>
+      );
+    }).concat(parentLinkItems);
 
   return (
     <HeaderUSWDS extended>
