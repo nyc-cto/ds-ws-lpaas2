@@ -3,6 +3,7 @@ import {
   Footer as FooterUSWDS,
   FooterNav,
   Grid,
+  GridContainer,
   Logo,
 } from "@trussworks/react-uswds";
 import { useTranslation } from "react-i18next";
@@ -13,25 +14,18 @@ import logoImg from "../images/logos/cto_logo_horizontal_white.png";
 function Footer() {
   const { t } = useTranslation();
   const primaryLinks = ["/link-one", "/link-two", "/link-three", "/link-four"];
-  const socialLinks = {
-    facebook: "www.facebook.com",
-    twitter: "www.twitter.com",
-    youtube: "www.youtube.com",
-    instagram: "www.instagram.com",
-    rss: "https://www.google.com/search?q=rss",
-  };
-  const socialLinkTypes = [
-    "facebook",
-    "twitter",
-    "youtube",
-    "instagram",
-    "rss",
-  ];
 
   return (
     <FooterUSWDS
       size="medium"
-      // returnToTop={returnToTop}
+      returnToTop={
+        <GridContainer>
+          <Link to="#top" className="usa-footer__return-to-top">
+            Return to top
+          </Link>
+          {/* TODO: for some reason class name has to be manually added*/}
+        </GridContainer>
+      }
       primary={
         <FooterNav
           size="medium"
@@ -56,18 +50,18 @@ function Footer() {
               />
             }
           />
-
-          <Grid className="usa-footer__contact-links" mobileLg={{ col: 6 }}>
-            <Grid>
+          <Grid
+            className="usa-footer__contact-links footer"
+            mobileLg={{ col: 6 }}
+          >
+            <Grid className="footer__copyright-trademark">
               <p>{t("footer.copyright")}</p>
-            </Grid>
-            <Grid>
               <p>{t("footer.trademark")}</p>
             </Grid>
-            <Grid>
+            <Grid className="footer__terms">
               <Link>{t("footer.terms")}</Link>
             </Grid>
-            <Grid>
+            <Grid className="footer__privacy">
               <Link>{t("footer.privacy")}</Link>
             </Grid>
           </Grid>

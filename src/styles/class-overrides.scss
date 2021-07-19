@@ -183,6 +183,7 @@
 
 //footer nav links
 .usa-footer__primary-section {
+  font-family: "Space Mono";
   @include u-text("accent-cool-lighter");
   @include u-bg("base");
   .usa-link,
@@ -190,6 +191,10 @@
   .usa-footer__primary-link {
     @include u-text("accent-cool-lighter");
   }
+}
+
+.usa-footer__return-to-top {
+  color: color("base-darker");
 }
 
 //department logo, terms & policies, and copyright & trademarks
@@ -204,6 +209,22 @@
     width: units("mobile");
     height: auto;
   }
+}
+
+.footer {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.footer__copyright-trademark p {
+  margin: 0;
+  padding: 0;
+}
+
+.footer__terms,
+.footer__privacy {
+  margin: 0;
+  padding-top: 36px;
 }
 
 //custom NYC banner
