@@ -7,6 +7,7 @@ function Layout({ children, slug }) {
   return (
     <>
       <Header slug={slug} />
+      <div className="#top" />
       {children}
       <Footer />
     </>

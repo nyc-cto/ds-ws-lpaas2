@@ -44,11 +44,11 @@
 }
 
 @mixin link-size {
-  border-bottom-width: units("1px") * 3;
+  border-bottom-width: units('1px') * 3;
 }
 
 @mixin link-size-expanded {
-  border-bottom-width: units("1px") * 10;
+  border-bottom-width: units('1px') * 10;
 }
 
 //set flex with items aligned center and content justified space between
@@ -106,15 +106,15 @@
 
 .usa-link {
   @include link-theme(
-    "base-dark",
-    "base-dark",
-    "primary-darker",
-    "primary-darker"
+    'base-dark',
+    'base-dark',
+    'primary-darker',
+    'primary-darker'
   );
   text-decoration: none;
   @include link-size();
   border-bottom-style: solid;
-  border-bottom-color: color("primary");
+  border-bottom-color: color('primary');
   &:hover {
     @include link-size-expanded();
   }
@@ -126,10 +126,10 @@
 .usa-link--light {
   /* not currently being used */
   @include link-theme(
-    "accent-cool-lighter",
-    "accent-cool-lighter",
-    "primary-lighter",
-    "primary-lighter"
+    'accent-cool-lighter',
+    'accent-cool-lighter',
+    'primary-lighter',
+    'primary-lighter'
   );
 }
 
@@ -183,6 +183,7 @@
 
 //footer nav links
 .usa-footer__primary-section {
+  font-family: 'Space Mono';
   @include u-text('accent-cool-lighter');
   @include u-bg('base');
   .usa-link,
@@ -190,6 +191,10 @@
   .usa-footer__primary-link {
     @include u-text('accent-cool-lighter');
   }
+}
+
+.usa-footer__return-to-top {
+  color: color('base-darker');
 }
 
 //department logo, terms & policies, and copyright & trademarks
@@ -217,6 +222,22 @@
 .header__logo {
   width: units('card-lg');
   height: auto;
+}
+
+.footer {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.footer__copyright-trademark p {
+  margin: 0;
+  padding: 0;
+}
+
+.footer__terms,
+.footer__privacy {
+  margin: 0;
+  padding-top: 36px;
 }
 
 //custom NYC banner
