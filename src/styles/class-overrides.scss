@@ -116,6 +116,7 @@
   border-bottom-style: solid;
   border-bottom-color: color('primary');
   &:hover {
+    text-decoration: none;
     @include link-size-expanded();
   }
   &:active {
