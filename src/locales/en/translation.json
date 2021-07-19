@@ -1,31 +1,28 @@
 {
   "title": "Project Title",
-  "banner": "An official website of New York City government",
-  "nav": {
-    "dropdown": [],
-    "dropdownOne": {
-      "label": "Nav Label 1",
-      "simpleLinkOne": "Simple link one",
-      "simpleLinkTwo": "Simple link two"
+  "header": {
+    "banner": "An official website of New York City government",
+    "nav": {
+      "dropdowns": [
+        {
+          "label": "Nav Label 1",
+          "simpleLinks": ["Simple link one", "Simple link two"]
+        },
+        {
+          "label": "Nav Label 2",
+          "simpleLinks": ["Simple link three", "Simple link four"]
+        }
+      ],
+      "parentLinks": ["Parent link"]
     },
-    "dropdownTwo": {
-      "label": "Nav Label 2",
-      "simpleLinkThree": "Simple link three",
-      "simpleLinkFour": "Simple link four"
-    },
-    "parentOne": "Parent link"
-  },
-  "secondaryLink": [],
-  "secondaryLinks": {
-    "linkOne": "Link one",
-    "linkTwo": "Link two"
+    "secondaryLinks": ["Link one", "Link two"]
   },
   "footer": {
     "copyright": "© 2021 City of New York. All Rights Reserved.",
     "trademark": "NYC is a trademark and service mark of the City of New York.",
     "terms": "NYC Terms of Use",
     "privacy": "NYC Privacy Policy",
-    "primary": [
+    "primaryLinks": [
       "Primary Link 1",
       "Primary Link 2",
       "Primary Link 3",
