@@ -310,7 +310,7 @@
   border-radius: 50%;
 }
 
-@media (max-width: units('desktop')) {
+@media (min-width: units('mobile')) {
   .banner__language-selector,
   .header__title {
     display: none;
@@ -330,11 +330,18 @@
 }
 
 @media (min-width: units('desktop')) {
+  .banner__language-selector,
+  .header__title {
+    display: block;
+  }
   .header__logo-title {
     @include flex-center-space-between();
   }
-  .header__logo {
-    width: units('card-lg');
-    height: auto;
+  .usa-navbar {
+    .header__logo {
+      width: units('card-lg');
+      height: auto;
+    }
   }
+  
 }
