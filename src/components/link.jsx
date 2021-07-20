@@ -48,7 +48,6 @@ function Link({
   // external
   return (
     <USWDSLink
-      href={to}
       variant={
         variant !== 'nav' && 'external'
       } /* if not nav link, set it to be regular external link */
@@ -58,6 +57,7 @@ function Link({
         },
         className,
       )}
+      href={to}
       /* className is included if it has a truthy value */
       /* if nav link, set it to be both external and nav link */
       {...other}

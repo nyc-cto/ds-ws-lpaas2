@@ -45,7 +45,7 @@ function Header({ slug }) {
   }
   const parentLinkItems = parentLinks.map(
     (element, i) => i < parentLength && (
-    <Link to={element} variant="nav" key={element}>
+    <Link variant="nav" to={element} key={element}>
       {parentLinksLabels[i]}
     </Link>
     ),
@@ -64,10 +64,10 @@ function Header({ slug }) {
         <NavMenuButton onClick={onClick} label="Menu" />
       </div>
       <ExtendedNav
+        onToggleMobileNav={onClick}
         primaryItems={NavDropDown().concat(parentLinkItems)}
         secondaryItems={[]}
         mobileExpanded={expanded}
-        onToggleMobileNav={onClick}
         role="navigation"
       />
       <SkipNavContent />

@@ -52,11 +52,11 @@ function LanguageSelector({ slug }) {
       ) : (
         <Grid className="language-selector__nav">
           <NavDropDownButton
-            className="language-selector__nav-button"
             onToggle={() => {
               setIsOpen((prevOpen) => !prevOpen);
             }}
             menuId="language-selector"
+            className="language-selector__nav-button"
             isOpen={isOpen}
             label={(
               <div className="banner__language-selector-label font-heading-xs">
@@ -67,8 +67,8 @@ function LanguageSelector({ slug }) {
           />
           <Menu
             id="language-selector"
-            items={languageMenuItems}
             isOpen={isOpen}
+            items={languageMenuItems}
           />
         </Grid>
       )}
