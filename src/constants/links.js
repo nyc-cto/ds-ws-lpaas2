@@ -1,11 +1,11 @@
 export const header = {
   navDropdowns: [
-    ["link-one", "link-two"],
-    ["link-three", "link-four"],
+    ['link-one', 'link-two'],
+    ['link-three', 'link-four'],
   ],
-  parent: ["link-five"],
+  parent: ['link-five'],
 };
 
 export const footer = {
-  primary: ["link-one", "link-two", "link-three", "link-four"],
+  primary: ['link-one', 'link-two', 'link-three', 'link-four'],
 };
