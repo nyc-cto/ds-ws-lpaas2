@@ -8,9 +8,9 @@ $theme-font-path: '../../node_modules/uswds/src/fonts';
 $theme-hero-image: '../images/cto_hero.png';
 
 //Custom themes
-@import './mocto-theme.scss';
+@import './_mocto-theme.scss';
 
 @import 'uswds';
 
 //Class overrides and custom classes
-@import './class-overrides.scss';
+@import './_class-overrides.scss';
