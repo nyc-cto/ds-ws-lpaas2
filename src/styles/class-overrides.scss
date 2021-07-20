@@ -323,7 +323,7 @@
 }
 
 //mobile & tablet view
-@media (min-width: units('mobile')) {
+@media (max-width: 1023px) {
   //hide language selector button and project title
   .banner__language-selector,
   .header__title {
