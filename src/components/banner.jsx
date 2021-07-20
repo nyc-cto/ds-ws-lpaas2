@@ -3,8 +3,8 @@ import React from 'react';
 import { Grid, GridContainer } from '@trussworks/react-uswds';
 import PropTypes from 'prop-types';
 
-import LanguageSelector from '.';
 import nycLogo from '../images/logos/nyc_logo.png';
+import LanguageSelector from './language-selector';
 
 function Banner({ children, slug }) {
   return (
