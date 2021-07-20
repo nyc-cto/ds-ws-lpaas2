@@ -61,17 +61,18 @@
 }
 
 //set text, background, and border colors for language selector buttons
-@mixin language-selector($direction, $direction) {
+@mixin hover-border($direction, $border-color, $text, $bg) {
   &:hover {
     padding-#{$direction}: units('05');
-    border-#{$direction}: units('05') solid color('primary');
+    border-#{$direction}: units('05') solid color($border-color);
   }
   .usa-button--unstyled {
-    @include u-bg('base-dark');
+    @include u-text($text);
+    @include u-bg($bg);
     &:hover {
-      @include u-text('accent-cool-lighter');
+      @include u-text($text);
       text-decoration: none;
-      @include u-bg('base-dark');
+      @include u-bg($bg);
     }
   }
 }
@@ -282,17 +283,32 @@
   .banner__language-selector-item--RtoL {
     display: flex;
     flex-direction: row-reverse;
-    @include language-selector('right');
+    @include hover-border(
+      'right',
+      'primary',
+      'accent-cool-lighter',
+      'base-dark'
+    );
   }
   //left-to-right language buttons in dropdown menu
   .banner__language-selector-item--LtoR {
-    @include language-selector('left');
+    @include hover-border(
+      'left',
+      'primary',
+      'accent-cool-lighter',
+      'base-dark'
+    );
   }
   //all language buttons when there are 5 or fewer languages
   .banner__language-selector-button-group {
     @include flex-center-space-between();
     .banner__language-selector-item {
-      @include language-selector('top');
+      @include hover-border(
+        'top',
+        'primary',
+        'accent-cool-lighter',
+        'base-dark'
+      );
       margin: 0 units('105');
       &:hover {
         padding-top: 0;
@@ -357,6 +373,36 @@
           @include u-bg('base-dark');
         }
       }
+    }
+  }
+
+  .usa-accordion__button[aria-expanded='false'] {
+    @include hover-border(
+      'left',
+      'secondary',
+      'base-darker',
+      'accent-cool-lighter'
+    );
+    &:hover {
+      @include u-bg('accent-cool-lighter');
+      padding: 0.75rem 1rem;
+    }
+    // &::after {
+    //   border: units('2px') solid color('secondary');
+    // }
+  }
+  .usa-accordion__button[aria-expanded='true'] {
+    @include u-bg('accent-cool-lighter');
+    @include hover-border(
+      'left',
+      'secondary',
+      'base-darker',
+      'accent-cool-lighter'
+    );
+    &:hover {
+      @include u-bg('accent-cool-lighter');
+      @include u-text('base-darker');
+      padding: 0.75rem 1rem;
     }
   }
 }
