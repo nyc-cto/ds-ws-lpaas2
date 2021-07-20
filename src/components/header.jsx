@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+
+import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import {
   ExtendedNav,
   Header as HeaderUSWDS,
   NavMenuButton,
   Title,
 } from '@trussworks/react-uswds';
-import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { Link, NavDropDown } from '.';
-import Banner from './banner';
-import ctoLogoShortform from '../images/logos/cto_logo_shortform_dark.png';
+
+import { Banner, Link, NavDropDown } from '.';
 import { header as links } from '../constants/links';
+import ctoLogoShortform from '../images/logos/cto_logo_shortform_dark.png';
+
 import '@reach/skip-nav/styles.css';
 
 function Header({ slug }) {

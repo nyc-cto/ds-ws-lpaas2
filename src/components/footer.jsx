@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Footer as FooterUSWDS,
   FooterNav,
@@ -7,8 +8,8 @@ import {
   Logo,
 } from '@trussworks/react-uswds';
 import { useTranslation } from 'react-i18next';
-import { Link } from '.';
 
+import { Link } from '.';
 import logoImg from '../images/logos/cto_logo_horizontal_white.png';
 
 function Footer() {

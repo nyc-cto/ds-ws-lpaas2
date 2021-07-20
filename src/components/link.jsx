@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { Link as USWDSLink } from '@trussworks/react-uswds';
-import { Link as GatsbyLink } from 'gatsby';
 import classNames from 'classnames';
+import { Link as GatsbyLink } from 'gatsby';
+import PropTypes from 'prop-types';
 
 function Link({
   children,
@@ -55,7 +56,7 @@ function Link({
         {
           'usa-link--external usa-link--nav': variant === 'nav',
         },
-        className
+        className,
       )}
       /* className is included if it has a truthy value */
       /* if nav link, set it to be both external and nav link */

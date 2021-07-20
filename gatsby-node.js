@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
-const fs = require('fs-extra');
 const path = require('path');
-const _ = require('lodash');
+
+const fs = require('fs-extra');
 const { createFilePath } = require('gatsby-source-filesystem');
+const _ = require('lodash');
+
 const { languages } = require('./src/constants/languages');
 
 exports.onCreateWebpackConfig = ({ actions }) => {

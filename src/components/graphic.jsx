@@ -1,6 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { Grid, GridContainer } from '@trussworks/react-uswds';
+import PropTypes from 'prop-types';
 
 function Graphic({ graphics }) {
   return (
