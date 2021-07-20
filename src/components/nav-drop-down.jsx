@@ -67,7 +67,7 @@ function NavDropDown() {
   });
 
   /* dynamically create dropdowns */
-  const [open, setOpen] = useState();
+  const [open, setOpen] = useState(undefined);
   const navBarItems = dropdowns
     .map((_, i) => {
       const id = `navDropDown${i}`;
