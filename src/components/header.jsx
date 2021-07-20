@@ -36,10 +36,9 @@ function Header({ slug }) {
   const constFileLength = dropdownLinks.length;
   const dropdownLabels = t('header.nav.dropdowns');
   const translationFileLength = dropdownLabels.length;
-  const length =
-    translationFileLength > constFileLength
-      ? constFileLength
-      : translationFileLength;
+  const length = translationFileLength > constFileLength
+    ? constFileLength
+    : translationFileLength;
   /* take shorter length in case there is missing dropdowns in
       `../constants/links.js` (constants file) or `../locales/` (translation files) */
   if (translationFileLength !== constFileLength) {
@@ -50,7 +49,7 @@ function Header({ slug }) {
       } in /src/constants/link.js\n`,
       `${translationFileLength} dropdown${
         translationFileLength > 1 ? 's' : ''
-      } in /src/locales`
+      } in /src/locales`,
     );
   }
   // eslint-disable-next-line array-callback-return
@@ -60,10 +59,9 @@ function Header({ slug }) {
       const navDropdownLinksLength = navDropdownLinks.length;
       const navDropdownLinkLabels = t('header.nav.dropdowns')[i].simpleLinks;
       const navDropdownLinkLabelsLength = navDropdownLinkLabels.length;
-      const navDropdownLength =
-        navDropdownLinksLength > navDropdownLinkLabelsLength
-          ? navDropdownLinkLabelsLength
-          : navDropdownLinksLength;
+      const navDropdownLength = navDropdownLinksLength > navDropdownLinkLabelsLength
+        ? navDropdownLinkLabelsLength
+        : navDropdownLinksLength;
       /* take shorter length in case there is a missing link
         in `../constants/links.js` (constants file) or label in `../locales/` (translation files) */
       if (navDropdownLinksLength !== navDropdownLinkLabelsLength) {
@@ -76,18 +74,17 @@ function Header({ slug }) {
           '\n',
           'Link labels: ',
           navDropdownLinkLabels,
-          '\n'
+          '\n',
         );
       }
       dropdowns.push(
         navDropdownLinks.map(
-          (element, j) =>
-            j < navDropdownLength && (
-              <Link to={element} key={element}>
-                {navDropdownLinkLabels[j]}
-              </Link>
-            )
-        )
+          (element, j) => j < navDropdownLength && (
+          <Link to={element} key={element}>
+            {navDropdownLinkLabels[j]}
+          </Link>
+          ),
+        ),
       );
     } else dropdowns.push([]);
   });
@@ -97,10 +94,9 @@ function Header({ slug }) {
   const parentLinksLength = parentLinks.length;
   const parentLinksLabels = t('header.nav.parentLinks');
   const parentLinksLabelsLength = parentLinksLabels.length;
-  const parentLength =
-    parentLinksLength > parentLinksLabelsLength
-      ? parentLinksLabelsLength
-      : parentLinksLength;
+  const parentLength = parentLinksLength > parentLinksLabelsLength
+    ? parentLinksLabelsLength
+    : parentLinksLength;
   // take shorter length if is missing link in parentLinks or missing label in translation file
   if (parentLinksLength !== parentLinksLabelsLength) {
     console.error(
@@ -110,16 +106,15 @@ function Header({ slug }) {
       '\n',
       'Labels: ',
       parentLinksLabels,
-      '\n'
+      '\n',
     );
   }
   const parentLinkItems = parentLinks.map(
-    (element, i) =>
-      i < parentLength && (
-        <Link to={element} variant="nav" key={element}>
-          <span>{parentLinksLabels[i]}</span>
-        </Link>
-      )
+    (element, i) => i < parentLength && (
+    <Link to={element} variant="nav" key={element}>
+      <span>{parentLinksLabels[i]}</span>
+    </Link>
+    ),
   );
 
   const handleClick = (langKey) => {

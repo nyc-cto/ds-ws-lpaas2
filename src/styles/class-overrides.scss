@@ -331,6 +331,30 @@
   }
   .usa-nav {
     padding: 0;
+    .usa-nav__inner {
+      .usa-nav__primary-item {
+        a,
+        .usa-accordion__button[aria-expanded='false'],
+        .usa-accordion__button[aria-expanded='true'] {
+          @include hover-border(
+            'left',
+            'secondary',
+            'base-darker',
+            'accent-cool-lighter'
+          );
+          @include u-text('base-darker');
+          @include u-bg('accent-cool-lighter');
+          padding: 0 units(0.5);
+          margin: units(1.5) units(2);
+          &:hover {
+            @include u-text('base-darker');
+            @include u-bg('accent-cool-lighter');
+            padding: 0 units(0.5);
+            margin: units(1.5) units(2);
+          }
+        }
+      }
+    }
   }
   .usa-navbar {
     @include flex-center-space-between();
@@ -373,36 +397,6 @@
           @include u-bg('base-dark');
         }
       }
-    }
-  }
-
-  .usa-accordion__button[aria-expanded='false'] {
-    @include hover-border(
-      'left',
-      'secondary',
-      'base-darker',
-      'accent-cool-lighter'
-    );
-    &:hover {
-      @include u-bg('accent-cool-lighter');
-      padding: 0.75rem 1rem;
-    }
-    // &::after {
-    //   border: units('2px') solid color('secondary');
-    // }
-  }
-  .usa-accordion__button[aria-expanded='true'] {
-    @include u-bg('accent-cool-lighter');
-    @include hover-border(
-      'left',
-      'secondary',
-      'base-darker',
-      'accent-cool-lighter'
-    );
-    &:hover {
-      @include u-bg('accent-cool-lighter');
-      @include u-text('base-darker');
-      padding: 0.75rem 1rem;
     }
   }
 }
