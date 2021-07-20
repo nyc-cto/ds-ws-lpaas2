@@ -105,10 +105,14 @@ function Header({ slug }) {
       <Banner slug={slug}>{t('header.banner')}</Banner>
       <div className="usa-navbar">
         <div className="header__logo-title">
-          <img className="header__logo" src={ctoLogoShortform} alt="NYC CTO" />
+          <img
+            className="header__logo"
+            src={ctoLogoShortform}
+            alt={t('agency.shortformName')}
+          />
           <Title className="header__title">{t('title')}</Title>
         </div>
-        <NavMenuButton onClick={onClick} label="Menu" />
+        <NavMenuButton onClick={onClick} label={t('header.nav.menu')} />
       </div>
       <ExtendedNav
         primaryItems={NavDropDown()

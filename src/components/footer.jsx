@@ -47,7 +47,7 @@ function Footer() {
               <img
                 className="footer__logo"
                 src={logoImg}
-                alt={t('footer.secondary.heading.logo')}
+                alt={t('agency.longformName')}
               />
             )}
           />
