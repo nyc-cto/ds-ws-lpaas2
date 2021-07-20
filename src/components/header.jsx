@@ -129,20 +129,42 @@ function Header({ slug }) {
 
   const languageNavItems = (
     <div className="header__language-nav-container">
-      {languages.map((language) => (
-        <div className="header__language-nav-items">
-          <Button
-            onClick={() => {
-              handleClick(language.langKey);
-            }}
-            type="button"
-            unstyled
-            key={language.langKey}
-          >
-            {language.lang}
-          </Button>
-        </div>
-      ))}
+      <div className="header__language-nav-RtoL">
+        {languages
+          .filter((language) => language.isRtoL)
+          .map((language) => (
+            <div className="header__language-nav-items">
+              <Button
+                onClick={() => {
+                  handleClick(language.langKey);
+                }}
+                type="button"
+                unstyled
+                key={language.langKey}
+              >
+                {language.lang}
+              </Button>
+            </div>
+          ))}
+      </div>
+      <div className="header__language-nav-LtoR">
+        {languages
+          .filter((language) => !language.isRtoL)
+          .map((language) => (
+            <div className="header__language-nav-items">
+              <Button
+                onClick={() => {
+                  handleClick(language.langKey);
+                }}
+                type="button"
+                unstyled
+                key={language.langKey}
+              >
+                {language.lang}
+              </Button>
+            </div>
+          ))}
+      </div>
     </div>
   );
 
