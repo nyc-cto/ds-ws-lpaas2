@@ -98,48 +98,6 @@ function Header({ slug }) {
     </div>
   );
 
-  const navBarItems = [
-    <>
-      <NavDropDownButton
-        onToggle={() => {
-          /* TODO: should it extend on ENTER or BUTTON_DOWN? */
-          setIsOpen2(false);
-          setIsOpen1((prevOpen) => !prevOpen);
-        }}
-        menuId="navDropDownOne"
-        isOpen={isOpen1}
-        label={t('header.nav.dropdowns.0.label')}
-        // isCurrent={true} // TODO: update later
-      />
-      <Menu
-        key="one"
-        items={dropdowns[0]}
-        isOpen={isOpen1}
-        id="navDropDownOne"
-      />
-    </>,
-    <>
-      <NavDropDownButton
-        onToggle={() => {
-          setIsOpen1(false);
-          setIsOpen2((prevOpen) => !prevOpen);
-        }}
-        menuId="navDropDownTwo"
-        isOpen={isOpen2}
-        label={t('header.nav.dropdowns.1.label')}
-        // isCurrent={true} // TODO: update later
-      />
-      <Menu
-        key="two"
-        items={dropdowns[1]}
-        isOpen={isOpen2}
-        id="navDropDownTwo"
-      />
-    </>,
-  ]
-    .concat(parentLinkItems)
-    .concat(languageNavItems);
-
   return (
     <HeaderUSWDS extended>
       {/* <Router> */}
@@ -153,7 +111,9 @@ function Header({ slug }) {
         <NavMenuButton onClick={onClick} label="Menu" />
       </div>
       <ExtendedNav
-        primaryItems={NavDropDown().concat(parentLinkItems)}
+        primaryItems={NavDropDown()
+          .concat(parentLinkItems)
+          .concat(languageNavItems)}
         secondaryItems={[]}
         mobileExpanded={expanded}
         onToggleMobileNav={onClick}
