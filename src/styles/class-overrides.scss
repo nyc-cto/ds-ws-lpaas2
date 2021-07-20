@@ -76,10 +76,6 @@
   }
 }
 
-.usa-nav {
-  margin-bottom: units(2);
-}
-
 //background for hero callout, menus, and graphics section
 .usa-hero__callout,
 .usa-nav__submenu,
@@ -315,6 +311,9 @@
   .header__title {
     display: none;
   }
+  .usa-nav {
+    padding: 0;
+  }
   .usa-navbar {
     @include flex-center-space-between();
     margin: units(4) 0 units(2) 0;
@@ -327,12 +326,35 @@
       @include u-bg('secondary');
     }
   }
+  .header__language-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include u-bg('base-dark');
+    position: absolute;
+    bottom: 0;
+    padding: units(1) 0;
+    .header__language-nav-items {
+      .usa-button--unstyled {
+        @include u-text('accent-cool-lighter');
+        &:hover {
+          @include u-text('primary');
+          @include u-bg('base-dark');
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: units('desktop')) {
   .banner__language-selector,
   .header__title {
     display: block;
+  }
+  .usa-nav {
+    margin-bottom: units(2);
   }
   .header__logo-title {
     @include flex-center-space-between();

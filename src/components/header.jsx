@@ -127,20 +127,24 @@ function Header({ slug }) {
     navigate(`/${langKey}/${slug}`);
   };
 
-  const languageNavItems = languages.map((language) => (
-    <div className="header__language-nav-items">
-      <Button
-        onClick={() => {
-          handleClick(language.langKey);
-        }}
-        type="button"
-        unstyled
-        key={language.langKey}
-      >
-        {language.lang}
-      </Button>
+  const languageNavItems = (
+    <div className="header__language-nav-container">
+      {languages.map((language) => (
+        <div className="header__language-nav-items">
+          <Button
+            onClick={() => {
+              handleClick(language.langKey);
+            }}
+            type="button"
+            unstyled
+            key={language.langKey}
+          >
+            {language.lang}
+          </Button>
+        </div>
+      ))}
     </div>
-  ));
+  );
 
   const navBarItems = [
     <>
