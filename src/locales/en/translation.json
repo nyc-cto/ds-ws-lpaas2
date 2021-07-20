@@ -2,6 +2,7 @@
   "title": "Project Title",
   "header": {
     "banner": "An official website of New York City government",
+    "language": "Language",
     "nav": {
       "dropdowns": [
         {
