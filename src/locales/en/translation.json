@@ -4,6 +4,7 @@
     "longformName": "NYC Mayor's Office of the Chief Technology Officer",
     "shortformName": "NYC CTO"
   },
+  "nyc": "NYC",
   "header": {
     "banner": "An official website of New York City government",
     "language": "Language",
@@ -18,6 +19,7 @@
           "simpleLinks": ["Simple link three", "Simple link four"]
         }
       ],
+      "menu": "Menu",
       "parentLinks": ["Parent link"]
     },
     "secondaryLinks": ["Link one", "Link two"]

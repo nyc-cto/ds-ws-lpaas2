@@ -4,6 +4,7 @@
     "longformName": "[zh_HANT] NYC Mayor's Office of the Chief Technology Officer",
     "shortformName": "[zh_HANT] NYC CTO"
   },
+  "nyc": "[zh_HANT] NYC",
   "header": {
     "banner": "[zh_HANT] An official website of New York City government",
     "language": "[zh_HANT] Language",
@@ -11,11 +12,17 @@
       "dropdowns": [
         {
           "label": "[zh_HANT] Nav Label 1",
-          "simpleLinks": ["[zh_HANT] Simple link one", "[zh_HANT] Simple link two"]
+          "simpleLinks": [
+            "[zh_HANT] Simple link one",
+            "[zh_HANT] Simple link two"
+          ]
         },
         {
           "label": "[zh_HANT] Nav Label 2",
-          "simpleLinks": ["[zh_HANT] Simple link three", "[zh_HANT] Simple link four"]
+          "simpleLinks": [
+            "[zh_HANT] Simple link three",
+            "[zh_HANT] Simple link four"
+          ]
         }
       ],
       "menu": "[zh_HANT] Menu",
