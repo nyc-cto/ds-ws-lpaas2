@@ -25,6 +25,7 @@ import '../styles/index.scss';
 function Landing({ data, location }) {
   const { t, i18n } = useTranslation();
 
+  // TODO: try to use LanguageDetector
   useEffect(() => {
     const path = location.pathname;
     const lang = path.split('/')[1];
