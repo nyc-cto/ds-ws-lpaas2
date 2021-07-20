@@ -332,7 +332,24 @@
   .usa-nav {
     padding: 0;
     .usa-nav__inner {
+      //nav close button
+      .usa-nav__close {
+        margin: units(1);
+        padding: units(1);
+      }
       .usa-nav__primary-item {
+        border: none;
+        //these submenu items are shown when a nav label is clicked and the accordion button expands
+        .usa-nav__submenu {
+          @include u-bg('accent-cool-lighter');
+          .usa-nav__submenu-item {
+            @include u-text('base-darker');
+            @include u-bg('accent-cool-lighter');
+            border: none;
+          }
+        }
+        //links and nav label buttons in the nav menu
+        //styling applies when accordion buttons are open and closed
         a,
         .usa-accordion__button[aria-expanded='false'],
         .usa-accordion__button[aria-expanded='true'] {
@@ -349,6 +366,7 @@
           &:hover {
             @include u-text('base-darker');
             @include u-bg('accent-cool-lighter');
+            @include u-text('bold');
             padding: 0 units(0.5);
             margin: units(1.5) units(2);
           }
@@ -356,22 +374,29 @@
       }
     }
   }
+
+  //header in mobile view
   .usa-navbar {
     @include flex-center-space-between();
     margin: units(4) 0 units(2) 0;
+    //smaller logo size
     .header__logo {
       width: units('card');
       height: auto;
       padding-left: units(2);
     }
+    //nav menu button
     .usa-menu-btn {
       @include u-bg('secondary');
     }
   }
+
+  //languages in nav bar
   .header__language-nav-container {
-    @include u-bg('base-dark');
+    //position languages at the bottom
     position: absolute;
     bottom: 0;
+    @include u-bg('base-dark');
     padding: units(1) 0;
     //right align right to left languages
     .header__language-nav-RtoL {
@@ -389,6 +414,7 @@
       flex-direction: row;
       flex-wrap: wrap;
     }
+    //language button styling
     .header__language-nav-items {
       .usa-button--unstyled {
         @include u-text('accent-cool-lighter');
@@ -420,6 +446,11 @@
       height: auto;
     }
   }
+
+  /*hide language buttons from nav in desktop view 
+  these buttons will be in the language selector dropdown
+  or they will be in the banner
+  in mobile view they are part of the nav menu */
   .header__language-nav-items {
     display: none;
   }
