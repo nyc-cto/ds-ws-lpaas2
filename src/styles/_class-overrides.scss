@@ -1,4 +1,4 @@
-/* MIXINS */
+/* || MIXINS */
 
 //set text and background colors for NYC buttons
 @mixin button-theme(
@@ -79,7 +79,7 @@
   }
 }
 
-/* GENERAL */
+/* || GENERAL */
 
 //background for hero callout, menus, and graphics section
 .usa-hero__callout,
@@ -88,7 +88,12 @@
   @include u-bg('base-dark');
 }
 
-/* LINKS */
+//circular images in graphics section
+.graphic_image--circle {
+  border-radius: 50%;
+}
+
+/* || LINKS */
 
 .usa-link {
   @include link-theme(
@@ -124,7 +129,7 @@
   );
 }
 
-/* BUTTONS */
+/* || BUTTONS */
 
 //primary button
 .usa-button {
@@ -174,7 +179,7 @@
   }
 }
 
-/* HEADER */
+/* || HEADER & NAVIGATION */
 
 .header__logo-title {
   .usa-logo__text {
@@ -183,8 +188,6 @@
     text-transform: uppercase;
   }
 }
-
-/* MEDIA QUERIES */
 
 //mobile & tablet view
 @media (min-width: units('mobile')) {
@@ -389,7 +392,7 @@
   }
 }
 
-/* BANNER */
+/* || BANNER & LANGUAGE SELECTION */
 
 //custom NYC banner
 .banner {
@@ -462,14 +465,7 @@
   }
 }
 
-/* BODY */
-
-//circular images in graphics section
-.graphic_image--circle {
-  border-radius: 50%;
-}
-
-/* FOOTER */
+/* || FOOTER */
 
 //footer nav links
 .usa-footer__primary-section {
