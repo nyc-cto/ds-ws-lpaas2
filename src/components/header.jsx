@@ -12,8 +12,8 @@ import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import { useTranslation } from 'react-i18next';
 import { Link, NavDropDown } from '.';
 import Banner from './banner';
-import ctoLogoShortform from '../images/logos/cto_logo_shortform_dark.png';
-import { header as links } from '../constants/links';
+import { logoHeader } from '../images';
+import { headerLinks as links } from '../constants/links';
 import { languages } from '../constants/languages';
 import '@reach/skip-nav/styles.css';
 
@@ -105,10 +105,14 @@ function Header({ slug }) {
       <Banner slug={slug}>{t('header.banner')}</Banner>
       <div className="usa-navbar">
         <div className="header__logo-title">
-          <img className="header__logo" src={ctoLogoShortform} alt="NYC CTO" />
+          <img
+            className="header__logo"
+            src={logoHeader}
+            alt={t('agency.shortformName')}
+          />
           <Title className="header__title">{t('title')}</Title>
         </div>
-        <NavMenuButton onClick={onClick} label="Menu" />
+        <NavMenuButton onClick={onClick} label={t('header.nav.menu')} />
       </div>
       <ExtendedNav
         primaryItems={NavDropDown()
