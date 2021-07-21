@@ -14,7 +14,7 @@ function Banner({ children, slug }) {
           <Grid row gap className="banner__logo-title">
             <Grid>
               <div>
-                <img src={logoBanner} alt={t('nyc')} />
+                <img src={logoBanner} alt={t('location')} />
               </div>
             </Grid>
             <Grid>
