@@ -11,10 +11,10 @@ function NavDropDown() {
 
   /* dynamically store dropdowns */
   const dropdowns = [];
-  const dropdownLinks = links.navDropdowns;
-  const constFileLength = dropdownLinks.length;
-  const dropdownLabels = t('header.nav.dropdowns');
-  const translationFileLength = dropdownLabels.length;
+  const dropDownLinks = links.navDropDowns;
+  const constFileLength = dropDownLinks.length;
+  const dropDownLabels = t('header.nav.dropdowns');
+  const translationFileLength = dropDownLabels.length;
   const length = translationFileLength > constFileLength
     ? constFileLength
     : translationFileLength;
@@ -32,35 +32,35 @@ function NavDropDown() {
     );
   }
   // eslint-disable-next-line array-callback-return
-  dropdownLinks.map((_, i) => {
+  dropDownLinks.map((_, i) => {
     if (i < length) {
-      const navDropdownLinks = dropdownLinks[i];
-      const navDropdownLinksLength = navDropdownLinks.length;
-      const navDropdownLinkLabels = t('header.nav.dropdowns')[i].simpleLinks;
-      const navDropdownLinkLabelsLength = navDropdownLinkLabels.length;
-      const navDropdownLength = navDropdownLinksLength > navDropdownLinkLabelsLength
-        ? navDropdownLinkLabelsLength
-        : navDropdownLinksLength;
+      const navDropDownLinks = dropDownLinks[i];
+      const navDropDownLinksLength = navDropDownLinks.length;
+      const navDropDownLinkLabels = t('header.nav.dropdowns')[i].simpleLinks;
+      const navDropDownLinkLabelsLength = navDropDownLinkLabels.length;
+      const navDropDownLength = navDropDownLinksLength > navDropDownLinkLabelsLength
+        ? navDropDownLinkLabelsLength
+        : navDropDownLinksLength;
       /* take shorter length in case there is a missing link
         in `../constants/links.js` (constants file) or label in `../locales/` (translation files) */
-      if (navDropdownLinksLength !== navDropdownLinkLabelsLength) {
+      if (navDropDownLinksLength !== navDropDownLinkLabelsLength) {
         console.error(
           `Different number of links in /src/constants/link.js and link labels in /src/locales for dropdown ${
             i + 1
           }\n`,
           'Links: ',
-          navDropdownLinks,
+          navDropDownLinks,
           '\n',
           'Link labels: ',
-          navDropdownLinkLabels,
+          navDropDownLinkLabels,
           '\n',
         );
       }
       dropdowns.push(
-        navDropdownLinks.map(
-          (element, j) => j < navDropdownLength && (
+        navDropDownLinks.map(
+          (element, j) => j < navDropDownLength && (
           <Link to={element} key={element}>
-            {navDropdownLinkLabels[j]}
+            {navDropDownLinkLabels[j]}
           </Link>
           ),
         ),
