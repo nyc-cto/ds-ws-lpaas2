@@ -7,14 +7,6 @@ const _ = require('lodash');
 
 const { languages } = require('./src/constants/languages');
 
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    node: {
-      fs: 'empty',
-    },
-  });
-};
-
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
   languages.map((lang) => createRedirect({
@@ -86,4 +78,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       },
     });
   }
+};
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: 'empty',
+    },
+  });
 };
