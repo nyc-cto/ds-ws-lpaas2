@@ -115,6 +115,7 @@
     'primary-darker'
   );
   text-decoration: none;
+  width: fit-content;
   @include link-size();
   border-bottom-style: solid;
   border-bottom-color: color('primary');
@@ -339,6 +340,7 @@
       }
       .usa-nav__primary-item {
         border: none;
+        width: fit-content;
         //these submenu items are shown when a nav label is clicked and the accordion button expands
         .usa-nav__submenu {
           @include u-bg('accent-cool-lighter');
