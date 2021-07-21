@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import { Grid, GridContainer } from '@trussworks/react-uswds';
 import { LanguageSelector } from '.';
-import nycLogo from '../images/logos/nyc_logo.png';
+import { logoBanner } from '../images';
 
 function Banner({ children, slug }) {
+  const { t } = useTranslation();
   return (
     <div className="usa-section--dark">
       <GridContainer>
@@ -12,7 +14,7 @@ function Banner({ children, slug }) {
           <Grid row gap className="banner__logo-title">
             <Grid>
               <div>
-                <img src={nycLogo} alt="NYC" />
+                <img src={logoBanner} alt={t('location')} />
               </div>
             </Grid>
             <Grid>

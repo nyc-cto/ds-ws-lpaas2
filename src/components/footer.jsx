@@ -8,12 +8,14 @@ import {
 } from '@trussworks/react-uswds';
 import { useTranslation } from 'react-i18next';
 import { Link } from '.';
+import { footerLinks as links } from '../constants/links';
 
-import logoImg from '../images/logos/cto_logo_horizontal_white.png';
+import { logoFooter } from '../images';
 
 function Footer() {
   const { t } = useTranslation();
-  const primaryLinks = ['/link-one', '/link-two', '/link-three', '/link-four'];
+  const primaryLinks = links.primary;
+  const secondaryLinks = links.secondary;
 
   return (
     <FooterUSWDS
@@ -46,8 +48,8 @@ function Footer() {
             image={(
               <img
                 className="footer__logo"
-                src={logoImg}
-                alt={t('footer.secondary.heading.logo')}
+                src={logoFooter}
+                alt={t('agency.longformName')}
               />
             )}
           />
@@ -60,10 +62,10 @@ function Footer() {
               <p>{t('footer.trademark')}</p>
             </Grid>
             <Grid className="footer__terms">
-              <Link to="/">{t('footer.terms')}</Link>
+              <Link to={secondaryLinks.terms}>{t('footer.terms')}</Link>
             </Grid>
             <Grid className="footer__privacy">
-              <Link to="/">{t('footer.privacy')}</Link>
+              <Link to={secondaryLinks.privacy}>{t('footer.privacy')}</Link>
             </Grid>
           </Grid>
         </Grid>
