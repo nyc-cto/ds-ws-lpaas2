@@ -12,7 +12,7 @@ import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import { useTranslation } from 'react-i18next';
 import { Link, NavDropDown } from '.';
 import Banner from './banner';
-import ctoLogoShortform from '../images/logos/cto_logo_shortform_dark.png';
+import { logoShortform } from '../images';
 import { headerLinks as links } from '../constants/links';
 import { languages } from '../constants/languages';
 import '@reach/skip-nav/styles.css';
@@ -29,9 +29,10 @@ function Header({ slug }) {
   const parentLinksLength = parentLinks.length;
   const parentLinksLabels = t('header.nav.parentLinks');
   const parentLinksLabelsLength = parentLinksLabels.length;
-  const parentLength = parentLinksLength > parentLinksLabelsLength
-    ? parentLinksLabelsLength
-    : parentLinksLength;
+  const parentLength =
+    parentLinksLength > parentLinksLabelsLength
+      ? parentLinksLabelsLength
+      : parentLinksLength;
   // take shorter length if is missing link in parentLinks or missing label in translation file
   if (parentLinksLength !== parentLinksLabelsLength) {
     console.error(
@@ -41,15 +42,16 @@ function Header({ slug }) {
       '\n',
       'Labels: ',
       parentLinksLabels,
-      '\n',
+      '\n'
     );
   }
   const parentLinkItems = parentLinks.map(
-    (element, i) => i < parentLength && (
-    <Link to={element} variant="nav" key={element}>
-      <span>{parentLinksLabels[i]}</span>
-    </Link>
-    ),
+    (element, i) =>
+      i < parentLength && (
+        <Link to={element} variant="nav" key={element}>
+          <span>{parentLinksLabels[i]}</span>
+        </Link>
+      )
   );
 
   const handleClick = (langKey) => {
@@ -107,7 +109,7 @@ function Header({ slug }) {
         <div className="header__logo-title">
           <img
             className="header__logo"
-            src={ctoLogoShortform}
+            src={logoShortform}
             alt={t('agency.shortformName')}
           />
           <Title className="header__title">{t('title')}</Title>

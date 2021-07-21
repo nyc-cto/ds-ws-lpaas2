@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Grid, GridContainer } from '@trussworks/react-uswds';
 import { LanguageSelector } from '.';
-import nycLogo from '../images/logos/nyc_logo.png';
+import { logo } from '../images';
 
 function Banner({ children, slug }) {
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ function Banner({ children, slug }) {
           <Grid row gap className="banner__logo-title">
             <Grid>
               <div>
-                <img src={nycLogo} alt={t('nyc')} />
+                <img src={logo} alt={t('nyc')} />
               </div>
             </Grid>
             <Grid>

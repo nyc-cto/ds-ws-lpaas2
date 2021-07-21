@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from '.';
 import { footerLinks as links } from '../constants/links';
 
-import logoImg from '../images/logos/cto_logo_horizontal_white.png';
+import { logoHorizontal } from '../images';
 
 function Footer() {
   const { t } = useTranslation();
@@ -20,15 +20,15 @@ function Footer() {
   return (
     <FooterUSWDS
       size="medium"
-      returnToTop={(
+      returnToTop={
         <GridContainer>
           <Link to="#top" className="usa-footer__return-to-top">
             Return to top
           </Link>
           {/* TODO: for some reason class name has to be manually added */}
         </GridContainer>
-      )}
-      primary={(
+      }
+      primary={
         <FooterNav
           size="medium"
           links={Array.from(
@@ -37,21 +37,21 @@ function Footer() {
               <Link className="usa-footer__primary-link" to={primaryLinks[i]}>
                 {t('footer.primaryLinks')[i]}
               </Link>
-            ),
+            )
           )}
         />
-      )}
-      secondary={(
+      }
+      secondary={
         <Grid row gap>
           <Logo
             size="medium"
-            image={(
+            image={
               <img
                 className="footer__logo"
-                src={logoImg}
+                src={logoHorizontal}
                 alt={t('agency.longformName')}
               />
-            )}
+            }
           />
           <Grid
             className="usa-footer__contact-links footer"
@@ -69,7 +69,7 @@ function Footer() {
             </Grid>
           </Grid>
         </Grid>
-      )}
+      }
     />
   );
 }
