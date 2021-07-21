@@ -29,10 +29,9 @@ function Header({ slug }) {
   const parentLinksLength = parentLinks.length;
   const parentLinksLabels = t('header.nav.parentLinks');
   const parentLinksLabelsLength = parentLinksLabels.length;
-  const parentLength =
-    parentLinksLength > parentLinksLabelsLength
-      ? parentLinksLabelsLength
-      : parentLinksLength;
+  const parentLength = parentLinksLength > parentLinksLabelsLength
+    ? parentLinksLabelsLength
+    : parentLinksLength;
   // take shorter length if is missing link in parentLinks or missing label in translation file
   if (parentLinksLength !== parentLinksLabelsLength) {
     console.error(
@@ -42,16 +41,15 @@ function Header({ slug }) {
       '\n',
       'Labels: ',
       parentLinksLabels,
-      '\n'
+      '\n',
     );
   }
   const parentLinkItems = parentLinks.map(
-    (element, i) =>
-      i < parentLength && (
-        <Link to={element} variant="nav" key={element}>
-          <span>{parentLinksLabels[i]}</span>
-        </Link>
-      )
+    (element, i) => i < parentLength && (
+    <Link to={element} variant="nav" key={element}>
+      <span>{parentLinksLabels[i]}</span>
+    </Link>
+    ),
   );
 
   const handleClick = (langKey) => {
