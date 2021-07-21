@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from '.';
 import { footerLinks as links } from '../constants/links';
 
-import { logoHorizontal } from '../images';
+import { logoFooter } from '../images';
 
 function Footer() {
   const { t } = useTranslation();
@@ -48,7 +48,7 @@ function Footer() {
             image={(
               <img
                 className="footer__logo"
-                src={logoHorizontal}
+                src={logoFooter}
                 alt={t('agency.longformName')}
               />
             )}

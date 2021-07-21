@@ -12,7 +12,7 @@ import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import { useTranslation } from 'react-i18next';
 import { Link, NavDropDown } from '.';
 import Banner from './banner';
-import { logoShortform } from '../images';
+import { logoHeader } from '../images';
 import { headerLinks as links } from '../constants/links';
 import { languages } from '../constants/languages';
 import '@reach/skip-nav/styles.css';
@@ -107,7 +107,7 @@ function Header({ slug }) {
         <div className="header__logo-title">
           <img
             className="header__logo"
-            src={logoShortform}
+            src={logoHeader}
             alt={t('agency.shortformName')}
           />
           <Title className="header__title">{t('title')}</Title>

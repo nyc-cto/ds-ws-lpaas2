@@ -1,3 +1,3 @@
-export { default as logo } from './logos/nyc_logo.png';
-export { default as logoShortform } from './logos/cto_logo_shortform_dark.png';
-export { default as logoHorizontal } from './logos/cto_logo_horizontal_white.png';
+export { default as logoBanner } from './logos/logo-banner.png';
+export { default as logoHeader } from './logos/logo-header.png';
+export { default as logoFooter } from './logos/logo-footer.png';
