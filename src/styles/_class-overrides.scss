@@ -1,3 +1,5 @@
+/* MIXINS */
+
 //set text and background colors for NYC buttons
 @mixin button-theme(
   $text-color,
@@ -77,6 +79,8 @@
   }
 }
 
+/* GENERAL */
+
 //background for hero callout, menus, and graphics section
 .usa-hero__callout,
 .usa-nav__submenu,
@@ -84,28 +88,7 @@
   @include u-bg('base-dark');
 }
 
-// .usa-nav__primary {
-//   //nav button when dropdown menu is closed
-//   .usa-accordion__button[aria-expanded='false'] {
-//     @include u-text('disabled-dark');
-//     &:hover {
-//       @include u-text('base-dark');
-//     }
-//     &::after {
-//       border: units('2px') solid color('secondary');
-//     }
-//   }
-//   //nav button when dropdown menu is open
-//   .usa-accordion__button[aria-expanded='true'] {
-//     @include u-bg('base-dark');
-//   }
-//   .usa-nav__primary-item > a {
-//     @include u-text('disabled-dark');
-//     &:hover {
-//       @include u-text('base-dark');
-//     }
-//   }
-// }
+/* LINKS */
 
 .usa-link {
   @include link-theme(
@@ -140,6 +123,8 @@
     'primary-lighter'
   );
 }
+
+/* BUTTONS */
 
 //primary button
 .usa-button {
@@ -189,6 +174,8 @@
   }
 }
 
+/* HEADER */
+
 .header__logo-title {
   .usa-logo__text {
     @include u-font-size('body', 'md');
@@ -197,131 +184,7 @@
   }
 }
 
-//footer nav links
-.usa-footer__primary-section {
-  font-family: 'Space Mono';
-  @include u-text('accent-cool-lighter');
-  @include u-bg('base');
-  margin-top: units(2);
-  padding: units(3) 0;
-  .usa-link,
-  .usa-link--external,
-  .usa-footer__primary-link {
-    @include u-text('accent-cool-lighter');
-    padding: 0;
-  }
-}
-
-.usa-footer__return-to-top {
-  @include u-text('base-darker');
-  padding: 0;
-}
-
-//department logo, terms & policies, and copyright & trademarks
-.usa-footer__secondary-section {
-  @include u-text('accent-cool-lighter');
-  @include u-bg('base-dark');
-  .usa-link,
-  .usa-link--external {
-    @include u-text('accent-cool-lighter');
-  }
-  .footer__logo {
-    width: units('mobile');
-    height: auto;
-  }
-}
-
-.footer {
-  @include u-font-size('body', 1);
-  @include u-text('bold');
-}
-
-.footer__copyright-trademark p {
-  margin: 0;
-  padding: 0;
-}
-
-.footer__terms,
-.footer__privacy {
-  margin: 0;
-  padding-top: units(5);
-}
-
-//custom NYC banner
-.banner {
-  @include flex-center-space-between();
-  .banner__logo-title,
-  .banner__language-selector-label {
-    @include flex-center-space-between();
-  }
-  //language nav button
-  .usa-accordion__button {
-    background-image: none;
-    padding: 0 units('105');
-    p {
-      padding-left: units('105');
-    }
-    //language nav button when dropdown menu is closed
-    &[aria-expanded='false'] {
-      @include u-text('base-dark');
-      @include u-bg('primary');
-      p {
-        @include u-text('base-dark');
-      }
-    }
-    //language nav button when dropdown menu is open
-    &[aria-expanded='true'] {
-      @include u-text('accent-cool-lighter');
-      @include u-bg('primary');
-    }
-  }
-  //language buttons that look like links
-  .usa-button--unstyled {
-    @include u-text('accent-cool-lighter');
-    text-decoration: none;
-  }
-  //right-to-left language buttons in dropdown menu
-  .banner__language-selector-item--RtoL {
-    display: flex;
-    flex-direction: row-reverse;
-    @include hover-border(
-      'right',
-      'primary',
-      'accent-cool-lighter',
-      'base-dark'
-    );
-  }
-  //left-to-right language buttons in dropdown menu
-  .banner__language-selector-item--LtoR {
-    @include hover-border(
-      'left',
-      'primary',
-      'accent-cool-lighter',
-      'base-dark'
-    );
-  }
-  //all language buttons when there are 5 or fewer languages
-  .banner__language-selector-button-group {
-    @include flex-center-space-between();
-    .banner__language-selector-item {
-      @include hover-border(
-        'top',
-        'primary',
-        'accent-cool-lighter',
-        'base-dark'
-      );
-      margin: 0 units('105');
-      &:hover {
-        padding-top: 0;
-      }
-    }
-  }
-}
-
-//circular images in graphics section
-.graphic_image--circle {
-  border-radius: 50%;
-}
+/* MEDIA QUERIES */
 
 //mobile & tablet view
 @media (min-width: units('mobile')) {
@@ -524,4 +387,136 @@
   .header__language-nav-items {
     display: none;
   }
+}
+
+/* BANNER */
+
+//custom NYC banner
+.banner {
+  @include flex-center-space-between();
+  .banner__logo-title,
+  .banner__language-selector-label {
+    @include flex-center-space-between();
+  }
+  //language nav button
+  .usa-accordion__button {
+    background-image: none;
+    padding: 0 units('105');
+    p {
+      padding-left: units('105');
+    }
+    //language nav button when dropdown menu is closed
+    &[aria-expanded='false'] {
+      @include u-text('base-dark');
+      @include u-bg('primary');
+      p {
+        @include u-text('base-dark');
+      }
+    }
+    //language nav button when dropdown menu is open
+    &[aria-expanded='true'] {
+      @include u-text('accent-cool-lighter');
+      @include u-bg('primary');
+    }
+  }
+  //language buttons that look like links
+  .usa-button--unstyled {
+    @include u-text('accent-cool-lighter');
+    text-decoration: none;
+  }
+  //right-to-left language buttons in dropdown menu
+  .banner__language-selector-item--RtoL {
+    display: flex;
+    flex-direction: row-reverse;
+    @include hover-border(
+      'right',
+      'primary',
+      'accent-cool-lighter',
+      'base-dark'
+    );
+  }
+  //left-to-right language buttons in dropdown menu
+  .banner__language-selector-item--LtoR {
+    @include hover-border(
+      'left',
+      'primary',
+      'accent-cool-lighter',
+      'base-dark'
+    );
+  }
+  //all language buttons when there are 5 or fewer languages
+  .banner__language-selector-button-group {
+    @include flex-center-space-between();
+    .banner__language-selector-item {
+      @include hover-border(
+        'top',
+        'primary',
+        'accent-cool-lighter',
+        'base-dark'
+      );
+      margin: 0 units('105');
+      &:hover {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+/* BODY */
+
+//circular images in graphics section
+.graphic_image--circle {
+  border-radius: 50%;
+}
+
+/* FOOTER */
+
+//footer nav links
+.usa-footer__primary-section {
+  font-family: 'Space Mono';
+  @include u-text('accent-cool-lighter');
+  @include u-bg('base');
+  margin-top: units(2);
+  padding: units(3) 0;
+  .usa-link,
+  .usa-link--external,
+  .usa-footer__primary-link {
+    @include u-text('accent-cool-lighter');
+    padding: 0;
+  }
+}
+
+.usa-footer__return-to-top {
+  @include u-text('base-darker');
+  padding: 0;
+}
+
+//department logo, terms & policies, and copyright & trademarks
+.usa-footer__secondary-section {
+  @include u-text('accent-cool-lighter');
+  @include u-bg('base-dark');
+  .usa-link,
+  .usa-link--external {
+    @include u-text('accent-cool-lighter');
+  }
+  .footer__logo {
+    width: units('mobile');
+    height: auto;
+  }
+}
+
+.footer {
+  @include u-font-size('body', 1);
+  @include u-text('bold');
+}
+
+.footer__copyright-trademark p {
+  margin: 0;
+  padding: 0;
+}
+
+.footer__terms,
+.footer__privacy {
+  margin: 0;
+  padding-top: units(5);
 }
