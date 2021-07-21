@@ -17,7 +17,7 @@ function Graphic({ graphics }) {
               >
                 {graphic.image && (
                   <img
-                    className="usa-media-block__img graphic_image--circle"
+                    className="graphic_image--circle usa-media-block__img"
                     src={graphic.image}
                     alt={graphic.imageDescription}
                   />
