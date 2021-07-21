@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, NavDropDown } from '.';
 import Banner from './banner';
 import ctoLogoShortform from '../images/logos/cto_logo_shortform_dark.png';
-import { header as links } from '../constants/links';
+import { headerLinks as links } from '../constants/links';
 import { languages } from '../constants/languages';
 import '@reach/skip-nav/styles.css';
 
