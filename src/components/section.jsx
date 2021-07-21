@@ -3,7 +3,7 @@ import React from 'react';
 import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
 import PropTypes from 'prop-types';
 
-function Section({ section, buttons }) {
+function Section({ buttons, section }) {
   return (
     <GridContainer className="usa-section">
       <Grid row>

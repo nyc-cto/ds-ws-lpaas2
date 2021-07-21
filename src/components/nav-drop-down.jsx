@@ -69,7 +69,7 @@ function NavDropDown() {
   });
 
   /* dynamically create dropdowns */
-  const [open, setOpen] = useState(undefined);
+  const [isOpen, setIsOpen] = useState(undefined);
   const navBarItems = dropdowns
     .map((_, i) => {
       const id = `navDropDown${i}`;
@@ -79,16 +79,16 @@ function NavDropDown() {
         <>
           <NavDropDownButton
             onToggle={() => {
-              if (open === id) setOpen(undefined);
-              else setOpen(id);
+              if (isOpen === id) setIsOpen(undefined);
+              else setIsOpen(id);
             }}
             menuId={id}
-            isOpen={open === id}
+            isOpen={isOpen === id}
             label={t(`header.nav.dropdowns.${i}.label`)}
           />
           <Menu
             id={id}
-            isOpen={open === id}
+            isOpen={isOpen === id}
             items={dropdowns[i]}
             key={iStr}
           />

@@ -7,12 +7,12 @@ import { Link as GatsbyLink } from 'gatsby';
 import PropTypes from 'prop-types';
 
 function Link({
-  children,
-  to,
+  variant,
   className,
   activeClassName, // Pass only to GatsbyLink
   partiallyActive, // Pass only to GatsbyLink
-  variant,
+  to,
+  children,
   ...other
 }) {
   const isInternal = /^\/(?!\/)/.test(to); // Assumes that any internal link will start with exactly one slash, and that anything else is external
@@ -22,10 +22,10 @@ function Link({
       // Navigation link
       return (
         <GatsbyLink
-          to={to}
           className={classNames('usa-link', 'usa-link--nav', className)} // quoted classes are always included while className is included if it has a truthy value
           activeClassName={activeClassName}
           partiallyActive={partiallyActive}
+          to={to}
           {...other}
         >
           {children}
@@ -35,10 +35,10 @@ function Link({
     return (
       // Use Gatsby Link for internal links
       <GatsbyLink
-        to={to}
         className={classNames('usa-link', className)} // usa-link is always included while className is included if it has a truthy value
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
+        to={to}
         {...other}
       >
         {children}
