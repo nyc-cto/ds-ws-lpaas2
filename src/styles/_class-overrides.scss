@@ -225,12 +225,12 @@
 /* || MOBILE */
 
 @media (min-width: units('mobile')) {
-
   /* || HEADER MOBILE */
 
-  //hide language selector button and project title
+  //hide language selector button, project title, and banner text
   .banner__language-selector,
-  .header__title {
+  .header__title,
+  .banner__info {
     display: none;
   }
   .usa-nav {
@@ -363,7 +363,7 @@
 
   .footer {
     @include u-font-size('body', 1);
-    @include u-text('bold');
+    @include u-text('normal');
   }
 
   .footer__copyright-trademark p {
@@ -374,23 +374,30 @@
   .footer__terms,
   .footer__privacy {
     margin: 0;
-    padding-top: units(5);
+    padding-top: units(2);
   }
 
   .usa-footer__primary-link {
     margin-left: units(2);
     border: none;
   }
+
+  .footer__privacy,
+  .footer__terms {
+    a {
+      border: none;
+    }
+  }
 }
 
 /* || DESKTOP */
 @media (min-width: units('desktop')) {
-
-/* || HEADER DESKTOP */
+  /* || HEADER DESKTOP */
 
   //show language selector button and project title
   .banner__language-selector,
-  .header__title {
+  .header__title,
+  .banner__info {
     display: block;
   }
   .usa-nav {
@@ -475,10 +482,48 @@
     display: none;
   }
 
-/* || FOOTER DESKTOP */
+  /* || FOOTER DESKTOP */
+
+  .footer {
+    @include u-font-size('body', 1);
+    @include u-text('bold');
+  }
 
   .usa-footer__primary-section {
     padding: units(3) 0;
+  }
+
+  .usa-footer__primary-link {
+    margin-left: 0;
+    border-bottom-style: solid;
+    border-bottom-color: color('primary');
+    &:hover {
+      text-decoration: none;
+      @include link-size-expanded();
+    }
+    &:active {
+      @include link-size-expanded();
+    }
+    &:visited {
+      border-bottom-color: color('primary');
+    }
+  }
+  .footer__privacy,
+  .footer__terms {
+    a {
+      border-bottom-style: solid;
+      border-bottom-color: color('primary');
+      &:hover {
+        text-decoration: none;
+        @include link-size-expanded();
+      }
+      &:active {
+        @include link-size-expanded();
+      }
+      &:visited {
+        border-bottom-color: color('primary');
+      }
+    }
   }
 }
 
@@ -490,6 +535,9 @@
   .banner__logo-title,
   .banner__language-selector-label {
     @include flex-center-space-between();
+  }
+  .font-heading-xs {
+    margin: 0;
   }
   //language nav button
   .usa-accordion__button {
@@ -554,4 +602,3 @@
     }
   }
 }
-
