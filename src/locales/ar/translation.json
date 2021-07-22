@@ -1,7 +1,13 @@
 {
   "title": "[ar] Project Title",
+  "agency": {
+    "longformName": "[ar] NYC Mayor's Office of the Chief Technology Officer",
+    "shortformName": "[ar] NYC CTO"
+  },
+  "location": "[ar] NYC",
   "header": {
     "banner": "[ar] An official website of New York City government",
+    "language": "[ar] Language",
     "nav": {
       "dropdowns": [
         {
@@ -13,6 +19,7 @@
           "simpleLinks": ["[ar] Simple link three", "[ar] Simple link four"]
         }
       ],
+      "menu": "[ar] Menu",
       "parentLinks": ["[ar] Parent link"]
     },
     "secondaryLinks": ["[ar] Link one", "[ar] Link two"]
@@ -27,24 +34,7 @@
       "[ar] Primary Link 2",
       "[ar] Primary Link 3",
       "[ar] Primary Link 4"
-    ],
-    "secondary": {
-      "heading": {
-        "logo": "[ar] Name of Agency",
-        "contact": "[ar] Agency Contact Center"
-      },
-      "socialLinks": [
-        "[ar] Facebook",
-        "[ar] Twitter",
-        "[ar] YouTube",
-        "[ar] Instagram",
-        "[ar] RSS"
-      ],
-      "address": {
-        "phone": "[ar] (800) CALL-GOVT",
-        "email": "[ar] info@agency.gov"
-      }
-    }
+    ]
   },
   "notFound": "[ar] 404: Page Not Found"
 }

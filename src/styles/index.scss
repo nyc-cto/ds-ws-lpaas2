@@ -5,12 +5,12 @@
 $theme-image-path: '../../node_modules/uswds/src/img';
 $theme-font-path: '../../node_modules/uswds/src/fonts';
 
-$theme-hero-image: '../images/cto_hero.png';
+$theme-hero-image: '../images/hero.png';
 
 //Custom themes
-@import './mocto-theme.scss';
+@import './_custom-theme.scss';
 
 @import 'uswds';
 
 //Class overrides and custom classes
-@import './class-overrides.scss';
+@import './_class-overrides.scss';
