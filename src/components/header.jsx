@@ -57,44 +57,27 @@ function Header({ slug }) {
     navigate(`/${langKey}/${slug}`);
   };
 
+  const languageNav = (isLangRtoL) => languages.map(
+    (language) => language.isRtoL === isLangRtoL && (
+      <div className="header__language-nav-items">
+        <Button
+          onClick={() => {
+            handleClick(language.langKey);
+          }}
+          type="button"
+          unstyled
+          key={language.langKey}
+        >
+          {language.lang}
+        </Button>
+      </div>
+    ),
+  );
+
   const languageNavItems = (
     <div className="header__language-nav-container">
-      <div className="header__language-nav-RtoL">
-        {languages.map(
-          (language) => language.isRtoL && (
-          <div className="header__language-nav-items">
-            <Button
-              onClick={() => {
-                handleClick(language.langKey);
-              }}
-              type="button"
-              unstyled
-              key={language.langKey}
-            >
-              {language.lang}
-            </Button>
-          </div>
-          ),
-        )}
-      </div>
-      <div className="header__language-nav-LtoR">
-        {languages.map(
-          (language) => !language.isRtoL && (
-          <div className="header__language-nav-items">
-            <Button
-              onClick={() => {
-                handleClick(language.langKey);
-              }}
-              type="button"
-              unstyled
-              key={language.langKey}
-            >
-              {language.lang}
-            </Button>
-          </div>
-          ),
-        )}
-      </div>
+      <div className="header__language-nav-RtoL">{languageNav(true)}</div>
+      <div className="header__language-nav-LtoR">{languageNav(false)}</div>
     </div>
   );
 
