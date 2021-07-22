@@ -55,6 +55,7 @@
   border-bottom-width: units('105');
 }
 
+//nav links and buttons in mobile and desktop views
 @mixin nav-item(
   $text,
   $text-hover,
@@ -83,6 +84,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+//align languages in nav
+@mixin align-languages($flex-start-or-end) {
+  display: flex;
+  align-items: center;
+  justify-content: $flex-start-or-end;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 //set text, background, and border colors for language selector buttons
@@ -289,19 +299,11 @@
     padding: units(1) 0;
     //right align right to left languages
     .header__language-nav-RtoL {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-direction: row;
-      flex-wrap: wrap;
+      @include align-languages(flex-end)
     }
     //left align left to right languages
     .header__language-nav-LtoR {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-direction: row;
-      flex-wrap: wrap;
+      @include align-languages(flex-start)
     }
     //language button styling
     .header__language-nav-items {
@@ -351,7 +353,7 @@
             }
           }
         }
-         //links and nav label buttons when accordion is closed
+        //links and nav label buttons when accordion is closed
         a,
         .usa-accordion__button[aria-expanded='false'] {
           @include hover-border(
