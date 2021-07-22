@@ -55,6 +55,29 @@
   border-bottom-width: units('105');
 }
 
+@mixin nav-item(
+  $text,
+  $text-hover,
+  $font-weight,
+  $font-weight-hover,
+  $bg,
+  $padding,
+  $margin
+) {
+  @include u-text($text);
+  @include u-bg($bg);
+  @include u-text($font-weight);
+  padding: $padding;
+  margin: $margin;
+  &:hover {
+    @include u-text($text-hover);
+    @include u-bg($bg);
+    @include u-text($font-weight-hover);
+    padding: $padding;
+    margin: $margin;
+  }
+}
+
 //set flex with items aligned center and content justified space between
 @mixin flex-center-space-between {
   display: flex;
@@ -227,17 +250,15 @@
             'base-darker',
             'accent-cool-lighter'
           );
-          @include u-text('base-darker');
-          @include u-bg('accent-cool-lighter');
-          padding: 0 units(0.5);
-          margin: units(1.5) units(2);
-          &:hover {
-            @include u-text('base-darker');
-            @include u-bg('accent-cool-lighter');
-            @include u-text('bold');
-            padding: 0 units(0.5);
-            margin: units(1.5) units(2);
-          }
+          @include nav-item(
+            'base-darker',
+            'base-darker',
+            'bold',
+            'bold',
+            'accent-cool-lighter',
+            0 units(0.5),
+            units(1.5) units(2)
+          );
         }
       }
     }
@@ -330,52 +351,45 @@
             }
           }
         }
-        //links in nav menu
-        a {
-          @include u-text('disabled-dark');
-          @include u-bg('accent-cool-lighter');
-          @include u-text('bold');
-          padding: units(2);
-          margin: 0;
+         //links and nav label buttons when accordion is closed
+        a,
+        .usa-accordion__button[aria-expanded='false'] {
+          @include hover-border(
+            'left',
+            'secondary',
+            'base-darker',
+            'accent-cool-lighter'
+          );
+          @include nav-item(
+            'disabled-dark',
+            'base-darker',
+            'bold',
+            'bold',
+            'accent-cool-lighter',
+            units(2),
+            0
+          );
           &:hover {
-            @include u-text('base-darker');
-            @include u-bg('accent-cool-lighter');
-            @include u-text('bold');
-            padding: units(2);
-            margin: 0;
             border: none;
           }
         }
         .usa-accordion__button[aria-expanded='false'] {
-          @include u-text('disabled-dark');
-          @include u-bg('accent-cool-lighter');
-          @include u-text('bold');
-          padding: units(2);
-          margin: 0;
-          &:hover {
-            @include u-text('base-darker');
-            @include u-bg('accent-cool-lighter');
-            @include u-text('bold');
-            padding: units(2);
-            margin: 0;
-            border: none;
-          }
           &::after {
             border: units('2px') solid color('secondary');
           }
         }
+        //nav label buttons when accordion is closed
         .usa-accordion__button[aria-expanded='true'] {
-          @include u-text('accent-cool-lighter');
-          @include u-bg('base-darker');
-          @include u-text('bold');
-          padding: units(2);
-          margin: 0;
+          @include nav-item(
+            'accent-cool-lighter',
+            'accent-cool-lighter',
+            'bold',
+            'bold',
+            'base-darker',
+            units(2),
+            0
+          );
           &:hover {
-            @include u-text('accent-cool-lighter');
-            @include u-bg('base-darker');
-            @include u-text('bold');
-            padding: units(2);
-            margin: 0;
             border: none;
           }
         }
