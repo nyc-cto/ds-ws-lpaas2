@@ -222,8 +222,12 @@
   }
 }
 
-//mobile & tablet view
+/* || MOBILE */
+
 @media (min-width: units('mobile')) {
+
+  /* || HEADER MOBILE */
+
   //hide language selector button and project title
   .banner__language-selector,
   .header__title {
@@ -274,7 +278,7 @@
     }
   }
 
-  //header in mobile view
+  //header & nav
   .usa-navbar {
     @include flex-center-space-between();
     margin: units(4) 0 units(2) 0;
@@ -299,11 +303,11 @@
     padding: units(1) 0;
     //right align right to left languages
     .header__language-nav-RtoL {
-      @include align-languages(flex-end)
+      @include align-languages(flex-end);
     }
     //left align left to right languages
     .header__language-nav-LtoR {
-      @include align-languages(flex-start)
+      @include align-languages(flex-start);
     }
     //language button styling
     .header__language-nav-items {
@@ -316,10 +320,74 @@
       }
     }
   }
+
+  /* || FOOTER MOBILE */
+
+  //footer nav links
+  .usa-footer__primary-section {
+    font-family: 'Space Mono';
+    @include u-text('accent-cool-lighter');
+    @include u-bg('base');
+    margin-top: units(2);
+    padding: 0;
+    .usa-link,
+    .usa-link--external,
+    .usa-footer__primary-link {
+      @include u-text('accent-cool-lighter');
+      padding: 0;
+    }
+  }
+
+  .usa-footer__primary-content {
+    padding: units(1);
+  }
+
+  .usa-footer__return-to-top {
+    @include u-text('base-darker');
+    padding: 0;
+  }
+
+  //department logo, terms & policies, and copyright & trademarks
+  .usa-footer__secondary-section {
+    @include u-text('accent-cool-lighter');
+    @include u-bg('base-dark');
+    .usa-link,
+    .usa-link--external {
+      @include u-text('accent-cool-lighter');
+    }
+    .footer__logo {
+      width: units('mobile');
+      height: auto;
+    }
+  }
+
+  .footer {
+    @include u-font-size('body', 1);
+    @include u-text('bold');
+  }
+
+  .footer__copyright-trademark p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer__terms,
+  .footer__privacy {
+    margin: 0;
+    padding-top: units(5);
+  }
+
+  .usa-footer__primary-link {
+    margin-left: units(2);
+    border: none;
+  }
 }
 
-//desktop view
+/* || DESKTOP */
 @media (min-width: units('desktop')) {
+
+/* || HEADER DESKTOP */
+
   //show language selector button and project title
   .banner__language-selector,
   .header__title {
@@ -406,6 +474,12 @@
   .header__language-nav-items {
     display: none;
   }
+
+/* || FOOTER DESKTOP */
+
+  .usa-footer__primary-section {
+    padding: units(3) 0;
+  }
 }
 
 /* || BANNER & LANGUAGE SELECTION */
@@ -481,54 +555,3 @@
   }
 }
 
-/* || FOOTER */
-
-//footer nav links
-.usa-footer__primary-section {
-  font-family: 'Space Mono';
-  @include u-text('accent-cool-lighter');
-  @include u-bg('base');
-  margin-top: units(2);
-  padding: units(3) 0;
-  .usa-link,
-  .usa-link--external,
-  .usa-footer__primary-link {
-    @include u-text('accent-cool-lighter');
-    padding: 0;
-  }
-}
-
-.usa-footer__return-to-top {
-  @include u-text('base-darker');
-  padding: 0;
-}
-
-//department logo, terms & policies, and copyright & trademarks
-.usa-footer__secondary-section {
-  @include u-text('accent-cool-lighter');
-  @include u-bg('base-dark');
-  .usa-link,
-  .usa-link--external {
-    @include u-text('accent-cool-lighter');
-  }
-  .footer__logo {
-    width: units('mobile');
-    height: auto;
-  }
-}
-
-.footer {
-  @include u-font-size('body', 1);
-  @include u-text('bold');
-}
-
-.footer__copyright-trademark p {
-  margin: 0;
-  padding: 0;
-}
-
-.footer__terms,
-.footer__privacy {
-  margin: 0;
-  padding-top: units(5);
-}
