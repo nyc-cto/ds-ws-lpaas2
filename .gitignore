@@ -1,9 +1,8 @@
+node_modules/
+
 # Gatsby
 .cache/
 public/
-
-# React
-node_modules/
 
 # Mac
 .DS_Store
