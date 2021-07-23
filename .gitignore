@@ -4,4 +4,5 @@ node_modules/
 public/
 
 # environmental variables
-.env*
+.env.development
+.env.production
