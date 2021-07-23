@@ -1,17 +1,11 @@
 /* eslint-disable no-unused-vars */
-const fs = require('fs-extra');
 const path = require('path');
-const _ = require('lodash');
-const { createFilePath } = require('gatsby-source-filesystem');
-const { languages } = require('./src/constants/languages');
 
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    node: {
-      fs: 'empty',
-    },
-  });
-};
+const fs = require('fs-extra');
+const { createFilePath } = require('gatsby-source-filesystem');
+const _ = require('lodash');
+
+const { languages } = require('./src/constants/languages');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
@@ -84,4 +78,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       },
     });
   }
+};
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: 'empty',
+    },
+  });
 };

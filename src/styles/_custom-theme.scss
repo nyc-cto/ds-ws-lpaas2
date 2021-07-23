@@ -34,17 +34,17 @@ $theme-color-primary: $custom-primary;
 $theme-color-primary-dark: $custom-primary-dark;
 $theme-color-primary-darker: $custom-primary-darker;
 
-$theme-color-accent-cool-lighter: white; //set to white in order to access white in mixins
-$theme-color-accent-cool-light: $custom-primary-light;
-$theme-color-accent-cool: $custom-primary;
-$theme-color-accent-cool-dark: $custom-primary-dark;
-$theme-color-accent-cool-darker: $custom-primary-darker;
-
 $theme-color-secondary-lighter: $custom-secondary-lighter;
 $theme-color-secondary-light: $custom-secondary-light;
 $theme-color-secondary: $custom-secondary;
 $theme-color-secondary-dark: $custom-secondary-dark;
 $theme-color-secondary-darker: $custom-secondary-darker;
+
+$theme-color-accent-cool-lighter: white; //set to white in order to access white in mixins
+$theme-color-accent-cool-light: $custom-primary-light;
+$theme-color-accent-cool: $custom-primary;
+$theme-color-accent-cool-dark: $custom-primary-dark;
+$theme-color-accent-cool-darker: $custom-primary-darker;
 
 $theme-color-accent-warm-lighter: $custom-secondary-lighter;
 $theme-color-accent-warm-light: $custom-secondary-light;

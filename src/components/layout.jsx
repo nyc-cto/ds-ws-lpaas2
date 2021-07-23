@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+
 import PropTypes from 'prop-types';
-import ScriptTag from 'react-script-tag';
-import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-import Header from './header';
+import { useTranslation } from 'react-i18next';
+import ScriptTag from 'react-script-tag';
+
 import Footer from './footer';
+import Header from './header';
 
 function Layout({ children, slug }) {
   const { t, i18n } = useTranslation();

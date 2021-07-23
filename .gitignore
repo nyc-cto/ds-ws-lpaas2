@@ -1,7 +1,11 @@
 node_modules/
-.DS_Store
+
+# Gatsby
 .cache/
 public/
+
+# Mac
+.DS_Store
 
 # environmental variables
 .env.development

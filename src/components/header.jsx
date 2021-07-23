@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { navigate } from 'gatsby';
+
+import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import {
   Button,
   ExtendedNav,
@@ -8,13 +8,15 @@ import {
   NavMenuButton,
   Title,
 } from '@trussworks/react-uswds';
-import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
+import { navigate } from 'gatsby';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
+
 import { Link, NavDropDown } from '.';
-import Banner from './banner';
-import { logoHeader } from '../images';
-import { headerLinks as links } from '../constants/links';
 import { languages } from '../constants/languages';
+import { headerLinks as links } from '../constants/links';
+import { logoHeader } from '../images';
+import Banner from './banner';
 import '@reach/skip-nav/styles.css';
 
 function Header({ slug }) {
@@ -46,8 +48,8 @@ function Header({ slug }) {
   }
   const parentLinkItems = parentLinks.map(
     (element, i) => i < parentLength && (
-    <Link to={element} variant="nav" key={element}>
-      <span>{parentLinksLabels[i]}</span>
+    <Link variant="nav" to={element} key={element}>
+      {parentLinksLabels[i]}
     </Link>
     ),
   );
@@ -98,12 +100,12 @@ function Header({ slug }) {
         <NavMenuButton onClick={onClick} label={t('header.nav.menu')} />
       </div>
       <ExtendedNav
+        onToggleMobileNav={onClick}
         primaryItems={NavDropDown()
           .concat(parentLinkItems)
           .concat(languageNavItems)}
         secondaryItems={[]}
         mobileExpanded={expanded}
-        onToggleMobileNav={onClick}
         role="navigation"
       />
       <SkipNavContent />

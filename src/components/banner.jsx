@@ -1,9 +1,11 @@
 import React from 'react';
+
+import { Grid, GridContainer } from '@trussworks/react-uswds';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { Grid, GridContainer } from '@trussworks/react-uswds';
-import { LanguageSelector } from '.';
+
 import { logoBanner } from '../images';
+import LanguageSelector from './language-selector';
 
 function Banner({ children, slug }) {
   const { t } = useTranslation();

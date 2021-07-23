@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Footer as FooterUSWDS,
   FooterNav,
@@ -7,14 +8,42 @@ import {
   Logo,
 } from '@trussworks/react-uswds';
 import { useTranslation } from 'react-i18next';
+
 import { Link } from '.';
 import { footerLinks as links } from '../constants/links';
-
 import { logoFooter } from '../images';
 
 function Footer() {
   const { t } = useTranslation();
+
   const primaryLinks = links.primary;
+  const primaryLinksLength = primaryLinks.length;
+  const primaryLinksLabels = t('footer.primaryLinks');
+  const primaryLinksLabelsLength = primaryLinksLabels.length;
+  const primaryLength = primaryLinksLength > primaryLinksLabelsLength
+    ? primaryLinksLabelsLength
+    : primaryLinksLength;
+  // take shorter length if is missing link in primaryLinks or missing label in translation file
+  if (primaryLinksLength !== primaryLinksLabelsLength) {
+    console.error(
+      'Different number of primary links in /src/constants/link.js and primary link labels in /src/locales\n',
+      'Links: ',
+      primaryLinks,
+      '\n',
+      'Labels: ',
+      primaryLinksLabels,
+      '\n',
+    );
+  }
+  // TODO: link underline is longer now after making it .map
+  const primaryLinkItems = primaryLinks.map(
+    (element, i) => i < primaryLength && (
+    <Link className="usa-footer__primary-link" to={element}>
+      {primaryLinksLabels[i]}
+    </Link>
+    ),
+  );
+
   const secondaryLinks = links.secondary;
 
   return (
@@ -31,14 +60,7 @@ function Footer() {
       primary={(
         <FooterNav
           size="medium"
-          links={Array.from(
-            { length: t('footer.primaryLinks').length },
-            (_, i) => (
-              <Link className="usa-footer__primary-link" to={primaryLinks[i]}>
-                {t('footer.primaryLinks')[i]}
-              </Link>
-            ),
-          )}
+          links={primaryLinkItems}
         />
       )}
       secondary={(
