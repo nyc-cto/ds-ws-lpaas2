@@ -18,7 +18,7 @@ function Banner({ children, slug }) {
               </div>
             </Grid>
             <Grid>
-              <p className="font-heading-xs">{children}</p>
+              <p className="banner__info font-heading-xs">{children}</p>
             </Grid>
           </Grid>
           <Grid>
