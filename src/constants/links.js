@@ -1,5 +1,5 @@
 export const headerLinks = {
-  navDropdowns: [
+  navDropDowns: [
     ['link-one', 'link-two'],
     ['link-three', 'link-four'],
   ],
