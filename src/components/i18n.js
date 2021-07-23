@@ -12,6 +12,9 @@ i18n
     debug: true,
     defaultNS: 'translations',
     fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false, // TODO: is this necessary?
+    },
     // load: "languageOnly",
     ns: ['translations'],
     react: {
