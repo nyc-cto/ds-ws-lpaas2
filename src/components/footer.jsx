@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   Footer as FooterUSWDS,
@@ -8,13 +8,15 @@ import {
   Logo,
 } from '@trussworks/react-uswds';
 import { useTranslation } from 'react-i18next';
+import ScriptTag from 'react-script-tag';
 
 import { Link } from '.';
 import { footerLinks as links } from '../constants/links';
 import { logoFooter } from '../images';
 
 function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [pageTitle, setPageTitle] = useState(t('title')); // initial title is header title
 
   const primaryLinks = links.primary;
   const primaryLinksLength = primaryLinks.length;
@@ -54,6 +56,8 @@ function Footer() {
           <Link to="#top" className="usa-footer__return-to-top">
             Return to top
           </Link>
+          <div id="feedback-widget" lang={i18n.language} pageTitle={pageTitle} endpoint={process.env.GATSBY_ENDPOINT} />
+          <ScriptTag src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js" type="text/javascript" />
           {/* TODO: for some reason class name has to be manually added */}
         </GridContainer>
       )}
