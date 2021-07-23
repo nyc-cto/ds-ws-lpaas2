@@ -8,8 +8,9 @@ import {
 } from '@trussworks/react-uswds';
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import { useTranslation } from 'react-i18next';
-import { Link, NavDropDown } from '.';
+import { Link } from '.';
 import Banner from './banner';
+import NavDropDown from './nav-drop-down';
 import ctoLogoShortform from '../images/logos/cto_logo_shortform_dark.png';
 import { header as links } from '../constants/links';
 import '@reach/skip-nav/styles.css';
