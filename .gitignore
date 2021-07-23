@@ -2,3 +2,7 @@ node_modules/
 .DS_Store
 .cache/
 public/
+
+# environmental variables
+.env.development
+.env.production
