@@ -4,7 +4,7 @@ import { Menu, NavDropDownButton } from '@trussworks/react-uswds';
 import { useTranslation } from 'react-i18next';
 
 import { Link } from '.';
-import { header as links } from '../constants/links';
+import { headerLinks as links } from '../constants/links';
 
 function NavDropDown() {
   const { t } = useTranslation();

@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { languages } from '../constants/languages';
 
 function LanguageSelector({ slug }) {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -44,7 +44,7 @@ function LanguageSelector({ slug }) {
     </div>
   ));
   return (
-    <>
+    <div className="banner__language-selector">
       {languageMenuItems.length <= 5 ? (
         <Grid className="banner__language-selector-button-group">
           {languageMenuItems}
@@ -61,7 +61,7 @@ function LanguageSelector({ slug }) {
             label={(
               <div className="banner__language-selector-label font-heading-xs">
                 <FeatherIcon icon="globe" size={16} />
-                <p>Language</p>
+                <p>{t('header.language')}</p>
               </div>
             )}
           />
@@ -72,7 +72,7 @@ function LanguageSelector({ slug }) {
           />
         </Grid>
       )}
-    </>
+    </div>
   );
 }
 

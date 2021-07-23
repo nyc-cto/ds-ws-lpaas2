@@ -1,7 +1,13 @@
 {
   "title": "[ru] Project Title",
+  "agency": {
+    "longformName": "[ru] NYC Mayor's Office of the Chief Technology Officer",
+    "shortformName": "[ru] NYC CTO"
+  },
+  "location": "[ru] NYC",
   "header": {
     "banner": "[ru] An official website of New York City government",
+    "language": "[ru] Language",
     "nav": {
       "dropdowns": [
         {
@@ -13,6 +19,7 @@
           "simpleLinks": ["[ru] Simple link three", "[ru] Simple link four"]
         }
       ],
+      "menu": "[ru] Menu",
       "parentLinks": ["[ru] Parent link"]
     }
   },

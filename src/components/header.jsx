@@ -2,22 +2,25 @@ import React, { useState } from 'react';
 
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import {
+  Button,
   ExtendedNav,
   Header as HeaderUSWDS,
   NavMenuButton,
   Title,
 } from '@trussworks/react-uswds';
+import { navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
-import { Banner, Link, NavDropDown } from '.';
-import { header as links } from '../constants/links';
-import ctoLogoShortform from '../images/logos/cto_logo_shortform_dark.png';
-
+import { Link, NavDropDown } from '.';
+import { languages } from '../constants/languages';
+import { headerLinks as links } from '../constants/links';
+import { logoHeader } from '../images';
+import Banner from './banner';
 import '@reach/skip-nav/styles.css';
 
 function Header({ slug }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   /* menu expansion in mobile view */
   const [expanded, setExpanded] = useState(false);
@@ -51,6 +54,35 @@ function Header({ slug }) {
     ),
   );
 
+  const handleClick = (langKey) => {
+    i18n.changeLanguage(langKey);
+    navigate(`/${langKey}/${slug}`);
+  };
+
+  const languageNav = (isLangRtoL) => languages.map(
+    (language) => language.isRtoL === isLangRtoL && (
+      <div className="header__language-nav-items">
+        <Button
+          onClick={() => {
+            handleClick(language.langKey);
+          }}
+          type="button"
+          unstyled
+          key={language.langKey}
+        >
+          {language.lang}
+        </Button>
+      </div>
+    ),
+  );
+
+  const languageNavItems = (
+    <div className="header__language-nav-container">
+      <div className="header__language-nav-RtoL">{languageNav(true)}</div>
+      <div className="header__language-nav-LtoR">{languageNav(false)}</div>
+    </div>
+  );
+
   return (
     <HeaderUSWDS extended>
       {/* <Router> */}
@@ -58,14 +90,20 @@ function Header({ slug }) {
       <Banner slug={slug}>{t('header.banner')}</Banner>
       <div className="usa-navbar">
         <div className="header__logo-title">
-          <img className="header__logo" src={ctoLogoShortform} alt="NYC CTO" />
-          <Title>{t('title')}</Title>
+          <img
+            className="header__logo"
+            src={logoHeader}
+            alt={t('agency.shortformName')}
+          />
+          <Title className="header__title">{t('title')}</Title>
         </div>
-        <NavMenuButton onClick={onClick} label="Menu" />
+        <NavMenuButton onClick={onClick} label={t('header.nav.menu')} />
       </div>
       <ExtendedNav
         onToggleMobileNav={onClick}
-        primaryItems={NavDropDown().concat(parentLinkItems)}
+        primaryItems={NavDropDown()
+          .concat(parentLinkItems)
+          .concat(languageNavItems)}
         secondaryItems={[]}
         mobileExpanded={expanded}
         role="navigation"
