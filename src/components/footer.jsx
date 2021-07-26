@@ -53,7 +53,7 @@ function Footer() {
       returnToTop={(
         <GridContainer className="usa-footer__return-to-top">
           <Link to="#top">
-            Return to top
+            {t('footer.returnToTop')}
           </Link>
         </GridContainer>
       )}
