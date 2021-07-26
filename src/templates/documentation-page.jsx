@@ -4,14 +4,7 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 import { GridContainer } from '@trussworks/react-uswds';
-import {
-  Graphic,
-  Hero,
-  i18next,
-  Layout,
-  Section,
-  Tagline,
-} from '../components';
+import { i18next, Layout, Section } from '../components';
 
 import '@trussworks/react-uswds/lib/uswds.css';
 import '@trussworks/react-uswds/lib/index.css';
@@ -61,8 +54,10 @@ function Documentation({ data, location }) {
             <GridContainer>
               {frontmatter.section && (
                 <Section
+                  page={frontmatter.page}
                   section={frontmatter.section}
-                  buttons={frontmatter.buttons}
+                  subsection={frontmatter.subsection}
+                  subSubsection={frontmatter.subSubsection}
                 />
               )}
             </GridContainer>
@@ -89,26 +84,19 @@ export const pageQuery = graphql`
       frontmatter {
         lang
         slug
-        hero {
-          image
-          imageDescription
-          heading
-          text
-        }
-        buttons {
-          callToAction
-        }
-        tagline {
-          heading
-          text
-        }
-        graphics {
-          image
-          imageDescription
+        page {
           heading
           text
         }
         section {
+          heading
+          text
+        }
+        subsection {
+          heading
+          text
+        }
+        subSubsection {
           heading
           text
         }

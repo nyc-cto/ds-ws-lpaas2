@@ -1,35 +1,17 @@
 ---
 lang: en
 templateKey: documentation-page
-slug: docs
-hero:
-  image: hero-img.jpg
-  imageDescription: Description
-  heading: Hero callout Bring attention to a project priority
-  text: Support the callout with some short explanatory text. You don’t need more than a couple of sentences.
-buttons:
-  callToAction: Call to action
-tagline:
-  heading: A tagline highlights your approach
-  text: The tagline should inspire confidence and interest, focusing on the value that your overall approach offers to your audience. Use a heading typeface and keep your tagline to just a few words, and don’t confuse or mystify. Use the right side of the grid to explain the tagline a bit more. What are your goals? How do you do your work? Write in the present tense, and stay brief here. People who are interested can find details on internal pages.
-graphics:
-  - image: http://placehold.it/150g
-    imageDescription: Description
-    heading: Graphic headings can vary.
-    text: Graphic headings can be used a few different ways, depending on what your landing page is for. Highlight your values, specific program areas, or results.
-  - image: http://placehold.it/150g
-    imageDescription: Description
-    heading: Stick to 6 or fewer words.
-    text: Keep body text to about 30 words. They can be shorter, but try to be somewhat balanced across all four. It creates a clean appearance with good spacing.
-  - image: http://placehold.it/150g
-    imageDescription: Description
-    heading: Never highlight anything without a goal.
-    text: For anything you want to highlight here, understand what your users know now, and what activity or impression you want from them after they see it.
-  - image: http://placehold.it/150g
-    imageDescription: Description
-    heading: Could also have 2 or 6.
-    text: In addition to your goal, find out your users’ goals. What do they want to know or do that supports your mission? Use these headings to show these.
+slug: documentation
+page:
+  heading: Page heading
+  text: The page heading communicates the main focus of the page. Make your page heading descriptive and keep it succinct.
 section:
   heading: Section heading
-  text: Everything up to this point should help people understand your agency or project who you are, your goal or mission, and how you approach it. Use this section to encourage them to act. Describe why they should get in touch here, and use an active verb on the button below. “Get in touch,” “Learn more,” and so on.
+  text: These headings introduce, respectively, sections and subsections within your body copy. As you create these headings, follow the same guidelines that you use when writing section headings. Be succinct, descriptive, and precise.
+subsection:
+  heading: Subsection heading
+  text: The particulars of your body copy will be determined by the topic of your page. Regardless of topic, it’s a good practice to follow the inverted pyramid structure when writing copy. Begin with the information that’s most important to your users and then present information of less importance. Keep each section and subsection focused - a good approach is to include one theme (topic) per section.
+subSubsection:
+  heading: Sub-subsection heading
+  text: The particulars of your body copy will be determined by the topic of your page. Regardless of topic, it’s a good practice to follow the inverted pyramid structure when writing copy. Begin with the information that’s most important to your users and then present information of less importance. Keep each section and subsection focused - a good approach is to include one theme (topic) per section. 
 ---
