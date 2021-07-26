@@ -49,12 +49,12 @@ function Footer() {
   return (
     <FooterUSWDS
       size="medium"
+      // TODO: for some reason class name has to be manually added for returnToTop
       returnToTop={(
-        <GridContainer>
-          <Link to="#top" className="usa-footer__return-to-top">
+        <GridContainer className="usa-footer__return-to-top">
+          <Link to="#top">
             Return to top
           </Link>
-          {/* TODO: for some reason class name has to be manually added */}
         </GridContainer>
       )}
       primary={(
