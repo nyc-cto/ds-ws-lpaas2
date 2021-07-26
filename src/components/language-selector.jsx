@@ -26,7 +26,7 @@ function LanguageSelector({ slug }) {
       className={
         languages.length <= 5
           ? 'banner__language-selector-item'
-          : language.isRtoL
+          : i18n.dir(language.langKey) === 'rtl'
             ? 'banner__language-selector-item--RtoL'
             : 'banner__language-selector-item--LtoR'
       }

@@ -59,8 +59,8 @@ function Header({ slug }) {
     navigate(`/${langKey}/${slug}`);
   };
 
-  const languageNav = (isLangRtoL) => languages.map(
-    (language) => language.isRtoL === isLangRtoL && (
+  const languageNav = (direction) => languages.map(
+    (language) => i18n.dir(language.langKey) === direction && (
       <div className="header__language-nav-items">
         <Button
           onClick={() => {
@@ -78,8 +78,8 @@ function Header({ slug }) {
 
   const languageNavItems = (
     <div className="header__language-nav-container">
-      <div className="header__language-nav-RtoL">{languageNav(true)}</div>
-      <div className="header__language-nav-LtoR">{languageNav(false)}</div>
+      <div className="header__language-nav-RtoL">{languageNav('rtl')}</div>
+      <div className="header__language-nav-LtoR">{languageNav('ltr')}</div>
     </div>
   );
 
