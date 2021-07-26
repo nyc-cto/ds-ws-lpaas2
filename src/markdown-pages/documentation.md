@@ -2,6 +2,7 @@
 lang: en
 templateKey: documentation-page
 slug: documentation
+pageTitle: Project | Documentation
 ---
 
 # Page heading

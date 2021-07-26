@@ -15,7 +15,7 @@ import '@fontsource/space-mono';
 import '../styles/index.scss';
 
 function Documentation({ data, location }) {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   // TODO: try to use LanguageDetector
   useEffect(() => {
@@ -45,16 +45,21 @@ function Documentation({ data, location }) {
 
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-
   return (
     <>
       <I18nextProvider i18n={i18next}>
-        <Helmet title={t('title')} htmlAttributes={{ lang: i18n.language }} />
+        <Helmet
+          title={frontmatter.pageTitle}
+          htmlAttributes={{ lang: i18n.language }}
+        />
         <Layout slug={frontmatter.slug}>
           <main>
             <GridContainer>
               <Grid className="documentation__container">
-                <div className="documentation usa-layout-docs__main usa-prose usa-layout-docs" dangerouslySetInnerHTML={{ __html: html }} />
+                <div
+                  className="documentation usa-layout-docs__main usa-prose usa-layout-docs"
+                  dangerouslySetInnerHTML={{ __html: html }}
+                />
               </Grid>
             </GridContainer>
           </main>
@@ -81,6 +86,7 @@ export const pageQuery = graphql`
       frontmatter {
         lang
         slug
+        pageTitle
       }
     }
   }

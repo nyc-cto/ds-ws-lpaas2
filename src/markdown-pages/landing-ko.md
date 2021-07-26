@@ -2,6 +2,7 @@
 lang: ko
 templateKey: landing-page
 slug: home
+pageTitle: ko Project | Home
 hero:
   image: ko hero-img.jpg
   imageDescription: ko Description

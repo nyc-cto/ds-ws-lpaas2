@@ -2,6 +2,7 @@
 lang: ru
 templateKey: landing-page
 slug: home
+pageTitle: ru Project | Home
 hero:
   image: ru hero-img.jpg
   imageDescription: ru Description

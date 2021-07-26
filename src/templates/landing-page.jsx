@@ -62,7 +62,7 @@ function Landing({ data, location }) {
       {/* <NotFound default /> */}
       {/* </Router> */}
       <I18nextProvider i18n={i18next}>
-        <Helmet title={t('title')} htmlAttributes={{ lang: i18n.language }} />
+        <Helmet title={frontmatter.pageTitle} htmlAttributes={{ lang: i18n.language }} />
         <Layout slug={frontmatter.slug}>
           <main>
             <GridContainer>
@@ -101,6 +101,7 @@ export const pageQuery = graphql`
       frontmatter {
         lang
         slug
+        pageTitle
         hero {
           image
           imageDescription

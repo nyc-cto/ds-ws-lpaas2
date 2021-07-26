@@ -2,6 +2,7 @@
 lang: zh_HANT
 templateKey: landing-page
 slug: home
+pageTitle: zh_HANT Project | Home
 hero:
   image: zh_HANT hero-img.jpg
   imageDescription: zh_HANT Description
