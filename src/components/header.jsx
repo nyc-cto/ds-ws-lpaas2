@@ -78,8 +78,8 @@ function Header({ slug }) {
 
   const languageNavItems = (
     <div className="header__language-nav-container">
-      <div className="header__language-nav-RtoL">{languageNav('rtl')}</div>
-      <div className="header__language-nav-LtoR">{languageNav('ltr')}</div>
+      <div className="header__language-nav-rtl">{languageNav('rtl')}</div>
+      <div className="header__language-nav-ltr">{languageNav('ltr')}</div>
     </div>
   );
 

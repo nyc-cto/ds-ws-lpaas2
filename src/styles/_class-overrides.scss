@@ -299,14 +299,16 @@
     //position languages at the bottom
     position: absolute;
     bottom: 0;
+    left: 0;
+    right: 0;
     @include u-bg('base-dark');
     padding: units(1) 0;
     //right align right to left languages
-    .header__language-nav-RtoL {
+    .header__language-nav-rtl {
       @include align-languages(flex-end);
     }
     //left align left to right languages
-    .header__language-nav-LtoR {
+    .header__language-nav-ltr {
       @include align-languages(flex-start);
     }
     //language button styling
@@ -566,7 +568,7 @@
     text-decoration: none;
   }
   //right-to-left language buttons in dropdown menu
-  .banner__language-selector-item--RtoL {
+  .banner__language-selector-item--rtl {
     display: flex;
     flex-direction: row-reverse;
     @include hover-border(
@@ -577,7 +579,7 @@
     );
   }
   //left-to-right language buttons in dropdown menu
-  .banner__language-selector-item--LtoR {
+  .banner__language-selector-item--ltr {
     @include hover-border(
       'left',
       'primary',

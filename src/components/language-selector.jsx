@@ -27,8 +27,8 @@ function LanguageSelector({ slug }) {
         languages.length <= 5
           ? 'banner__language-selector-item'
           : i18n.dir(language.langKey) === 'rtl'
-            ? 'banner__language-selector-item--RtoL'
-            : 'banner__language-selector-item--LtoR'
+            ? 'banner__language-selector-item--rtl'
+            : 'banner__language-selector-item--ltr'
       }
     >
       <Button
