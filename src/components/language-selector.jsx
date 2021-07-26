@@ -17,8 +17,7 @@ function LanguageSelector({ slug }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (langKey) => {
-    i18n.changeLanguage(langKey);
-    navigate(`/${langKey}/${slug}`);
+    i18n.changeLanguage(langKey, navigate(`/${langKey}/${slug}`));
   };
 
   const languageMenuItems = languages.map((language) => (

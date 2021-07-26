@@ -55,8 +55,7 @@ function Header({ slug }) {
   );
 
   const handleClick = (langKey) => {
-    i18n.changeLanguage(langKey);
-    navigate(`/${langKey}/${slug}`);
+    i18n.changeLanguage(langKey, navigate(`/${langKey}/${slug}`));
   };
 
   const languageNav = (direction) => languages.map(
