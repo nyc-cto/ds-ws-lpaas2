@@ -18,7 +18,7 @@ i18n
     // load: "languageOnly",
     ns: ['translations'],
     react: {
-      useSuspense: false,
+      useSuspense: true,
     },
     resources: {
       ar: {
