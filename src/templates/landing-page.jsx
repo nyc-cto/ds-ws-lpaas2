@@ -23,7 +23,7 @@ import '@fontsource/space-mono';
 import '../styles/index.scss';
 
 function Landing({ data, location }) {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   // TODO: try to use LanguageDetector
   useEffect(() => {
