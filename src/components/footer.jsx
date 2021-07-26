@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import {
   Footer as FooterUSWDS,
@@ -16,7 +16,6 @@ import { logoFooter } from '../images';
 
 function Footer() {
   const { t, i18n } = useTranslation();
-  const [pageTitle, setPageTitle] = useState(t('title')); // initial title is header title
 
   const primaryLinks = links.primary;
   const primaryLinksLength = primaryLinks.length;
@@ -56,9 +55,8 @@ function Footer() {
           <Link to="#top" className="usa-footer__return-to-top">
             Return to top
           </Link>
-          <div id="feedback-widget" lang={i18n.language} pageTitle={pageTitle} endpoint={process.env.GATSBY_ENDPOINT} />
+          <div id="feedback-widget" className="footer__feedback-widget" lang={i18n.language} pageTitle={t('title')} endpoint={process.env.GATSBY_ENDPOINT} />
           <ScriptTag src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js" type="text/javascript" />
-          {/* TODO: for some reason class name has to be manually added */}
         </GridContainer>
       )}
       primary={(
