@@ -1,0 +1,604 @@
+/* || MIXINS */
+
+//set text and background colors for NYC buttons
+@mixin button-theme(
+  $text-color,
+  $text-hover,
+  $text-active,
+  $text-disabled,
+  $bg,
+  $bg-hover,
+  $bg-active,
+  $bg-disabled,
+  $border-color
+) {
+  @include u-text($text-color);
+  @include u-bg($bg);
+  &:hover {
+    @include u-text($text-hover);
+    @include u-bg($bg-hover);
+    border: units('2px') solid color($border-color);
+  }
+  &:active {
+    @include u-text($text-active);
+    @include u-bg($bg-active);
+  }
+  &:disabled {
+    @include u-text($text-disabled);
+    @include u-bg($bg-disabled);
+  }
+}
+
+@mixin link-theme(
+  $color,
+  $border-bottom-color-active,
+  $color-visited,
+  $border-bottom-color-visited
+) {
+  @include u-text($color);
+  &:active {
+    border-bottom-color: color($border-bottom-color-active);
+  }
+  &:visited {
+    @include u-text($color-visited);
+    border-bottom-color: color($border-bottom-color-visited);
+  }
+}
+
+@mixin link-size {
+  // border-bottom-width: units('1px') * 3;
+  border-bottom-width: units('05');
+}
+
+@mixin link-size-expanded {
+  // border-bottom-width: units('1px') * 10;
+  border-bottom-width: units('105');
+}
+
+//nav links and buttons in mobile and desktop views
+@mixin nav-item(
+  $text,
+  $text-hover,
+  $font-weight,
+  $font-weight-hover,
+  $bg,
+  $padding,
+  $margin
+) {
+  @include u-text($text);
+  @include u-bg($bg);
+  @include u-text($font-weight);
+  padding: $padding;
+  margin: $margin;
+  &:hover {
+    @include u-text($text-hover);
+    @include u-bg($bg);
+    @include u-text($font-weight-hover);
+    padding: $padding;
+    margin: $margin;
+  }
+}
+
+//set flex with items aligned center and content justified space between
+@mixin flex-center-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//align languages in nav
+@mixin align-languages($flex-start-or-end) {
+  display: flex;
+  align-items: center;
+  justify-content: $flex-start-or-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+//set text, background, and border colors for language selector buttons
+@mixin hover-border($direction, $border-color, $text, $bg) {
+  &:hover {
+    padding-#{$direction}: units('05');
+    border-#{$direction}: units('05') solid color($border-color);
+  }
+  .usa-button--unstyled {
+    @include u-text($text);
+    @include u-bg($bg);
+    &:hover {
+      @include u-text($text);
+      text-decoration: none;
+      @include u-bg($bg);
+    }
+  }
+}
+
+/* || GENERAL */
+
+//background for hero callout, menus, and graphics section
+.usa-hero__callout,
+.usa-nav__submenu,
+.usa-section--dark {
+  @include u-bg('base-dark');
+}
+
+//circular images in graphics section
+.graphic_image--circle {
+  border-radius: 50%;
+}
+
+/* || LINKS */
+
+.usa-link {
+  @include link-theme(
+    'base-dark',
+    'base-dark',
+    'primary-darker',
+    'primary-darker'
+  );
+  text-decoration: none;
+  width: fit-content;
+  @include link-size();
+  border-bottom-style: solid;
+  border-bottom-color: color('primary');
+  &:hover {
+    text-decoration: none;
+    @include link-size-expanded();
+  }
+  &:active {
+    @include link-size-expanded();
+  }
+  &:visited {
+    border-bottom-color: color('primary');
+  }
+}
+
+.usa-link--light {
+  /* not currently being used */
+  @include link-theme(
+    'accent-cool-lighter',
+    'accent-cool-lighter',
+    'primary-lighter',
+    'primary-lighter'
+  );
+}
+
+/* || BUTTONS */
+
+//primary button
+.usa-button {
+  @include button-theme(
+    'base-dark',
+    'base-dark',
+    'accent-cool-lighter',
+    'accent-cool-lighter',
+    'primary',
+    'primary',
+    'base-dark',
+    'disabled',
+    'base-dark'
+  );
+}
+
+//warm button
+.usa-button--accent-warm {
+  @include button-theme(
+    'base-dark',
+    'base-dark',
+    'accent-cool-lighter',
+    'accent-cool-lighter',
+    'secondary',
+    'secondary',
+    'secondary-darker',
+    'disabled',
+    'base-dark'
+  );
+}
+
+//inverse button
+.usa-button--inverse {
+  @include button-theme(
+    'base-dark',
+    'base-dark',
+    'base-dark',
+    'base-dark',
+    'base-lighter',
+    'base-lightest',
+    'accent-cool-lighter',
+    'base-dark',
+    'base-lighter'
+  );
+  &:hover {
+    border: none;
+  }
+}
+
+/* || HEADER & NAVIGATION */
+
+.header__logo-title {
+  .usa-logo__text {
+    @include u-font-size('body', 'md');
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+  }
+}
+
+/* || MOBILE */
+
+@media (min-width: units('mobile')) {
+  /* || HEADER MOBILE */
+
+  //hide language selector button, project title, and banner text
+  .banner__language-selector,
+  .header__title,
+  .banner__info {
+    display: none;
+  }
+  .usa-nav {
+    padding: 0;
+    .usa-nav__inner {
+      //nav close button
+      .usa-nav__close {
+        margin: units(1);
+        padding: units(1);
+      }
+      .usa-nav__primary-item {
+        border: none;
+        width: fit-content;
+        //these submenu items are shown when a nav label is clicked and the accordion button expands
+        .usa-nav__submenu {
+          @include u-bg('accent-cool-lighter');
+          .usa-nav__submenu-item {
+            @include u-text('base-darker');
+            @include u-bg('accent-cool-lighter');
+            border: none;
+          }
+        }
+        //links and nav label buttons in the nav menu
+        //styling applies when accordion buttons are open and closed
+        a,
+        .usa-accordion__button[aria-expanded='false'],
+        .usa-accordion__button[aria-expanded='true'] {
+          @include hover-border(
+            'left',
+            'secondary',
+            'base-darker',
+            'accent-cool-lighter'
+          );
+          @include nav-item(
+            'base-darker',
+            'base-darker',
+            'normal',
+            'bold',
+            'accent-cool-lighter',
+            0 units(0.5),
+            units(1.5) units(2)
+          );
+        }
+      }
+    }
+  }
+
+  //header & nav
+  .usa-navbar {
+    @include flex-center-space-between();
+    margin: units(4) 0 units(2) 0;
+    //smaller logo size
+    .header__logo {
+      width: units('card');
+      height: auto;
+      padding-left: units(2);
+    }
+    //nav menu button
+    .usa-menu-btn {
+      @include u-bg('secondary');
+    }
+  }
+
+  //languages in nav bar
+  .header__language-nav-container {
+    //position languages at the bottom
+    position: absolute;
+    bottom: 0;
+    @include u-bg('base-dark');
+    padding: units(1) 0;
+    //right align right to left languages
+    .header__language-nav-RtoL {
+      @include align-languages(flex-end);
+    }
+    //left align left to right languages
+    .header__language-nav-LtoR {
+      @include align-languages(flex-start);
+    }
+    //language button styling
+    .header__language-nav-items {
+      .usa-button--unstyled {
+        @include u-text('accent-cool-lighter');
+        &:hover {
+          @include u-text('primary');
+          @include u-bg('base-dark');
+        }
+      }
+    }
+  }
+
+  /* || FOOTER MOBILE */
+
+  //footer nav links
+  .usa-footer__primary-section {
+    font-family: 'Space Mono';
+    @include u-text('accent-cool-lighter');
+    @include u-bg('base');
+    margin-top: units(2);
+    padding: 0;
+    .usa-link,
+    .usa-link--external,
+    .usa-footer__primary-link {
+      @include u-text('accent-cool-lighter');
+      padding: 0;
+    }
+  }
+
+  .usa-footer__primary-content {
+    padding: units(1);
+  }
+
+  .usa-footer__return-to-top {
+    @include u-text('base-darker');
+    padding: 0;
+  }
+
+  //department logo, terms & policies, and copyright & trademarks
+  .usa-footer__secondary-section {
+    @include u-text('accent-cool-lighter');
+    @include u-bg('base-dark');
+    .usa-link,
+    .usa-link--external {
+      @include u-text('accent-cool-lighter');
+    }
+    .footer__logo {
+      width: units('mobile');
+      height: auto;
+    }
+  }
+
+  .footer {
+    @include u-font-size('body', 1);
+    @include u-text('normal');
+  }
+
+  .footer__copyright-trademark p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer__terms,
+  .footer__privacy {
+    margin: 0;
+    padding-top: units(2);
+  }
+
+  .usa-footer__primary-link {
+    margin-left: units(2);
+    border: none;
+  }
+
+  .footer__privacy,
+  .footer__terms {
+    a {
+      border: none;
+    }
+  }
+}
+
+/* || DESKTOP */
+@media (min-width: units('desktop')) {
+  /* || HEADER DESKTOP */
+
+  //show language selector button and project title
+  .banner__language-selector,
+  .header__title,
+  .banner__info {
+    display: block;
+  }
+  .usa-nav {
+    margin-bottom: units(2);
+  }
+  .header__logo-title {
+    @include flex-center-space-between();
+  }
+  .usa-navbar {
+    .header__logo {
+      width: units('card-lg');
+      height: auto;
+    }
+  }
+
+  .usa-nav {
+    padding: units(2);
+    .usa-nav__inner {
+      .usa-nav__primary-item {
+        .usa-nav__submenu {
+          @include u-bg('base-darker');
+          .usa-nav__submenu-item {
+            @include u-bg('base-darker');
+            a {
+              @include u-text('accent-cool-lighter');
+              @include u-bg('base-darker');
+              @include u-text('normal');
+            }
+          }
+        }
+        //links and nav label buttons when accordion is closed
+        a,
+        .usa-accordion__button[aria-expanded='false'] {
+          @include hover-border(
+            'left',
+            'secondary',
+            'base-darker',
+            'accent-cool-lighter'
+          );
+          @include nav-item(
+            'disabled-dark',
+            'base-darker',
+            'bold',
+            'bold',
+            'accent-cool-lighter',
+            units(2),
+            0
+          );
+          &:hover {
+            border: none;
+          }
+        }
+        .usa-accordion__button[aria-expanded='false'] {
+          &::after {
+            border: units('2px') solid color('secondary');
+          }
+        }
+        //nav label buttons when accordion is closed
+        .usa-accordion__button[aria-expanded='true'] {
+          @include nav-item(
+            'accent-cool-lighter',
+            'accent-cool-lighter',
+            'bold',
+            'bold',
+            'base-darker',
+            units(2),
+            0
+          );
+          &:hover {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  /*hide language buttons from nav in desktop view 
+  these buttons will be in the language selector dropdown
+  or they will be in the banner
+  in mobile view they are part of the nav menu */
+  .header__language-nav-items {
+    display: none;
+  }
+
+  /* || FOOTER DESKTOP */
+
+  .footer {
+    @include u-font-size('body', 1);
+    @include u-text('bold');
+  }
+
+  .usa-footer__primary-section {
+    padding: units(3) 0;
+  }
+
+  .usa-footer__primary-link {
+    margin-left: 0;
+    border-bottom-style: solid;
+    border-bottom-color: color('primary');
+    &:hover {
+      text-decoration: none;
+      @include link-size-expanded();
+    }
+    &:active {
+      @include link-size-expanded();
+    }
+    &:visited {
+      border-bottom-color: color('primary');
+    }
+  }
+  .footer__privacy,
+  .footer__terms {
+    a {
+      border-bottom-style: solid;
+      border-bottom-color: color('primary');
+      &:hover {
+        text-decoration: none;
+        @include link-size-expanded();
+      }
+      &:active {
+        @include link-size-expanded();
+      }
+      &:visited {
+        border-bottom-color: color('primary');
+      }
+    }
+  }
+}
+
+/* || BANNER & LANGUAGE SELECTION */
+
+//custom NYC banner
+.banner {
+  @include flex-center-space-between();
+  .banner__logo-title,
+  .banner__language-selector-label {
+    @include flex-center-space-between();
+  }
+  .font-heading-xs {
+    margin: 0;
+  }
+  //language nav button
+  .usa-accordion__button {
+    background-image: none;
+    padding: 0 units('105');
+    p {
+      padding-left: units('105');
+    }
+    //language nav button when dropdown menu is closed
+    &[aria-expanded='false'] {
+      @include u-text('base-dark');
+      @include u-bg('primary');
+      p {
+        @include u-text('base-dark');
+      }
+    }
+    //language nav button when dropdown menu is open
+    &[aria-expanded='true'] {
+      @include u-text('accent-cool-lighter');
+      @include u-bg('primary');
+    }
+  }
+  //language buttons that look like links
+  .usa-button--unstyled {
+    @include u-text('accent-cool-lighter');
+    text-decoration: none;
+  }
+  //right-to-left language buttons in dropdown menu
+  .banner__language-selector-item--RtoL {
+    display: flex;
+    flex-direction: row-reverse;
+    @include hover-border(
+      'right',
+      'primary',
+      'accent-cool-lighter',
+      'base-dark'
+    );
+  }
+  //left-to-right language buttons in dropdown menu
+  .banner__language-selector-item--LtoR {
+    @include hover-border(
+      'left',
+      'primary',
+      'accent-cool-lighter',
+      'base-dark'
+    );
+  }
+  //all language buttons when there are 5 or fewer languages
+  .banner__language-selector-button-group {
+    @include flex-center-space-between();
+    .banner__language-selector-item {
+      @include hover-border(
+        'top',
+        'primary',
+        'accent-cool-lighter',
+        'base-dark'
+      );
+      margin: 0 units('105');
+      &:hover {
+        padding-top: 0;
+      }
+    }
+  }
+}

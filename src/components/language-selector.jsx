@@ -1,16 +1,18 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { navigate } from 'gatsby';
+
 import {
   Button, Grid, Menu, NavDropDownButton,
 } from '@trussworks/react-uswds';
-import { useTranslation } from 'react-i18next';
 import FeatherIcon from 'feather-icons-react';
+import { navigate } from 'gatsby';
+import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
+
 import { languages } from '../constants/languages';
 
 function LanguageSelector({ slug }) {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -42,7 +44,7 @@ function LanguageSelector({ slug }) {
     </div>
   ));
   return (
-    <>
+    <div className="banner__language-selector">
       {languageMenuItems.length <= 5 ? (
         <Grid className="banner__language-selector-button-group">
           {languageMenuItems}
@@ -50,27 +52,27 @@ function LanguageSelector({ slug }) {
       ) : (
         <Grid className="language-selector__nav">
           <NavDropDownButton
-            className="language-selector__nav-button"
             onToggle={() => {
               setIsOpen((prevOpen) => !prevOpen);
             }}
             menuId="language-selector"
+            className="language-selector__nav-button"
             isOpen={isOpen}
             label={(
               <div className="banner__language-selector-label font-heading-xs">
                 <FeatherIcon icon="globe" size={16} />
-                <p>Language</p>
+                <p>{t('header.language')}</p>
               </div>
             )}
           />
           <Menu
             id="language-selector"
-            items={languageMenuItems}
             isOpen={isOpen}
+            items={languageMenuItems}
           />
         </Grid>
       )}
-    </>
+    </div>
   );
 }
 

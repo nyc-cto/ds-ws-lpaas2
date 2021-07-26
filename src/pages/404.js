@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
-import { Redirect, Router } from "@reach/router";
-import { navigate } from "gatsby";
-import { useTranslation } from "react-i18next";
-import i18next from "../components/i18n";
+import React, { useEffect } from 'react';
+
+import { Redirect, Router } from '@reach/router';
+import { navigate } from 'gatsby';
+import { useTranslation } from 'react-i18next';
+
+import i18next from '../components/i18n';
 
 function NotFound() {
   const { i18n } = useTranslation();
@@ -11,7 +13,8 @@ function NotFound() {
   }, []);
 
   return (
-    <React.Fragment></React.Fragment>
+    // eslint-disable-next-line react/jsx-filename-extension
+    <></>
     // // <Router>
     // //   <Redirect from="/" to={`/${i18n.language}/404`} noThrow />
     // // </Router>

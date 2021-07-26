@@ -1,8 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
 
-function Hero({ hero, buttons }) {
+import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
+import PropTypes from 'prop-types';
+
+function Hero({ buttons, hero }) {
   return (
     <GridContainer className="usa-hero">
       <Grid row>

@@ -1,0 +1,63 @@
+$custom-base-lightest: #ccdee2;
+$custom-base-lighter: #9ab2b7;
+$custom-base-light: #68868c;
+$custom-base: #365961;
+$custom-base-dark: #042d36;
+$custom-base-ink: #001115;
+
+$custom-primary-lighter: #daf4f6;
+$custom-primary-light: #72d6dc;
+$custom-primary: #0bb7c2;
+$custom-primary-dark: #08888f;
+$custom-primary-darker: #04595b;
+
+$custom-secondary-lighter: #fbd9e4;
+$custom-secondary-light: #ee6d98;
+$custom-secondary: #e1004b;
+$custom-secondary-dark: #b20040;
+$custom-secondary-darker: #720034;
+
+$custom-disabled-light: #e9e9e9;
+$custom-disabled: #c4c4c4;
+$custom-disabled-dark: #7b7b7b;
+
+$theme-color-base-lightest: $custom-base-lightest;
+$theme-color-base-lighter: $custom-base-lighter;
+$theme-color-base-light: $custom-base-light;
+$theme-color-base: $custom-base;
+$theme-color-base-dark: $custom-base-dark;
+$theme-color-base-ink: $custom-base-ink;
+
+$theme-color-primary-lighter: $custom-primary-lighter;
+$theme-color-primary-light: $custom-primary-light;
+$theme-color-primary: $custom-primary;
+$theme-color-primary-dark: $custom-primary-dark;
+$theme-color-primary-darker: $custom-primary-darker;
+
+$theme-color-secondary-lighter: $custom-secondary-lighter;
+$theme-color-secondary-light: $custom-secondary-light;
+$theme-color-secondary: $custom-secondary;
+$theme-color-secondary-dark: $custom-secondary-dark;
+$theme-color-secondary-darker: $custom-secondary-darker;
+
+$theme-color-accent-cool-lighter: white; //set to white in order to access white in mixins
+$theme-color-accent-cool-light: $custom-primary-light;
+$theme-color-accent-cool: $custom-primary;
+$theme-color-accent-cool-dark: $custom-primary-dark;
+$theme-color-accent-cool-darker: $custom-primary-darker;
+
+$theme-color-accent-warm-lighter: $custom-secondary-lighter;
+$theme-color-accent-warm-light: $custom-secondary-light;
+$theme-color-accent-warm: $custom-secondary;
+$theme-color-accent-warm-dark: $custom-secondary-dark;
+$theme-color-accent-warm-darker: $custom-secondary-darker;
+
+$theme-color-disabled-light: $custom-disabled-light;
+$theme-color-disabled: $custom-disabled;
+$theme-color-disabled-dark: $custom-disabled-dark;
+
+$theme-text-color: "base-dark";
+$theme-font-type-sans: "public-sans";
+$theme-font-role-heading: "sans";
+
+$theme-focus-color: "primary";

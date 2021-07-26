@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
+
+import { GridContainer } from '@trussworks/react-uswds';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 // import React, { Suspense } from "react";
 // import { Redirect, Router } from "@reach/router";
 import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
 import { I18nextProvider, useTranslation } from 'react-i18next';
-import { GridContainer } from '@trussworks/react-uswds';
+
 import {
   Graphic,
   Hero,

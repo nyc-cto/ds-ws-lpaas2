@@ -1,7 +1,13 @@
 {
   "title": "[pl] Project Title",
+  "agency": {
+    "longformName": "[pl] NYC Mayor's Office of the Chief Technology Officer",
+    "shortformName": "[pl] NYC CTO"
+  },
+  "location": "[pl] NYC",
   "header": {
     "banner": "[pl] An official website of New York City government",
+    "language": "[pl] Language",
     "nav": {
       "dropdowns": [
         {
@@ -13,33 +19,28 @@
           "simpleLinks": ["[pl] Simple link three", "[pl] Simple link four"]
         }
       ],
+      "menu": "[pl] Menu",
       "parentLinks": ["[pl] Parent link"]
-    },
-    "secondaryLinks": ["[pl] Link one", "[pl] Link two"]
+    }
   },
   "footer": {
-    "copyright": "[pl] © 2021 City of New York. All Rights Reserved.",
-    "trademark": "[pl] NYC is a trademark and service mark of the City of New York.",
-    "terms": "[pl] NYC Terms of Use",
-    "privacy": "[pl] NYC Privacy Policy",
+    "returnToTop": "[pl] Return to top",
     "primaryLinks": [
       "[pl] Primary Link 1",
       "[pl] Primary Link 2",
       "[pl] Primary Link 3",
       "[pl] Primary Link 4"
     ],
+    "copyright": "[pl] © 2021 City of New York. All Rights Reserved.",
+    "trademark": "[pl] NYC is a trademark and service mark of the City of New York.",
+    "terms": "[pl] NYC Terms of Use",
+    "privacy": "[pl] NYC Privacy Policy",
     "secondary": {
       "heading": {
         "logo": "[pl] Name of Agency",
         "contact": "[pl] Agency Contact Center"
       },
-      "socialLinks": [
-        "[pl] Facebook",
-        "[pl] Twitter",
-        "[pl] YouTube",
-        "[pl] Instagram",
-        "[pl] RSS"
-      ],
+      "socialLinks": ["[pl] Facebook", "[pl] Twitter", "[pl] YouTube", "[pl] Instagram", "[pl] RSS"],
       "address": {
         "phone": "[pl] (800) CALL-GOVT",
         "email": "[pl] info@agency.gov"

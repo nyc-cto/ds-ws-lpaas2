@@ -9,9 +9,17 @@ i18n
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
-    ns: ['translations'],
+    debug: true,
     defaultNS: 'translations',
     fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false, // TODO: is this necessary?
+    },
+    // load: "languageOnly",
+    ns: ['translations'],
+    react: {
+      useSuspense: false,
+    },
     resources: {
       ar: {
         translations: require('../locales/ar/translation.json'),

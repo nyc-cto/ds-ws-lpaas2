@@ -1,11 +1,31 @@
 {
   "extends": ["airbnb"],
+  "plugins": ["import"],
   "env": {
     "node": true,
     "es6": true,
     "browser": true
   },
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   }
 }
