@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { I18nextProvider, useTranslation } from 'react-i18next';
-import { GridContainer } from '@trussworks/react-uswds';
-import { i18next, Layout, Section } from '../components';
+import { Grid, GridContainer } from '@trussworks/react-uswds';
+import { i18next, Layout } from '../components';
 
 import '@trussworks/react-uswds/lib/uswds.css';
 import '@trussworks/react-uswds/lib/index.css';
@@ -43,7 +43,7 @@ function Documentation({ data, location }) {
   }, [location.pathname]);
 
   const { markdownRemark } = data;
-  const { frontmatter } = markdownRemark;
+  const { frontmatter, html } = markdownRemark;
 
   return (
     <>
@@ -52,14 +52,9 @@ function Documentation({ data, location }) {
         <Layout slug={frontmatter.slug}>
           <main>
             <GridContainer>
-              {frontmatter.section && (
-                <Section
-                  page={frontmatter.page}
-                  section={frontmatter.section}
-                  subsection={frontmatter.subsection}
-                  subSubsection={frontmatter.subSubsection}
-                />
-              )}
+              <Grid>
+                <div dangerouslySetInnerHTML={{ __html: html }} />
+              </Grid>
             </GridContainer>
           </main>
         </Layout>
@@ -81,25 +76,10 @@ export const pageQuery = graphql`
         lang: { eq: $lang }
       }
     ) {
+      html
       frontmatter {
         lang
         slug
-        page {
-          heading
-          text
-        }
-        section {
-          heading
-          text
-        }
-        subsection {
-          heading
-          text
-        }
-        subSubsection {
-          heading
-          text
-        }
       }
     }
   }
