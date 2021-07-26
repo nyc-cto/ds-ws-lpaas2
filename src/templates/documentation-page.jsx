@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
@@ -52,8 +53,8 @@ function Documentation({ data, location }) {
         <Layout slug={frontmatter.slug}>
           <main>
             <GridContainer>
-              <Grid>
-                <div dangerouslySetInnerHTML={{ __html: html }} />
+              <Grid className="documentation__container">
+                <div className="documentation usa-layout-docs__main usa-prose usa-layout-docs" dangerouslySetInnerHTML={{ __html: html }} />
               </Grid>
             </GridContainer>
           </main>

@@ -8,9 +8,10 @@ $theme-font-path: '../../node_modules/uswds/src/fonts';
 $theme-hero-image: '../images/hero.png';
 
 //Custom themes
-@import './_custom-theme.scss';
+@import './custom-theme.scss';
 
 @import 'uswds';
 
 //Class overrides and custom classes
-@import './_class-overrides.scss';
+@import './class-overrides.scss';
+@import './documentation-page'
