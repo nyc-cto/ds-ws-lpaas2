@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
@@ -18,8 +18,10 @@ function Layout({ children, slug }) {
       <Helmet onChangeClientState={(newState) => setPageTitle(newState.title)} />
       <div id="top" />
       {children}
-      <div id="feedback-widget" lang={i18n.language} pageTitle={pageTitle} endpoint={process.env.GATSBY_ENDPOINT} />
-      <ScriptTag src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js" type="text/javascript" />
+      <Suspense fallback="loading">
+        <div id="feedback-widget" lang={i18n.language} pageTitle={pageTitle} endpoint={process.env.GATSBY_ENDPOINT} />
+        <ScriptTag src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js" type="text/javascript" />
+      </Suspense>
       <Footer />
     </>
   );

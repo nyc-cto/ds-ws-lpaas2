@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import {
   Footer as FooterUSWDS,
@@ -47,52 +47,54 @@ function Footer() {
   const secondaryLinks = links.secondary;
 
   return (
-    <FooterUSWDS
-      size="medium"
-      returnToTop={(
-        <GridContainer>
-          <Link to="#top" className="usa-footer__return-to-top">
-            Return to top
-          </Link>
-          {/* TODO: for some reason class name has to be manually added */}
-        </GridContainer>
+    <Suspense fallback="loading">
+      <FooterUSWDS
+        size="medium"
+        returnToTop={(
+          <GridContainer>
+            <Link to="#top" className="usa-footer__return-to-top">
+              Return to top
+            </Link>
+            {/* TODO: for some reason class name has to be manually added */}
+          </GridContainer>
       )}
-      primary={(
-        <FooterNav
-          size="medium"
-          links={primaryLinkItems}
-        />
-      )}
-      secondary={(
-        <Grid row gap>
-          <Logo
+        primary={(
+          <FooterNav
             size="medium"
-            image={(
-              <img
-                className="footer__logo"
-                src={logoFooter}
-                alt={t('agency.longformName')}
-              />
-            )}
+            links={primaryLinkItems}
           />
-          <Grid
-            className="usa-footer__contact-links footer"
-            mobileLg={{ col: 6 }}
-          >
-            <Grid className="footer__copyright-trademark">
-              <p>{t('footer.copyright')}</p>
-              <p>{t('footer.trademark')}</p>
-            </Grid>
-            <Grid className="footer__terms">
-              <Link to={secondaryLinks.terms}>{t('footer.terms')}</Link>
-            </Grid>
-            <Grid className="footer__privacy">
-              <Link to={secondaryLinks.privacy}>{t('footer.privacy')}</Link>
+      )}
+        secondary={(
+          <Grid row gap>
+            <Logo
+              size="medium"
+              image={(
+                <img
+                  className="footer__logo"
+                  src={logoFooter}
+                  alt={t('agency.longformName')}
+                />
+            )}
+            />
+            <Grid
+              className="usa-footer__contact-links footer"
+              mobileLg={{ col: 6 }}
+            >
+              <Grid className="footer__copyright-trademark">
+                <p>{t('footer.copyright')}</p>
+                <p>{t('footer.trademark')}</p>
+              </Grid>
+              <Grid className="footer__terms">
+                <Link to={secondaryLinks.terms}>{t('footer.terms')}</Link>
+              </Grid>
+              <Grid className="footer__privacy">
+                <Link to={secondaryLinks.privacy}>{t('footer.privacy')}</Link>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
       )}
-    />
+      />
+    </Suspense>
   );
 }
 

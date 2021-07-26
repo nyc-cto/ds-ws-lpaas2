@@ -1,5 +1,4 @@
-/* eslint-disable no-nested-ternary */
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 
 import {
   Button, Grid, Menu, NavDropDownButton,
@@ -24,6 +23,7 @@ function LanguageSelector({ slug }) {
   const languageMenuItems = languages.map((language) => (
     <div
       className={
+        // eslint-disable-next-line no-nested-ternary
         languages.length <= 5
           ? 'banner__language-selector-item'
           : language.isRtoL
@@ -44,35 +44,37 @@ function LanguageSelector({ slug }) {
     </div>
   ));
   return (
-    <div className="banner__language-selector">
-      {languageMenuItems.length <= 5 ? (
-        <Grid className="banner__language-selector-button-group">
-          {languageMenuItems}
-        </Grid>
-      ) : (
-        <Grid className="language-selector__nav">
-          <NavDropDownButton
-            onToggle={() => {
-              setIsOpen((prevOpen) => !prevOpen);
-            }}
-            menuId="language-selector"
-            className="language-selector__nav-button"
-            isOpen={isOpen}
-            label={(
-              <div className="banner__language-selector-label font-heading-xs">
-                <FeatherIcon icon="globe" size={16} />
-                <p>{t('header.language')}</p>
-              </div>
+    <Suspense fallback="loading">
+      <div className="banner__language-selector">
+        {languageMenuItems.length <= 5 ? (
+          <Grid className="banner__language-selector-button-group">
+            {languageMenuItems}
+          </Grid>
+        ) : (
+          <Grid className="language-selector__nav">
+            <NavDropDownButton
+              onToggle={() => {
+                setIsOpen((prevOpen) => !prevOpen);
+              }}
+              menuId="language-selector"
+              className="language-selector__nav-button"
+              isOpen={isOpen}
+              label={(
+                <div className="banner__language-selector-label font-heading-xs">
+                  <FeatherIcon icon="globe" size={16} />
+                  <p>{t('header.language')}</p>
+                </div>
             )}
-          />
-          <Menu
-            id="language-selector"
-            isOpen={isOpen}
-            items={languageMenuItems}
-          />
-        </Grid>
-      )}
-    </div>
+            />
+            <Menu
+              id="language-selector"
+              isOpen={isOpen}
+              items={languageMenuItems}
+            />
+          </Grid>
+        )}
+      </div>
+    </Suspense>
   );
 }
 

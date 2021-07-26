@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import {
@@ -84,32 +84,34 @@ function Header({ slug }) {
   );
 
   return (
-    <HeaderUSWDS extended>
-      {/* <Router> */}
-      <SkipNavLink />
-      <Banner slug={slug}>{t('header.banner')}</Banner>
-      <div className="usa-navbar">
-        <div className="header__logo-title">
-          <img
-            className="header__logo"
-            src={logoHeader}
-            alt={t('agency.shortformName')}
-          />
-          <Title className="header__title">{t('title')}</Title>
+    <Suspense fallback="loading">
+      <HeaderUSWDS extended>
+        {/* <Router> */}
+        <SkipNavLink />
+        <Banner slug={slug}>{t('header.banner')}</Banner>
+        <div className="usa-navbar">
+          <div className="header__logo-title">
+            <img
+              className="header__logo"
+              src={logoHeader}
+              alt={t('agency.shortformName')}
+            />
+            <Title className="header__title">{t('title')}</Title>
+          </div>
+          <NavMenuButton onClick={onClick} label={t('header.nav.menu')} />
         </div>
-        <NavMenuButton onClick={onClick} label={t('header.nav.menu')} />
-      </div>
-      <ExtendedNav
-        onToggleMobileNav={onClick}
-        primaryItems={NavDropDown()
-          .concat(parentLinkItems)
-          .concat(languageNavItems)}
-        secondaryItems={[]}
-        mobileExpanded={expanded}
-        role="navigation"
-      />
-      <SkipNavContent />
-    </HeaderUSWDS>
+        <ExtendedNav
+          onToggleMobileNav={onClick}
+          primaryItems={NavDropDown()
+            .concat(parentLinkItems)
+            .concat(languageNavItems)}
+          secondaryItems={[]}
+          mobileExpanded={expanded}
+          role="navigation"
+        />
+        <SkipNavContent />
+      </HeaderUSWDS>
+    </Suspense>
   );
 }
 
