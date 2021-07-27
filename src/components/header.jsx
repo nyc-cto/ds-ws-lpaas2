@@ -13,10 +13,11 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
 import { Link } from '.';
-import Banner from './banner';
-import NavDropDown from './nav-drop-down';
+import { languages } from '../constants/languages';
 import { headerLinks as links } from '../constants/links';
 import { logoHeader } from '../images';
+import Banner from './banner';
+import NavDropDown from './nav-drop-down';
 
 import '@reach/skip-nav/styles.css';
 
