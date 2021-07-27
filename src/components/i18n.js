@@ -62,14 +62,6 @@ i18n
       },
     },
     returnObjects: true,
-    interpolation: {
-      escapeValue: false,
-    },
-    react: {
-      useSuspense: false,
-      // wait: true ?
-    },
-    debug: true,
   });
 
 export default i18n;
