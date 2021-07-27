@@ -2,21 +2,15 @@ import React, { useEffect } from 'react';
 
 // import React, { Suspense } from "react";
 // import { Redirect, Router } from "@reach/router";
-import { navigate } from 'gatsby';
-import { useTranslation } from 'react-i18next';
 
-import { i18next } from '../components';
+import Layout from '../components/layout';
 
-function Home({ location }) {
-  const { i18n } = useTranslation();
-
+function Home() {
   // TODO: which method is preferred?
 
   // method one
-  useEffect(() => {
-    navigate(`/${i18n.language}/`);
-  }, []);
-  return <></>;
+  // eslint-disable-next-line react/jsx-filename-extension
+  return <Layout />;
 
   // method two throws an error (there's not a page or function yet at /en) – takes time to load
   // return (
