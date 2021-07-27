@@ -1,0 +1,99 @@
+/* || GENERAL */
+
+//background for hero callout, menus, and graphics section
+.usa-hero__callout,
+.usa-nav__submenu,
+.usa-section--dark {
+  @include u-bg('base-dark');
+}
+
+//circular images in graphics section
+.graphic_image--circle {
+  border-radius: 50%;
+}
+
+/* || LINKS */
+
+.usa-link {
+  @include link-theme(
+    'base-dark',
+    'base-dark',
+    'primary-darker',
+    'primary-darker'
+  );
+  text-decoration: none;
+  width: fit-content;
+  @include link-size();
+  border-bottom-style: solid;
+  border-bottom-color: color('primary');
+  &:hover {
+    text-decoration: none;
+    @include link-size-expanded();
+  }
+  &:active {
+    @include link-size-expanded();
+  }
+  &:visited {
+    border-bottom-color: color('primary');
+  }
+}
+
+.usa-link--light {
+  /* not currently being used */
+  @include link-theme(
+    'accent-cool-lighter',
+    'accent-cool-lighter',
+    'primary-lighter',
+    'primary-lighter'
+  );
+}
+
+/* || BUTTONS */
+
+//primary button
+.usa-button {
+  @include button-theme(
+    'base-dark',
+    'base-dark',
+    'accent-cool-lighter',
+    'accent-cool-lighter',
+    'primary',
+    'primary',
+    'base-dark',
+    'disabled',
+    'base-dark'
+  );
+}
+
+//warm button
+.usa-button--accent-warm {
+  @include button-theme(
+    'base-dark',
+    'base-dark',
+    'accent-cool-lighter',
+    'accent-cool-lighter',
+    'secondary',
+    'secondary',
+    'secondary-darker',
+    'disabled',
+    'base-dark'
+  );
+}
+
+//inverse button
+.usa-button--inverse {
+  @include button-theme(
+    'base-dark',
+    'base-dark',
+    'base-dark',
+    'base-dark',
+    'base-lighter',
+    'base-lightest',
+    'accent-cool-lighter',
+    'base-dark',
+    'base-lighter'
+  );
+  &:hover {
+    border: none;
+  }
+}
