@@ -1,21 +1,11 @@
+/* eslint-disable react/no-danger */
 import React, { useEffect } from 'react';
-
-import { GridContainer } from '@trussworks/react-uswds';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-// import React, { Suspense } from "react";
-// import { Redirect, Router } from "@reach/router";
 import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
 import { I18nextProvider, useTranslation } from 'react-i18next';
-
-import {
-  Graphic,
-  Hero,
-  i18next,
-  Layout,
-  Section,
-  Tagline,
-} from '../components';
+import { Grid, GridContainer } from '@trussworks/react-uswds';
+import { i18next, Layout } from '../components';
 
 import '@trussworks/react-uswds/lib/uswds.css';
 import '@trussworks/react-uswds/lib/index.css';
@@ -24,7 +14,7 @@ import '@fontsource/space-mono';
 
 import '../styles/index.scss';
 
-function Landing({ data, location }) {
+function Documentation({ data, location }) {
   const { i18n } = useTranslation();
 
   // TODO: try to use LanguageDetector
@@ -54,82 +44,52 @@ function Landing({ data, location }) {
   }, [location.pathname]);
 
   const { markdownRemark } = data;
-  const { frontmatter } = markdownRemark;
-
+  const { frontmatter, html } = markdownRemark;
   return (
-    // <Suspense fallback="loading">
     <>
-      {/* <Router basepath={i18n.language}> */}
-      {/* <Redirect from="/" to={`/${i18n.language}/home`} noThrow /> */}
-      {/* <NotFound default /> */}
-      {/* </Router> */}
       <I18nextProvider i18n={i18next}>
-        <Helmet title={frontmatter.pageTitle} htmlAttributes={{ lang: i18n.language }} />
+        <Helmet
+          title={frontmatter.pageTitle}
+          htmlAttributes={{ lang: i18n.language }}
+        />
         <Layout slug={frontmatter.slug}>
           <main>
             <GridContainer>
-              {frontmatter.hero && (
-                <Hero hero={frontmatter.hero} buttons={frontmatter.buttons} />
-              )}
-              {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
-              {frontmatter.graphics && (
-                <Graphic graphics={frontmatter.graphics} />
-              )}
-              {frontmatter.section && (
-                <Section
-                  section={frontmatter.section}
-                  buttons={frontmatter.buttons}
+              <Grid className="documentation__container">
+                <div
+                  className="documentation usa-layout-docs usa-layout-docs__main usa-prose"
+                  dangerouslySetInnerHTML={{ __html: html }}
                 />
-              )}
+              </Grid>
             </GridContainer>
           </main>
         </Layout>
       </I18nextProvider>
     </>
-    // </Suspense>
   );
 }
 
-Landing.propTypes = {
+Documentation.propTypes = {
   data: PropTypes.node.isRequired,
   location: PropTypes.node.isRequired,
 };
 
 export const pageQuery = graphql`
-  query Landing($lang: String!) {
+  query Documentation($lang: String!) {
     markdownRemark(
-      frontmatter: { templateKey: { eq: "landing-page" }, lang: { eq: $lang } }
+      frontmatter: {
+        templateKey: { eq: "documentation-page" }
+        lang: { eq: $lang }
+      }
     ) {
+      html
       frontmatter {
         lang
         slug
         pageTitle
-        hero {
-          image
-          imageDescription
-          heading
-          text
-        }
-        buttons {
-          callToAction
-        }
-        tagline {
-          heading
-          text
-        }
-        graphics {
-          image
-          imageDescription
-          heading
-          text
-        }
-        section {
-          heading
-          text
-        }
       }
     }
   }
 `;
 
-export default Landing;
+export default Documentation;

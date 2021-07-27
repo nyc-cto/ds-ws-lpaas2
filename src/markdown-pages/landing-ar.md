@@ -2,6 +2,7 @@
 lang: ar
 templateKey: landing-page
 slug: home
+pageTitle: ar Project | Home
 hero:
   image: ar hero-img.jpg
   imageDescription: ar Description

@@ -2,6 +2,7 @@
 lang: zh_HANS
 templateKey: landing-page
 slug: home
+pageTitle: zh_HANS Project | Home
 hero:
   image: zh_HANS hero-img.jpg
   imageDescription: zh_HANS Description
