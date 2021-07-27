@@ -17,8 +17,7 @@ function LanguageSelector({ slug }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (langKey) => {
-    i18n.changeLanguage(langKey);
-    navigate(`/${langKey}/${slug}`);
+    i18n.changeLanguage(langKey, navigate(`/${langKey}/${slug}`));
   };
 
   const languageMenuItems = languages.map((language) => (
@@ -26,9 +25,9 @@ function LanguageSelector({ slug }) {
       className={
         languages.length <= 5
           ? 'banner__language-selector-item'
-          : language.isRtoL
-            ? 'banner__language-selector-item--RtoL'
-            : 'banner__language-selector-item--LtoR'
+          : i18n.dir(language.langKey) === 'rtl'
+            ? 'banner__language-selector-item--rtl'
+            : 'banner__language-selector-item--ltr'
       }
     >
       <Button
