@@ -2,7 +2,7 @@
 lang: bn
 templateKey: documentation-page
 slug: documentation
-pageTitle: Project | Documentation
+pageTitle: bn Project | Documentation
 ---
 
 # bn Page heading

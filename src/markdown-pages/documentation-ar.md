@@ -2,7 +2,7 @@
 lang: ar
 templateKey: documentation-page
 slug: documentation
-pageTitle: Project | Documentation
+pageTitle: ar Project | Documentation
 ---
 
 # ar Page heading

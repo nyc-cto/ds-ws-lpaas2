@@ -2,7 +2,7 @@
 lang: ur
 templateKey: documentation-page
 slug: documentation
-pageTitle: Project | Documentation
+pageTitle: ur Project | Documentation
 ---
 
 # ur Page heading

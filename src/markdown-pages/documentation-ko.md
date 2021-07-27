@@ -2,7 +2,7 @@
 lang: ko
 templateKey: documentation-page
 slug: documentation
-pageTitle: Project | Documentation
+pageTitle: ko Project | Documentation
 ---
 
 # ko Page heading

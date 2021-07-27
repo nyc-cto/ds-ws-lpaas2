@@ -2,7 +2,7 @@
 lang: yi
 templateKey: documentation-page
 slug: documentation
-pageTitle: Project | Documentation
+pageTitle: yi Project | Documentation
 ---
 
 # yi Page heading
