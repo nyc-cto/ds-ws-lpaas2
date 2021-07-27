@@ -24,6 +24,7 @@
     }
   },
   "footer": {
+    "returnToTop": "[bn] Return to top",
     "primaryLinks": [
       "[bn] Primary Link 1",
       "[bn] Primary Link 2",

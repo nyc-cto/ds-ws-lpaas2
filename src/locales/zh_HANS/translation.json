@@ -24,6 +24,7 @@
     }
   },
   "footer": {
+    "returnToTop": "[zh_HANS] Return to top",
     "primaryLinks": [
       "[zh_HANS] Primary Link 1",
       "[zh_HANS] Primary Link 2",
