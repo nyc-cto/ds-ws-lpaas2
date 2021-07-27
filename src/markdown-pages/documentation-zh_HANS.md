@@ -1,5 +1,5 @@
 ---
-lang: zh_hans
+lang: zh_HANS
 templateKey: documentation-page
 slug: documentation
 pageTitle: zh_HANS Project | Documentation

@@ -1,5 +1,5 @@
 ---
-lang: zh_hant
+lang: zh_HANT
 templateKey: documentation-page
 slug: documentation
 pageTitle: zh_HANT Project | Documentation

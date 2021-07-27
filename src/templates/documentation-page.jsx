@@ -57,7 +57,7 @@ function Documentation({ data, location }) {
             <GridContainer>
               <Grid className="documentation__container">
                 <div
-                  className="documentation usa-layout-docs__main usa-prose usa-layout-docs"
+                  className="documentation usa-layout-docs usa-layout-docs__main usa-prose"
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
               </Grid>
