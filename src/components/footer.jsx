@@ -8,13 +8,14 @@ import {
   Logo,
 } from '@trussworks/react-uswds';
 import { useTranslation } from 'react-i18next';
+import ScriptTag from 'react-script-tag';
 
 import { Link } from '.';
 import { footerLinks as links } from '../constants/links';
 import { logoFooter } from '../images';
 
 function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const primaryLinks = links.primary;
   const primaryLinksLength = primaryLinks.length;
@@ -55,6 +56,8 @@ function Footer() {
           <Link to="#top">
             {t('footer.returnToTop')}
           </Link>
+          <div id="feedback-widget" className="footer__feedback-widget" lang={i18n.language} pageTitle={t('title')} endpoint={process.env.GATSBY_ENDPOINT} />
+          <ScriptTag src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js" type="text/javascript" />
         </GridContainer>
       )}
       primary={(

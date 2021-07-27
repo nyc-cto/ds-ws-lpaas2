@@ -330,7 +330,7 @@
     font-family: 'Space Mono';
     @include u-text('accent-cool-lighter');
     @include u-bg('base');
-    margin-top: units(2);
+    margin-top: 0;
     padding: 0;
     .usa-link,
     .usa-link--external,
@@ -347,6 +347,10 @@
   .usa-footer__return-to-top {
     @include u-text('base-darker');
     padding: 0;
+  }
+
+  .footer__feedback-widget{
+    margin-top: units(3);
   }
 
   //department logo, terms & policies, and copyright & trademarks
