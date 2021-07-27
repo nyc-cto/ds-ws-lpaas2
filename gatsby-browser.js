@@ -5,12 +5,12 @@
 // TODO: try to pull language from route here
 
 // Client route changes
-exports.onRouteUpdate = ({ location, prevLocation }) => {
+// exports.onRouteUpdate = ({ location, prevLocation }) => {
 //   const { i18n } = useTranslation();
-  //   useEffect(() => {
-  //     navigate(`/${i18n.language}/404`);
-  //   }, []);
+//   useEffect(() => {
+//     navigate(`/${i18n.language}/404`);
+//   }, []);
 
-  console.log('new pathname', location.pathname);
-  console.log('old pathname', prevLocation ? prevLocation.pathname : null);
-};
+//   console.log('new pathname', location.pathname);
+//   console.log('old pathname', prevLocation ? prevLocation.pathname : null);
+// };
