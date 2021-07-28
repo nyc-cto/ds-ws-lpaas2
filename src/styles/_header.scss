@@ -40,7 +40,7 @@
         a,
         .usa-accordion__button[aria-expanded='false'],
         .usa-accordion__button[aria-expanded='true'] {
-          @include hover-border(
+          @include active-border(
             'left',
             'secondary',
             'base-darker',
@@ -68,7 +68,6 @@
     .header__logo {
       width: units('card');
       height: auto;
-      padding-left: units(2);
     }
     //nav menu button
     .usa-menu-btn {
@@ -149,7 +148,7 @@
         //links and nav label buttons when accordion is closed
         a,
         .usa-accordion__button[aria-expanded='false'] {
-          @include hover-border(
+          @include active-border(
             'left',
             'secondary',
             'base-darker',
@@ -224,6 +223,13 @@
         p {
           @include u-text('base-dark');
         }
+        &:hover {
+          @include u-text('accent-cool-lighter');
+          @include u-bg('primary');
+          p {
+            @include u-text('accent-cool-lighter');
+          }
+        }
       }
       //language nav button when dropdown menu is open
       &[aria-expanded='true'] {
@@ -240,7 +246,7 @@
     .banner__language-selector-item--rtl {
       display: flex;
       flex-direction: row-reverse;
-      @include hover-border(
+      @include active-border(
         'right',
         'primary',
         'accent-cool-lighter',
@@ -249,7 +255,7 @@
     }
     //left-to-right language buttons in dropdown menu
     .banner__language-selector-item--ltr {
-      @include hover-border(
+      @include active-border(
         'left',
         'primary',
         'accent-cool-lighter',
@@ -260,7 +266,7 @@
     .banner__language-selector-button-group {
       @include flex-center-space-between();
       .banner__language-selector-item {
-        @include hover-border(
+        @include active-border(
           'top',
           'primary',
           'accent-cool-lighter',

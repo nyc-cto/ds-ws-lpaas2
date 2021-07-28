@@ -13,7 +13,7 @@ function Hero({ buttons, hero }) {
           )}
           {hero.text && <p className="usa-prose">{hero.text}</p>}
           {buttons.callToAction && (
-            <Button className="usa-button--inverse">
+            <Button className="usa-button">
               {buttons.callToAction}
             </Button>
           )}

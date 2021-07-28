@@ -95,15 +95,15 @@
 }
 
 //text, background, and border colors for language selector buttons
-@mixin hover-border($direction, $border-color, $text, $bg) {
-  &:hover {
+@mixin active-border($direction, $border-color, $text, $bg) {
+  &:active {
     padding-#{$direction}: units('05');
     border-#{$direction}: units('05') solid color($border-color);
   }
   .usa-button--unstyled {
     @include u-text($text);
     @include u-bg($bg);
-    &:hover {
+    &:active {
       @include u-text($text);
       text-decoration: none;
       @include u-bg($bg);
