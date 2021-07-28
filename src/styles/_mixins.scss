@@ -94,6 +94,15 @@
   flex-wrap: wrap;
 }
 
+@mixin language-button-hover($text) {
+  .usa-button--unstyled {
+    &:hover {
+      @include u-text($text);
+      border: none;
+    }
+  }
+}
+
 //text, background, and border colors for language selector buttons
 @mixin active-border($direction, $border-color, $text, $bg) {
   &:active {

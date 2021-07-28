@@ -100,6 +100,9 @@
           @include u-text('primary');
           @include u-bg('base-dark');
         }
+        &:active {
+          @include language-button-hover('primary');
+        }
       }
     }
   }
@@ -212,9 +215,10 @@
     //language nav button
     .usa-accordion__button {
       background-image: none;
-      padding: 0 units('105');
+      padding: units(2) units('105');
       p {
         padding-left: units('105');
+        margin: 0;
       }
       //language nav button when dropdown menu is closed
       &[aria-expanded='false'] {
@@ -244,6 +248,7 @@
     }
     //right-to-left language buttons in dropdown menu
     .banner__language-selector-item--rtl {
+      @include language-button-hover('primary');
       display: flex;
       flex-direction: row-reverse;
       @include active-border(
@@ -255,6 +260,7 @@
     }
     //left-to-right language buttons in dropdown menu
     .banner__language-selector-item--ltr {
+      @include language-button-hover('primary');
       @include active-border(
         'left',
         'primary',
