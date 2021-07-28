@@ -1,9 +1,6 @@
 /* || MOBILE */
 
 @media (min-width: units('mobile')) {
-  
-  /* || HEADER */
-
   .header__logo-title {
     .usa-logo__text {
       @include u-font-size('body', 'md');
@@ -112,9 +109,6 @@
 /* || DESKTOP */
 
 @media (min-width: units('desktop')) {
-
-  /* || HEADER */
-
   //show language selector button and project title
   .banner__language-selector,
   .header__title,
@@ -205,8 +199,6 @@
   .header__language-nav-items {
     display: none;
   }
-
-  /* || BANNER & LANGUAGE SELECTION */
 
   //custom NYC banner
   .banner {

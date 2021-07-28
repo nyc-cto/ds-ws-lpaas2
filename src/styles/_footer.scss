@@ -1,8 +1,6 @@
 /* || MOBILE */
 
 @media (min-width: units('mobile')) {
-  /* || FOOTER  */
-
   //footer nav links
   .usa-footer__primary-section {
     font-family: 'Space Mono';
@@ -85,8 +83,6 @@
 /* || DESKTOP */
 
 @media (min-width: units('desktop')) {
-  /* || FOOTER */
-
   .footer {
     @include u-font-size('body', 1);
     @include u-text('bold');
