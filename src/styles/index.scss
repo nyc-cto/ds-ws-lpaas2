@@ -13,5 +13,8 @@ $theme-hero-image: '../images/hero.png';
 @import 'uswds';
 
 //Class overrides and custom classes
-@import './class-overrides';
-@import './documentation-page'
+@import './mixins';
+@import './global';
+@import './header';
+@import './body';
+@import './footer';

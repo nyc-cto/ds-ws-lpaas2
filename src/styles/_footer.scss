@@ -1,0 +1,127 @@
+/* || MOBILE */
+
+@media (min-width: units('mobile')) {
+  //footer nav links
+  .usa-footer__primary-section {
+    font-family: 'Space Mono';
+    @include u-text('accent-cool-lighter');
+    @include u-bg('base');
+    margin-top: 0;
+    padding: 0;
+    .usa-link,
+    .usa-link--external,
+    .usa-footer__primary-link {
+      @include u-text('accent-cool-lighter');
+      padding: 0;
+    }
+  }
+
+  .usa-footer__primary-content {
+    padding: units(1);
+  }
+
+  .usa-footer__return-to-top {
+    a {
+      @include link-theme(
+        'base-dark',
+        'primary',
+        'base-dark',
+        'primary'
+      );
+      text-decoration: none;
+      padding: 0;
+    }
+  }
+
+  .footer__feedback-widget {
+    margin-top: units(3);
+  }
+
+  //department logo, terms & policies, and copyright & trademarks
+  .usa-footer__secondary-section {
+    @include u-text('accent-cool-lighter');
+    @include u-bg('base-dark');
+    .usa-link,
+    .usa-link--external {
+      @include u-text('accent-cool-lighter');
+    }
+    .footer__logo {
+      width: units('mobile');
+      height: auto;
+    }
+  }
+
+  .footer {
+    @include u-font-size('body', 1);
+    @include u-text('normal');
+  }
+
+  .footer__copyright-trademark p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer__terms,
+  .footer__privacy {
+    margin: 0;
+    padding-top: units(2);
+  }
+
+  .usa-footer__primary-link {
+    margin-left: units(2);
+    border: none;
+  }
+
+  .footer__privacy,
+  .footer__terms {
+    a {
+      border: none;
+    }
+  }
+}
+
+/* || DESKTOP */
+
+@media (min-width: units('desktop')) {
+  .footer {
+    @include u-font-size('body', 1);
+    @include u-text('bold');
+  }
+
+  .usa-footer__primary-section {
+    padding: units(3) 0;
+  }
+
+  .usa-footer__primary-link {
+    margin-left: 0;
+    border-bottom-style: solid;
+    border-bottom-color: color('primary');
+    &:hover {
+      text-decoration: none;
+      @include link-size-expanded();
+    }
+    &:active {
+      @include link-size-expanded();
+    }
+    &:visited {
+      border-bottom-color: color('primary');
+    }
+  }
+  .footer__privacy,
+  .footer__terms {
+    a {
+      border-bottom-style: solid;
+      border-bottom-color: color('primary');
+      &:hover {
+        text-decoration: none;
+        @include link-size-expanded();
+      }
+      &:active {
+        @include link-size-expanded();
+      }
+      &:visited {
+        border-bottom-color: color('primary');
+      }
+    }
+  }
+}

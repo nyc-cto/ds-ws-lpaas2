@@ -1,0 +1,112 @@
+//text and background colors for NYC buttons
+@mixin button-theme(
+  $text-color,
+  $text-hover,
+  $text-active,
+  $text-disabled,
+  $bg,
+  $bg-hover,
+  $bg-active,
+  $bg-disabled,
+  $border-color
+) {
+  @include u-text($text-color);
+  @include u-bg($bg);
+  &:hover {
+    @include u-text($text-hover);
+    @include u-bg($bg-hover);
+    border: units('2px') solid color($border-color);
+  }
+  &:active {
+    @include u-text($text-active);
+    @include u-bg($bg-active);
+  }
+  &:disabled {
+    @include u-text($text-disabled);
+    @include u-bg($bg-disabled);
+  }
+}
+
+//link text and border colors
+@mixin link-theme(
+  $color,
+  $border-bottom-color-active,
+  $color-visited,
+  $border-bottom-color-visited
+) {
+  @include u-text($color);
+  &:active {
+    border-bottom-color: color($border-bottom-color-active);
+  }
+  &:visited {
+    @include u-text($color-visited);
+    border-bottom-color: color($border-bottom-color-visited);
+  }
+}
+
+//bottom border of links
+@mixin link-size {
+  border-bottom-width: units('05');
+}
+
+//bottom border of links on hover
+@mixin link-size-expanded {
+  border-bottom-width: units('105');
+}
+
+//nav links and buttons in mobile and desktop views
+@mixin nav-item(
+  $text,
+  $text-hover,
+  $font-weight,
+  $font-weight-hover,
+  $bg,
+  $padding,
+  $margin
+) {
+  @include u-text($text);
+  @include u-bg($bg);
+  @include u-text($font-weight);
+  padding: $padding;
+  margin: $margin;
+  &:hover {
+    @include u-text($text-hover);
+    @include u-bg($bg);
+    @include u-text($font-weight-hover);
+    padding: $padding;
+    margin: $margin;
+  }
+}
+
+//flex with items aligned center and content justified space between
+@mixin flex-center-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//align languages in nav
+@mixin align-languages($flex-start-or-end) {
+  display: flex;
+  align-items: center;
+  justify-content: $flex-start-or-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+//text, background, and border colors for language selector buttons
+@mixin hover-border($direction, $border-color, $text, $bg) {
+  &:hover {
+    padding-#{$direction}: units('05');
+    border-#{$direction}: units('05') solid color($border-color);
+  }
+  .usa-button--unstyled {
+    @include u-text($text);
+    @include u-bg($bg);
+    &:hover {
+      @include u-text($text);
+      text-decoration: none;
+      @include u-bg($bg);
+    }
+  }
+}
