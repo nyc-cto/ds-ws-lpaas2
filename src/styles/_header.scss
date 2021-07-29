@@ -40,12 +40,16 @@
         a,
         .usa-accordion__button[aria-expanded='false'],
         .usa-accordion__button[aria-expanded='true'] {
-          @include active-border(
-            'left',
-            'secondary',
-            'base-darker',
-            'accent-cool-lighter'
-          );
+          .nav-dropdown__label-icon,
+          .nav-dropdown__label-icon--expanded {
+            display: none;
+          }
+          // @include active-border(
+          //   'left',
+          //   'secondary',
+          //   'base-darker',
+          //   'accent-cool-lighter'
+          // );
           @include nav-item(
             'base-darker',
             'base-darker',
