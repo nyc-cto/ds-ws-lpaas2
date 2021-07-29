@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 
-import { GridContainer } from '@trussworks/react-uswds';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 // import React, { Suspense } from "react";
@@ -64,24 +63,25 @@ function Landing({ data, location }) {
       {/* <NotFound default /> */}
       {/* </Router> */}
       <I18nextProvider i18n={i18next}>
-        <Helmet title={frontmatter.pageTitle} htmlAttributes={{ lang: i18n.language }} />
+        <Helmet
+          title={frontmatter.pageTitle}
+          htmlAttributes={{ lang: i18n.language }}
+        />
         <Layout slug={frontmatter.slug}>
           <main>
-            <GridContainer>
-              {frontmatter.hero && (
-                <Hero hero={frontmatter.hero} buttons={frontmatter.buttons} />
-              )}
-              {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
-              {frontmatter.graphics && (
-                <Graphic graphics={frontmatter.graphics} />
-              )}
-              {frontmatter.section && (
-                <Section
-                  section={frontmatter.section}
-                  buttons={frontmatter.buttons}
-                />
-              )}
-            </GridContainer>
+            {frontmatter.hero && (
+              <Hero hero={frontmatter.hero} buttons={frontmatter.buttons} />
+            )}
+            {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
+            {frontmatter.graphics && (
+              <Graphic graphics={frontmatter.graphics} />
+            )}
+            {frontmatter.section && (
+              <Section
+                section={frontmatter.section}
+                buttons={frontmatter.buttons}
+              />
+            )}
           </main>
         </Layout>
       </I18nextProvider>
