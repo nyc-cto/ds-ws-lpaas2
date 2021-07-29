@@ -163,7 +163,7 @@
             'bold',
             'bold',
             'accent-cool-lighter',
-            units(2),
+            units(2) units(2) 0 units(2),
             0
           );
           &:hover {
@@ -171,19 +171,48 @@
           }
         }
         .usa-accordion__button[aria-expanded='false'] {
+          background-image: none;
+          .nav-dropdown__label {
+            p {
+              margin: 0;
+              padding-right: units('105');
+            }
+            @include flex-center-space-between();
+            .nav-dropdown__label-icon {
+              display: block;
+            }
+            .nav-dropdown__label-icon--expanded {
+              display: none;
+            }
+          }
+
           &::after {
             border: units('2px') solid color('secondary');
           }
         }
         //nav label buttons when accordion is closed
         .usa-accordion__button[aria-expanded='true'] {
+          background-image: none;
+          .nav-dropdown__label {
+            p {
+              margin: 0;
+              padding-right: units('105');
+            }
+            @include flex-center-space-between();
+            .nav-dropdown__label-icon {
+              display: none;
+            }
+            .nav-dropdown__label-icon--expanded {
+              display: block;
+            }
+          }
           @include nav-item(
             'accent-cool-lighter',
             'accent-cool-lighter',
             'bold',
             'bold',
             'base-dark',
-            units(2),
+            units(2) units(2) 0 units(2),
             0
           );
           &:hover {
