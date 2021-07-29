@@ -272,6 +272,7 @@
     .banner__language-selector-button-group {
       @include flex-center-space-between();
       .banner__language-selector-item {
+        @include language-button-hover('primary');
         @include active-border(
           'top',
           'primary',

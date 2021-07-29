@@ -87,6 +87,7 @@
 /* || SECTIONS */
 
 //background color of dark sections
-.usa-section--dark {
+.usa-section--dark,
+.usa-nav__submenu {
   @include u-bg('base-dark');
 }
