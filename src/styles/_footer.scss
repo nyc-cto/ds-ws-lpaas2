@@ -22,12 +22,7 @@
 
   .usa-footer__return-to-top {
     a {
-      @include link-theme(
-        'base-dark',
-        'primary',
-        'base-dark',
-        'primary'
-      );
+      @include link-theme('base-dark', 'primary', 'base-dark', 'primary');
       text-decoration: none;
       padding: 0;
     }
@@ -51,7 +46,7 @@
     }
   }
 
-  .footer {
+  .footer__info {
     @include u-font-size('body', 1);
     @include u-text('normal');
   }
@@ -83,7 +78,11 @@
 /* || DESKTOP */
 
 @media (min-width: units('desktop')) {
-  .footer {
+  .footer__return-to-top-feedback-container {
+  
+  }
+
+  .footer__info {
     @include u-font-size('body', 1);
     @include u-text('bold');
   }
