@@ -9,21 +9,25 @@ function Graphic({ graphics }) {
       <GridContainer>
         <Grid>
           <Grid row gap className="usa-graphic-list__row">
-            {graphics
-              && graphics.map((graphic) => (
+            {graphics &&
+              graphics.map((graphic) => (
                 <Grid
                   className="usa-media-block"
-                  tablet={{ col: 6 }}
+                  row
+                  gap
+                  desktop={{ col: 6 }}
                   key={graphic.heading}
                 >
-                  {graphic.image && (
-                    <img
-                      className="graphic_image--circle usa-media-block__img"
-                      src={graphic.image}
-                      alt={graphic.imageDescription}
-                    />
-                  )}
-                  <Grid className="usa-media-block__body">
+                  <Grid tablet={{ col: 3 }} desktop={{ col: 5 }}>
+                    {graphic.image && (
+                      <img
+                        className="graphic_image--circle usa-media-block__img"
+                        src={graphic.image}
+                        alt={graphic.imageDescription}
+                      />
+                    )}
+                  </Grid>
+                  <Grid className="usa-media-block__body" tablet={{ col: 9 }} desktop={{ col: 7 }}>
                     {graphic.heading && (
                       <h2 className="usa-graphic-list__heading">
                         {graphic.heading}
