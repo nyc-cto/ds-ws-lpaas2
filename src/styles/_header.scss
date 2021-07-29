@@ -138,12 +138,12 @@
     .usa-nav__inner {
       .usa-nav__primary-item {
         .usa-nav__submenu {
-          @include u-bg('base-darker');
+          @include u-bg('base-dark');
           .usa-nav__submenu-item {
-            @include u-bg('base-darker');
+            @include u-bg('base-dark');
             a {
               @include u-text('accent-cool-lighter');
-              @include u-bg('base-darker');
+              @include u-bg('base-dark');
               @include u-text('normal');
             }
           }
@@ -182,7 +182,7 @@
             'accent-cool-lighter',
             'bold',
             'bold',
-            'base-darker',
+            'base-dark',
             units(2),
             0
           );

@@ -1,3 +1,33 @@
+/* || HERO */
+
+//background for hero callout
+.usa-hero__callout {
+  @include u-bg('base-dark');
+}
+
+/* || TAGLINE */
+
+.tagline__heading-container {
+  .font-heading-xl,
+  .tagline__heading {
+    margin: 0;
+  }
+}
+
+
+/* || GRAPHICS SECTION */
+
+//circular images in graphics section
+.graphic_image--circle {
+  border-radius: 50%;
+}
+
+.usa-media-block__body {
+padding: units(3) 0;
+}
+
+/* || DOCUMENTATION PAGE */
+
 .documentation__container {
   padding-bottom: units(8);
 }

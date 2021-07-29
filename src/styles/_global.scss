@@ -1,17 +1,3 @@
-/* || GENERAL */
-
-//background for hero callout, menus, and graphics section
-.usa-hero__callout,
-.usa-nav__submenu,
-.usa-section--dark {
-  @include u-bg('base-dark');
-}
-
-//circular images in graphics section
-.graphic_image--circle {
-  border-radius: 50%;
-}
-
 /* || LINKS */
 
 .usa-link {
@@ -96,4 +82,11 @@
   &:hover {
     border: none;
   }
+}
+
+/* || SECTIONS */
+
+//background color of dark sections
+.usa-section--dark {
+  @include u-bg('base-dark');
 }

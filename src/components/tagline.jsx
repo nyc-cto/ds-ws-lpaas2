@@ -8,8 +8,8 @@ function Tagline({ tagline }) {
     <GridContainer className="usa-section">
       <Grid row gap>
         {tagline.heading && (
-          <Grid tablet={{ col: 4 }}>
-            <h2 className="font-heading-xl">{tagline.heading}</h2>
+          <Grid className="tagline__heading-container" tablet={{ col: 4 }}>
+            <h2 className="font-heading-xl tagline__heading">{tagline.heading}</h2>
           </Grid>
         )}
         {tagline.text && (
