@@ -18,10 +18,10 @@ function Graphic({ graphics }) {
                   desktop={{ col: 6 }}
                   key={graphic.heading}
                 >
-                  <Grid tablet={{ col: 3 }} desktop={{ col: 5 }}>
+                  <Grid className="graphic__image-container" tablet={{ col: 3 }} desktop={{ col: 5 }}>
                     {graphic.image && (
                       <img
-                        className="graphic_image--circle usa-media-block__img"
+                        className="graphic__image--circle usa-media-block__img"
                         src={graphic.image}
                         alt={graphic.imageDescription}
                       />
