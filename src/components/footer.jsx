@@ -79,7 +79,7 @@ function Footer() {
             )}
           />
           <Grid
-            className="usa-footer__contact-links footer"
+            className="usa-footer__contact-links footer" // TODO: contact-links?
             mobileLg={{ col: 6 }}
           >
             <Grid className="footer__copyright-trademark">
