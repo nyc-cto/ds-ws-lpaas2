@@ -46,12 +46,12 @@
 
 //bottom border of links
 @mixin link-size {
-  border-bottom-width: units('05');
+  border-bottom-width: 3px;
 }
 
 //bottom border of links on hover
 @mixin link-size-expanded {
-  border-bottom-width: units('105');
+  border-bottom-width: 5px;
 }
 
 //nav links and buttons in mobile and desktop views

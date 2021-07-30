@@ -208,7 +208,7 @@
             border: none;
           }
           &::after {
-            border: units('2px') solid color('secondary');
+            border: 3px solid color('secondary');
           }
         }
         //nav label buttons when accordion is closed
