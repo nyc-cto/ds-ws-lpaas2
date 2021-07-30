@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
+import { navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 
 function Section({ buttons, section }) {
@@ -13,7 +14,14 @@ function Section({ buttons, section }) {
           )}
           {section.text && <p className="usa-intro">{section.text}</p>}
           {buttons.callToAction && (
-            <Button className="usa-button--big">{buttons.callToAction}</Button>
+            <Button
+              onClick={() => {
+                navigate(section.link);
+              }}
+              className="usa-button--big"
+            >
+              {buttons.callToAction}
+            </Button>
           )}
         </Grid>
       </Grid>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
+import { navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 
 function Hero({ buttons, hero }) {
@@ -13,7 +14,12 @@ function Hero({ buttons, hero }) {
           )}
           {hero.text && <p className="usa-prose">{hero.text}</p>}
           {buttons.callToAction && (
-            <Button className="usa-button--inverse">
+            <Button
+              onClick={() => {
+                navigate(hero.link);
+              }}
+              className="usa-button--inverse"
+            >
               {buttons.callToAction}
             </Button>
           )}
