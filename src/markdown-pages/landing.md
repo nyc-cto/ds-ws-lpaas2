@@ -8,8 +8,8 @@ hero:
   imageDescription: Description
   heading: Customizable Landing Page Template 
   text: Spin up a landing page for your agency with this template. It includes all of the resources that you need to have a secure, appealing, and sustainable landing page.
-buttons:
-  callToAction: Resources
+  buttonLink: https://github.com/nyc-cto/LPaaS2/
+  buttonText: Resources
 tagline:
   heading: Accessible, customizable, responsive, and translatable.
   text: Our landing page template allows you to highlight your organization or agency by making it convenient to spin up a landing page of your own. Agencies can edit the template to include useful content and customize it to highlight your work. The landing page template has key accessibility features, including readability by a screen reader, and the content can be translated into different languages. The page is also responsive on mobile, tablet, and desktop platforms.
@@ -33,4 +33,6 @@ graphics:
 section:
   heading: Get in Touch!
   text: If you are interested in creating or upgrading your organization’s landing page, this landing page template is a great start. For information on how to get started, feel free to contact us.
+  buttonLink: https://www1.nyc.gov/assets/cto/#/contact
+  buttonText: Contact Us
 ---
