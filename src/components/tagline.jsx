@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
 function Tagline({ tagline }) {
   return (
     <section className="usa-section">
-      <GridContainer className="usa-section">
+      <GridContainer>
         <Grid row gap>
           {tagline.heading && (
-            <Grid className="tagline__heading-container" tablet={{ col: 4 }}>
-              <h2 className="font-heading-xl tagline__heading">
+            <Grid className="tagline__heading" tablet={{ col: 4 }}>
+              <h2 className="font-heading-xl tagline__heading-text">
                 {tagline.heading}
               </h2>
             </Grid>
