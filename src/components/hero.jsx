@@ -4,7 +4,7 @@ import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
 import { navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 
-function Hero({ buttons, hero }) {
+function Hero({ hero }) {
   return (
     <GridContainer className="usa-hero">
       <Grid row>
@@ -13,14 +13,14 @@ function Hero({ buttons, hero }) {
             <h1 className="usa-hero__heading">{hero.heading}</h1>
           )}
           {hero.text && <p className="usa-prose">{hero.text}</p>}
-          {buttons.callToAction && (
+          {hero.buttonLink && hero.buttonText && (
             <Button
               onClick={() => {
-                navigate(hero.link);
+                navigate(hero.buttonLink);
               }}
               className="usa-button--inverse"
             >
-              {buttons.callToAction}
+              {hero.buttonText}
             </Button>
           )}
         </Grid>
@@ -31,7 +31,6 @@ function Hero({ buttons, hero }) {
 
 Hero.propTypes = {
   hero: PropTypes.node.isRequired,
-  buttons: PropTypes.node.isRequired,
 };
 
 export default Hero;

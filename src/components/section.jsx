@@ -4,7 +4,7 @@ import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
 import { navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 
-function Section({ buttons, section }) {
+function Section({ section }) {
   return (
     <GridContainer className="usa-section">
       <Grid row>
@@ -13,14 +13,14 @@ function Section({ buttons, section }) {
             <h2 className="font-heading-xl">{section.heading}</h2>
           )}
           {section.text && <p className="usa-intro">{section.text}</p>}
-          {buttons.callToAction && (
+          {section.buttonLink && section.buttonText && (
             <Button
               onClick={() => {
-                navigate(section.link);
+                navigate(section.buttonLink);
               }}
               className="usa-button--big"
             >
-              {buttons.callToAction}
+              {section.buttonText}
             </Button>
           )}
         </Grid>
@@ -31,7 +31,6 @@ function Section({ buttons, section }) {
 
 Section.propTypes = {
   section: PropTypes.node.isRequired,
-  buttons: PropTypes.node.isRequired,
 };
 
 export default Section;
