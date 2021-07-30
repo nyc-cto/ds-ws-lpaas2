@@ -21,15 +21,12 @@
   }
 
   .usa-footer__return-to-top {
+    padding: units(2);
     a {
       @include link-theme('base-dark', 'primary', 'base-dark', 'primary');
       text-decoration: none;
       padding: 0;
     }
-  }
-
-  .footer__feedback-widget {
-    margin-top: units(3);
   }
 
   //department logo, terms & policies, and copyright & trademarks
@@ -78,8 +75,15 @@
 /* || DESKTOP */
 
 @media (min-width: units('desktop')) {
-  .footer__return-to-top-feedback-container {
-  
+  .footer__return-to-top-feedback {
+    display: flex;
+    justify-content: center;
+    .usa-footer__return-to-top {
+      align-self: flex-end;
+    }
+    .footer__feedback {
+      padding: 0 300px 0 158px;
+    }
   }
 
   .footer__info {

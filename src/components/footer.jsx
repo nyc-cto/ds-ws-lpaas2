@@ -21,9 +21,10 @@ function Footer() {
   const primaryLinksLength = primaryLinks.length;
   const primaryLinksLabels = t('footer.primaryLinks');
   const primaryLinksLabelsLength = primaryLinksLabels.length;
-  const primaryLength = primaryLinksLength > primaryLinksLabelsLength
-    ? primaryLinksLabelsLength
-    : primaryLinksLength;
+  const primaryLength =
+    primaryLinksLength > primaryLinksLabelsLength
+      ? primaryLinksLabelsLength
+      : primaryLinksLength;
   // take shorter length if is missing link in primaryLinks or missing label in translation file
   if (primaryLinksLength !== primaryLinksLabelsLength) {
     console.error(
@@ -33,53 +34,55 @@ function Footer() {
       '\n',
       'Labels: ',
       primaryLinksLabels,
-      '\n',
+      '\n'
     );
   }
   // TODO: link underline is longer now after making it .map
   const primaryLinkItems = primaryLinks.map(
-    (element, i) => i < primaryLength && (
-    <Link className="usa-footer__primary-link" to={element}>
-      {primaryLinksLabels[i]}
-    </Link>
-    ),
+    (element, i) =>
+      i < primaryLength && (
+        <Link className="usa-footer__primary-link" to={element}>
+          {primaryLinksLabels[i]}
+        </Link>
+      )
   );
 
   const secondaryLinks = links.secondary;
 
   return (
     <div>
-      <div className="footer__return-to-top-feedback-container">
-        <Grid className="usa-footer__return-to-top">
+      <div className="footer__return-to-top-feedback">
+        <div className="usa-footer__return-to-top">
           <Link to="#top">{t('footer.returnToTop')}</Link>
-        </Grid>
-        <div
-          id="feedback-widget"
-          className="footer__feedback-widget"
-          lang={i18n.language}
-          pageTitle={t('title')}
-          endpoint={process.env.GATSBY_ENDPOINT}
-        />
-        <ScriptTag
-          src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js"
-          type="text/javascript"
-        />
+        </div>
+        <div className="footer__feedback">
+          <div
+            id="feedback-widget"
+            lang={i18n.language}
+            pageTitle={t('title')}
+            endpoint={process.env.GATSBY_ENDPOINT}
+          />
+          <ScriptTag
+            src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js"
+            type="text/javascript"
+          />
+        </div>
       </div>
       <FooterUSWDS
         size="medium"
         // TODO: for some reason class name has to be manually added for returnToTop
         primary={<FooterNav size="medium" links={primaryLinkItems} />}
-        secondary={(
+        secondary={
           <Grid row gap>
             <Logo
               size="medium"
-              image={(
+              image={
                 <img
                   className="footer__logo"
                   src={logoFooter}
                   alt={t('agency.longformName')}
                 />
-              )}
+              }
             />
             <Grid
               className="usa-footer__contact-links footer__info"
@@ -97,7 +100,7 @@ function Footer() {
               </Grid>
             </Grid>
           </Grid>
-        )}
+        }
       />
     </div>
   );
