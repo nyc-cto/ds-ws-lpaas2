@@ -35,6 +35,7 @@ function Footer() {
       '\n',
     );
   }
+
   const primaryLinkItems = primaryLinks.map(
     (element, i) => i < primaryLength && (
     <Link className="usa-footer__primary-link" to={element}>
