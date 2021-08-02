@@ -2,6 +2,7 @@
 lang: en
 templateKey: landing-page
 slug: home
+pageTitle: Project | Home
 hero:
   image: hero-img.jpg
   imageDescription: Description

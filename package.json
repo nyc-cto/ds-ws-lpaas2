@@ -48,6 +48,12 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "cache": "gatsby clean",
+    "clean": "npm run cache && rm -rf node_modules",
+    "dev": "gatsby develop",
+    "prod": "gatsby serve",
+    "rebuild": "npm run reinstall && npm run build",
+    "reinstall": "npm ci",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

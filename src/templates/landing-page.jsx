@@ -25,7 +25,7 @@ import '@fontsource/space-mono';
 import '../styles/index.scss';
 
 function Landing({ data }) {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
@@ -38,7 +38,10 @@ function Landing({ data }) {
       {/* <NotFound default /> */}
       {/* </Router> */}
       <I18nextProvider i18n={i18next}>
-        <Helmet title={t('title')} htmlAttributes={{ lang: i18n.language }} />
+        <Helmet
+          title={frontmatter.pageTitle}
+          htmlAttributes={{ lang: i18n.language }}
+        />
         <Layout slug={frontmatter.slug}>
           <main>
             <GridContainer>
@@ -76,6 +79,7 @@ export const pageQuery = graphql`
       frontmatter {
         lang
         slug
+        pageTitle
         hero {
           image
           imageDescription

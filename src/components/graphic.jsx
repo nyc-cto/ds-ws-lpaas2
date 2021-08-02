@@ -12,7 +12,7 @@ function Graphic({ graphics }) {
             && graphics.map((graphic) => (
               <Grid
                 className="usa-media-block"
-                tablet={{ col: 6 }}
+                tablet={{ col: 6 }} // TODO: maybe adjust for different number of graphics?
                 key={graphic.heading}
               >
                 {graphic.image && (

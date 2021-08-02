@@ -1,15 +1,15 @@
 /* eslint-disable global-require */
 import i18n from 'i18next';
-import Backend from 'i18next-http-backend';
-// import LanguageDetector from "i18next-browser-languagedetector";
+import LanguageDetector from 'i18next-browser-languagedetector';
+import Backend from 'i18next-xhr-backend'; // TODO: i18next-http-backend? differences?
 import { initReactI18next } from 'react-i18next';
 
 i18n
   .use(Backend)
   .use(initReactI18next)
-  // .use(LanguageDetector)
+  .use(LanguageDetector)
   .init({
-    debug: true,
+    debug: true, // TODO: change to debug being used only when in development
     defaultNS: 'translations',
     fallbackLng: 'en',
     interpolation: {
@@ -19,6 +19,7 @@ i18n
     ns: ['translations'],
     react: {
       useSuspense: false,
+      // wait: true ?
     },
     resources: {
       ar: {

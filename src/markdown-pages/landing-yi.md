@@ -2,6 +2,7 @@
 lang: yi
 templateKey: landing-page
 slug: home
+pageTitle: yi Project | Home
 hero:
   image: yi hero-img.jpg
   imageDescription: yi Description
