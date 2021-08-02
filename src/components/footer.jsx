@@ -35,7 +35,6 @@ function Footer() {
       '\n',
     );
   }
-  // TODO: link underline is longer now after making it .map
   const primaryLinkItems = primaryLinks.map(
     (element, i) => i < primaryLength && (
     <Link className="usa-footer__primary-link" to={element}>
@@ -67,7 +66,6 @@ function Footer() {
       </div>
       <FooterUSWDS
         size="medium"
-        // TODO: for some reason class name has to be manually added for returnToTop
         primary={<FooterNav size="medium" links={primaryLinkItems} />}
         secondary={(
           <Grid row gap>

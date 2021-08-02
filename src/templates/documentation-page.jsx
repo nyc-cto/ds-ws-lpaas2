@@ -1,10 +1,12 @@
 /* eslint-disable react/no-danger */
 import React, { useEffect } from 'react';
+
+import { Grid, GridContainer } from '@trussworks/react-uswds';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
 import { I18nextProvider, useTranslation } from 'react-i18next';
-import { Grid, GridContainer } from '@trussworks/react-uswds';
+
 import { i18next, Layout } from '../components';
 
 import '@trussworks/react-uswds/lib/uswds.css';
@@ -17,7 +19,6 @@ import '../styles/index.scss';
 function Documentation({ data, location }) {
   const { i18n } = useTranslation();
 
-  // TODO: try to use LanguageDetector
   useEffect(() => {
     const path = location.pathname;
     const lang = path.split('/')[1];

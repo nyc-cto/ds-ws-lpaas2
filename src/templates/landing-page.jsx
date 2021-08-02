@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-// import React, { Suspense } from "react";
-// import { Redirect, Router } from "@reach/router";
 import { Helmet } from 'react-helmet';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 
@@ -26,7 +24,6 @@ import '../styles/index.scss';
 function Landing({ data, location }) {
   const { i18n } = useTranslation();
 
-  // TODO: try to use LanguageDetector
   useEffect(() => {
     const path = location.pathname;
     const lang = path.split('/')[1];
@@ -56,12 +53,7 @@ function Landing({ data, location }) {
   const { frontmatter } = markdownRemark;
 
   return (
-    // <Suspense fallback="loading">
     <>
-      {/* <Router basepath={i18n.language}> */}
-      {/* <Redirect from="/" to={`/${i18n.language}/home`} noThrow /> */}
-      {/* <NotFound default /> */}
-      {/* </Router> */}
       <I18nextProvider i18n={i18next}>
         <Helmet
           title={frontmatter.pageTitle}
@@ -86,7 +78,6 @@ function Landing({ data, location }) {
         </Layout>
       </I18nextProvider>
     </>
-    // </Suspense>
   );
 }
 
