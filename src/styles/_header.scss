@@ -1,7 +1,7 @@
 /* || MOBILE */
 
 @media (min-width: units('mobile')) {
-  .header__logo-title {
+  .header-info {
     .usa-logo__text {
       @include u-font-size('body', 'md');
       font-family: 'Space Mono', monospace;
@@ -11,7 +11,7 @@
 
   //hide language selector button, project title, and banner text
   .banner__language-selector,
-  .header__title,
+  .header-info__title,
   .banner__info {
     display: none;
   }
@@ -69,7 +69,7 @@
     @include flex-center-space-between();
     margin: units(4) 0 units(2) 0;
     //smaller logo size
-    .header__logo {
+    .header-info__logo {
       width: units('card');
       height: auto;
     }
@@ -89,11 +89,11 @@
     @include u-bg('base-dark');
     padding: units(1) 0;
     //right align right to left languages
-    .header__language-nav-rtl {
+    .header__header__language-nav-items--rtl {
       @include align-languages(flex-end);
     }
     //left align left to right languages
-    .header__language-nav-ltr {
+    .header__header__language-nav-items--ltr {
       @include align-languages(flex-start);
     }
     //language button styling
@@ -117,9 +117,12 @@
 @media (min-width: units('desktop')) {
   //show language selector button and project title
   .banner__language-selector,
-  .header__title,
+  .header-info__title,
   .banner__info {
     display: block;
+  }
+  .header-info {
+    @include flex-center-space-between();
   }
   .header__language-nav-container {
     display: none;
@@ -127,11 +130,8 @@
   .usa-nav {
     margin-bottom: units(2);
   }
-  .header__logo-title {
-    @include flex-center-space-between();
-  }
   .usa-navbar {
-    .header__logo {
+    .header-info__logo {
       width: units('card-lg');
       height: auto;
     }
