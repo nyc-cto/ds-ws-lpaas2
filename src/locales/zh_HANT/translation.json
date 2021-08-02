@@ -12,11 +12,17 @@
       "dropdowns": [
         {
           "label": "[zh_HANT] Nav Label 1",
-          "simpleLinks": ["[zh_HANT] Simple link one", "[zh_HANT] Simple link two"]
+          "simpleLinks": [
+            "[zh_HANT] Simple link one",
+            "[zh_HANT] Simple link two"
+          ]
         },
         {
           "label": "[zh_HANT] Nav Label 2",
-          "simpleLinks": ["[zh_HANT] Simple link three", "[zh_HANT] Simple link four"]
+          "simpleLinks": [
+            "[zh_HANT] Simple link three",
+            "[zh_HANT] Simple link four"
+          ]
         }
       ],
       "menu": "[zh_HANT] Menu",
@@ -33,8 +39,10 @@
     ],
     "copyright": "[zh_HANT] © 2021 City of New York. All Rights Reserved.",
     "trademark": "[zh_HANT] NYC is a trademark and service mark of the City of New York.",
-    "terms": "[zh_HANT] NYC Terms of Use",
-    "privacy": "[zh_HANT] NYC Privacy Policy"
+    "secondaryLinks": {
+      "terms": "[zh_HANT] NYC Terms of Use",
+      "privacy": "[zh_HANT] NYC Privacy Policy"
+    }
   },
   "notFound": "[zh_HANT] 404: Page Not Found"
 }

@@ -33,8 +33,10 @@
     ],
     "copyright": "[ko] © 2021 City of New York. All Rights Reserved.",
     "trademark": "[ko] NYC is a trademark and service mark of the City of New York.",
-    "terms": "[ko] NYC Terms of Use",
-    "privacy": "[ko] NYC Privacy Policy"
+    "secondaryLinks": {
+      "terms": "[ko] NYC Terms of Use",
+      "privacy": "[ko] NYC Privacy Policy"
+    }
   },
   "notFound": "[ko] 404: Page Not Found"
 }
