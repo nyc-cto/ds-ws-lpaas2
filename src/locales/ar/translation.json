@@ -35,17 +35,6 @@
     "trademark": "[ar] NYC is a trademark and service mark of the City of New York.",
     "terms": "[ar] NYC Terms of Use",
     "privacy": "[ar] NYC Privacy Policy",
-    "secondary": {
-      "heading": {
-        "logo": "[ar] Name of Agency",
-        "contact": "[ar] Agency Contact Center"
-      },
-      "socialLinks": ["[ar] Facebook", "[ar] Twitter", "[ar] YouTube", "[ar] Instagram", "[ar] RSS"],
-      "address": {
-        "phone": "[ar] (800) CALL-GOVT",
-        "email": "[ar] info@agency.gov"
-      }
-    }
   },
   "notFound": "[ar] 404: Page Not Found"
 }

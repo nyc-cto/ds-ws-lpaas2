@@ -34,18 +34,7 @@
     "copyright": "[fr] © 2021 City of New York. All Rights Reserved.",
     "trademark": "[fr] NYC is a trademark and service mark of the City of New York.",
     "terms": "[fr] NYC Terms of Use",
-    "privacy": "[fr] NYC Privacy Policy",
-    "secondary": {
-      "heading": {
-        "logo": "[fr] Name of Agency",
-        "contact": "[fr] Agency Contact Center"
-      },
-      "socialLinks": ["[fr] Facebook", "[fr] Twitter", "[fr] YouTube", "[fr] Instagram", "[fr] RSS"],
-      "address": {
-        "phone": "[fr] (800) CALL-GOVT",
-        "email": "[fr] info@agency.gov"
-      }
-    }
+    "privacy": "[fr] NYC Privacy Policy"
   },
   "notFound": "[fr] 404: Page Not Found"
 }
