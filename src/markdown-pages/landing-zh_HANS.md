@@ -4,8 +4,6 @@ templateKey: landing-page
 slug: home
 pageTitle: zh_HANS Project | Home
 hero:
-  image: hero-img.jpg
-  imageDescription: zh_HANS Description
   heading: zh_HANS Customizable Landing Page Template 
   text: zh_HANS Spin up a landing page for your agency with this template. It includes all of the resources that you need to have a secure, appealing, and sustainable landing page.
   buttonLink: https://github.com/nyc-cto/LPaaS2/

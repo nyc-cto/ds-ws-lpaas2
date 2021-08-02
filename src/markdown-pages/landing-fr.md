@@ -4,8 +4,6 @@ templateKey: landing-page
 slug: home
 pageTitle: fr Project | Home
 hero:
-  image: hero-img.jpg
-  imageDescription: fr Description
   heading: fr Customizable Landing Page Template 
   text: fr Spin up a landing page for your agency with this template. It includes all of the resources that you need to have a secure, appealing, and sustainable landing page.
   buttonLink: https://github.com/nyc-cto/LPaaS2/

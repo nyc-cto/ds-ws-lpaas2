@@ -96,8 +96,6 @@ export const pageQuery = graphql`
         slug
         pageTitle
         hero {
-          image
-          imageDescription
           heading
           text
           buttonLink
