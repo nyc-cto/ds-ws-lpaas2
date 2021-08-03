@@ -12,22 +12,18 @@ tagline:
   heading: zh_HANS Accessible, customizable, responsive, and translatable.
   text: zh_HANS Our landing page template allows you to highlight your organization or agency by making it convenient to spin up a landing page of your own. Agencies can edit the template to include useful content and customize it to highlight your work. The landing page template has key accessibility features, including readability by a screen reader, and the content can be translated into different languages. The page is also responsive on mobile, tablet, and desktop platforms.
 graphics:
-  - image: http://placehold.it/150g
-    imageDescription: zh_HANS Description
+  - imageDescription: zh_HANS Description
     heading: zh_HANS Accessible
     text: zh_HANS The landing page is readable by a screen reader, usable with a keyboard, and has been tested for several additional accessibility features.
-  - image: http://placehold.it/150g
-    imageDescription: zh_HANS Description
+  - imageDescription: zh_HANS Description
     heading: zh_HANS Customizable
     text: zh_HANS Administrators of the landing page are able to change styling and theming features on the page, as well as edit any necessary content. 
-  - image: http://placehold.it/150g
-    imageDescription: zh_HANS Description
+  - imageDescription: zh_HANS Description
     heading: zh_HANS Responsive
     text: zh_HANS The landing page is responsive and sensible on mobile, tablet, and desktop platforms. 
-  - image: http://placehold.it/150g
-    imageDescription: zh_HANS Description
+  - imageDescription: zh_HANS Description
     heading: zh_HANS Translatable
-    text: zh_HANS The landing page can support any number of language translations, including right-to-left languages. 
+    text: zh_HANS The landing page can support any number of language translations, including right-to-left languages.
 section:
   heading: zh_HANS Get in Touch!
   text: zh_HANS If you are interested in creating or upgrading your organization’s landing page, this landing page template is a great start. For information on how to get started, feel free to contact us.
