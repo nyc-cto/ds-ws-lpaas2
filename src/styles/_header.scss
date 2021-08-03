@@ -1,7 +1,7 @@
 /* || MOBILE */
 
 @media (min-width: units('mobile')) {
-  .header__logo-title {
+  .header-info {
     .usa-logo__text {
       @include u-font-size('body', 'md');
       font-family: 'Space Mono', monospace;
@@ -11,7 +11,7 @@
 
   //hide language selector button, project title, and banner text
   .banner__language-selector,
-  .header__title,
+  .header-info__title,
   .banner__info {
     display: none;
   }
@@ -40,12 +40,16 @@
         a,
         .usa-accordion__button[aria-expanded='false'],
         .usa-accordion__button[aria-expanded='true'] {
-          @include hover-border(
-            'left',
-            'secondary',
-            'base-darker',
-            'accent-cool-lighter'
-          );
+          .nav-dropdown__label-icon,
+          .nav-dropdown__label-icon--expanded {
+            display: none;
+          }
+          // @include active-border(
+          //   'left',
+          //   'secondary',
+          //   'base-darker',
+          //   'accent-cool-lighter'
+          // );
           @include nav-item(
             'base-darker',
             'base-darker',
@@ -65,10 +69,9 @@
     @include flex-center-space-between();
     margin: units(4) 0 units(2) 0;
     //smaller logo size
-    .header__logo {
+    .header-info__logo {
       width: units('card');
       height: auto;
-      padding-left: units(2);
     }
     //nav menu button
     .usa-menu-btn {
@@ -86,11 +89,11 @@
     @include u-bg('base-dark');
     padding: units(1) 0;
     //right align right to left languages
-    .header__language-nav-rtl {
+    .header__language-nav-items--rtl {
       @include align-languages(flex-end);
     }
     //left align left to right languages
-    .header__language-nav-ltr {
+    .header__language-nav-items--ltr {
       @include align-languages(flex-start);
     }
     //language button styling
@@ -100,6 +103,9 @@
         &:hover {
           @include u-text('primary');
           @include u-bg('base-dark');
+        }
+        &:active {
+          @include language-button--hover('primary');
         }
       }
     }
@@ -111,9 +117,12 @@
 @media (min-width: units('desktop')) {
   //show language selector button and project title
   .banner__language-selector,
-  .header__title,
+  .header-info__title,
   .banner__info {
     display: block;
+  }
+  .header-info {
+    @include flex-center-space-between();
   }
   .header__language-nav-container {
     display: none;
@@ -121,11 +130,8 @@
   .usa-nav {
     margin-bottom: units(2);
   }
-  .header__logo-title {
-    @include flex-center-space-between();
-  }
   .usa-navbar {
-    .header__logo {
+    .header-info__logo {
       width: units('card-lg');
       height: auto;
     }
@@ -136,20 +142,19 @@
     .usa-nav__inner {
       .usa-nav__primary-item {
         .usa-nav__submenu {
-          @include u-bg('base-darker');
+          @include u-bg('base-dark');
           .usa-nav__submenu-item {
-            @include u-bg('base-darker');
+            @include u-bg('base-dark');
             a {
               @include u-text('accent-cool-lighter');
-              @include u-bg('base-darker');
+              @include u-bg('base-dark');
               @include u-text('normal');
             }
           }
         }
-        //links and nav label buttons when accordion is closed
-        a,
-        .usa-accordion__button[aria-expanded='false'] {
-          @include hover-border(
+        //nav links
+        a {
+          @include active-border(
             'left',
             'secondary',
             'base-darker',
@@ -168,20 +173,67 @@
             border: none;
           }
         }
+        //nav label buttons when accordion is closed
         .usa-accordion__button[aria-expanded='false'] {
+          background-image: none;
+          .nav-dropdown__label {
+            p {
+              margin: 0;
+              padding-right: units('105');
+            }
+            @include flex-center-space-between();
+            .nav-dropdown__label-icon {
+              display: block;
+            }
+            .nav-dropdown__label-icon--expanded {
+              display: none;
+            }
+          }
+          @include active-border(
+            'left',
+            'secondary',
+            'base-darker',
+            'accent-cool-lighter'
+          );
+          @include nav-item(
+            'disabled-dark',
+            'base-darker',
+            'bold',
+            'bold',
+            'accent-cool-lighter',
+            units(2) units(2) 0 units(2),
+            0
+          );
+          &:hover {
+            border: none;
+          }
           &::after {
-            border: units('2px') solid color('secondary');
+            border: 3px solid color('secondary');
           }
         }
         //nav label buttons when accordion is closed
         .usa-accordion__button[aria-expanded='true'] {
+          background-image: none;
+          .nav-dropdown__label {
+            p {
+              margin: 0;
+              padding-right: units('105');
+            }
+            @include flex-center-space-between();
+            .nav-dropdown__label-icon {
+              display: none;
+            }
+            .nav-dropdown__label-icon--expanded {
+              display: block;
+            }
+          }
           @include nav-item(
             'accent-cool-lighter',
             'accent-cool-lighter',
             'bold',
             'bold',
-            'base-darker',
-            units(2),
+            'base-dark',
+            units(2) units(2) 0 units(2),
             0
           );
           &:hover {
@@ -213,9 +265,10 @@
     //language nav button
     .usa-accordion__button {
       background-image: none;
-      padding: 0 units('105');
+      padding: units(2) units('105');
       p {
         padding-left: units('105');
+        margin: 0;
       }
       //language nav button when dropdown menu is closed
       &[aria-expanded='false'] {
@@ -223,6 +276,13 @@
         @include u-bg('primary');
         p {
           @include u-text('base-dark');
+        }
+        &:hover {
+          @include u-text('accent-cool-lighter');
+          @include u-bg('primary');
+          p {
+            @include u-text('accent-cool-lighter');
+          }
         }
       }
       //language nav button when dropdown menu is open
@@ -238,9 +298,10 @@
     }
     //right-to-left language buttons in dropdown menu
     .banner__language-selector-item--rtl {
+      @include language-button--hover('primary');
       display: flex;
       flex-direction: row-reverse;
-      @include hover-border(
+      @include active-border(
         'right',
         'primary',
         'accent-cool-lighter',
@@ -249,7 +310,8 @@
     }
     //left-to-right language buttons in dropdown menu
     .banner__language-selector-item--ltr {
-      @include hover-border(
+      @include language-button--hover('primary');
+      @include active-border(
         'left',
         'primary',
         'accent-cool-lighter',
@@ -260,7 +322,8 @@
     .banner__language-selector-button-group {
       @include flex-center-space-between();
       .banner__language-selector-item {
-        @include hover-border(
+        @include language-button--hover('primary');
+        @include active-border(
           'top',
           'primary',
           'accent-cool-lighter',

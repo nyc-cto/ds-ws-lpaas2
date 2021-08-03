@@ -4,7 +4,6 @@ import {
   Footer as FooterUSWDS,
   FooterNav,
   Grid,
-  GridContainer,
   Logo,
 } from '@trussworks/react-uswds';
 import { useTranslation } from 'react-i18next';
@@ -48,56 +47,63 @@ function Footer() {
   const secondaryLinks = links.secondary;
 
   return (
-    <FooterUSWDS
-      size="medium"
-      // TODO: for some reason class name has to be manually added for returnToTop
-      returnToTop={(
-        <GridContainer>
-          <Grid className="usa-footer__return-to-top">
-            <Link to="#top">
-              {t('footer.returnToTop')}
-            </Link>
-          </Grid>
-          <div id="feedback-widget" className="footer__feedback-widget" lang={i18n.language} pageTitle={t('title')} endpoint={process.env.GATSBY_ENDPOINT} />
-          <ScriptTag src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js" type="text/javascript" />
-        </GridContainer>
-      )}
-      primary={(
-        <FooterNav
-          size="medium"
-          links={primaryLinkItems}
-        />
-      )}
-      secondary={(
-        <Grid row gap>
-          <Logo
-            size="medium"
-            image={(
-              <img
-                className="footer__logo"
-                src={logoFooter}
-                alt={t('agency.longformName')}
-              />
-            )}
+    <div>
+      <div className="footer-above">
+        <div className="usa-footer__return-to-top footer-above__return-to-top">
+          <Link to="#top">{t('footer.returnToTop')}</Link>
+        </div>
+        <div className="footer-above__feedback">
+          <div
+            id="feedback-widget"
+            lang={i18n.language}
+            pageTitle={t('title')}
+            endpoint={process.env.GATSBY_ENDPOINT}
           />
-          <Grid
-            className="usa-footer__contact-links footer"
-            mobileLg={{ col: 6 }}
-          >
-            <Grid className="footer__copyright-trademark">
-              <p>{t('footer.copyright')}</p>
-              <p>{t('footer.trademark')}</p>
-            </Grid>
-            <Grid className="footer__terms">
-              <Link to={secondaryLinks.terms}>{t('footer.secondaryLinks.terms')}</Link>
-            </Grid>
-            <Grid className="footer__privacy">
-              <Link to={secondaryLinks.privacy}>{t('footer.secondaryLinks.privacy')}</Link>
+          <ScriptTag
+            src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js"
+            type="text/javascript"
+          />
+        </div>
+      </div>
+      <FooterUSWDS
+        className="footer"
+        size="medium"
+        primary={<FooterNav size="medium" links={primaryLinkItems} />}
+        secondary={(
+          <Grid row gap>
+            <Logo
+              size="medium"
+              image={(
+                <img
+                  className="footer__logo"
+                  src={logoFooter}
+                  alt={t('agency.longformName')}
+                />
+              )}
+            />
+            <Grid
+              className="usa-footer__contact-links footer__info"
+              mobileLg={{ col: 6 }}
+            >
+              <Grid className="footer__copyright-trademark">
+                <p>{t('footer.copyright')}</p>
+                <p>{t('footer.trademark')}</p>
+              </Grid>
+              <Grid className="footer__terms">
+                <Link to={secondaryLinks.terms}>
+                  {t('footer.secondaryLinks.terms')}
+                </Link>
+              </Grid>
+              <Grid className="footer__privacy">
+                <Link to={secondaryLinks.privacy}>
+                  {t('footer.secondaryLinks.privacy')}
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      )}
-    />
+        )}
+      />
+    </div>
   );
 }
 

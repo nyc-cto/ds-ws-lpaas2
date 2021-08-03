@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import Backend from 'i18next-xhr-backend'; // TODO: i18next-http-backend? differences?
+import Backend from 'i18next-xhr-backend';
 import { initReactI18next } from 'react-i18next';
 
 i18n
@@ -9,17 +9,15 @@ i18n
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
-    debug: true, // TODO: change to debug being used only when in development
+    debug: true,
     defaultNS: 'translations',
     fallbackLng: 'en',
     interpolation: {
-      escapeValue: false, // TODO: is this necessary?
+      escapeValue: false,
     },
-    // load: "languageOnly",
     ns: ['translations'],
     react: {
       useSuspense: false,
-      // wait: true ?
     },
     resources: {
       ar: {

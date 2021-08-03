@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Menu, NavDropDownButton } from '@trussworks/react-uswds';
+import FeatherIcon from 'feather-icons-react';
 import { useTranslation } from 'react-i18next';
 
 import { Link } from '.';
@@ -84,7 +85,13 @@ function NavDropDown() {
             }}
             menuId={id}
             isOpen={isOpen === id}
-            label={t(`header.nav.dropdowns.${i}.label`)}
+            label={(
+              <div className="nav-dropdown__label">
+                <p>{t(`header.nav.dropdowns.${i}.label`)}</p>
+                <FeatherIcon className="nav-dropdown__label-icon" icon="chevron-down" size={16} />
+                <FeatherIcon className="nav-dropdown__label-icon--expanded" color="white" icon="chevron-up" size={16} />
+              </div>
+            )}
           />
           <Menu
             id={id}

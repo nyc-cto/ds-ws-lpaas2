@@ -1,10 +1,7 @@
 import React from 'react';
 
-import { GridContainer } from '@trussworks/react-uswds';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-// import React, { Suspense } from "react";
-// import { Redirect, Router } from "@reach/router";
 import { Helmet } from 'react-helmet';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 
@@ -31,12 +28,7 @@ function Landing({ data }) {
   const { frontmatter } = markdownRemark;
 
   return (
-    // <Suspense fallback="loading">
     <>
-      {/* <Router basepath={i18n.language}> */}
-      {/* <Redirect from="/" to={`/${i18n.language}/home`} noThrow /> */}
-      {/* <NotFound default /> */}
-      {/* </Router> */}
       <I18nextProvider i18n={i18next}>
         <Helmet
           title={frontmatter.pageTitle}
@@ -44,17 +36,14 @@ function Landing({ data }) {
         />
         <Layout slug={frontmatter.slug}>
           <main>
-            <GridContainer>
-              {frontmatter.hero && (<Hero hero={frontmatter.hero} />)}
-              {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
-              {frontmatter.graphics && (<Graphic graphics={frontmatter.graphics} />)}
-              {frontmatter.section && (<Section section={frontmatter.section} />)}
-            </GridContainer>
+            {frontmatter.hero && (<Hero hero={frontmatter.hero} />)}
+            {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
+            {frontmatter.graphics && (<Graphic graphics={frontmatter.graphics} />)}
+            {frontmatter.section && (<Section section={frontmatter.section} />)}
           </main>
         </Layout>
       </I18nextProvider>
     </>
-    // </Suspense>
   );
 }
 

@@ -1,3 +1,66 @@
+/* || HERO */
+
+//background for hero callout
+.usa-hero__callout {
+  @include u-bg('base-dark');
+}
+
+/* || TAGLINE */
+
+.tagline__heading {
+  .font-heading-xl,
+  .tagline__heading-text {
+    margin: 0;
+  }
+}
+
+/* || GRAPHICS SECTION */
+
+.graphic__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+//circular images in graphics section
+.graphic__image--circle {
+  border-radius: 50%;
+}
+
+//graphics section image and text
+.usa-media-block {
+  padding: units(3) 0;
+}
+
+//for mobile up to tablet view, the images are above the text
+@media (min-width: units('mobile')) {
+  //graphics section image
+  .usa-media-block__img {
+    margin-left: units(4);
+  }
+
+  //graphics section header and paragraph
+  .usa-media-block__body {
+    padding: units(3) 0;
+  }
+}
+
+//for tablet view and above, the images are to the left of the text
+@media (min-width: units('tablet')) {
+  //graphics section image
+  .usa-media-block__img {
+    margin-left: units(3);
+  }
+
+  //graphics secction header and paragraph
+  .usa-media-block__body {
+    padding: 0;
+  }
+}
+
+
+/* || DOCUMENTATION PAGE */
+
 .documentation__container {
   padding-bottom: units(8);
 }

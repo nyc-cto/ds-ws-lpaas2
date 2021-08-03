@@ -40,15 +40,15 @@ const languages = [
     langKey: 'es',
   },
   {
-    lang: 'ةيبرعلا',
+    lang: 'العربية',
     langKey: 'ar',
   },
   {
-    lang: 'ودرا',
+    lang: 'اردو',
     langKey: 'ur',
   },
   {
-    lang: 'שידיי',
+    lang: 'ייִדיש',
     langKey: 'yi',
   },
 ];

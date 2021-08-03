@@ -17,24 +17,16 @@
   }
 
   .usa-footer__primary-content {
-    padding: units(1);
+    padding: units(2);
   }
 
   .usa-footer__return-to-top {
+    padding: units(2);
     a {
-      @include link-theme(
-        'base-dark',
-        'primary',
-        'base-dark',
-        'primary'
-      );
+      @include link-theme('base-dark', 'primary', 'base-dark', 'primary');
       text-decoration: none;
       padding: 0;
     }
-  }
-
-  .footer__feedback-widget {
-    margin-top: units(3);
   }
 
   //department logo, terms & policies, and copyright & trademarks
@@ -51,7 +43,7 @@
     }
   }
 
-  .footer {
+  .footer__info {
     @include u-font-size('body', 1);
     @include u-text('normal');
   }
@@ -83,7 +75,18 @@
 /* || DESKTOP */
 
 @media (min-width: units('desktop')) {
-  .footer {
+  .footer-above {
+    display: flex;
+    justify-content: center;
+    .footer-above__return-to-top {
+      align-self: flex-end;
+    }
+    .footer-above__feedback {
+      padding: 0 300px 0 158px;
+    }
+  }
+
+  .footer__info {
     @include u-font-size('body', 1);
     @include u-text('bold');
   }
@@ -98,10 +101,10 @@
     border-bottom-color: color('primary');
     &:hover {
       text-decoration: none;
-      @include link-size-expanded();
+      @include link-size--expanded();
     }
     &:active {
-      @include link-size-expanded();
+      @include link-size--expanded();
     }
     &:visited {
       border-bottom-color: color('primary');
@@ -114,10 +117,10 @@
       border-bottom-color: color('primary');
       &:hover {
         text-decoration: none;
-        @include link-size-expanded();
+        @include link-size--expanded();
       }
       &:active {
-        @include link-size-expanded();
+        @include link-size--expanded();
       }
       &:visited {
         border-bottom-color: color('primary');
