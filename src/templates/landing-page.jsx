@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
@@ -21,33 +21,8 @@ import '@fontsource/space-mono';
 
 import '../styles/index.scss';
 
-function Landing({ data, location }) {
+function Landing({ data }) {
   const { i18n } = useTranslation();
-
-  useEffect(() => {
-    const path = location.pathname;
-    const lang = path.split('/')[1];
-    const route = path
-      .split('/')
-      .slice(2)
-      .filter((v) => v !== '')
-      .join('/');
-    if (lang.length === 0 && route.length === 0) {
-      // empty path
-      // not currently being used
-      // navigate(`/${i18n.language}/`);
-    } else if (lang.length !== 0 && route.length === 0) {
-      // only language given
-      if (lang !== i18n.language) i18n.changeLanguage(lang);
-    } else if (lang.length === 0 && route.length !== 0) {
-      // only route given
-      // not currently being used
-      // navigate(`${i18n.language}/${route}`);
-    } else if (lang !== i18n.language) {
-      // both language and route given
-      i18n.changeLanguage(lang);
-    }
-  }, [location.pathname]);
 
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
@@ -61,19 +36,10 @@ function Landing({ data, location }) {
         />
         <Layout slug={frontmatter.slug}>
           <main>
-            {frontmatter.hero && (
-              <Hero hero={frontmatter.hero} buttons={frontmatter.buttons} />
-            )}
+            {frontmatter.hero && (<Hero hero={frontmatter.hero} />)}
             {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
-            {frontmatter.graphics && (
-              <Graphic graphics={frontmatter.graphics} />
-            )}
-            {frontmatter.section && (
-              <Section
-                section={frontmatter.section}
-                buttons={frontmatter.buttons}
-              />
-            )}
+            {frontmatter.graphics && (<Graphic graphics={frontmatter.graphics} />)}
+            {frontmatter.section && (<Section section={frontmatter.section} />)}
           </main>
         </Layout>
       </I18nextProvider>
@@ -83,7 +49,6 @@ function Landing({ data, location }) {
 
 Landing.propTypes = {
   data: PropTypes.node.isRequired,
-  location: PropTypes.node.isRequired,
 };
 
 export const pageQuery = graphql`
@@ -96,20 +61,16 @@ export const pageQuery = graphql`
         slug
         pageTitle
         hero {
-          image
-          imageDescription
           heading
           text
-        }
-        buttons {
-          callToAction
+          buttonLink
+          buttonText
         }
         tagline {
           heading
           text
         }
         graphics {
-          image
           imageDescription
           heading
           text
@@ -117,6 +78,8 @@ export const pageQuery = graphql`
         section {
           heading
           text
+          buttonLink
+          buttonText
         }
       }
     }

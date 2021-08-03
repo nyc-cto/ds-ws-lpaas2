@@ -2,7 +2,9 @@ node_modules/
 
 # Gatsby
 .cache/
-public/
+
+# Gatsby + production
+public/ 
 
 # Mac
 .DS_Store

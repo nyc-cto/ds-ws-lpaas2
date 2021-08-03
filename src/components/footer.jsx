@@ -90,10 +90,14 @@ function Footer() {
                 <p>{t('footer.trademark')}</p>
               </Grid>
               <Grid className="footer__terms">
-                <Link to={secondaryLinks.terms}>{t('footer.terms')}</Link>
+                <Link to={secondaryLinks.terms}>
+                  {t('footer.secondaryLinks.terms')}
+                </Link>
               </Grid>
               <Grid className="footer__privacy">
-                <Link to={secondaryLinks.privacy}>{t('footer.privacy')}</Link>
+                <Link to={secondaryLinks.privacy}>
+                  {t('footer.secondaryLinks.privacy')}
+                </Link>
               </Grid>
             </Grid>
           </Grid>
