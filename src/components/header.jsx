@@ -79,24 +79,24 @@ function Header({ slug }) {
 
   const languageNavItems = (
     <div className="header__language-nav-container">
-      <div className="header__language-nav-rtl">{languageNav('rtl')}</div>
-      <div className="header__language-nav-ltr">{languageNav('ltr')}</div>
+      <div className="header__language-nav-items--rtl">{languageNav('rtl')}</div>
+      <div className="header__language-nav-items--ltr">{languageNav('ltr')}</div>
     </div>
   );
 
   return (
-    <HeaderUSWDS extended>
+    <HeaderUSWDS extended className="header">
       {/* <Router> */}
       <SkipNavLink />
       <Banner slug={slug}>{t('header.banner')}</Banner>
       <div className="usa-navbar">
-        <div className="header__logo-title">
+        <div className="header-info">
           <img
-            className="header__logo"
+            className="header-info__logo"
             src={logoHeader}
             alt={t('agency.shortformName')}
           />
-          <Title className="header__title">{t('title')}</Title>
+          <Title className="header-info__title">{t('title')}</Title>
         </div>
         <NavMenuButton onClick={onClick} label={t('header.nav.menu')} />
       </div>

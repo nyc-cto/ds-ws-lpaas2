@@ -48,11 +48,11 @@ function Footer() {
 
   return (
     <div>
-      <div className="footer__return-to-top-feedback">
-        <div className="usa-footer__return-to-top">
+      <div className="footer-above">
+        <div className="usa-footer__return-to-top footer-above__return-to-top">
           <Link to="#top">{t('footer.returnToTop')}</Link>
         </div>
-        <div className="footer__feedback">
+        <div className="footer-above__feedback">
           <div
             id="feedback-widget"
             lang={i18n.language}
@@ -66,6 +66,7 @@ function Footer() {
         </div>
       </div>
       <FooterUSWDS
+        className="footer"
         size="medium"
         primary={<FooterNav size="medium" links={primaryLinkItems} />}
         secondary={(
