@@ -4,17 +4,25 @@ const path = require('path');
 const fs = require('fs-extra');
 const { createFilePath } = require('gatsby-source-filesystem');
 const _ = require('lodash');
+// const { useTranslation } = require('react-i18next');
 
+// const { i18next } = require('./src/components/i18n');
 const { languages } = require('./src/constants/languages');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
+
   languages.map((lang) => createRedirect({
     fromPath: `/${lang.langKey}/home`,
     toPath: `/${lang.langKey}/`,
     isPermanent: true,
     redirectInBrowser: true,
   }));
+
+  // createRedirect({
+  //   fromPath: '/404',
+  //   toPath:
+  // })
 
   return graphql(`
     {
