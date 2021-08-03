@@ -45,19 +45,10 @@ function Landing({ data }) {
         <Layout slug={frontmatter.slug}>
           <main>
             <GridContainer>
-              {frontmatter.hero && (
-                <Hero hero={frontmatter.hero} buttons={frontmatter.buttons} />
-              )}
+              {frontmatter.hero && (<Hero hero={frontmatter.hero} />)}
               {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
-              {frontmatter.graphics && (
-                <Graphic graphics={frontmatter.graphics} />
-              )}
-              {frontmatter.section && (
-                <Section
-                  section={frontmatter.section}
-                  buttons={frontmatter.buttons}
-                />
-              )}
+              {frontmatter.graphics && (<Graphic graphics={frontmatter.graphics} />)}
+              {frontmatter.section && (<Section section={frontmatter.section} />)}
             </GridContainer>
           </main>
         </Layout>
@@ -81,13 +72,10 @@ export const pageQuery = graphql`
         slug
         pageTitle
         hero {
-          image
-          imageDescription
           heading
           text
-        }
-        buttons {
-          callToAction
+          buttonLink
+          buttonText
         }
         tagline {
           heading
@@ -102,6 +90,8 @@ export const pageQuery = graphql`
         section {
           heading
           text
+          buttonLink
+          buttonText
         }
       }
     }
