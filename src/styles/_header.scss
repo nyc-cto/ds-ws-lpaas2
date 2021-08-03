@@ -105,7 +105,7 @@
           @include u-bg('base-dark');
         }
         &:active {
-          @include language-button-hover('primary');
+          @include language-button--hover('primary');
         }
       }
     }
@@ -298,7 +298,7 @@
     }
     //right-to-left language buttons in dropdown menu
     .banner__language-selector-item--rtl {
-      @include language-button-hover('primary');
+      @include language-button--hover('primary');
       display: flex;
       flex-direction: row-reverse;
       @include active-border(
@@ -310,7 +310,7 @@
     }
     //left-to-right language buttons in dropdown menu
     .banner__language-selector-item--ltr {
-      @include language-button-hover('primary');
+      @include language-button--hover('primary');
       @include active-border(
         'left',
         'primary',
@@ -322,7 +322,7 @@
     .banner__language-selector-button-group {
       @include flex-center-space-between();
       .banner__language-selector-item {
-        @include language-button-hover('primary');
+        @include language-button--hover('primary');
         @include active-border(
           'top',
           'primary',

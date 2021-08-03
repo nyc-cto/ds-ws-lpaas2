@@ -101,10 +101,10 @@
     border-bottom-color: color('primary');
     &:hover {
       text-decoration: none;
-      @include link-size-expanded();
+      @include link-size--expanded();
     }
     &:active {
-      @include link-size-expanded();
+      @include link-size--expanded();
     }
     &:visited {
       border-bottom-color: color('primary');
@@ -117,10 +117,10 @@
       border-bottom-color: color('primary');
       &:hover {
         text-decoration: none;
-        @include link-size-expanded();
+        @include link-size--expanded();
       }
       &:active {
-        @include link-size-expanded();
+        @include link-size--expanded();
       }
       &:visited {
         border-bottom-color: color('primary');

@@ -50,7 +50,7 @@
 }
 
 //bottom border of links on hover
-@mixin link-size-expanded {
+@mixin link-size--expanded {
   border-bottom-width: 5px;
 }
 
@@ -94,7 +94,7 @@
   flex-wrap: wrap;
 }
 
-@mixin language-button-hover($text) {
+@mixin language-button--hover($text) {
   .usa-button--unstyled {
     &:hover {
       @include u-text($text);
