@@ -12,20 +12,6 @@ tagline:
   heading: yi Accessible, customizable, responsive, and translatable.
   text: yi Our landing page template allows you to highlight your organization or agency by making it convenient to spin up a landing page of your own. Agencies can edit the template to include useful content and customize it to highlight your work. The landing page template has key accessibility features, including readability by a screen reader, and the content can be translated into different languages. The page is also responsive on mobile, tablet, and desktop platforms.
 graphics:
-<<<<<<< HEAD
-  - imageDescription: yi Description
-    heading: yi Graphic headings can vary.
-    text: yi Graphic headings can be used a few different ways, depending on what your landing page is for. Highlight your values, specific program areas, or results.
-  - imageDescription: yi Description
-    heading: yi Stick to 6 or fewer words.
-    text: yi Keep body text to about 30 words. They can be shorter, but try to be somewhat balanced across all four. It creates a clean appearance with good spacing.
-  - imageDescription: yi Description
-    heading: yi Never highlight anything without a goal.
-    text: yi For anything you want to highlight here, understand what your users know now, and what activity or impression you want from them after they see it.
-  - imageDescription: yi Description
-    heading: yi Could also have 2 or 6.
-    text: yi In addition to your goal, find out your users’ goals. What do they want to know or do that supports your mission? Use these headings to show these.
-=======
   - image: http://placehold.it/150g
     imageDescription: yi Description
     heading: yi Accessible
@@ -42,7 +28,6 @@ graphics:
     imageDescription: yi Description
     heading: yi Translatable
     text: yi The landing page can support any number of language translations, including right-to-left languages. 
->>>>>>> dev
 section:
   heading: yi Get in Touch!
   text: yi If you are interested in creating or upgrading your organization’s landing page, this landing page template is a great start. For information on how to get started, feel free to contact us.
