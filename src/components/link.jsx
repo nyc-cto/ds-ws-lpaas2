@@ -48,18 +48,9 @@ function Link({
   // external
   return (
     <USWDSLink
-      variant={
-        variant !== 'nav' && 'external'
-      } /* if not nav link, set it to be regular external link */
-      className={classNames(
-        {
-          'usa-link--external usa-link--nav': variant === 'nav',
-        },
-        className,
-      )}
+      variant={variant === 'nav' && 'nav'}
+      className={className}
       href={to}
-      /* className is included if it has a truthy value */
-      /* if nav link, set it to be both external and nav link */
       {...other}
     >
       {children}
