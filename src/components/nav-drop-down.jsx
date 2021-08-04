@@ -14,7 +14,7 @@ function NavDropDown() {
   const dropdowns = [];
   const dropDownLinks = links.navDropDowns;
   const constFileLength = dropDownLinks.length;
-  const dropDownLabels = t('header.nav.dropdowns');
+  const dropDownLabels = t('navigation.dropdowns');
   const translationFileLength = dropDownLabels.length;
   const length = translationFileLength > constFileLength
     ? constFileLength
@@ -23,7 +23,7 @@ function NavDropDown() {
       `../constants/links.js` (constants file) or `../locales/` (translation files) */
   if (translationFileLength !== constFileLength) {
     console.error(
-      'Different number of dropdowns in /src/constants/link.js and dropdown labels in /src/locales\n',
+      'Different number of dropdowns in /src/constants/link.js (under headerLinks.navDropDowns) and labels in /src/locales (under navigation.dropdowns)\n',
       `${constFileLength} dropdown${
         constFileLength > 1 ? 's' : ''
       } in /src/constants/link.js\n`,
@@ -46,7 +46,7 @@ function NavDropDown() {
         in `../constants/links.js` (constants file) or label in `../locales/` (translation files) */
       if (navDropDownLinksLength !== navDropDownLinkLabelsLength) {
         console.error(
-          `Different number of links in /src/constants/link.js and link labels in /src/locales for dropdown ${
+          `Different number of links in /src/constants/link.js (under headerLinks.navDropDowns) and labels in /src/locales (under navigation.dropdowns) for dropdown ${
             i + 1
           }\n`,
           'Links: ',
@@ -87,9 +87,9 @@ function NavDropDown() {
             isOpen={isOpen === id}
             label={(
               <div className="nav-dropdown__label">
-                <p>{t(`header.nav.dropdowns.${i}.label`)}</p>
+                <p>{dropDownLabels[i].label}</p>
                 <FeatherIcon className="nav-dropdown__label-icon" icon="chevron-down" size={16} />
-                <FeatherIcon className="nav-dropdown__label-icon--expanded" color="white" icon="chevron-up" size={16} />
+                <FeatherIcon className="nav-dropdown__label-icon--expanded" icon="chevron-up" color="white" size={16} />
               </div>
             )}
           />

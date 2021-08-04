@@ -31,7 +31,7 @@ function Header({ slug }) {
   /* dynamically store parent links */
   const parentLinks = links.parent;
   const parentLinksLength = parentLinks.length;
-  const parentLinksLabels = t('header.nav.parentLinks');
+  const parentLinksLabels = t('navigation.parentLinks');
   const parentLinksLabelsLength = parentLinksLabels.length;
   const parentLength = parentLinksLength > parentLinksLabelsLength
     ? parentLinksLabelsLength
@@ -39,7 +39,7 @@ function Header({ slug }) {
   // take shorter length if is missing link in parentLinks or missing label in translation file
   if (parentLinksLength !== parentLinksLabelsLength) {
     console.error(
-      'Different number of parent links in /src/constants/link.js and parent labels in /src/locales\n',
+      'Different number of parent links in /src/constants/link.js (under headerLinks.parent) and parent labels in /src/locales (under navigation.parentLinks)\n',
       'Links: ',
       parentLinks,
       '\n',
@@ -98,7 +98,7 @@ function Header({ slug }) {
           />
           <Title className="header-info__title">{t('title')}</Title>
         </div>
-        <NavMenuButton onClick={onClick} label={t('header.nav.menu')} />
+        <NavMenuButton onClick={onClick} label={t('header.menuMobileNav')} />
       </div>
       <ExtendedNav
         onToggleMobileNav={onClick}
