@@ -6,7 +6,6 @@ import {
 } from '@trussworks/react-uswds';
 import FeatherIcon from 'feather-icons-react';
 import { navigate } from 'gatsby';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
 import { languages } from '../constants/languages';
@@ -74,9 +73,5 @@ function LanguageSelector({ slug }) {
     </div>
   );
 }
-
-LanguageSelector.propTypes = {
-  slug: PropTypes.string.isRequired,
-};
 
 export default LanguageSelector;

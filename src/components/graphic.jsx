@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Grid, GridContainer } from '@trussworks/react-uswds';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
 import { graphicImages } from '../images';
@@ -63,9 +62,5 @@ function Graphic({ graphics }) {
     </section>
   );
 }
-
-Graphic.propTypes = {
-  graphics: PropTypes.node.isRequired,
-};
 
 export default Graphic;

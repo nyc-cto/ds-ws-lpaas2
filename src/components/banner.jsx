@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Grid, GridContainer } from '@trussworks/react-uswds';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
 import { logoBanner } from '../images';
@@ -31,10 +30,5 @@ function Banner({ children, slug }) {
     </div>
   );
 }
-
-Banner.propTypes = {
-  children: PropTypes.node.isRequired,
-  slug: PropTypes.string.isRequired,
-};
 
 export default Banner;

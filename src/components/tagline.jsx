@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Grid, GridContainer } from '@trussworks/react-uswds';
-import PropTypes from 'prop-types';
 
 function Tagline({ tagline }) {
   return (
@@ -25,9 +24,5 @@ function Tagline({ tagline }) {
     </section>
   );
 }
-
-Tagline.propTypes = {
-  tagline: PropTypes.node.isRequired,
-};
 
 export default Tagline;
