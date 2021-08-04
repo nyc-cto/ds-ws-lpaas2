@@ -6,7 +6,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'LPaaS 2.0',
+    title: process.env.GATSBY_TITLE,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
