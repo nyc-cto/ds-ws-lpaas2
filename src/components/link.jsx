@@ -1,10 +1,8 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
 import { Link as USWDSLink } from '@trussworks/react-uswds';
 import classNames from 'classnames';
 import { Link as GatsbyLink } from 'gatsby';
-import PropTypes from 'prop-types';
 
 function Link({
   variant,
@@ -66,14 +64,5 @@ function Link({
     </USWDSLink>
   );
 }
-
-Link.propTypes = {
-  children: PropTypes.node.isRequired,
-  to: PropTypes.node.isRequired,
-  className: PropTypes.node.isRequired,
-  activeClassName: PropTypes.node.isRequired,
-  partiallyActive: PropTypes.node.isRequired,
-  variant: PropTypes.node.isRequired,
-};
 
 export default Link;

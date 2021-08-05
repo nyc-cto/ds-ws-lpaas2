@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
 import { navigate } from 'gatsby';
-import PropTypes from 'prop-types';
 
 function Section({ section }) {
   return (
@@ -30,9 +29,5 @@ function Section({ section }) {
     </section>
   );
 }
-
-Section.propTypes = {
-  section: PropTypes.node.isRequired,
-};
 
 export default Section;

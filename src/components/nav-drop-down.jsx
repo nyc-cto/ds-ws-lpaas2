@@ -32,8 +32,7 @@ function NavDropDown() {
       } in /src/locales`,
     );
   }
-  // eslint-disable-next-line array-callback-return
-  dropDownLinks.map((_, i) => {
+  dropDownLinks.forEach((_, i) => {
     if (i < length) {
       const navDropDownLinks = dropDownLinks[i];
       const navDropDownLinksLength = navDropDownLinks.length;

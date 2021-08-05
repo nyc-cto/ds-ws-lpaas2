@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 
@@ -46,10 +45,6 @@ function Landing({ data }) {
     </>
   );
 }
-
-Landing.propTypes = {
-  data: PropTypes.node.isRequired,
-};
 
 export const pageQuery = graphql`
   query Landing($lang: String!) {

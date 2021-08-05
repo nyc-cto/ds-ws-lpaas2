@@ -9,7 +9,6 @@ import {
   Title,
 } from '@trussworks/react-uswds';
 import { navigate } from 'gatsby';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
 import { Link } from '.';
@@ -113,9 +112,5 @@ function Header({ slug }) {
     </HeaderUSWDS>
   );
 }
-
-Header.propTypes = {
-  slug: PropTypes.string.isRequired,
-};
 
 export default Header;

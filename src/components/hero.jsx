@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
 import { navigate } from 'gatsby';
-import PropTypes from 'prop-types';
 
 function Hero({ hero }) {
   return (
@@ -30,9 +29,5 @@ function Hero({ hero }) {
     </section>
   );
 }
-
-Hero.propTypes = {
-  hero: PropTypes.node.isRequired,
-};
 
 export default Hero;

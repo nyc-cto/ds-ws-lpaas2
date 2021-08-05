@@ -3,7 +3,6 @@ import React from 'react';
 
 import { Grid, GridContainer } from '@trussworks/react-uswds';
 import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 
@@ -44,10 +43,6 @@ function Documentation({ data }) {
     </>
   );
 }
-
-Documentation.propTypes = {
-  data: PropTypes.node.isRequired,
-};
 
 export const pageQuery = graphql`
   query Documentation($lang: String!) {
