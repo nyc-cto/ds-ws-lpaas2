@@ -296,6 +296,7 @@
       @include u-text('accent-cool-lighter');
       text-decoration: none;
     }
+
     //right-to-left language buttons in dropdown menu
     .banner__language-selector-item--rtl {
       @include language-button--hover('primary');
@@ -334,6 +335,12 @@
           padding-top: 0;
         }
       }
+    }
+  }
+  // color of language button that is the active language
+  .banner__language-selector-item--active {
+    button {
+      @include u-text('primary');
     }
   }
 }
