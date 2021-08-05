@@ -5,7 +5,7 @@ import FeatherIcon from 'feather-icons-react';
 import { useTranslation } from 'react-i18next';
 
 import { Link } from '.';
-import { headerLinks as links } from '../constants/links';
+import { header as links } from '../constants/links';
 
 function NavDropDown() {
   const { t } = useTranslation();
@@ -23,7 +23,7 @@ function NavDropDown() {
       `../constants/links.js` (constants file) or `../locales/` (translation files) */
   if (translationFileLength !== constFileLength) {
     console.error(
-      'Different number of dropdowns in /src/constants/link.js (under headerLinks.navDropDownLinks) and labels in /src/locales (under navigation.dropdowns)\n',
+      'Different number of dropdowns in /src/constants/link.js (under header.navDropDownLinks) and labels in /src/locales (under navigation.dropdowns)\n',
       `${constFileLength} dropdown${
         constFileLength > 1 ? 's' : ''
       } in /src/constants/link.js\n`,
@@ -46,7 +46,7 @@ function NavDropDown() {
         in `../constants/links.js` (constants file) or label in `../locales/` (translation files) */
       if (navDropDownLinksLength !== navDropDownLinkLabelsLength) {
         console.error(
-          `Different number of links in /src/constants/link.js (under headerLinks.navDropDownLinks) and labels in /src/locales (under navigation.dropdowns) for dropdown ${
+          `Different number of links in /src/constants/link.js (under header.navDropDownLinks) and labels in /src/locales (under navigation.dropdowns) for dropdown ${
             i + 1
           }\n`,
           'Links: ',

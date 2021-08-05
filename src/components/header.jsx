@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Link } from '.';
 import { languages } from '../constants/languages';
-import { headerLinks as links } from '../constants/links';
+import { header as links } from '../constants/links';
 import { logoHeader } from '../images';
 import Banner from './banner';
 import NavDropDown from './nav-drop-down';
@@ -39,7 +39,7 @@ function Header({ slug }) {
   // take shorter length if is missing link in parentLinks or missing label in translation file
   if (parentLinksLength !== parentLinksLabelsLength) {
     console.error(
-      'Different number of parent links in /src/constants/link.js (under headerLinks.parentLinks) and parent labels in /src/locales (under navigation.parentLinkLabels)\n',
+      'Different number of parent links in /src/constants/link.js (under header.parentLinks) and parent labels in /src/locales (under navigation.parentLinkLabels)\n',
       'Links: ',
       parentLinks,
       '\n',
