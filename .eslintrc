@@ -7,8 +7,8 @@
     "browser": true
   },
   "rules": {
-    "react/jsx-props-no-spreading": { "custom": "ignore" }, // disables prop spreading messages in src/components/link.jsx
-    "react/prop-types": "off", // disables prop type messages
+    "react/jsx-props-no-spreading": 0, // disables prop spreading messages in src/components/link.jsx
+    "react/prop-types": 0, // disables prop type messages
     "no-nested-ternary": "off", // disables nested ternary messages
     "no-console": "off",
     "import/order": [ // order used for imports
