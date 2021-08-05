@@ -5,32 +5,26 @@
     "shortformName": "[pl] NYC CTO"
   },
   "location": "[pl] NYC",
+  "navigation": {
+    "dropdowns": [
+      {
+        "buttonLabel": "[pl] Nav Label 1",
+        "linkLabels": ["[pl] Simple link one", "[pl] Simple link two"]
+      },
+      {
+        "buttonLabel": "[pl] Nav Label 2",
+        "linkLabels": ["[pl] Simple link three", "[pl] Simple link four"]
+      }
+    ],
+    "parentLinkLabels": ["[pl] Parent link"]
+  },
   "header": {
     "banner": "[pl] An official website of New York City government",
     "language": "[pl] Language",
-    "nav": {
-      "dropdowns": [
-        {
-          "label": "[pl] Nav Label 1",
-          "simpleLinks": ["[pl] Simple link one", "[pl] Simple link two"]
-        },
-        {
-          "label": "[pl] Nav Label 2",
-          "simpleLinks": ["[pl] Simple link three", "[pl] Simple link four"]
-        }
-      ],
-      "menu": "[pl] Menu",
-      "parentLinks": ["[pl] Parent link"]
-    }
+    "menuMobileNav": "[pl] Menu"
   },
   "footer": {
     "returnToTop": "[pl] Return to top",
-    "primaryLinks": [
-      "[pl] Primary Link 1",
-      "[pl] Primary Link 2",
-      "[pl] Primary Link 3",
-      "[pl] Primary Link 4"
-    ],
     "copyright": "[pl] © 2021 City of New York. All Rights Reserved.",
     "trademark": "[pl] NYC is a trademark and service mark of the City of New York.",
     "secondaryLinks": {

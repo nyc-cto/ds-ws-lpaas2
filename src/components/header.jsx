@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Link } from '.';
 import { languages } from '../constants/languages';
-import { headerLinks as links } from '../constants/links';
+import { header as links } from '../constants/links';
 import { logoHeader } from '../images';
 import Banner from './banner';
 import NavDropDown from './nav-drop-down';
@@ -28,9 +28,9 @@ function Header({ slug }) {
   const onClick = () => setExpanded((prevExpanded) => !prevExpanded);
 
   /* dynamically store parent links */
-  const parentLinks = links.parent;
+  const parentLinks = links.parentLinks;
   const parentLinksLength = parentLinks.length;
-  const parentLinksLabels = t('header.nav.parentLinks');
+  const parentLinksLabels = t('navigation.parentLinkLabels');
   const parentLinksLabelsLength = parentLinksLabels.length;
   const parentLength = parentLinksLength > parentLinksLabelsLength
     ? parentLinksLabelsLength
@@ -38,7 +38,7 @@ function Header({ slug }) {
   // take shorter length if is missing link in parentLinks or missing label in translation file
   if (parentLinksLength !== parentLinksLabelsLength) {
     console.error(
-      'Different number of parent links in /src/constants/link.js and parent labels in /src/locales\n',
+      'Different number of parent links in /src/constants/link.js (under header.parentLinks) and parent labels in /src/locales (under navigation.parentLinkLabels)\n',
       'Links: ',
       parentLinks,
       '\n',
@@ -97,7 +97,7 @@ function Header({ slug }) {
           />
           <Title className="header-info__title">{t('title')}</Title>
         </div>
-        <NavMenuButton onClick={onClick} label={t('header.nav.menu')} />
+        <NavMenuButton onClick={onClick} label={t('header.menuMobileNav')} />
       </div>
       <ExtendedNav
         onToggleMobileNav={onClick}
