@@ -26,7 +26,7 @@ function Footer() {
   // take shorter length if is missing link in primaryLinks or missing label in translation file
   if (primaryLinksLength !== primaryLinksLabelsLength) {
     console.error(
-      'Different number of links in /src/constants/link.js (under headerLinks.navDropDownSimpleLinks and headerLinks.parent) and labels in /src/locales (under navigation.dropdowns and navigation.parentLinks)\n',
+      'Different number of links in /src/constants/link.js (under headerLinks.navDropDownLinks and headerLinks.parent) and labels in /src/locales (under navigation.dropdowns and navigation.parentLinks)\n',
       'Links: ',
       primaryLinks,
       '\n',
