@@ -3,11 +3,11 @@ export const headerLinks = {
     ['link-one', 'link-two'],
     ['link-three', 'link-four'],
   ],
-  parent: ['link-five'],
+  parentLinks: ['link-five'],
 };
 
 export const footerLinks = {
-  primary: headerLinks.navDropDownLinks.flat().concat(headerLinks.parent),
+  primary: headerLinks.navDropDownLinks.flat().concat(headerLinks.parentLinks),
   secondary: {
     terms: 'terms',
     privacy: 'privacy',
