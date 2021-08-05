@@ -16,12 +16,6 @@
 
 /* || GRAPHICS SECTION */
 
-.graphic__image-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
 //circular images in graphics section
 .graphic__image--circle {
   border-radius: 50%;
@@ -34,11 +28,6 @@
 
 //for mobile up to tablet view, the images are above the text
 @media (min-width: units('mobile')) {
-  //graphics section image
-  .usa-media-block__img {
-    margin-left: units(4);
-  }
-
   //graphics section header and paragraph
   .usa-media-block__body {
     padding: units(3) 0;
