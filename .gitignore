@@ -1,9 +1,9 @@
+# npm
 node_modules/
 
 # Gatsby
 .cache/
-
-# Gatsby + production
+# + production
 public/ 
 
 # Mac
