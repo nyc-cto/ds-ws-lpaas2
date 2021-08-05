@@ -16,7 +16,7 @@
         "linkLabels": ["[ru] Simple link three", "[ru] Simple link four"]
       }
     ],
-    "parentLinks": ["[ru] Parent link"]
+    "parentLinkLabels": ["[ru] Parent link"]
   },
   "header": {
     "banner": "[ru] An official website of New York City government",

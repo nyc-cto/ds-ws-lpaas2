@@ -31,7 +31,7 @@ function Header({ slug }) {
   /* dynamically store parent links */
   const parentLinks = links.parent;
   const parentLinksLength = parentLinks.length;
-  const parentLinksLabels = t('navigation.parentLinks');
+  const parentLinksLabels = t('navigation.parentLinkLabels');
   const parentLinksLabelsLength = parentLinksLabels.length;
   const parentLength = parentLinksLength > parentLinksLabelsLength
     ? parentLinksLabelsLength
@@ -39,7 +39,7 @@ function Header({ slug }) {
   // take shorter length if is missing link in parentLinks or missing label in translation file
   if (parentLinksLength !== parentLinksLabelsLength) {
     console.error(
-      'Different number of parent links in /src/constants/link.js (under headerLinks.parent) and parent labels in /src/locales (under navigation.parentLinks)\n',
+      'Different number of parent links in /src/constants/link.js (under headerLinks.parent) and parent labels in /src/locales (under navigation.parentLinkLabels)\n',
       'Links: ',
       parentLinks,
       '\n',

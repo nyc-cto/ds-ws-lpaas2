@@ -16,7 +16,7 @@
         "linkLabels": ["Simple link three", "Simple link four"]
       }
     ],
-    "parentLinks": ["Parent link"]
+    "parentLinkLabels": ["Parent link"]
   },
   "header": {
     "banner": "An official website of New York City government",

@@ -16,7 +16,7 @@
         "linkLabels": ["[ko] Simple link three", "[ko] Simple link four"]
       }
     ],
-    "parentLinks": ["[ko] Parent link"]
+    "parentLinkLabels": ["[ko] Parent link"]
   },
   "header": {
     "banner": "[ko] An official website of New York City government",
