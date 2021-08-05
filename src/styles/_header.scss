@@ -150,7 +150,7 @@
           }
         }
         //nav links
-        a {
+        .usa-nav__link {
           @include active-border(
             'left',
             'secondary',
@@ -168,6 +168,9 @@
           );
           &:hover {
             border: none;
+            &::after {
+              border: 3px solid color('secondary');
+            }
           }
         }
         //nav label buttons when accordion is closed

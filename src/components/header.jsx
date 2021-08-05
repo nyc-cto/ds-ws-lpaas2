@@ -49,7 +49,7 @@ function Header({ slug }) {
   }
   const parentLinkItems = parentLinks.map(
     (element, i) => i < parentLength && (
-    <Link variant="nav" to={element} key={element}>
+    <Link variant="nav" to={element} key={element} className="usa-nav__link">
       {parentLinksLabels[i]}
     </Link>
     ),
