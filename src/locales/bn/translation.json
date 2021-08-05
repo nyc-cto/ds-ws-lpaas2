@@ -8,11 +8,11 @@
   "navigation": {
     "dropdowns": [
       {
-        "label": "[bn] Nav Label 1",
+        "buttonLabel": "[bn] Nav Label 1",
         "simpleLinks": ["[bn] Simple link one", "[bn] Simple link two"]
       },
       {
-        "label": "[bn] Nav Label 2",
+        "buttonLabel": "[bn] Nav Label 2",
         "simpleLinks": ["[bn] Simple link three", "[bn] Simple link four"]
       }
     ],

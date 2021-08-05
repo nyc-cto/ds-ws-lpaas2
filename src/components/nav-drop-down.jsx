@@ -87,7 +87,7 @@ function NavDropDown() {
             isOpen={isOpen === id}
             label={(
               <div className="nav-dropdown__label">
-                <p>{dropDownLabels[i].label}</p>
+                <p>{dropDownLabels[i].buttonLabel}</p>
                 <FeatherIcon className="nav-dropdown__label-icon" icon="chevron-down" size={16} />
                 <FeatherIcon className="nav-dropdown__label-icon--expanded" icon="chevron-up" color="white" size={16} />
               </div>
