@@ -9,11 +9,11 @@
     "dropdowns": [
       {
         "buttonLabel": "[zh_HANT] Nav Label 1",
-        "simpleLinks": ["[zh_HANT] Simple link one", "[zh_HANT] Simple link two"]
+        "linkLabels": ["[zh_HANT] Simple link one", "[zh_HANT] Simple link two"]
       },
       {
         "buttonLabel": "[zh_HANT] Nav Label 2",
-        "simpleLinks": ["[zh_HANT] Simple link three", "[zh_HANT] Simple link four"]
+        "linkLabels": ["[zh_HANT] Simple link three", "[zh_HANT] Simple link four"]
       }
     ],
     "parentLinks": ["[zh_HANT] Parent link"]

@@ -37,7 +37,7 @@ function NavDropDown() {
     if (i < length) {
       const navDropDownLinks = dropDownLinks[i];
       const navDropDownLinksLength = navDropDownLinks.length;
-      const navDropDownLinkLabels = dropDownLabels[i].simpleLinks;
+      const navDropDownLinkLabels = dropDownLabels[i].linkLabels;
       const navDropDownLinkLabelsLength = navDropDownLinkLabels.length;
       const navDropDownLength = navDropDownLinksLength > navDropDownLinkLabelsLength
         ? navDropDownLinkLabelsLength

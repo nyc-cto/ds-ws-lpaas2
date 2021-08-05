@@ -18,7 +18,7 @@ function Footer() {
 
   const primaryLinks = links.primary;
   const primaryLinksLength = primaryLinks.length;
-  const primaryLinksLabels = t('navigation.dropdowns').map((element) => element.simpleLinks).flat().concat(t('navigation.parentLinks'));
+  const primaryLinksLabels = t('navigation.dropdowns').map((element) => element.linkLabels).flat().concat(t('navigation.parentLinks'));
   const primaryLinksLabelsLength = primaryLinksLabels.length;
   const primaryLength = primaryLinksLength > primaryLinksLabelsLength
     ? primaryLinksLabelsLength

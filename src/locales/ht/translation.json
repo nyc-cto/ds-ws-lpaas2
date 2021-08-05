@@ -9,11 +9,11 @@
     "dropdowns": [
       {
         "buttonLabel": "[ht] Nav Label 1",
-        "simpleLinks": ["[ht] Simple link one", "[ht] Simple link two"]
+        "linkLabels": ["[ht] Simple link one", "[ht] Simple link two"]
       },
       {
         "buttonLabel": "[ht] Nav Label 2",
-        "simpleLinks": ["[ht] Simple link three", "[ht] Simple link four"]
+        "linkLabels": ["[ht] Simple link three", "[ht] Simple link four"]
       }
     ],
     "parentLinks": ["[ht] Parent link"]
