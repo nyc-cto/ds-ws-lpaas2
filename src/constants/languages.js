@@ -1,4 +1,4 @@
-const languages = [
+const languages = [ // order here is the same order in language selector
   {
     lang: 'বাংলা',
     langKey: 'bn',
