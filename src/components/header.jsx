@@ -25,17 +25,17 @@ function Header({ slug }) {
 
   /* menu expansion in mobile view */
   const [expanded, setExpanded] = useState(false);
-  const onClick = () => setExpanded((prevExpanded) => !prevExpanded);
+  const handleMenuClick = () => setExpanded((prevExpanded) => !prevExpanded);
 
   /* dynamically store parent links */
-  const parentLinks = links.parentLinks;
+  const {parentLinks} = links; // links
   const parentLinksLength = parentLinks.length;
-  const parentLinksLabels = t('navigation.parentLinkLabels');
+  const parentLinksLabels = t('navigation.parentLinkLabels'); // labels
   const parentLinksLabelsLength = parentLinksLabels.length;
   const parentLength = parentLinksLength > parentLinksLabelsLength
     ? parentLinksLabelsLength
     : parentLinksLength;
-  // take shorter length if is missing link in parentLinks or missing label in translation file
+  // take shorter length if there is missing link in parentLinks or label in parentLinksLabels
   if (parentLinksLength !== parentLinksLabelsLength) {
     console.error(
       'Different number of parent links in /src/constants/link.js (under header.parentLinks) and parent labels in /src/locales (under navigation.parentLinkLabels)\n',
@@ -47,6 +47,8 @@ function Header({ slug }) {
       '\n',
     );
   }
+
+  // generating links
   const parentLinkItems = parentLinks.map(
     (element, i) => i < parentLength && (
     <Link variant="nav" to={element} key={element}>
@@ -55,7 +57,8 @@ function Header({ slug }) {
     ),
   );
 
-  const handleClick = (langKey) => {
+  // change language on language selector button click
+  const handleLangClick = (langKey) => {
     i18n.changeLanguage(langKey, navigate(`/${langKey}/${slug}`));
   };
 
@@ -64,7 +67,7 @@ function Header({ slug }) {
       <div className="header__language-nav-items">
         <Button
           onClick={() => {
-            handleClick(language.langKey);
+            handleLangClick(language.langKey);
           }}
           type="button"
           unstyled
@@ -76,6 +79,7 @@ function Header({ slug }) {
     ),
   );
 
+  // language selector items
   const languageNavItems = (
     <div className="header__language-nav-container">
       <div className="header__language-nav-items--rtl">{languageNav('rtl')}</div>
@@ -85,7 +89,6 @@ function Header({ slug }) {
 
   return (
     <HeaderUSWDS extended className="header">
-      {/* <Router> */}
       <SkipNavLink />
       <Banner slug={slug}>{t('header.banner')}</Banner>
       <div className="usa-navbar">
@@ -97,10 +100,10 @@ function Header({ slug }) {
           />
           <Title className="header-info__title">{t('title')}</Title>
         </div>
-        <NavMenuButton onClick={onClick} label={t('header.menuMobileNav')} />
+        <NavMenuButton onClick={handleMenuClick} label={t('header.menuMobileNav')} />
       </div>
       <ExtendedNav
-        onToggleMobileNav={onClick}
+        onToggleMobileNav={handleMenuClick}
         primaryItems={NavDropDown()
           .concat(parentLinkItems)
           .concat(languageNavItems)}
