@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import ScriptTag from 'react-script-tag';
 
 import { Link } from '.';
-import { footerLinks as links } from '../constants/links';
+import { footer as links } from '../constants/links';
 import { logoFooter } from '../images';
 
 function Footer() {
@@ -26,7 +26,7 @@ function Footer() {
   // take shorter length if is missing link in primaryLinks or missing label in translation file
   if (primaryLinksLength !== primaryLinksLabelsLength) {
     console.error(
-      'Different number of links in /src/constants/link.js (under header.navDropDownLinks and headerLinks.parentLinks) and labels in /src/locales (under navigation.dropdowns and navigation.parentLinkLabels)\n',
+      'Different number of links in /src/constants/link.js (under header.navDropDownLinks and header.parentLinks) and labels in /src/locales (under navigation.dropdowns and navigation.parentLinkLabels)\n',
       'Links: ',
       primaryLinks,
       '\n',

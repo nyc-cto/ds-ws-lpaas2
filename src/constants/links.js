@@ -6,7 +6,7 @@ export const header = {
   parentLinks: ['link-five'],
 };
 
-export const footerLinks = {
+export const footer = {
   primary: header.navDropDownLinks.flat().concat(header.parentLinks),
   secondary: {
     terms: 'terms',
