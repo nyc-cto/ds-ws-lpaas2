@@ -7,7 +7,7 @@ hero:
   heading: zh_HANS Customizable Landing Page Template 
   text: zh_HANS Set up a landing page for your agency with this template. It includes all of the resources that you need to have an easy, compliant, secure, appealing, and sustainable landing page.
   buttonLink: https://github.com/nyc-cto/LPaaS2/
-  buttonText: zh_HANS Resources
+  buttonText: zh_HANS View on GitHub
 tagline:
   heading: zh_HANS Accessible, customizable, responsive, and translatable.
   text: zh_HANS This landing page template allows you to set up a standalone microsite that highlights your program, report, plan, or other resource with NYC-approved design and technology. You can edit the template to include useful content and customize it to highlight your agency’s work. The landing page template is WCAG 2.0 compliant, and has multi-lingual support by default. The page is also responsive on mobile, tablet, and desktop platforms.
