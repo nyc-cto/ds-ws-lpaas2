@@ -1,5 +1,5 @@
 export const headerLinks = {
-  navDropDowns: [
+  navDropDownSimpleLinks: [
     ['link-one', 'link-two'],
     ['link-three', 'link-four'],
   ],
@@ -7,7 +7,7 @@ export const headerLinks = {
 };
 
 export const footerLinks = {
-  primary: headerLinks.navDropDowns.flat().concat(headerLinks.parent),
+  primary: headerLinks.navDropDownSimpleLinks.flat().concat(headerLinks.parent),
   secondary: {
     terms: 'terms',
     privacy: 'privacy',
