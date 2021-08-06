@@ -20,11 +20,14 @@ import '@fontsource/space-mono';
 
 import '../styles/index.scss';
 
-function Landing({ data }) {
+function Landing({ data, pageContext }) {
   const { i18n } = useTranslation();
 
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
+  const { languageList } = pageContext;
+
+  console.log('LANGUAGE LIST', languageList)
 
   return (
     <>

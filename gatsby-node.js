@@ -49,6 +49,13 @@ exports.createPages = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges;
 
+    const getLanguages = () => {
+      const files = fs.readdirSync('./src/locales');
+      return languages.filter((lang) => files.includes(lang.langKey));
+    };
+  
+    const languageList = getLanguages();
+
     posts.forEach((edge) => {
       const { id } = edge.node;
       if (edge.node.frontmatter.templateKey) {
@@ -62,6 +69,7 @@ exports.createPages = ({ actions, graphql }) => {
           context: {
             id,
             lang,
+            languageList,
           },
         });
       }
