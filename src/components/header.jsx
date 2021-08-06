@@ -28,14 +28,10 @@ function Header({ slug }) {
   const onClick = () => setExpanded((prevExpanded) => !prevExpanded);
 
   /* dynamically store parent links */
-  const parentLinks = links.parentLinks;
+  const { parentLinks } = links; // links + labels
   const parentLinksLength = parentLinks.length;
-  const parentLinksLabels = t('navigation.parentLinkLabels');
+  const parentLinksLabels = t('navigation.parentLinkLabels'); // labels
   const parentLinksLabelsLength = parentLinksLabels.length;
-  const parentLength = parentLinksLength > parentLinksLabelsLength
-    ? parentLinksLabelsLength
-    : parentLinksLength;
-  // take shorter length if is missing link in parentLinks or missing label in translation file
   if (parentLinksLength !== parentLinksLabelsLength) {
     console.error(
       'Different number of parent links in /src/constants/link.js (under header.parentLinks) and parent labels in /src/locales (under navigation.parentLinkLabels)\n',
@@ -47,13 +43,11 @@ function Header({ slug }) {
       '\n',
     );
   }
-  const parentLinkItems = parentLinks.map(
-    (element, i) => i < parentLength && (
-    <Link variant="nav" to={element} key={element}>
-      {parentLinksLabels[i]}
+  const parentLinkItems = parentLinks.map((linkAndLabel, _) => (
+    <Link variant="nav" to={linkAndLabel.link} key={_}>
+      {t(linkAndLabel.label)}
     </Link>
-    ),
-  );
+  ));
 
   const handleClick = (langKey) => {
     i18n.changeLanguage(langKey, navigate(`/${langKey}/${slug}`));
@@ -78,8 +72,12 @@ function Header({ slug }) {
 
   const languageNavItems = (
     <div className="header__language-nav-container">
-      <div className="header__language-nav-items--rtl">{languageNav('rtl')}</div>
-      <div className="header__language-nav-items--ltr">{languageNav('ltr')}</div>
+      <div className="header__language-nav-items--rtl">
+        {languageNav('rtl')}
+      </div>
+      <div className="header__language-nav-items--ltr">
+        {languageNav('ltr')}
+      </div>
     </div>
   );
 
