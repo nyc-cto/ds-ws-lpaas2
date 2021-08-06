@@ -97,15 +97,23 @@
       @include align-languages(flex-start);
     }
     //language button styling
-    .header__language-nav-items {
+    .header__language-nav-item--active {
+      .usa-button--unstyled {
+        @include u-text('primary');
+        &:hover {
+          @include u-text('primary');
+          @include u-bg('base-dark');
+          border: none;
+        }
+      }
+    }
+    .header__language-nav-item--inactive {
       .usa-button--unstyled {
         @include u-text('accent-cool-lighter');
         &:hover {
           @include u-text('primary');
           @include u-bg('base-dark');
-        }
-        &:active {
-          @include language-button--hover('primary');
+          border: none;
         }
       }
     }
