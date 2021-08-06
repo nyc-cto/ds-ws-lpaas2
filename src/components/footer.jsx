@@ -18,15 +18,14 @@ function Footer() {
 
   const primaryLinks = links.primary;
   const primaryLinksLength = primaryLinks.length;
-  const primaryLinksLabels = t('navigation.dropdowns').map((element) => element.linkLabels).flat().concat(t('navigation.parentLinkLabels'));
+  const primaryLinksLabels = t('navigation.dropdowns')
+    .map((element) => element.linkLabels)
+    .flat()
+    .concat(t('navigation.parentLinkLabels'));
   const primaryLinksLabelsLength = primaryLinksLabels.length;
-  const primaryLength = primaryLinksLength > primaryLinksLabelsLength
-    ? primaryLinksLabelsLength
-    : primaryLinksLength;
-  // take shorter length if is missing link in primaryLinks or missing label in translation file
   if (primaryLinksLength !== primaryLinksLabelsLength) {
     console.error(
-      'Different number of links in /src/constants/link.js (under header.navDropDownLinks and header.parentLinks) and labels in /src/locales (under navigation.dropdowns and navigation.parentLinkLabels)\n',
+      'Different number of links in /src/constants/link.js (under header.navDropDowns and header.parentLinks) and labels in /src/locales (under navigation.dropdowns and navigation.parentLinkLabels)\n',
       'Links: ',
       primaryLinks,
       '\n',
@@ -36,13 +35,11 @@ function Footer() {
     );
   }
 
-  const primaryLinkItems = primaryLinks.map(
-    (element, i) => i < primaryLength && (
-    <Link className="usa-footer__primary-link" to={element}>
-      {primaryLinksLabels[i]}
+  const primaryLinkItems = primaryLinks.map((linkAndLabel, _) => (
+    <Link className="usa-footer__primary-link" to={linkAndLabel.link} key={_}>
+      {t(linkAndLabel.label)}
     </Link>
-    ),
-  );
+  ));
 
   const secondaryLinks = links.secondary;
 
