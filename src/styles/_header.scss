@@ -338,9 +338,20 @@
     }
   }
   // color of language button that is the active language
-  .banner__language-selector-item--active {
-    button {
-      @include u-text('primary');
-    }
+  .banner__language-selector-item--ltr.banner__language-selector-item--active {
+    padding-left: units('05');
+    border-left: units('05') solid color('primary');
+  }
+  .banner__language-selector-item--rtl.banner__language-selector-item--active {
+    padding-right: units('05');
+    border-right: units('05') solid color('primary');
+  }
+  .banner__language-selector-item.banner__language-selector-item--active {
+    border-top: units('05') solid color('primary');
+    padding-bottom: units('05');
+  }
+  .banner__language-selector-item.banner__language-selector-item--inactive {
+    border-top: units('05') solid color('base-dark');
+    padding-bottom: units('05');
   }
 }

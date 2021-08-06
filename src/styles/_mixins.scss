@@ -112,10 +112,5 @@
   .usa-button--unstyled {
     @include u-text($text);
     @include u-bg($bg);
-    &:active {
-      @include u-text($text);
-      text-decoration: none;
-      @include u-bg($bg);
-    }
   }
 }
