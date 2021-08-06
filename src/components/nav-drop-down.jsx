@@ -32,7 +32,6 @@ function NavDropDown() {
     const navDropDownLinksLength = navDropDown.length;
     const navDropDownLinkLabels = navDropDownLabels[i].linkLabels;
     const navDropDownLinkLabelsLength = navDropDownLinkLabels.length;
-    console.log(links.navDropDowns[0]);
     if (navDropDownLinksLength !== navDropDownLinkLabelsLength) {
       console.error(
         `Different number of links in /src/constants/link.js (under header["navDropDowns"][${i}]) and labels in /src/locales (under navigation["dropdowns"][${i}]["linkLabels"]) for dropdown ${
