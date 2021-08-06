@@ -15,11 +15,13 @@ import '@fontsource/space-mono';
 
 import '../styles/index.scss';
 
-function Documentation({ data }) {
+function Documentation({ data, pageContext }) {
   const { i18n } = useTranslation();
 
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
+  const { languageList } = pageContext;
+
   return (
     <>
       <I18nextProvider i18n={i18next}>
@@ -27,7 +29,7 @@ function Documentation({ data }) {
           title={frontmatter.pageTitle}
           htmlAttributes={{ lang: i18n.language }}
         />
-        <Layout slug={frontmatter.slug}>
+        <Layout languageList={languageList} slug={frontmatter.slug}>
           <main>
             <GridContainer>
               <Grid className="documentation__container">

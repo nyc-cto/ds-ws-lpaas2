@@ -36,7 +36,7 @@ function Landing({ data, pageContext }) {
           title={frontmatter.pageTitle}
           htmlAttributes={{ lang: i18n.language }}
         />
-        <Layout slug={frontmatter.slug}>
+        <Layout languageList={languageList} slug={frontmatter.slug}>
           <main>
             {frontmatter.hero && (<Hero hero={frontmatter.hero} />)}
             {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}

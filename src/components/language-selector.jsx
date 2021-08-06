@@ -7,9 +7,7 @@ import FeatherIcon from 'feather-icons-react';
 import { navigate } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 
-import { languages } from '../constants/languages';
-
-function LanguageSelector({ slug }) {
+function LanguageSelector({ languageList, slug }) {
   const { t, i18n } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -18,10 +16,10 @@ function LanguageSelector({ slug }) {
     i18n.changeLanguage(langKey, navigate(`/${langKey}/${slug}`));
   };
 
-  const languageMenuItems = languages.map((language) => (
+  const languageMenuItems = languageList.map((language) => (
     <div
       className={
-        languages.length <= 5
+        languageList.length <= 5
           ? 'banner__language-selector-item'
           : i18n.dir(language.langKey) === 'rtl'
             ? 'banner__language-selector-item--rtl'

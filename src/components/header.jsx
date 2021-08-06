@@ -12,7 +12,6 @@ import { navigate } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 
 import { Link } from '.';
-import { languages } from '../constants/languages';
 import { header as links } from '../constants/links';
 import { logoHeader } from '../images';
 import Banner from './banner';
@@ -20,7 +19,7 @@ import NavDropDown from './nav-drop-down';
 
 import '@reach/skip-nav/styles.css';
 
-function Header({ slug }) {
+function Header({ languageList, slug }) {
   const { t, i18n } = useTranslation();
 
   /* menu expansion in mobile view */
@@ -59,7 +58,7 @@ function Header({ slug }) {
     i18n.changeLanguage(langKey, navigate(`/${langKey}/${slug}`));
   };
 
-  const languageNav = (direction) => languages.map(
+  const languageNav = (direction) => languageList.map(
     (language) => i18n.dir(language.langKey) === direction && (
       <div className="header__language-nav-items">
         <Button
@@ -87,7 +86,7 @@ function Header({ slug }) {
     <HeaderUSWDS extended className="header">
       {/* <Router> */}
       <SkipNavLink />
-      <Banner slug={slug}>{t('header.banner')}</Banner>
+      <Banner languageList={languageList} slug={slug}>{t('header.banner')}</Banner>
       <div className="usa-navbar">
         <div className="header-info">
           <img
