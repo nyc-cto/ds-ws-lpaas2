@@ -6,7 +6,6 @@ pageTitle: yi Project | Home
 hero:
   heading: yi Customizable Landing Page Template 
   text: yi Set up a landing page for your agency with this template. It includes all of the resources that you need to have an easy, compliant, secure, appealing, and sustainable landing page.
-  buttonLink: https://github.com/nyc-cto/LPaaS2/
   buttonText: yi View on GitHub
 tagline:
   heading: yi Accessible, customizable, responsive, and translatable.
@@ -27,6 +26,5 @@ graphics:
 section:
   heading: yi Get in Touch!
   text: yi If you are interested in highlighting your agency’s work with a landing page, this template is a great start and we’re happy to help you take it further. For information on how to get started, feel free to contact us.
-  buttonLink: https://www1.nyc.gov/assets/cto/#/contact
   buttonText: yi Contact Us
 ---

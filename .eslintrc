@@ -7,7 +7,7 @@
     "browser": true
   },
   "rules": {
-    "react/jsx-props-no-spreading": { "custom": "ignore" },
+    "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
     "no-nested-ternary": "off",
     "no-console": "off",

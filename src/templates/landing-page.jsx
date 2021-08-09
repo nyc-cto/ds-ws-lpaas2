@@ -58,7 +58,6 @@ export const pageQuery = graphql`
         hero {
           heading
           text
-          buttonLink
           buttonText
         }
         tagline {
@@ -73,7 +72,6 @@ export const pageQuery = graphql`
         section {
           heading
           text
-          buttonLink
           buttonText
         }
       }

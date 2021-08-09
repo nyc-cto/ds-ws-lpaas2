@@ -3,6 +3,8 @@ import React from 'react';
 import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
 import { navigate } from 'gatsby';
 
+import { landing as links } from '../constants/links';
+
 function Hero({ hero }) {
   return (
     <section className="usa-hero">
@@ -13,10 +15,10 @@ function Hero({ hero }) {
               <h1 className="usa-hero__heading">{hero.heading}</h1>
             )}
             {hero.text && <p className="usa-prose">{hero.text}</p>}
-            {hero.buttonLink && hero.buttonText && (
+            {links.heroButtonLink && hero.buttonText && (
               <Button
                 onClick={() => {
-                  navigate(hero.buttonLink);
+                  navigate(links.heroButtonLink);
                 }}
                 className="usa-button"
               >

@@ -6,6 +6,11 @@ export const header = {
   parentLinks: ['link-five'],
 };
 
+export const landing = {
+  heroButtonLink: 'https://github.com/nyc-cto/LPaaS2/',
+  sectionButtonLink: 'https://www1.nyc.gov/assets/cto/#/contact',
+};
+
 export const footer = {
   primary: header.navDropDownLinks.flat().concat(header.parentLinks),
   secondary: {

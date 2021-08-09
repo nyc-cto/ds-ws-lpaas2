@@ -6,7 +6,6 @@ pageTitle: Proyecto | Inicio
 hero:
   heading: Plantilla Editable para Página de Inicio 
   text: Crea una página de inicio para tu institución de gobierno con esta plantilla. Incluye todos los recursos que puedes necesitar para tener una página de inicio simple, segura, atractiva y sostenible. 
-  buttonLink: https://github.com/nyc-cto/LPaaS2/
   buttonText: Mirar en GitHub
 tagline:
   heading: Accesible, Personalizable, Traducible y Responsiva. 
@@ -27,6 +26,5 @@ graphics:
 section:
   heading: ¡Contáctanos!
   text: Si estás interesado en destacar el trabajo de tu institución con una página de inicio. Esta plantilla es un buen lugar para comenzar, nosotros con gusto te ayudaremos a llevar tu diseño aún más lejos. Para más información sobre cómo comenzar, contáctanos. 
-  buttonLink: https://www1.nyc.gov/assets/cto/#/contact
   buttonText: Contáctanos
 ---

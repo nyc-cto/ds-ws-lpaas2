@@ -6,7 +6,6 @@ pageTitle: zh_HANS Project | Home
 hero:
   heading: zh_HANS Customizable Landing Page Template 
   text: zh_HANS Set up a landing page for your agency with this template. It includes all of the resources that you need to have an easy, compliant, secure, appealing, and sustainable landing page.
-  buttonLink: https://github.com/nyc-cto/LPaaS2/
   buttonText: zh_HANS View on GitHub
 tagline:
   heading: zh_HANS Accessible, customizable, responsive, and translatable.
@@ -27,6 +26,5 @@ graphics:
 section:
   heading: zh_HANS Get in Touch!
   text: zh_HANS If you are interested in highlighting your agency’s work with a landing page, this template is a great start and we’re happy to help you take it further. For information on how to get started, feel free to contact us.
-  buttonLink: https://www1.nyc.gov/assets/cto/#/contact
   buttonText: zh_HANS Contact Us
 ---
