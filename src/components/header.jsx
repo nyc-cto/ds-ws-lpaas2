@@ -28,14 +28,10 @@ function Header({ slug }) {
   const handleMenuClick = () => setExpanded((prevExpanded) => !prevExpanded);
 
   /* dynamically store parent links */
-  const {parentLinks} = links; // links
+  const { parentLinks } = links; // links + labels
   const parentLinksLength = parentLinks.length;
-  const parentLinksLabels = t('navigation.parentLinkLabels'); // labels
+  const parentLinksLabels = t('navigation.parentLinkLabels'); // labels (used for verification only; labels are taken from parentLinks)
   const parentLinksLabelsLength = parentLinksLabels.length;
-  const parentLength = parentLinksLength > parentLinksLabelsLength
-    ? parentLinksLabelsLength
-    : parentLinksLength;
-  // take shorter length if there is missing link in parentLinks or label in parentLinksLabels
   if (parentLinksLength !== parentLinksLabelsLength) {
     console.error(
       'Different number of parent links in /src/constants/link.js (under header.parentLinks) and parent labels in /src/locales (under navigation.parentLinkLabels)\n',
@@ -47,15 +43,13 @@ function Header({ slug }) {
       '\n',
     );
   }
-
+  
   // generating links
-  const parentLinkItems = parentLinks.map(
-    (element, i) => i < parentLength && (
-    <Link variant="nav" to={element} key={element}>
-      {parentLinksLabels[i]}
+  const parentLinkItems = parentLinks.map((linkAndLabel, _) => (
+    <Link variant="nav" to={linkAndLabel.link} key={`parent${_}`}>
+      {t(linkAndLabel.label)}
     </Link>
-    ),
-  );
+  ));
 
   // change language on language selector button click
   const handleLangClick = (langKey) => {
@@ -82,8 +76,12 @@ function Header({ slug }) {
   // language selector items
   const languageNavItems = (
     <div className="header__language-nav-container">
-      <div className="header__language-nav-items--rtl">{languageNav('rtl')}</div>
-      <div className="header__language-nav-items--ltr">{languageNav('ltr')}</div>
+      <div className="header__language-nav-items--rtl">
+        {languageNav('rtl')}
+      </div>
+      <div className="header__language-nav-items--ltr">
+        {languageNav('ltr')}
+      </div>
     </div>
   );
 

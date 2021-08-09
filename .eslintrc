@@ -7,9 +7,9 @@
     "browser": true
   },
   "rules": {
-    "react/jsx-props-no-spreading": 0, // disables prop spreading messages in src/components/link.jsx
-    "react/prop-types": 0, // disables prop type messages
-    "no-nested-ternary": "off", // disables nested ternary messages
+    "react/jsx-props-no-spreading": "off", // allows prop spreading (used primarily in src/components/link.jsx)
+    "react/prop-types": "off", // does not require props validation in a React component definition
+    "no-nested-ternary": "off", // allows nested ternaries
     "no-console": "off",
     "import/order": [ // order used for imports
       "error",
