@@ -27,8 +27,6 @@ function Landing({ data, pageContext }) {
   const { frontmatter } = markdownRemark;
   const { languageList } = pageContext;
 
-  console.log('LANGUAGE LIST', languageList)
-
   return (
     <>
       <I18nextProvider i18n={i18next}>
