@@ -16,14 +16,14 @@ import { logoFooter } from '../images';
 function Footer() {
   const { t, i18n } = useTranslation();
 
-  const primaryLinks = links.primary;
+  const primaryLinks = links.primary; // links
   const primaryLinksLength = primaryLinks.length;
-  const primaryLinksLabels = t('navigation.dropdowns').map((element) => element.linkLabels).flat().concat(t('navigation.parentLinkLabels'));
+  const primaryLinksLabels = t('navigation.dropdowns').map((element) => element.linkLabels).flat().concat(t('navigation.parentLinkLabels')); // labels (automatically taken from header labels)
   const primaryLinksLabelsLength = primaryLinksLabels.length;
   const primaryLength = primaryLinksLength > primaryLinksLabelsLength
     ? primaryLinksLabelsLength
     : primaryLinksLength;
-  // take shorter length if is missing link in primaryLinks or missing label in translation file
+  // take shorter length if is missing link in primaryLinks or label in primaryLinkLabels
   if (primaryLinksLength !== primaryLinksLabelsLength) {
     console.error(
       'Different number of links in /src/constants/link.js (under header.navDropDownLinks and header.parentLinks) and labels in /src/locales (under navigation.dropdowns and navigation.parentLinkLabels)\n',
@@ -36,6 +36,7 @@ function Footer() {
     );
   }
 
+  // generating links
   const primaryLinkItems = primaryLinks.map(
     (element, i) => i < primaryLength && (
     <Link className="usa-footer__primary-link" to={element}>

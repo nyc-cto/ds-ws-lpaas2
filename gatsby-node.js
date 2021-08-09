@@ -12,6 +12,7 @@ const { languages } = require('./src/constants/languages');
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
 
+  // redirects on the home path (i.e. en/home) for cleaner path on home page (i.e. en/)
   languages.map((lang) => createRedirect({
     fromPath: `/${lang.langKey}/home`,
     toPath: `/${lang.langKey}/`,
@@ -24,6 +25,7 @@ exports.createPages = ({ actions, graphql }) => {
   //   toPath:
   // })
 
+  /* creating each page */
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -80,7 +82,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: 'slug',
       node,
-      value: slug === 'home' ? `/${lang}` : `/${lang}/${slug}/`,
+      value: slug === 'home' ? `/${lang}` : `/${lang}/${slug}/`, // gets rid of slug on the home page for cleaner look (i.e. en/home --> en/)
       context: {
         lang,
       },

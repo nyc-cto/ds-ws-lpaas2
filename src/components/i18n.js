@@ -12,7 +12,7 @@ i18n
     defaultNS: 'translations',
     fallbackLng: 'en',
     interpolation: {
-      escapeValue: false,
+      escapeValue: false, // not needed for React
     },
     ns: ['translations'],
     react: {
