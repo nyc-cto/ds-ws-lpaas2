@@ -30,7 +30,7 @@ function Header({ slug }) {
   /* dynamically store parent links */
   const { parentLinks } = links; // links + labels
   const parentLinksLength = parentLinks.length;
-  const parentLinksLabels = t('navigation.parentLinkLabels'); // labels
+  const parentLinksLabels = t('navigation.parentLinkLabels'); // labels (used for verification only; labels are taken from parentLinks)
   const parentLinksLabelsLength = parentLinksLabels.length;
   if (parentLinksLength !== parentLinksLabelsLength) {
     console.error(

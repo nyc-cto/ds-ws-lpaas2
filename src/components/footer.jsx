@@ -18,6 +18,7 @@ function Footer() {
 
   const primaryLinks = links.primary; // link + labels
   const primaryLinksLength = primaryLinks.length;
+  // labels (used for verification only; labels are taken from primaryLinks)
   const primaryLinksLabels = t('navigation.dropdowns')
     .map((element) => element.linkLabels) // get only link labels (not dropdown button labels)
     .flat() // unnest/flatten a nested array

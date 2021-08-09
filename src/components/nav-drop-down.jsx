@@ -14,7 +14,7 @@ function NavDropDown() {
   const dropdowns = [];
   const { navDropDowns } = links; // links + labels
   const constFileLength = navDropDowns.length;
-  const navDropDownLabels = t('navigation.dropdowns'); // labels
+  const navDropDownLabels = t('navigation.dropdowns'); // labels (used for verification only; labels are taken from navDropDowns)
   const translationFileLength = navDropDownLabels.length;
   // error message if there is missing dropdowns or dropdown labels
   if (translationFileLength !== constFileLength) {
