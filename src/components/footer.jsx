@@ -18,8 +18,8 @@ function Footer() {
 
   const primaryLinks = links.primary;
   const primaryLinksLength = primaryLinks.length;
-  const primaryLinksLabels = t('navigation.dropdowns').map((element) => element.linkLabels).flat().concat(t('navigation.parentLinkLabels'));
-  const primaryLinksLabelsLength = primaryLinksLabels.length;
+  const primaryLinksLabels = t('navigation.dropdowns').map && t('navigation.dropdowns').map((element) => element.linkLabels).flat().concat(t('navigation.parentLinkLabels'));
+  const primaryLinksLabelsLength = primaryLinksLabels?.length;
   const primaryLength = primaryLinksLength > primaryLinksLabelsLength
     ? primaryLinksLabelsLength
     : primaryLinksLength;
@@ -39,7 +39,7 @@ function Footer() {
   const primaryLinkItems = primaryLinks.map(
     (element, i) => i < primaryLength && (
     <Link className="usa-footer__primary-link" to={element}>
-      {primaryLinksLabels[i]}
+      {primaryLinksLabels && primaryLinksLabels[i]}
     </Link>
     ),
   );

@@ -37,7 +37,7 @@ function NavDropDown() {
       const navDropDownLinks = dropDownLinks[i];
       const navDropDownLinksLength = navDropDownLinks.length;
       const navDropDownLinkLabels = dropDownLabels[i].linkLabels;
-      const navDropDownLinkLabelsLength = navDropDownLinkLabels.length;
+      const navDropDownLinkLabelsLength = navDropDownLinkLabels?.length;
       const navDropDownLength = navDropDownLinksLength > navDropDownLinkLabelsLength
         ? navDropDownLinkLabelsLength
         : navDropDownLinksLength;
@@ -60,7 +60,7 @@ function NavDropDown() {
         navDropDownLinks.map(
           (element, j) => j < navDropDownLength && (
           <Link to={element} key={element}>
-            {navDropDownLinkLabels[j]}
+            {navDropDownLinkLabels && navDropDownLinkLabels[j]}
           </Link>
           ),
         ),
