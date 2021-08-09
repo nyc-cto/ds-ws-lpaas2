@@ -1,5 +1,6 @@
 export const header = {
   navDropDowns: [
+    // first dropdown start
     [
       {
         label: 'navigation.dropdowns.0.linkLabels.0',
@@ -10,6 +11,8 @@ export const header = {
         link: 'link-two',
       },
     ],
+    // first dropdown end
+    // second dropdown start
     [
       {
         label: 'navigation.dropdowns.1.linkLabels.0',
@@ -20,6 +23,7 @@ export const header = {
         link: 'link-four',
       },
     ],
+    // second dropdown end
   ],
   parentLinks: [{ label: 'navigation.parentLinkLabels.0', link: 'link-five' }],
 };
