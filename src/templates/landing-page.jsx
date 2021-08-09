@@ -7,11 +7,11 @@ import { I18nextProvider, useTranslation } from 'react-i18next';
 import {
   Graphic,
   Hero,
-  i18next,
   Layout,
   Section,
   Tagline,
 } from '../components';
+import i18next from '../i18n'
 
 import '@trussworks/react-uswds/lib/uswds.css';
 import '@trussworks/react-uswds/lib/index.css';

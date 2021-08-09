@@ -6,7 +6,8 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 
-import { i18next, Layout } from '../components';
+import { Layout } from '../components';
+import i18next from '../i18n'
 
 import '@trussworks/react-uswds/lib/uswds.css';
 import '@trussworks/react-uswds/lib/index.css';

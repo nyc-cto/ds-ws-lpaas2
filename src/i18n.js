@@ -1,37 +1,38 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import ChainedBackend from 'i18next-chained-backend';
+// import ChainedBackend from 'i18next-chained-backend';
 import HttpBackend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
-import resourcesToBackend from 'i18next-resources-to-backend';
+// import resourcesToBackend from 'i18next-resources-to-backend';
 
 i18n
+  .use(HttpBackend)
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
     debug: true,
-    defaultNS: 'translations',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
     },
     ns: ['translations'],
+    defaultNS: 'translations',
     react: {
       useSuspense: false,
     },
-    backend: {
-      backends: [
-        HttpBackend,
-        // resourcesToBackend((lng, ns, clb) => {
-        //   import(`./locales/${lng}/${ns}.json`)
-        //         .then((resources) => clb(null, resources))
-        //         .catch(clb)
-        // })
-      ],
-      // backendOptions: [{
-      //   loadPath: './locales/{{lng}}/{{ns}}.json'
-      // }],
-    },
+    // backend: {
+    //   backends: [
+    //     HttpBackend,
+    //     // resourcesToBackend((lng, ns, clb) => {
+    //     //   import(`./locales/${lng}/${ns}.json`)
+    //     //         .then((resources) => clb(null, resources))
+    //     //         .catch(clb)
+    //     // })
+    //   ],
+    //   // backendOptions: [{
+    //   //   loadPath: './locales/{{lng}}/{{ns}}.json'
+    //   // }],
+    // },
     resources: {
       ar: {
         translations: require('./locales/ar/translation.json'),
