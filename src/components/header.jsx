@@ -25,7 +25,7 @@ function Header({ slug }) {
 
   /* menu expansion in mobile view */
   const [expanded, setExpanded] = useState(false);
-  const onClick = () => setExpanded((prevExpanded) => !prevExpanded);
+  const handleMenuClick = () => setExpanded((prevExpanded) => !prevExpanded);
 
   /* dynamically store parent links */
   const { parentLinks } = links; // links + labels
@@ -43,13 +43,16 @@ function Header({ slug }) {
       '\n',
     );
   }
+  
+  // generating links
   const parentLinkItems = parentLinks.map((linkAndLabel, _) => (
     <Link variant="nav" to={linkAndLabel.link} key={`parent${_}`}>
       {t(linkAndLabel.label)}
     </Link>
   ));
 
-  const handleClick = (langKey) => {
+  // change language on language selector button click
+  const handleLangClick = (langKey) => {
     i18n.changeLanguage(langKey, navigate(`/${langKey}/${slug}`));
   };
 
@@ -58,7 +61,7 @@ function Header({ slug }) {
       <div className="header__language-nav-items">
         <Button
           onClick={() => {
-            handleClick(language.langKey);
+            handleLangClick(language.langKey);
           }}
           type="button"
           unstyled
@@ -70,6 +73,7 @@ function Header({ slug }) {
     ),
   );
 
+  // language selector items
   const languageNavItems = (
     <div className="header__language-nav-container">
       <div className="header__language-nav-items--rtl">
@@ -83,7 +87,6 @@ function Header({ slug }) {
 
   return (
     <HeaderUSWDS extended className="header">
-      {/* <Router> */}
       <SkipNavLink />
       <Banner slug={slug}>{t('header.banner')}</Banner>
       <div className="usa-navbar">
@@ -95,10 +98,10 @@ function Header({ slug }) {
           />
           <Title className="header-info__title">{t('title')}</Title>
         </div>
-        <NavMenuButton onClick={onClick} label={t('header.menuMobileNav')} />
+        <NavMenuButton onClick={handleMenuClick} label={t('header.menuMobileNav')} />
       </div>
       <ExtendedNav
-        onToggleMobileNav={onClick}
+        onToggleMobileNav={handleMenuClick}
         primaryItems={NavDropDown()
           .concat(parentLinkItems)
           .concat(languageNavItems)}

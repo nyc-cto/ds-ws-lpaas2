@@ -1,5 +1,5 @@
 export const header = {
-  navDropDowns: [
+  navDropDowns: [ // dropdowns
     // first dropdown start
     [
       {
@@ -25,13 +25,13 @@ export const header = {
     ],
     // second dropdown end
   ],
-  parentLinks: [{ label: 'navigation.parentLinkLabels.0', link: 'link-five' }],
+  parentLinks: [{ label: 'navigation.parentLinkLabels.0', link: 'link-five' }], // parent (standalone) links
 };
 
 export const footer = {
   primary: header.navDropDowns
     .flat() // turn nested array into flat/unnested array
-    .concat(header.parentLinks), // add parent links
+    .concat(header.parentLinks), // add parent links (taken directly from header; don't make change here)
   secondary: {
     terms: 'terms',
     privacy: 'privacy',

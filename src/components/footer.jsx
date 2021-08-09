@@ -18,7 +18,7 @@ function Footer() {
 
   const primaryLinks = links.primary; // link + labels
   const primaryLinksLength = primaryLinks.length;
-  // labels (used for verification only; labels are taken from primaryLinks)
+  // labels (automatically taken from header labels, but used for verification only; labels are taken from primaryLinks)
   const primaryLinksLabels = t('navigation.dropdowns')
     .map((element) => element.linkLabels) // get only link labels (not dropdown button labels)
     .flat() // unnest/flatten a nested array
@@ -36,6 +36,7 @@ function Footer() {
     );
   }
 
+  // generating links
   const primaryLinkItems = primaryLinks.map((linkAndLabel, _) => (
     <Link className="usa-footer__primary-link" to={linkAndLabel.link} key={`primaryLink${_}`}>
       {t(linkAndLabel.label)}

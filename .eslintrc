@@ -11,10 +11,11 @@
     "react/prop-types": "off", // does not require props validation in a React component definition
     "no-nested-ternary": "off", // allows nested ternaries
     "no-console": "off",
-    "import/order": [
+    "import/order": [ // order used for imports
       "error",
       {
-        "groups": ["builtin", "external", "internal"],
+        "groups": ["builtin", "external", "internal"], // group types of imports
+        // react import comes before anything
         "pathGroups": [
           {
             "pattern": "react",

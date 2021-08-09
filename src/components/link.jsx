@@ -16,24 +16,14 @@ function Link({
   const isInternal = /^\/(?!\/)/.test(to); // Assumes that any internal link will start with exactly one slash, and that anything else is external
 
   if (isInternal) {
-    if (variant === 'nav') {
-      // Navigation link
-      return (
-        <GatsbyLink
-          className={classNames('usa-link', 'usa-link--nav', className)} // quoted classes are always included while className is included if it has a truthy value
-          activeClassName={activeClassName}
-          partiallyActive={partiallyActive}
-          to={to}
-          {...other}
-        >
-          {children}
-        </GatsbyLink>
-      );
-    }
+    // internal link
     return (
-      // Use Gatsby Link for internal links
       <GatsbyLink
-        className={classNames('usa-link', className)} // usa-link is always included while className is included if it has a truthy value
+        className={
+          variant === 'nav'
+            ? classNames('usa-link', 'usa-link--nav', className) // nav link
+            : classNames('usa-link', className) // regular link
+        } // quoted classes are always included while className is included if it has a truthy value
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
         to={to}
@@ -43,7 +33,7 @@ function Link({
       </GatsbyLink>
     );
   }
-  // external
+  // external link
   return (
     <USWDSLink
       variant={variant === 'nav' && 'nav'}
