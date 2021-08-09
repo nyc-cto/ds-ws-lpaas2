@@ -1,5 +1,5 @@
 {
-  "title": "Título del Proyecto",
+  "title": "Project Title",
   "agency": {
     "longformName": "NYC Mayor's Office of the Chief Technology Officer",
     "shortformName": "NYC CTO"
@@ -9,28 +9,28 @@
     "dropdowns": [
       {
         "buttonLabel": "Nav Label 1",
-        "linkLabels": ["Enlace Simple", "Enlace Simple Dos"]
+        "linkLabels": ["Simple link one", "Simple link two"]
       },
       {
         "buttonLabel": "Nav Label 2",
-        "linkLabels": ["Enlace Simple tres", "Enlace Simple cuatro"]
+        "linkLabels": ["Simple link three", "Simple link four"]
       }
     ],
     "parentLinkLabels": ["Parent link"]
   },
   "header": {
-    "banner": "Un sitio oficial del gobierno de la Ciudad de Nueva York",
-    "language": "Idioma",
-    "menuMobileNav": "Ménu"
+    "banner": "An official website of New York City government",
+    "language": "Language",
+    "menuMobileNav": "Menu"
   },
   "footer": {
-    "returnToTop": "Regresar Arriba",
-    "copyright": "© 2021 Ciudad de Nueva York . Todos los derechos reservados.",
+    "returnToTop": "Return to top",
+    "copyright": "© 2021 City of New York. All Rights Reserved.",
     "trademark": "NYC is a trademark and service mark of the City of New York.",
     "secondaryLinks": {
-      "terms": "NYC Términos y Condiciones",
-      "privacy": "NYC Política de Privacidad"
+      "terms": "NYC Terms of Use",
+      "privacy": "NYC Privacy Policy"
     }
   },
-  "notFound": "404: No encontramos tu sitio"
+  "notFound": "404: Page Not Found"
 }
