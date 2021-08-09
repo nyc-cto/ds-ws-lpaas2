@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 
 import { Layout } from '../components';
-import i18next from '../i18n'
+import i18next from '../i18n-config'
 
 import '@trussworks/react-uswds/lib/uswds.css';
 import '@trussworks/react-uswds/lib/index.css';

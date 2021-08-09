@@ -11,7 +11,7 @@ import {
   Section,
   Tagline,
 } from '../components';
-import i18next from '../i18n'
+import i18next from '../i18n-config'
 
 import '@trussworks/react-uswds/lib/uswds.css';
 import '@trussworks/react-uswds/lib/index.css';
