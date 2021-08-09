@@ -44,7 +44,7 @@ function Header({ slug }) {
     );
   }
   const parentLinkItems = parentLinks.map((linkAndLabel, _) => (
-    <Link variant="nav" to={linkAndLabel.link} key={_}>
+    <Link variant="nav" to={linkAndLabel.link} key={`parent${_}`}>
       {t(linkAndLabel.label)}
     </Link>
   ));

@@ -34,7 +34,7 @@ function NavDropDown() {
     const navDropDownLinkLabelsLength = navDropDownLinkLabels.length;
     if (navDropDownLinksLength !== navDropDownLinkLabelsLength) {
       console.error(
-        `Different number of links in /src/constants/link.js (under header["navDropDowns"][${i}]) and labels in /src/locales (under navigation["dropdowns"][${i}]["linkLabels"]) for dropdown ${
+        `Different number of links in /src/constants/link.js (under header.navDropDowns[${i}]) and labels in /src/locales (under navigation.dropdowns[${i}].linkLabels) for dropdown ${
           i + 1
         }\n`,
         'Links: ',
@@ -47,7 +47,7 @@ function NavDropDown() {
     }
     dropdowns.push(
       navDropDown.map((linkAndLabel, _) => (
-        <Link to={linkAndLabel.link} key={_}>
+        <Link to={linkAndLabel.link} key={`dropdown${i}Link${_}`}>
           {t(linkAndLabel.label)}
         </Link>
       )),
@@ -85,7 +85,7 @@ function NavDropDown() {
             </div>
           )}
         />
-        <Menu id={id} isOpen={isOpen === id} items={dropdowns[i]} key={i} />
+        <Menu id={id} isOpen={isOpen === id} items={dropdowns[i]} key={`dropdown${i}`} />
       </>
     );
   });

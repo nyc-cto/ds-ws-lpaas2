@@ -16,12 +16,12 @@ import { logoFooter } from '../images';
 function Footer() {
   const { t, i18n } = useTranslation();
 
-  const primaryLinks = links.primary;
+  const primaryLinks = links.primary; // link + labels
   const primaryLinksLength = primaryLinks.length;
   const primaryLinksLabels = t('navigation.dropdowns')
-    .map((element) => element.linkLabels)
-    .flat()
-    .concat(t('navigation.parentLinkLabels'));
+    .map((element) => element.linkLabels) // get only link labels (not dropdown button labels)
+    .flat() // unnest/flatten a nested array
+    .concat(t('navigation.parentLinkLabels')); // add parent link labels
   const primaryLinksLabelsLength = primaryLinksLabels.length;
   if (primaryLinksLength !== primaryLinksLabelsLength) {
     console.error(
@@ -36,7 +36,7 @@ function Footer() {
   }
 
   const primaryLinkItems = primaryLinks.map((linkAndLabel, _) => (
-    <Link className="usa-footer__primary-link" to={linkAndLabel.link} key={_}>
+    <Link className="usa-footer__primary-link" to={linkAndLabel.link} key={`primaryLink${_}`}>
       {t(linkAndLabel.label)}
     </Link>
   ));
