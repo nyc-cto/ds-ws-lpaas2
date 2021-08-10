@@ -7,11 +7,11 @@ import { I18nextProvider, useTranslation } from 'react-i18next';
 import {
   Graphic,
   Hero,
-  i18next,
   Layout,
   Section,
   Tagline,
 } from '../components';
+import i18next from '../i18n-config'
 
 import '@trussworks/react-uswds/lib/uswds.css';
 import '@trussworks/react-uswds/lib/index.css';
@@ -20,11 +20,12 @@ import '@fontsource/space-mono';
 
 import '../styles/index.scss';
 
-function Landing({ data }) {
+function Landing({ data, pageContext }) {
   const { i18n } = useTranslation();
 
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
+  const { languageList } = pageContext;
 
   return (
     <>
@@ -33,7 +34,7 @@ function Landing({ data }) {
           title={frontmatter.pageTitle}
           htmlAttributes={{ lang: i18n.language }}
         />
-        <Layout slug={frontmatter.slug}>
+        <Layout languageList={languageList} slug={frontmatter.slug}>
           <main>
             {frontmatter.hero && (<Hero hero={frontmatter.hero} />)}
             {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}

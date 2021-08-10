@@ -29,7 +29,7 @@ function NavDropDown() {
     );
   }
   navDropDowns.forEach((navDropDown, i) => {
-    const navDropDownLinksLength = navDropDown.length;
+    const navDropDownLinksLength = navDropDown?.length;
     const navDropDownLinkLabels = navDropDownLabels[i].linkLabels; // labels (used for verification only)
     const navDropDownLinkLabelsLength = navDropDownLinkLabels.length;
     if (navDropDownLinksLength !== navDropDownLinkLabelsLength) {

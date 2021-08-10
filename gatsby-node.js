@@ -4,9 +4,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const { createFilePath } = require('gatsby-source-filesystem');
 const _ = require('lodash');
-// const { useTranslation } = require('react-i18next');
 
-// const { i18next } = require('./src/components/i18n');
 const { languages } = require('./src/constants/languages');
 
 exports.createPages = ({ actions, graphql }) => {
@@ -20,12 +18,6 @@ exports.createPages = ({ actions, graphql }) => {
     redirectInBrowser: true,
   }));
 
-  // createRedirect({
-  //   fromPath: '/404',
-  //   toPath:
-  // })
-
-  /* creating each page */
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -51,6 +43,13 @@ exports.createPages = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges;
 
+    const getLanguages = () => {
+      const files = fs.readdirSync('./src/locales');
+      return languages.filter((lang) => files.includes(lang.langKey));
+    };
+
+    const languageList = getLanguages();
+
     posts.forEach((edge) => {
       const { id } = edge.node;
       if (edge.node.frontmatter.templateKey) {
@@ -64,6 +63,7 @@ exports.createPages = ({ actions, graphql }) => {
           context: {
             id,
             lang,
+            languageList,
           },
         });
       }
