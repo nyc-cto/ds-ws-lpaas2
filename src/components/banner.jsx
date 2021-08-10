@@ -6,6 +6,10 @@ import { useTranslation } from 'react-i18next';
 import { logoBanner } from '../images';
 import LanguageSelector from './language-selector';
 
+// this is the banner at the top of the page
+// it includes the the language selector button(s)
+// update the text in the translation files in src/locales
+
 function Banner({ children, languageList, slug }) {
   const { t } = useTranslation();
   return (
@@ -15,7 +19,7 @@ function Banner({ children, languageList, slug }) {
           <Grid row gap className="banner__logo-title">
             <Grid>
               <div>
-                <img src={logoBanner} alt={t('location')} />
+                {logoBanner && <img src={logoBanner} alt={t('location')} />}
               </div>
             </Grid>
             <Grid>
