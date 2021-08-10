@@ -303,6 +303,7 @@
     .usa-button--unstyled {
       @include u-text('accent-cool-lighter');
       text-decoration: none;
+      line-height: 25px;
     }
 
     //right-to-left language buttons in dropdown menu
