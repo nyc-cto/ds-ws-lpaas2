@@ -104,6 +104,7 @@
     .header__language-nav-item--active {
       .usa-button--unstyled {
         @include u-text('primary');
+        border: units('2px') solid color('base-dark');
         &:hover {
           @include u-text('primary');
           @include u-bg('base-dark');
@@ -114,6 +115,7 @@
     .header__language-nav-item--inactive {
       .usa-button--unstyled {
         @include u-text('accent-cool-lighter');
+        border: none;
         &:hover {
           @include u-text('primary');
           @include u-bg('base-dark');
@@ -158,6 +160,9 @@
               @include u-text('accent-cool-lighter');
               @include u-bg('base-dark');
               @include u-text('normal');
+              &:hover {
+                border: none;
+              }
             }
           }
         }

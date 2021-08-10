@@ -47,6 +47,7 @@
     'primary',
     'base-dark',
     'disabled',
+    'primary',
     'base-dark'
   );
 }
@@ -62,6 +63,7 @@
     'secondary',
     'secondary-darker',
     'disabled',
+    'secondary',
     'base-dark'
   );
 }
@@ -77,11 +79,27 @@
     'base-lightest',
     'accent-cool-lighter',
     'base-dark',
+    'base-dark',
     'base-lighter'
   );
   &:hover {
     border: none;
   }
+}
+
+.usa-button--unstyled {
+  @include button-theme(
+    'base-dark',
+    'base-dark',
+    'accent-cool-lighter',
+    'accent-cool-lighter',
+    'primary',
+    'primary',
+    'base-dark',
+    'disabled',
+    'base-dark',
+    'base-dark'
+  );
 }
 
 /* || SECTIONS */

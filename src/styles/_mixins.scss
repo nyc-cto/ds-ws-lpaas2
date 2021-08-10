@@ -8,14 +8,16 @@
   $bg-hover,
   $bg-active,
   $bg-disabled,
-  $border-color
+  $border-color,
+  $border-color-hover
 ) {
   @include u-text($text-color);
   @include u-bg($bg);
+  border: units('2px') solid color($border-color);
   &:hover {
     @include u-text($text-hover);
     @include u-bg($bg-hover);
-    border: units('2px') solid color($border-color);
+    border: units('2px') solid color($border-color-hover);
   }
   &:active {
     @include u-text($text-active);
@@ -98,7 +100,6 @@
   .usa-button--unstyled {
     &:hover {
       @include u-text($text);
-      border: none;
     }
   }
 }
