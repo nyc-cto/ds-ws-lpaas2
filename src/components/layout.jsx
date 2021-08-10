@@ -7,37 +7,26 @@ import { useTranslation } from 'react-i18next';
 import Footer from './footer';
 import Header from './header';
 
-function Layout({ children, slug }) {
+function Layout({ children, languageList, slug }) {
   const location = useLocation();
   const { i18n } = useTranslation();
 
   useEffect(() => {
     const path = location.pathname;
-    const lang = path.split('/')[1];
+    const lang = path.split('/')[1]; // language
     const route = path
       .split('/')
       .slice(2)
       .filter((v) => v !== '')
-      .join('/');
-    if (path === '/') navigate(`/${i18n.language}/`);
-    // empty path
-    else if (lang === '404') navigate(`/${i18n.language}/404`);
-    else if (lang.length !== 0 && route.length === 0) {
-      // only language given
-      if (lang !== i18n.language) i18n.changeLanguage(lang);
-    } else if (lang.length === 0 && route.length !== 0) {
-      // only route given
-      // not currently being used
-      // navigate(`${i18n.language}/${route}`);
-    } else if (lang !== i18n.language) {
-      // both language and route given
-      i18n.changeLanguage(lang);
-    }
+      .join('/'); // rest of the path excluding the language
+    if (path === '/') navigate(`/${i18n.language}/`); // '/' redirect
+    else if (lang === '404') navigate(`/${i18n.language}/404`); // '/404' redirect
+    else if (lang !== i18n.language) i18n.changeLanguage(lang); // change current language if there's a different language entered in path
   }, [location.pathname]);
 
   return (
     <>
-      <Header slug={slug} />
+      <Header languageList={languageList} slug={slug} />
       <div id="top" />
       {children}
       <Footer />

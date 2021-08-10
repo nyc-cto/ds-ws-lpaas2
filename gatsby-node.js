@@ -4,25 +4,19 @@ const path = require('path');
 const fs = require('fs-extra');
 const { createFilePath } = require('gatsby-source-filesystem');
 const _ = require('lodash');
-// const { useTranslation } = require('react-i18next');
 
-// const { i18next } = require('./src/components/i18n');
 const { languages } = require('./src/constants/languages');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
 
+  // redirects on the home path (i.e. en/home) for cleaner path on home page (i.e. en/)
   languages.map((lang) => createRedirect({
     fromPath: `/${lang.langKey}/home`,
     toPath: `/${lang.langKey}/`,
     isPermanent: true,
     redirectInBrowser: true,
   }));
-
-  // createRedirect({
-  //   fromPath: '/404',
-  //   toPath:
-  // })
 
   return graphql(`
     {
@@ -49,6 +43,13 @@ exports.createPages = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges;
 
+    const getLanguages = () => {
+      const files = fs.readdirSync('./src/locales');
+      return languages.filter((lang) => files.includes(lang.langKey));
+    };
+
+    const languageList = getLanguages();
+
     posts.forEach((edge) => {
       const { id } = edge.node;
       if (edge.node.frontmatter.templateKey) {
@@ -62,6 +63,7 @@ exports.createPages = ({ actions, graphql }) => {
           context: {
             id,
             lang,
+            languageList,
           },
         });
       }
@@ -80,7 +82,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: 'slug',
       node,
-      value: slug === 'home' ? `/${lang}` : `/${lang}/${slug}/`,
+      value: slug === 'home' ? `/${lang}` : `/${lang}/${slug}/`, // gets rid of slug on the home page for cleaner look (i.e. en/home --> en/)
       context: {
         lang,
       },
