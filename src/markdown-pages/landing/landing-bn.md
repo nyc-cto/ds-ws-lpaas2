@@ -6,7 +6,6 @@ pageTitle: bn Project | Home
 hero:
   heading: bn Customizable Landing Page Template 
   text: bn Set up a landing page for your agency with this template. It includes all of the resources that you need to have an easy, compliant, secure, appealing, and sustainable landing page.
-  buttonLink: https://github.com/nyc-cto/LPaaS2/
   buttonText: bn View on GitHub
 tagline:
   heading: bn Accessible, customizable, responsive, and translatable.
@@ -27,6 +26,5 @@ graphics:
 section:
   heading: bn Get in Touch!
   text: bn If you are interested in highlighting your agency’s work with a landing page, this template is a great start and we’re happy to help you take it further. For information on how to get started, feel free to contact us.
-  buttonLink: https://www1.nyc.gov/assets/cto/#/contact
   buttonText: bn Contact Us
 ---

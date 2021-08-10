@@ -2,31 +2,29 @@
 lang: es
 templateKey: landing-page
 slug: home
-pageTitle: es Project | Home
+pageTitle: Proyecto | Inicio
 hero:
-  heading: es Customizable Landing Page Template 
-  text: es Set up a landing page for your agency with this template. It includes all of the resources that you need to have an easy, compliant, secure, appealing, and sustainable landing page.
-  buttonLink: https://github.com/nyc-cto/LPaaS2/
-  buttonText: es View on GitHub
+  heading: Plantilla Editable para Página de Inicio 
+  text: Crea una página de inicio para tu institución de gobierno con esta plantilla. Incluye todos los recursos que puedes necesitar para tener una página de inicio simple, segura, atractiva y sostenible. 
+  buttonText: Mirar en GitHub
 tagline:
-  heading: es Accessible, customizable, responsive, and translatable.
-  text: es This landing page template allows you to set up a standalone microsite that highlights your program, report, plan, or other resource with NYC-approved design and technology. You can edit the template to include useful content and customize it to highlight your agency’s work. The landing page template is WCAG 2.0 compliant, and has multi-lingual support by default. The page is also responsive on mobile, tablet, and desktop platforms.
+  heading: Accesible, Personalizable, Traducible y Responsiva. 
+  text: Esta Plantilla Editable para Página de Inicio te ayudará a crear micrositios independientes para destacar tus iniciativas, reportes, planes, programas y cualquier otro contenido con un diseño pre-aprobado por la Ciudad de Nueva York. Puedes editar esta plantilla para destacar el trabajo de tu institución con contenidos útiles y personalizables. Esta página de inicio sigue los estándares de la WCAG 2.0, y tiene soporte en múltiples idiomas. Esta página también es responsiva a celulares, tabletas, y computadoras.
 graphics:
-  - imageDescription: es Description
-    heading: es Accessible
-    text: es The landing page is readable by a screen reader, usable with a keyboard, and has been tested for several additional accessibility features.
-  - imageDescription: es Description
-    heading: es Customizable
-    text: es Administrators of the landing page are able to change styling and theming features of the page, as well as edit any necessary content. 
-  - imageDescription: es Description
-    heading: es Responsive
-    text: es The landing page is responsive on mobile, tablet, and desktop platforms.
-  - imageDescription: es Description
-    heading: es Translatable
-    text: es The landing page can support any number of language translations, including right-to-left languages. 
+  - imageDescription: Descripción
+    heading: Accesible
+    text: Esta página de inicio puede ser leída por un lector de pantallas, puede navegarse con un teclado y es compatible con múltiples funciones de accesibilidad. 
+  - imageDescription: Descripción
+    heading: Personalizable
+    text:  Los administradores de esta página pueden cambiar el estilo y los temas del sitio, así como cualquier contenido. 
+  - imageDescription: Descripción
+    heading: Responsiva
+    text: Esta página es responsiva a celulares, tabletas, y computadoras.
+  - imageDescription: Descripción
+    heading: Traducible
+    text: Esta página es compatible con cualquier número de traducciones, incluyendo lenguajes de derecha a izquierda.
 section:
-  heading: es Get in Touch!
-  text: es If you are interested in highlighting your agency’s work with a landing page, this template is a great start and we’re happy to help you take it further. For information on how to get started, feel free to contact us.
-  buttonLink: https://www1.nyc.gov/assets/cto/#/contact
-  buttonText: es Contact Us
+  heading: ¡Contáctanos!
+  text: Si estás interesado en destacar el trabajo de tu institución con una página de inicio. Esta plantilla es un buen lugar para comenzar, nosotros con gusto te ayudaremos a llevar tu diseño aún más lejos. Para más información sobre cómo comenzar, contáctanos. 
+  buttonText: Contáctanos
 ---

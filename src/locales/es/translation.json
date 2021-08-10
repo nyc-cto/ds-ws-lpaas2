@@ -1,36 +1,36 @@
 {
-  "title": "[es] Project Title",
+  "title": "Título del Proyecto",
   "agency": {
-    "longformName": "[es] NYC Mayor's Office of the Chief Technology Officer",
-    "shortformName": "[es] NYC CTO"
+    "longformName": "NYC Mayor's Office of the Chief Technology Officer",
+    "shortformName": "NYC CTO"
   },
-  "location": "[es] NYC",
+  "location": "NYC",
   "navigation": {
     "dropdowns": [
       {
-        "buttonLabel": "[es] Nav Label 1",
-        "linkLabels": ["[es] Simple link one", "[es] Simple link two"]
+        "buttonLabel": "Nav Label 1",
+        "linkLabels": ["Enlace Simple", "Enlace Simple Dos"]
       },
       {
-        "buttonLabel": "[es] Nav Label 2",
-        "linkLabels": ["[es] Simple link three", "[es] Simple link four"]
+        "buttonLabel": "Nav Label 2",
+        "linkLabels": ["Enlace Simple tres", "Enlace Simple cuatro"]
       }
     ],
-    "parentLinkLabels": ["[es] Parent link"]
+    "parentLinkLabels": ["Parent link"]
   },
   "header": {
-    "banner": "[es] An official website of New York City government",
-    "language": "[es] Language",
-    "menuMobileNav": "[es] Menu"
+    "banner": "Un sitio oficial del gobierno de la Ciudad de Nueva York",
+    "language": "Idioma",
+    "menuMobileNav": "Ménu"
   },
   "footer": {
-    "returnToTop": "[es] Return to top",
-    "copyright": "[es] © 2021 City of New York. All Rights Reserved.",
-    "trademark": "[es] NYC is a trademark and service mark of the City of New York.",
+    "returnToTop": "Regresar Arriba",
+    "copyright": "© 2021 Ciudad de Nueva York . Todos los derechos reservados.",
+    "trademark": "NYC is a trademark and service mark of the City of New York.",
     "secondaryLinks": {
-      "terms": "[es] NYC Terms of Use",
-      "privacy": "[es] NYC Privacy Policy"
+      "terms": "NYC Términos y Condiciones",
+      "privacy": "NYC Política de Privacidad"
     }
   },
-  "notFound": "[es] 404: Page Not Found"
+  "notFound": "404: No encontramos tu sitio"
 }

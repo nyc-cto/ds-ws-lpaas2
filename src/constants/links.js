@@ -28,6 +28,11 @@ export const header = {
   parentLinks: [{ label: 'navigation.parentLinkLabels.0', link: 'link-five' }], // parent (standalone) links
 };
 
+export const landing = {
+  heroButtonLink: 'https://github.com/nyc-cto/LPaaS2/',
+  sectionButtonLink: 'https://www1.nyc.gov/assets/cto/#/contact',
+};
+
 export const footer = {
   primary: header.navDropDowns
     .flat() // turn nested array into flat/unnested array
