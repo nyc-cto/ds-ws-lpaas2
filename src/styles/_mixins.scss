@@ -102,15 +102,3 @@
     }
   }
 }
-
-//text, background, and border colors for language selector buttons
-@mixin active-border($direction, $border-color, $text, $bg) {
-  &:active {
-    padding-#{$direction}: units('05');
-    border-#{$direction}: units('05') solid color($border-color);
-  }
-  .usa-button--unstyled {
-    @include u-text($text);
-    @include u-bg($bg);
-  }
-}

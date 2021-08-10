@@ -44,12 +44,6 @@
           .nav-dropdown__label-icon--expanded {
             display: none;
           }
-          // @include active-border(
-          //   'left',
-          //   'secondary',
-          //   'base-darker',
-          //   'accent-cool-lighter'
-          // );
           @include nav-item(
             'base-darker',
             'base-darker',
@@ -159,12 +153,6 @@
         }
         //nav links
         .usa-nav__link {
-          @include active-border(
-            'left',
-            'secondary',
-            'base-darker',
-            'accent-cool-lighter'
-          );
           @include nav-item(
             'disabled-dark',
             'base-darker',
@@ -197,12 +185,6 @@
               display: none;
             }
           }
-          @include active-border(
-            'left',
-            'secondary',
-            'base-darker',
-            'accent-cool-lighter'
-          );
           @include nav-item(
             'disabled-dark',
             'base-darker',
@@ -302,6 +284,7 @@
     //language buttons that look like links
     .usa-button--unstyled {
       @include u-text('accent-cool-lighter');
+      @include u-bg('base-dark');
       text-decoration: none;
       line-height: 25px;
     }
@@ -311,34 +294,16 @@
       @include language-button--hover('primary');
       display: flex;
       flex-direction: row-reverse;
-      @include active-border(
-        'right',
-        'primary',
-        'accent-cool-lighter',
-        'base-dark'
-      );
     }
     //left-to-right language buttons in dropdown menu
     .banner__language-selector-item--ltr {
       @include language-button--hover('primary');
-      @include active-border(
-        'left',
-        'primary',
-        'accent-cool-lighter',
-        'base-dark'
-      );
     }
     //all language buttons when there are 5 or fewer languages
     .banner__language-selector-button-group {
       @include flex-center-space-between();
       .banner__language-selector-item {
         @include language-button--hover('primary');
-        @include active-border(
-          'top',
-          'primary',
-          'accent-cool-lighter',
-          'base-dark'
-        );
         margin: 0 units('105');
         &:hover {
           padding-top: 0;
