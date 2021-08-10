@@ -44,15 +44,25 @@
           .nav-dropdown__label-icon--expanded {
             display: none;
           }
+          .nav-dropdown__label {
+            p {
+              margin: 0;
+              padding: 0;
+            }
+          }
           @include nav-item(
             'base-darker',
             'base-darker',
             'normal',
             'bold',
             'accent-cool-lighter',
-            0 units(0.5),
-            units(1.5) units(2)
+            units(0.5),
+            units(2)
           );
+          &:hover {
+            border-left: units('05') solid color('secondary');
+            padding-left: units('05');
+          }
         }
       }
     }
@@ -311,21 +321,21 @@
       }
     }
   }
-  // color of language button that is the active language
+  // to indicate which language is in use or active, there is a bar on one side on one side of the language button
+  // left-to-right languages active border
   .banner__language-selector-item--ltr.banner__language-selector-item--active {
-    padding-left: units('05');
-    border-left: units('05') solid color('primary');
+    @include language-button--active(left, 'primary', left);
   }
+  // right-to-left languages active border
   .banner__language-selector-item--rtl.banner__language-selector-item--active {
-    padding-right: units('05');
-    border-right: units('05') solid color('primary');
+    @include language-button--active(right, 'primary', right);
   }
+  // active border is on top when there are 5 or less languages
   .banner__language-selector-item.banner__language-selector-item--active {
-    border-top: units('05') solid color('primary');
-    padding-bottom: units('05');
+    @include language-button--active(top, 'primary', bottom);
   }
+  // set these styles so spacing is the same for active and inactive languages when there are less than 5 overall
   .banner__language-selector-item.banner__language-selector-item--inactive {
-    border-top: units('05') solid color('base-dark');
-    padding-bottom: units('05');
+    @include language-button--active(top, 'base-dark', bottom);
   }
 }

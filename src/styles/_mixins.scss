@@ -102,3 +102,8 @@
     }
   }
 }
+
+@mixin language-button--active($border-direction, $border-color, $padding-direction) {
+  border-#{$border-direction}: units('05') solid color($border-color);
+  padding-#{$padding-direction}: units('05');
+}
