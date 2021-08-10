@@ -4,6 +4,7 @@ import { useLocation } from '@reach/router';
 import { navigate } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 
+import { languages } from '../constants/languages';
 import Footer from './footer';
 import Header from './header';
 
@@ -14,14 +15,14 @@ function Layout({ children, slug }) {
   useEffect(() => {
     const path = location.pathname;
     const lang = path.split('/')[1]; // language
-    const route = path
-      .split('/')
-      .slice(2)
-      .filter((v) => v !== '')
-      .join('/'); // rest of the path excluding the language
-    if (path === '/') navigate(`/${i18n.language}/`); // '/' redirect
-    else if (lang === '404') navigate(`/${i18n.language}/404`); // '/404' redirect
-    else if (lang !== i18n.language) i18n.changeLanguage(lang); // change current language if there's a different language entered in path
+    if (path === '/') navigate(`/${i18n.language}/`);
+    // '/' redirect
+    else if (path === '/404/') navigate(`/${i18n.language}/404`);
+    // '/404' redirect
+    else if (
+      lang !== i18n.language // if there's a different language entered in path
+      && languages.map((language) => language.langKey).includes(lang) // and the language exists in this app
+    ) i18n.changeLanguage(lang); // then change the current language to that language
   }, [location.pathname]);
 
   return (
