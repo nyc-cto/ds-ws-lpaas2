@@ -18,7 +18,6 @@ function Hero({ hero }) {
                 onClick={() => {
                   navigate(hero.buttonLink);
                 }}
-                className="usa-button"
               >
                 {hero.buttonText}
               </Button>
