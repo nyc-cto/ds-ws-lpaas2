@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { logoBanner } from '../images';
 import LanguageSelector from './language-selector';
 
-function Banner({ children, slug }) {
+function Banner({ children, languageList, slug }) {
   const { t } = useTranslation();
   return (
     <div className="usa-section--dark">
@@ -23,7 +23,7 @@ function Banner({ children, slug }) {
             </Grid>
           </Grid>
           <Grid>
-            <LanguageSelector slug={slug} />
+            <LanguageSelector languageList={languageList} slug={slug} />
           </Grid>
         </Grid>
       </GridContainer>
