@@ -4,12 +4,21 @@
 // DO NOT EDIT OR DELETE THIS FILE
 // DO NOT EDIT OR DELETE THIS FILE
 
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { navigate } from 'gatsby';
+import { useTranslation } from 'react-i18next';
 
 import Layout from '../components/layout';
 
 function Page404() {
-  return <Layout />; // nothing is displayed (only redirects from routing in layout component)
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    navigate(`/${i18n.language}/404`);
+  }, []);
+
+  return <Layout />; // for routing in layout component
 }
 
 export default Page404;
