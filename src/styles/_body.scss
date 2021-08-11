@@ -1,6 +1,6 @@
 /* || HERO */
 
-//background for hero callout
+//  background for hero callout
 .usa-hero__callout {
   @include u-bg('base-dark');
 }
@@ -16,32 +16,32 @@
 
 /* || GRAPHICS SECTION */
 
-//circular images in graphics section
+// circular images in graphics section
 .graphic__image--circle {
   border-radius: 50%;
 }
 
-//graphics section image and text
+// graphics section image and text
 .usa-media-block {
   padding: units(3) 0;
 }
 
-//for mobile up to tablet view, the images are above the text
+// for mobile up to tablet view, the images are above the text
 @media (min-width: units('mobile')) {
-  //graphics section header and paragraph
+  // graphics section header and paragraph
   .usa-media-block__body {
     padding: units(3) 0;
   }
 }
 
-//for tablet view and above, the images are to the left of the text
+// for tablet view and above, the images are to the left of the text
 @media (min-width: units('tablet')) {
-  //graphics section image
+  // graphics section image
   .usa-media-block__img {
     margin-left: units(3);
   }
 
-  //graphics secction header and paragraph
+  // graphics secction header and paragraph
   .usa-media-block__body {
     padding: 0;
   }

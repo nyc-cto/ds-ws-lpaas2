@@ -9,7 +9,7 @@
     }
   }
 
-  //hide language selector button, project title, and banner text
+  // hide language selector button, project title, and banner text
   .banner__language-selector,
   .header-info__title,
   .banner__info {
@@ -18,7 +18,7 @@
   .usa-nav {
     padding: 0;
     .usa-nav__inner {
-      //nav close button
+      // nav close button
       .usa-nav__close {
         margin: units(1);
         padding: units(1);
@@ -26,7 +26,7 @@
       .usa-nav__primary-item {
         border: none;
         width: fit-content;
-        //these submenu items are shown when a nav label is clicked and the accordion button expands
+        // these submenu items are shown when a nav label is clicked and the accordion button expands
         .usa-nav__submenu {
           @include u-bg('accent-cool-lighter');
           .usa-nav__submenu-item {
@@ -35,8 +35,8 @@
             border: none;
           }
         }
-        //links and nav label buttons in the nav menu
-        //styling applies when accordion buttons are open and closed
+        // links and nav label buttons in the nav menu
+        // styling applies when accordion buttons are open and closed
         a,
         .usa-accordion__button[aria-expanded='false'],
         .usa-accordion__button[aria-expanded='true'] {
@@ -68,7 +68,7 @@
     }
   }
 
-  //header & nav
+  // header & nav
   .usa-navbar {
     @include flex-center-space-between();
     margin: units(4) 0 units(2) 0;
@@ -77,30 +77,30 @@
       width: units('card');
       height: auto;
     }
-    //nav menu button
+    // nav menu button
     .usa-menu-btn {
       @include u-bg('secondary');
     }
   }
 
-  //languages in nav bar
+  // languages in nav bar
   .header__language-nav-container {
-    //position languages at the bottom
+    // position languages at the bottom
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     @include u-bg('base-dark');
     padding: units(1) 0;
-    //right align right to left languages
+    // right align right to left languages
     .header__language-nav-items--rtl {
       @include align-languages(flex-end);
     }
-    //left align left to right languages
+    // left align left to right languages
     .header__language-nav-items--ltr {
       @include align-languages(flex-start);
     }
-    //language button styling
+    // language button styling
     .header__language-nav-item--active {
       .usa-button--unstyled {
         @include u-text('primary');
@@ -129,7 +129,7 @@
 /* || DESKTOP */
 
 @media (min-width: units('desktop')) {
-  //show language selector button and project title
+  // show language selector button and project title
   .banner__language-selector,
   .header-info__title,
   .banner__info {
@@ -166,7 +166,7 @@
             }
           }
         }
-        //nav links
+        // nav links
         .usa-nav__link {
           @include nav-item(
             'disabled-dark',
@@ -184,7 +184,7 @@
             }
           }
         }
-        //nav label buttons when accordion is closed
+        // nav label buttons when accordion is closed
         .usa-accordion__button[aria-expanded='false'] {
           background-image: none;
           .nav-dropdown__label {
@@ -216,7 +216,7 @@
             border: 3px solid color('secondary');
           }
         }
-        //nav label buttons when accordion is closed
+        // nav label buttons when accordion is closed
         .usa-accordion__button[aria-expanded='true'] {
           background-image: none;
           .nav-dropdown__label {
@@ -249,15 +249,15 @@
     }
   }
 
-  /*hide language buttons from nav in desktop view 
-  these buttons will be in the language selector dropdown
-  or they will be in the banner
-  in mobile view they are part of the nav menu */
+  /* Hide language buttons from nav bar in desktop view. 
+  In desktop view, these buttons will be in the language selector dropdown
+  or they will be in the banner, depending on the number of languages.
+  In mobile view, they are part of the nav menu. */
   .header__language-nav-items {
     display: none;
   }
 
-  //custom NYC banner
+  // custom NYC banner
   .banner {
     @include flex-center-space-between();
     .banner__logo-title,
@@ -267,7 +267,7 @@
     .font-heading-xs {
       margin: 0;
     }
-    //language nav button
+    // language selector nav button, which opens a dropdown menu
     .usa-accordion__button {
       background-image: none;
       padding: units(2) units('105');
@@ -275,7 +275,7 @@
         padding-left: units('105');
         margin: 0;
       }
-      //language nav button when dropdown menu is closed
+      // language selector nav button when dropdown menu is closed
       &[aria-expanded='false'] {
         @include u-text('base-dark');
         @include u-bg('primary');
@@ -290,13 +290,13 @@
           }
         }
       }
-      //language nav button when dropdown menu is open
+      // language selector nav button when dropdown menu is open
       &[aria-expanded='true'] {
         @include u-text('accent-cool-lighter');
         @include u-bg('primary');
       }
     }
-    //language buttons that look like links
+    // language buttons that look like links
     .usa-button--unstyled {
       @include u-text('accent-cool-lighter');
       @include u-bg('base-dark');
@@ -304,17 +304,18 @@
       line-height: 25px;
     }
 
-    //right-to-left language buttons in dropdown menu
+    // right-to-left language buttons in dropdown menu
     .banner__language-selector-item--rtl {
       @include language-button--hover('primary');
       display: flex;
       flex-direction: row-reverse;
     }
-    //left-to-right language buttons in dropdown menu
+    // left-to-right language buttons in dropdown menu
     .banner__language-selector-item--ltr {
       @include language-button--hover('primary');
     }
-    //all language buttons when there are 5 or fewer languages
+    // all language buttons when there are 5 or fewer languages
+    // for 5 or fewer languages, the buttons are in the banner not the dropdown menu
     .banner__language-selector-button-group {
       @include flex-center-space-between();
       .banner__language-selector-item {
@@ -327,19 +328,19 @@
     }
   }
   // to indicate which language is in use or active, there is a bar on one side of the language button
-  // left-to-right languages active border
+  // left-to-right languages active border, in dropdown language selector menu
   .banner__language-selector-item--ltr.banner__language-selector-item--active {
     @include language-button--active(left, 'primary', left);
   }
-  // right-to-left languages active border
+  // right-to-left languages active border, in dropdown language selector menu
   .banner__language-selector-item--rtl.banner__language-selector-item--active {
     @include language-button--active(right, 'primary', right);
   }
-  // active border is on top when there are 5 or less languages
+  // active border is on top when there are 5 or fewer languages, in banner
   .banner__language-selector-item.banner__language-selector-item--active {
     @include language-button--active(top, 'primary', bottom);
   }
-  // set these styles so spacing is the same for active and inactive languages when there are less than 5 overall
+  // set these styles so spacing is the same for active and inactive languages when there are less than 5 languages overall
   .banner__language-selector-item.banner__language-selector-item--inactive {
     @include language-button--active(top, 'base-dark', bottom);
   }

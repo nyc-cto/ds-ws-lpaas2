@@ -36,7 +36,7 @@
 
 /* || BUTTONS */
 
-//primary button
+// primary button
 .usa-button {
   @include button-theme(
     'base-dark',
@@ -52,7 +52,7 @@
   );
 }
 
-//warm button
+// warm button
 .usa-button--accent-warm {
   @include button-theme(
     'base-dark',
@@ -68,7 +68,7 @@
   );
 }
 
-//inverse button
+// inverse button
 .usa-button--inverse {
   @include button-theme(
     'base-dark',
@@ -104,7 +104,7 @@
 
 /* || SECTIONS */
 
-//background color of dark sections
+// background color of dark sections
 .usa-section--dark,
 .usa-nav__submenu {
   @include u-bg('base-dark');
