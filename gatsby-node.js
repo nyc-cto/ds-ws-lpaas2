@@ -4,9 +4,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const { createFilePath } = require('gatsby-source-filesystem');
 const _ = require('lodash');
-// const { useTranslation } = require('react-i18next');
 
-// const { i18next } = require('./src/components/i18n');
 const { languages } = require('./src/constants/languages');
 
 exports.createPages = ({ actions, graphql }) => {
@@ -19,11 +17,6 @@ exports.createPages = ({ actions, graphql }) => {
     isPermanent: true,
     redirectInBrowser: true,
   }));
-
-  // createRedirect({
-  //   fromPath: '/404',
-  //   toPath:
-  // })
 
   /* creating each page */
   return graphql(`
@@ -56,16 +49,31 @@ exports.createPages = ({ actions, graphql }) => {
       if (edge.node.frontmatter.templateKey) {
         const lang = _.get(edge, 'node.frontmatter.lang', 'en');
 
-        createPage({
-          path: edge.node.fields.slug,
-          component: path.resolve(
-            `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`,
-          ),
-          context: {
-            id,
-            lang,
-          },
-        });
+        // Check if the page is a localized 404 (i.e. /en/404/)
+        if (edge.node.fields.slug.match(/^\/[a-z]{2}\/404\/$/)) {
+          // Match all paths starting with the language code (apart from other valid paths)
+          createPage({
+            path: edge.node.fields.slug,
+            matchPath: `/${lang}/*`,
+            component: path.resolve('src/templates/404-page.jsx'),
+            context: {
+              id,
+              lang,
+            },
+          });
+        } else {
+          // If page is not a localized 404 (i.e. /en/404/), create the page normally
+          createPage({
+            path: edge.node.fields.slug,
+            component: path.resolve(
+              `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`,
+            ),
+            context: {
+              id,
+              lang,
+            },
+          });
+        }
       }
     });
   });
@@ -87,24 +95,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         lang,
       },
     });
-  }
-};
-
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage, deletePage } = actions;
-
-  // Check if the page is a localized 404 (i.e. /en/404/)
-  if (page.path.match(/^\/[a-z]{2}\/404\/$/)) {
-    const oldPage = { ...page };
-
-    // Get the language code from the path, and match all paths
-    // starting with this code (apart from other valid paths)
-    const langCode = page.path.split('/')[1];
-    page.matchPath = `/${langCode}/*`;
-
-    // Recreate the modified page
-    deletePage(oldPage);
-    createPage(page);
   }
 };
 
