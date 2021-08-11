@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { graphicImages } from '../images';
 
-// update the text content in  markdown files in src/markdown-pages
+// update the content by editing the markdown files in src/markdown-pages
 // update the graphics images in src/images/graphics
 
 function Graphic({ graphics }) {
