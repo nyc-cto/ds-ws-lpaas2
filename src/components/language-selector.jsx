@@ -20,11 +20,11 @@ function LanguageSelector({ languageList, slug }) {
 
   // create the language selector buttons based on the language list (languages used in src/locales)
   // for 5 or less languages, the buttons are simply in the banner at the top of the page
-  // for 5 or more languages, the buttons are in a dropdown menu
+  // for more than 5 languages, the buttons are in a dropdown menu
   const languageMenuItems = languageList.map((language) => (
     <div
       className={
-        `${languageList.length <= 5 // are there are 5 or less languages used in the locales folder
+        `${languageList.length <= 5 // are there 5 or less languages used in the locales folder
           ? 'banner__language-selector-item' // 5 or less languages
           : i18n.dir(language.langKey) === 'rtl' // if more than 5 languages, check if the language is right-to-left
             ? 'banner__language-selector-item--rtl' // if right-to-left, the language buttons will be styled differently
