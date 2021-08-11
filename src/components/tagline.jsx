@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Grid, GridContainer } from '@trussworks/react-uswds';
 
+// update the content by editing the markdown files in src/markdown-pages
+
 function Tagline({ tagline }) {
   return (
     <section className="usa-section">

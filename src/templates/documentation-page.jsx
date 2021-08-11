@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 
 import { Layout } from '../components';
-import i18next from '../i18n-config'
+import i18next from '../i18n-config';
 
 import '@trussworks/react-uswds/lib/uswds.css';
 import '@trussworks/react-uswds/lib/index.css';
@@ -19,8 +19,10 @@ import '../styles/index.scss';
 function Documentation({ data, pageContext }) {
   const { i18n } = useTranslation();
 
+  // data from the front matter and html from the body of the markdown files
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
+  // list of languages used in the locales folder, passed by page context in gatsby-node.js
   const { languageList } = pageContext;
 
   return (

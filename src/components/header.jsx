@@ -55,6 +55,7 @@ function Header({ languageList, slug }) {
     i18n.changeLanguage(langKey, navigate(`/${langKey}/${slug}`));
   };
 
+  // language buttons shown in mobile navigation menu
   const languageNav = (direction) => languageList.map(
     (language) => i18n.dir(language.langKey) === direction && (
       <div className={`header__language-nav-item--${language.langKey === i18n.language ? 'active' : 'inactive'}`}>
