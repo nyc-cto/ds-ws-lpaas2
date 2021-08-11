@@ -326,7 +326,7 @@
       }
     }
   }
-  // to indicate which language is in use or active, there is a bar on one side on one side of the language button
+  // to indicate which language is in use or active, there is a bar on one side of the language button
   // left-to-right languages active border
   .banner__language-selector-item--ltr.banner__language-selector-item--active {
     @include language-button--active(left, 'primary', left);

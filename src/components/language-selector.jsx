@@ -24,10 +24,10 @@ function LanguageSelector({ languageList, slug }) {
   const languageMenuItems = languageList.map((language) => (
     <div
       className={
-        `${languageList.length <= 5 // are there are less than 5 languages used in the locales folder
-          ? 'banner__language-selector-item' // less than 5 languages
+        `${languageList.length <= 5 // are there are 5 or less languages used in the locales folder
+          ? 'banner__language-selector-item' // 5 or less languages
           : i18n.dir(language.langKey) === 'rtl' // if more than 5 languages, check if the language is right-to-left
-            ? 'banner__language-selector-item--rtl' // if right-to-left the language buttons will have slightly different styles
+            ? 'banner__language-selector-item--rtl' // if right-to-left, the language buttons will be styled differently
             : 'banner__language-selector-item--ltr'} ${
           language.langKey === i18n.language // does button's language code match current language
             ? 'banner__language-selector-item--active' // active language is the language being used on the current page

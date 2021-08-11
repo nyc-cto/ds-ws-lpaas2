@@ -6,7 +6,7 @@ import { navigate } from 'gatsby';
 import { landing as links } from '../constants/links';
 
 // update the content by editing the markdown files in src/markdown-pages
-// update the button link in src/constants/links
+// update the button link in src/constants/links.js
 
 function Section({ section }) {
   return (
