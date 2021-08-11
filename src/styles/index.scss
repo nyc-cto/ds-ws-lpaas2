@@ -5,12 +5,12 @@
 $theme-font-path: '../../node_modules/uswds/src/fonts';
 $theme-image-path: '../../node_modules/uswds/src/img';
 
-//Custom themes
+// Custom themes
 @import './custom-theme';
 
 @import 'uswds';
 
-//Class overrides and custom classes
+// Class overrides and custom classes
 @import './mixins';
 @import './global';
 @import './header';

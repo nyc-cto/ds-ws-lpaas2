@@ -1,7 +1,7 @@
 /* || MOBILE */
 
 @media (min-width: units('mobile')) {
-  //footer nav links
+  // footer nav links
   .usa-footer__primary-section {
     font-family: 'Space Mono';
     @include u-text('accent-cool-lighter');
@@ -29,7 +29,7 @@
     }
   }
 
-  //department logo, terms & policies, and copyright & trademarks
+  // department logo, terms & policies, and copyright & trademarks
   .usa-footer__secondary-section {
     @include u-text('accent-cool-lighter');
     @include u-bg('base-dark');
