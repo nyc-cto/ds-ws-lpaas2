@@ -36,7 +36,7 @@
 
 /* || BUTTONS */
 
-//primary button
+// primary button
 .usa-button {
   @include button-theme(
     'base-dark',
@@ -47,11 +47,12 @@
     'primary',
     'base-dark',
     'disabled',
+    'primary',
     'base-dark'
   );
 }
 
-//warm button
+// warm button
 .usa-button--accent-warm {
   @include button-theme(
     'base-dark',
@@ -62,11 +63,12 @@
     'secondary',
     'secondary-darker',
     'disabled',
+    'secondary',
     'base-dark'
   );
 }
 
-//inverse button
+// inverse button
 .usa-button--inverse {
   @include button-theme(
     'base-dark',
@@ -77,6 +79,7 @@
     'base-lightest',
     'accent-cool-lighter',
     'base-dark',
+    'base-dark',
     'base-lighter'
   );
   &:hover {
@@ -84,9 +87,24 @@
   }
 }
 
+.usa-button--unstyled {
+  @include button-theme(
+    'base-dark',
+    'base-dark',
+    'accent-cool-lighter',
+    'accent-cool-lighter',
+    'primary',
+    'primary',
+    'base-dark',
+    'disabled',
+    'base-dark',
+    'base-dark'
+  );
+}
+
 /* || SECTIONS */
 
-//background color of dark sections
+// background color of dark sections
 .usa-section--dark,
 .usa-nav__submenu {
   @include u-bg('base-dark');

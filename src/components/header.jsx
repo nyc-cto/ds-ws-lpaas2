@@ -57,7 +57,7 @@ function Header({ languageList, slug }) {
 
   const languageNav = (direction) => languageList.map(
     (language) => i18n.dir(language.langKey) === direction && (
-      <div className="header__language-nav-items">
+      <div className={`header__language-nav-item--${language.langKey === i18n.language ? 'active' : 'inactive'}`}>
         <Button
           onClick={() => {
             handleLangClick(language.langKey);

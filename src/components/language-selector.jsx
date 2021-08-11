@@ -19,11 +19,11 @@ function LanguageSelector({ languageList, slug }) {
   const languageMenuItems = languageList.map((language) => (
     <div
       className={
-        languageList.length <= 5
+        `${languageList.length <= 5
           ? 'banner__language-selector-item'
           : i18n.dir(language.langKey) === 'rtl'
             ? 'banner__language-selector-item--rtl'
-            : 'banner__language-selector-item--ltr'
+            : 'banner__language-selector-item--ltr'} ${language.langKey === i18n.language ? 'banner__language-selector-item--active' : 'banner__language-selector-item--inactive'}`
       }
     >
       <Button

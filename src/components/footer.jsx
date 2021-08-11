@@ -32,7 +32,7 @@ function Footer() {
       '\n',
       'Labels: ',
       primaryLinksLabels,
-      '\n',
+      '\n'
     );
   }
 
@@ -48,7 +48,7 @@ function Footer() {
   return (
     <div>
       <div className="footer-above">
-        <div className="usa-footer__return-to-top footer-above__return-to-top">
+      <div className="usa-footer__return-to-top footer-above__return-to-top">
           <Link to="#top">{t('footer.returnToTop')}</Link>
         </div>
         <div className="footer-above__feedback">
@@ -68,17 +68,17 @@ function Footer() {
         className="footer"
         size="medium"
         primary={<FooterNav size="medium" links={primaryLinkItems} />}
-        secondary={(
+        secondary={
           <Grid row gap>
             <Logo
               size="medium"
-              image={(
+              image={
                 <img
                   className="footer__logo"
                   src={logoFooter}
                   alt={t('agency.longformName')}
                 />
-              )}
+              }
             />
             <Grid
               className="usa-footer__contact-links footer__info"
@@ -100,7 +100,7 @@ function Footer() {
               </Grid>
             </Grid>
           </Grid>
-        )}
+        }
       />
     </div>
   );
