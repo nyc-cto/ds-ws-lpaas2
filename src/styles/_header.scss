@@ -289,11 +289,17 @@
             @include u-text('accent-cool-lighter');
           }
         }
+        &:active {
+          outline: none;
+        }
       }
       // language selector nav button when dropdown menu is open
       &[aria-expanded='true'] {
         @include u-text('accent-cool-lighter');
         @include u-bg('primary');
+        &:focus {
+          outline: none;
+        }
       }
     }
     // language buttons that look like links
