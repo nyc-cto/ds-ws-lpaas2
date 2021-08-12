@@ -6,7 +6,8 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 
-import { i18next, Layout } from '../components';
+import { Layout } from '../components';
+import i18next from '../i18n-config';
 
 import '@trussworks/react-uswds/lib/uswds.css';
 import '@trussworks/react-uswds/lib/index.css';
@@ -15,11 +16,15 @@ import '@fontsource/space-mono';
 
 import '../styles/index.scss';
 
-function Documentation({ data }) {
+function Documentation({ data, pageContext }) {
   const { i18n } = useTranslation();
 
+  // data from the front matter and html from the body of the markdown files
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
+  // list of languages used in the locales folder, passed by page context in gatsby-node.js
+  const { languageList } = pageContext;
+
   return (
     <>
       <I18nextProvider i18n={i18next}>
@@ -27,7 +32,7 @@ function Documentation({ data }) {
           title={frontmatter.pageTitle}
           htmlAttributes={{ lang: i18n.language }}
         />
-        <Layout slug={frontmatter.slug}>
+        <Layout languageList={languageList} slug={frontmatter.slug}>
           <main>
             <GridContainer>
               <Grid className="documentation__container">

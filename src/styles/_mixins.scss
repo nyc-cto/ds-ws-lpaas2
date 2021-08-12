@@ -1,4 +1,4 @@
-//text and background colors for NYC buttons
+// text and background colors for NYC buttons
 @mixin button-theme(
   $text-color,
   $text-hover,
@@ -8,14 +8,16 @@
   $bg-hover,
   $bg-active,
   $bg-disabled,
-  $border-color
+  $border-color,
+  $border-color-hover
 ) {
   @include u-text($text-color);
   @include u-bg($bg);
+  border: units('2px') solid color($border-color);
   &:hover {
     @include u-text($text-hover);
     @include u-bg($bg-hover);
-    border: units('2px') solid color($border-color);
+    border: units('2px') solid color($border-color-hover);
   }
   &:active {
     @include u-text($text-active);
@@ -27,7 +29,7 @@
   }
 }
 
-//link text and border colors
+// link text and border colors
 @mixin link-theme(
   $color,
   $border-bottom-color-active,
@@ -44,17 +46,17 @@
   }
 }
 
-//bottom border of links
+// bottom border of links
 @mixin link-size {
   border-bottom-width: 3px;
 }
 
-//bottom border of links on hover
+// bottom border of links on hover
 @mixin link-size--expanded {
   border-bottom-width: 5px;
 }
 
-//nav links and buttons in mobile and desktop views
+// nav links and buttons in mobile and desktop views
 @mixin nav-item(
   $text,
   $text-hover,
@@ -78,14 +80,14 @@
   }
 }
 
-//flex with items aligned center and content justified space between
+// flex with items aligned center and content justified space between
 @mixin flex-center-space-between {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-//align languages in nav
+// align languages in nav
 @mixin align-languages($flex-start-or-end) {
   display: flex;
   align-items: center;
@@ -98,24 +100,11 @@
   .usa-button--unstyled {
     &:hover {
       @include u-text($text);
-      border: none;
     }
   }
 }
 
-//text, background, and border colors for language selector buttons
-@mixin active-border($direction, $border-color, $text, $bg) {
-  &:active {
-    padding-#{$direction}: units('05');
-    border-#{$direction}: units('05') solid color($border-color);
-  }
-  .usa-button--unstyled {
-    @include u-text($text);
-    @include u-bg($bg);
-    &:active {
-      @include u-text($text);
-      text-decoration: none;
-      @include u-bg($bg);
-    }
-  }
+@mixin language-button--active($border-direction, $border-color, $padding-direction) {
+  border-#{$border-direction}: units('05') solid color($border-color);
+  padding-#{$padding-direction}: units('05');
 }

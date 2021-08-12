@@ -3,6 +3,11 @@ import React from 'react';
 import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
 import { navigate } from 'gatsby';
 
+import { landing as links } from '../constants/links';
+
+// update the content by editing the markdown files in src/markdown-pages
+// update the button link in src/constants/links.js
+
 function Section({ section }) {
   return (
     <section className="usa-section">
@@ -13,10 +18,10 @@ function Section({ section }) {
               <h2 className="font-heading-xl">{section.heading}</h2>
             )}
             {section.text && <p className="usa-intro">{section.text}</p>}
-            {section.buttonLink && section.buttonText && (
+            {links.sectionButtonLink && section.buttonText && (
               <Button
                 onClick={() => {
-                  navigate(section.buttonLink);
+                  navigate(links.sectionButtonLink);
                 }}
                 className="usa-button--big"
               >

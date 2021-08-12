@@ -1,7 +1,7 @@
 /* || MOBILE */
 
 @media (min-width: units('mobile')) {
-  //footer nav links
+  // footer nav links
   .usa-footer__primary-section {
     font-family: 'Space Mono';
     @include u-text('accent-cool-lighter');
@@ -29,7 +29,7 @@
     }
   }
 
-  //department logo, terms & policies, and copyright & trademarks
+  // department logo, terms & policies, and copyright & trademarks
   .usa-footer__secondary-section {
     @include u-text('accent-cool-lighter');
     @include u-bg('base-dark');
@@ -80,9 +80,8 @@
     justify-content: center;
     .footer-above__return-to-top {
       align-self: flex-end;
-    }
-    .footer-above__feedback {
-      padding: 0 300px 0 158px;
+      position: absolute;
+      right: 0;
     }
   }
 

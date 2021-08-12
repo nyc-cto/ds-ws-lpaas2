@@ -33,19 +33,19 @@ function Page404({ data }) {
                   <p>{frontmatter.waysToFixError}</p>
                   )}
                   {frontmatter.actions.text && <p>{frontmatter.actions.text}</p>}
-                  {links.home && frontmatter.actions.homeButtonText && (
+                  {links.HOME && frontmatter.actions.homeButtonText && (
                     <Button
                       onClick={() => {
-                        navigate(links.home);
+                        navigate(links.HOME);
                       }}
                     >
                       {frontmatter.actions.homeButtonText}
                     </Button>
                   )}
-                  {links.contact && frontmatter.actions.contactButtonText && (
+                  {links.CONTACT && frontmatter.actions.contactButtonText && (
                     <Button
                       onClick={() => {
-                        navigate(links.contact);
+                        navigate(links.CONTACT);
                       }}
                     >
                       {frontmatter.actions.contactButtonText}

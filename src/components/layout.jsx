@@ -8,7 +8,7 @@ import { languages } from '../constants/languages';
 import Footer from './footer';
 import Header from './header';
 
-function Layout({ children, slug }) {
+function Layout({ children, languageList, slug }) {
   const location = useLocation();
   const { i18n } = useTranslation();
 
@@ -27,7 +27,7 @@ function Layout({ children, slug }) {
 
   return (
     <>
-      <Header slug={slug} />
+      <Header languageList={languageList} slug={slug} />
       <div id="top" />
       {children}
       <Footer />

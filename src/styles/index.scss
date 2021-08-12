@@ -1,16 +1,20 @@
 /*
-  These are necessary for the image and font urls referenced in the source
-  files to resolve correctly.
+  these are necessary for the image and font urls referenced in the source
+  files to resolve correctly
 */
 $theme-font-path: '../../node_modules/uswds/src/fonts';
 $theme-image-path: '../../node_modules/uswds/src/img';
 
-//Custom themes
+
+// do not edit the order of the following imports 
+
+// custom themes - EDIT THIS FILE TO CUSTOMIZE THEMES
 @import './custom-theme';
 
+// USWDS
 @import 'uswds';
 
-//Class overrides and custom classes
+// class overrides and custom classes - you should not need to edit these files
 @import './mixins';
 @import './global';
 @import './header';

@@ -3,6 +3,12 @@ import React from 'react';
 import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
 import { navigate } from 'gatsby';
 
+import { landing as links } from '../constants/links';
+
+// update the content by editing the markdown files in src/markdown-pages
+// update the button link in src/constants/links.js
+// the background image for the hero is set in src/styles/_custom-theme.scss
+
 function Hero({ hero }) {
   return (
     <section className="usa-hero">
@@ -13,10 +19,10 @@ function Hero({ hero }) {
               <h1 className="usa-hero__heading">{hero.heading}</h1>
             )}
             {hero.text && <p className="usa-prose">{hero.text}</p>}
-            {hero.buttonLink && hero.buttonText && (
+            {links.heroButtonLink && hero.buttonText && (
               <Button
                 onClick={() => {
-                  navigate(hero.buttonLink);
+                  navigate(links.heroButtonLink);
                 }}
               >
                 {hero.buttonText}
