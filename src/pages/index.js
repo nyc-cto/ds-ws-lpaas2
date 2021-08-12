@@ -9,7 +9,8 @@ import React from 'react';
 import Layout from '../components/layout';
 
 function Home() {
-  return <Layout />; // for routing in layout component
+  // nothing is displayed (only redirects from routing in layout component)
+  return <Layout languageList={[]} />;
 }
 
 export default Home;

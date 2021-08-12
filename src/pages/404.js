@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 import Layout from '../components/layout';
 
+
 function Page404() {
   const { i18n } = useTranslation();
 
@@ -18,7 +19,7 @@ function Page404() {
     navigate(`/${i18n.language}/404`);
   }, []);
 
-  return <Layout />; // for routing in layout component
+  return <Layout languageList={[]} />; // for routing in layout component
 }
 
 export default Page404;
