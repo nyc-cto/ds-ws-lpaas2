@@ -24,7 +24,7 @@ function Hero({ hero }) {
                 onClick={() => {
                   navigate(links.heroButtonLink);
                 }}
-                className="usa-button"
+                className="usa-button--inverse"
               >
                 {hero.buttonText}
               </Button>
