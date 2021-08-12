@@ -17,7 +17,7 @@
   }
 
   .usa-footer__primary-content {
-    padding: units(2);
+   
   }
 
   .usa-footer__return-to-top {
@@ -95,19 +95,23 @@
   }
 
   .usa-footer__primary-link {
-    margin-left: 0;
-    border-bottom-style: solid;
-    border-bottom-color: color('primary');
-    &:hover {
-      text-decoration: none;
-      @include link-size--expanded();
+    margin: 0;
+    border: none;
+  }
+  .usa-link.usa-footer__primary-link {
+    padding: units(0.5);
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
     }
-    &:active {
-      @include link-size--expanded();
-    }
-    &:visited {
-      border-bottom-color: color('primary');
-    }
+  
+    // &:hover::after{
+    //   border: 3px solid color('primary');
+    // }
   }
   .footer__privacy,
   .footer__terms {
