@@ -1,13 +1,23 @@
 /* || LINKS */
 
 .usa-link {
-  text-decoration: none;
-  &:hover {
-    text-decoration: none;
-  }
-  &:hover::after{
-    border: 3px solid color('primary');
-  }
+  // padding: units(1.5);
+  // text-decoration: none;
+  // &:hover {
+  //   text-decoration: none;
+  // }
+  // &::after{
+  //   border: 3px solid color('primary');
+  //   content: "";
+  //   position: absolute;
+  //   left: 16px;
+  //   right: 16px;
+  //   bottom: 0;
+  //   margin: 0;
+  // }
+  // &:hover::after{
+  //   border: 5px solid color('primary');
+  // }
   // @include link-theme(
   //   'base-dark',
   //   'base-dark',

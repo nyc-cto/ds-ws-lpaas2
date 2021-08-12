@@ -95,39 +95,28 @@
   }
 
   .usa-footer__primary-link {
-    margin: 0;
-    border: none;
-  }
-  .usa-link.usa-footer__primary-link {
-    padding: units(0.5);
+    padding: units(1.5);
+    margin: units(1.5) 0;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
     &::after{
+      border: 3px solid color('primary');
       content: "";
       position: absolute;
-      left: 0;
-      right: 0;
+      left: 16px;
+      right: 16px;
       bottom: 0;
       margin: 0;
     }
-  
-    // &:hover::after{
-    //   border: 3px solid color('primary');
-    // }
+    &:hover::after{
+      border: 5px solid color('primary');
+    }
   }
   .footer__privacy,
   .footer__terms {
     a {
-      border-bottom-style: solid;
-      border-bottom-color: color('primary');
-      &:hover {
-        text-decoration: none;
-        @include link-size--expanded();
-      }
-      &:active {
-        @include link-size--expanded();
-      }
-      &:visited {
-        border-bottom-color: color('primary');
-      }
     }
   }
 }
