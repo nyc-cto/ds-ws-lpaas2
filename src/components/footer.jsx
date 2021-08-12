@@ -38,8 +38,8 @@ function Footer() {
 
   // generating links
   const primaryLinkItems = primaryLinks.map((linkAndLabel, _) => (
-    <Link className="usa-footer__primary-link" to={linkAndLabel.link} key={`primaryLink${_}`}>
-      {t(linkAndLabel.label)}
+    <Link className="usa-footer__primary-link" to={linkAndLabel.LINK} key={`primaryLink${_}`}>
+      {t(linkAndLabel.LABEL)}
     </Link>
   ));
 
@@ -89,12 +89,12 @@ function Footer() {
                 <p>{t('footer.trademark')}</p>
               </Grid>
               <Grid className="footer__terms">
-                <Link to={secondaryLinks.terms}>
+                <Link to={secondaryLinks.TERMS}>
                   {t('footer.secondaryLinks.terms')}
                 </Link>
               </Grid>
               <Grid className="footer__privacy">
-                <Link to={secondaryLinks.privacy}>
+                <Link to={secondaryLinks.PRIVACY}>
                   {t('footer.secondaryLinks.privacy')}
                 </Link>
               </Grid>

@@ -45,8 +45,8 @@ function Header({ languageList, slug }) {
   
   // generating links
   const parentLinkItems = parentLinks.map((linkAndLabel, _) => (
-    <Link variant="nav" to={linkAndLabel.link} key={`parent${_}`}>
-      {t(linkAndLabel.label)}
+    <Link variant="nav" to={linkAndLabel.LINK} key={`parent${_}`}>
+      {t(linkAndLabel.LABEL)}
     </Link>
   ));
 

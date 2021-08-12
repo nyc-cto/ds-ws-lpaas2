@@ -48,8 +48,8 @@ function NavDropDown() {
     dropdowns.push(
       // generating links
       navDropDown.map((linkAndLabel, _) => (
-        <Link to={linkAndLabel.link} key={`dropdown${i}Link${_}`}>
-          {t(linkAndLabel.label)}
+        <Link to={linkAndLabel.LINK} key={`dropdown${i}Link${_}`}>
+          {t(linkAndLabel.LABEL)}
         </Link>
       )),
     );
