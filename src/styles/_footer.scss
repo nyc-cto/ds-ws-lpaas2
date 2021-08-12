@@ -88,6 +88,13 @@
         border-width: 5px;
         bottom: 0px;
       }
+      &:focus {
+        outline: none;
+      }
+      &:focus::after {
+        border-width: 5px;
+        bottom: 0;
+      }
     }
   }
 
@@ -117,6 +124,13 @@
       margin: 0;
     }
     &:hover::after {
+      border-width: 5px;
+      bottom: 0;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:focus::after {
       border-width: 5px;
       bottom: 0;
     }
