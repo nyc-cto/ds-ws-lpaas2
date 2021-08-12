@@ -149,9 +149,10 @@
   }
 
   .usa-nav {
-    padding: units(2);
+    padding: units(1.5) 0;
     .usa-nav__inner {
       .usa-nav__primary-item {
+        margin-right: 16px;
         .usa-nav__submenu {
           @include u-bg('base-dark');
           .usa-nav__submenu-item {
