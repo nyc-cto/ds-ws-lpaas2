@@ -18,10 +18,10 @@ function Section({ section }) {
               <h2 className="font-heading-xl">{section.heading}</h2>
             )}
             {section.text && <p className="usa-intro">{section.text}</p>}
-            {links.sectionButtonLink && section.buttonText && (
+            {links.SECTION_BUTTON_LINK && section.buttonText && (
               <Button
                 onClick={() => {
-                  navigate(links.sectionButtonLink);
+                  navigate(links.SECTION_BUTTON_LINK);
                 }}
                 className="usa-button--big"
               >

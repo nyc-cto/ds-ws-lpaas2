@@ -4,12 +4,14 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpBackend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 
+const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
+
 i18n
   .use(HttpBackend)
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
-    debug: true,
+    debug: activeEnv === 'development',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false, // not needed for React

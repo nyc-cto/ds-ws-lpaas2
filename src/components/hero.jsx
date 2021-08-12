@@ -19,10 +19,10 @@ function Hero({ hero }) {
               <h1 className="usa-hero__heading">{hero.heading}</h1>
             )}
             {hero.text && <p className="usa-prose">{hero.text}</p>}
-            {links.heroButtonLink && hero.buttonText && (
+            {links.HERO_BUTTON_LINK && hero.buttonText && (
               <Button
                 onClick={() => {
-                  navigate(links.heroButtonLink);
+                  navigate(links.HERO_BUTTON_LINK);
                 }}
                 className="usa-button--inverse"
               >
