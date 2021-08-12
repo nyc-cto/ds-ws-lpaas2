@@ -23,14 +23,14 @@
 
 // graphics section image and text
 .usa-media-block {
-  padding: units(3) 0;
+  padding: units(1) 0;
 }
 
 // for mobile up to tablet view, the images are above the text
 @media (min-width: units('mobile')) {
-  // graphics section header and paragraph
+  // graphics secction header and paragraph
   .usa-media-block__body {
-    padding: units(3) 0;
+    padding: 0;
   }
 }
 
@@ -40,13 +40,16 @@
   .usa-media-block__img {
     margin-left: units(3);
   }
-
-  // graphics secction header and paragraph
   .usa-media-block__body {
-    padding: 0;
+    margin-left: units(2.5);
   }
 }
 
+@media (min-width: units('desktop')) {
+  .usa-media-block__body {
+    margin-left: 0;
+  }
+}
 
 /* || DOCUMENTATION PAGE */
 
