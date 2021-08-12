@@ -13,7 +13,7 @@ import LanguageSelector from './language-selector';
 function Banner({ children, languageList, slug }) {
   const { t } = useTranslation();
   return (
-    <div className="usa-section--dark">
+    <section className="usa-section--dark">
       <GridContainer>
         <Grid row className="banner">
           <Grid row gap className="banner__logo-title">
@@ -31,7 +31,7 @@ function Banner({ children, languageList, slug }) {
           </Grid>
         </Grid>
       </GridContainer>
-    </div>
+    </section>
   );
 }
 

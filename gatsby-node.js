@@ -18,6 +18,7 @@ exports.createPages = ({ actions, graphql }) => {
     redirectInBrowser: true,
   }));
 
+  /* creating each page */
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -56,17 +57,33 @@ exports.createPages = ({ actions, graphql }) => {
       if (edge.node.frontmatter.templateKey) {
         const lang = _.get(edge, 'node.frontmatter.lang', 'en');
 
-        createPage({
-          path: edge.node.fields.slug,
-          component: path.resolve(
-            `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`,
-          ),
-          context: {
-            id,
-            lang,
-            languageList,
-          },
-        });
+        // Check if the page is a localized 404 (i.e. /en/404/)
+        if (edge.node.fields.slug.match(/^\/[a-z]{2}\/404\/$/)) {
+          // Match all paths starting with the language code (apart from other valid paths)
+          createPage({
+            path: edge.node.fields.slug,
+            matchPath: `/${lang}/*`,
+            component: path.resolve('src/templates/404-page.jsx'),
+            context: {
+              id,
+              lang,
+              languageList,
+            },
+          });
+        } else {
+          // If page is not a localized 404 (i.e. /en/404/), create the page normally
+          createPage({
+            path: edge.node.fields.slug,
+            component: path.resolve(
+              `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`,
+            ),
+            context: {
+              id,
+              lang,
+              languageList,
+            },
+          });
+        }
       }
     });
   });
