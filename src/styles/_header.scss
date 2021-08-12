@@ -277,6 +277,13 @@
       }
       // language selector nav button when dropdown menu is closed
       &[aria-expanded='false'] {
+        &:focus {
+          outline: none;
+          @include u-text('accent-cool-lighter');
+          p {
+            @include u-text('accent-cool-lighter');
+          }
+        }
         @include u-text('base-dark');
         @include u-bg('primary');
         p {
