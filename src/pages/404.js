@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 
 function NotFound() {
   return (
-    <Layout />
+    <Layout languageList={[]} />
   );
 }
 

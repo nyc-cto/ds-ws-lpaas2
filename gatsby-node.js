@@ -42,6 +42,7 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges;
+
     // create a list of languages being used by seeing which language files are in src/locales
     const getLanguages = () => {
       const files = fs.readdirSync('./src/locales');
