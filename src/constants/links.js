@@ -33,6 +33,7 @@ export const landing = {
   SECTION_BUTTON_LINK: 'https://www1.nyc.gov/assets/cto/#/contact',
 };
 
+
 export const footer = {
   primary: header.navDropDowns
     .flat() // turn nested array into flat/unnested array
@@ -41,4 +42,14 @@ export const footer = {
     TERMS: 'terms',
     PRIVACY: 'privacy',
   },
+};
+
+export const landing = {
+  heroButtonLink: 'https://github.com/nyc-cto/LPaaS2/',
+  sectionButtonLink: 'https://www1.nyc.gov/assets/cto/#/contact',
+};
+
+export const page404 = {
+  HOME: '/',
+  CONTACT: 'https://www1.nyc.gov/assets/cto/#/contact',
 };

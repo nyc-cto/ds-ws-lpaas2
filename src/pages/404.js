@@ -1,12 +1,25 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
+
+// DO NOT EDIT OR DELETE THIS FILE
+// DO NOT EDIT OR DELETE THIS FILE
+// DO NOT EDIT OR DELETE THIS FILE
+
+import React, { useEffect } from 'react';
+
+import { navigate } from 'gatsby';
+import { useTranslation } from 'react-i18next';
 
 import Layout from '../components/layout';
 
-function NotFound() {
-  return (
-    <Layout />
-  );
+
+function Page404() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    navigate(`/${i18n.language}/404`);
+  }, []);
+
+  return <Layout languageList={[]} />; // for routing in layout component
 }
 
-export default NotFound;
+export default Page404;
