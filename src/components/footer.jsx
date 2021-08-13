@@ -88,12 +88,12 @@ function Footer() {
                 <p>{t('footer.copyright')}</p>
                 <p>{t('footer.trademark')}</p>
               </Grid>
-              <Grid className="footer__terms">
+              <Grid className="footer__info-link">
                 <Link to={secondaryLinks.TERMS}>
                   {t('footer.secondaryLinks.terms')}
                 </Link>
               </Grid>
-              <Grid className="footer__privacy">
+              <Grid className="footer__info-link">
                 <Link to={secondaryLinks.PRIVACY}>
                   {t('footer.secondaryLinks.privacy')}
                 </Link>

@@ -28,12 +28,6 @@ export const header = {
   parentLinks: [{ LABEL: 'navigation.parentLinkLabels.0', LINK: 'link-five' }], // parent (standalone) links
 };
 
-export const landing = {
-  HERO_BUTTON_LINK: 'https://github.com/nyc-cto/LPaaS2/',
-  SECTION_BUTTON_LINK: 'https://www1.nyc.gov/assets/cto/#/contact',
-};
-
-
 export const footer = {
   primary: header.navDropDowns
     .flat() // turn nested array into flat/unnested array
@@ -45,8 +39,8 @@ export const footer = {
 };
 
 export const landing = {
-  heroButtonLink: 'https://github.com/nyc-cto/LPaaS2/',
-  sectionButtonLink: 'https://www1.nyc.gov/assets/cto/#/contact',
+  HERO_BUTTON_LINK: 'https://github.com/nyc-cto/LPaaS2/',
+  SECTION_BUTTON_LINK: 'https://www1.nyc.gov/assets/cto/#/contact',
 };
 
 export const page404 = {
