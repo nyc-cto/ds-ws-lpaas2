@@ -90,18 +90,15 @@
   @include button-theme(
     'base-dark',
     'base-dark',
+    'accent-cool-lighter',
+    'disabled-dark',
+    'accent-cool-lighter',
+    'primary',
     'base-dark',
-    'base-dark',
-    'base-lighter',
-    'base-lightest',
     'accent-cool-lighter',
     'base-dark',
-    'base-dark',
-    'base-lighter'
+    'base-dark'
   );
-  &:hover {
-    border: none;
-  }
 }
 
 .usa-button--unstyled {

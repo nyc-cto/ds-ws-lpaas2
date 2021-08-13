@@ -1,6 +1,7 @@
 const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
 
-require('dotenv').config({ // import .env.development or .env.production based on environment
+require('dotenv').config({
+  // import .env.development or .env.production based on environment
   path: `.env.${activeEnv}`,
 });
 
@@ -19,5 +20,11 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: './src/images/favicon.svg',
+      },
+    },
   ],
 };
