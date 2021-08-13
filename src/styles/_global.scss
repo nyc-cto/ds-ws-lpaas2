@@ -1,26 +1,9 @@
 /* || LINKS */
 
 .usa-link {
-  @include link-theme(
-    'base-dark',
-    'base-dark',
-    'primary-darker',
-    'primary-darker'
-  );
   text-decoration: none;
-  width: fit-content;
-  @include link-size();
-  border-bottom-style: solid;
-  border-bottom-color: color('primary');
   &:hover {
-    text-decoration: none;
-    @include link-size--expanded();
-  }
-  &:active {
-    @include link-size--expanded();
-  }
-  &:visited {
-    border-bottom-color: color('primary');
+    text-decoration: underline;
   }
 }
 

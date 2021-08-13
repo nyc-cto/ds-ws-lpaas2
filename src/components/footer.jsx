@@ -48,7 +48,7 @@ function Footer() {
   return (
     <div>
       <div className="footer-above">
-      <div className="usa-footer__return-to-top footer-above__return-to-top">
+        <div className="usa-footer__return-to-top footer-above__return-to-top">
           <Link to="#top">{t('footer.returnToTop')}</Link>
         </div>
         <div className="footer-above__feedback">
@@ -84,16 +84,16 @@ function Footer() {
               className="usa-footer__contact-links footer__info"
               mobileLg={{ col: 6 }}
             >
-              <Grid className="footer__copyright-trademark">
+              <Grid className="footer__info-prose">
                 <p>{t('footer.copyright')}</p>
                 <p>{t('footer.trademark')}</p>
               </Grid>
-              <Grid className="footer__terms">
+              <Grid className="footer__info-link">
                 <Link to={secondaryLinks.TERMS}>
                   {t('footer.secondaryLinks.terms')}
                 </Link>
               </Grid>
-              <Grid className="footer__privacy">
+              <Grid className="footer__info-link">
                 <Link to={secondaryLinks.PRIVACY}>
                   {t('footer.secondaryLinks.privacy')}
                 </Link>

@@ -16,16 +16,11 @@
     }
   }
 
-  .usa-footer__primary-content {
-    padding: units(2);
-  }
-
   .usa-footer__return-to-top {
-    padding: units(2);
+    padding: units(1.5) units(2);
     a {
       @include link-theme('base-dark', 'primary', 'base-dark', 'primary');
-      text-decoration: none;
-      padding: 0;
+      margin: units(1.5) 0;
     }
   }
 
@@ -48,13 +43,7 @@
     @include u-text('normal');
   }
 
-  .footer__copyright-trademark p {
-    margin: 0;
-    padding: 0;
-  }
-
-  .footer__terms,
-  .footer__privacy {
+  .footer__info-link {
     margin: 0;
     padding-top: units(2);
   }
@@ -62,13 +51,6 @@
   .usa-footer__primary-link {
     margin-left: units(2);
     border: none;
-  }
-
-  .footer__privacy,
-  .footer__terms {
-    a {
-      border: none;
-    }
   }
 }
 
@@ -85,6 +67,37 @@
     }
   }
 
+  .usa-footer__return-to-top {
+    a {
+      @include link-theme('base-dark', 'primary', 'base-dark', 'primary');
+      margin: units(1.5) 0;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+      &::after {
+        border: 3px solid color('primary');
+        content: '';
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 2px;
+        margin: 0;
+      }
+      &:hover::after {
+        border-width: 5px;
+        bottom: 0px;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:focus::after {
+        border-width: 5px;
+        bottom: 0;
+      }
+    }
+  }
+
   .footer__info {
     @include u-font-size('body', 1);
     @include u-text('bold');
@@ -95,35 +108,31 @@
   }
 
   .usa-footer__primary-link {
-    margin-left: 0;
-    border-bottom-style: solid;
-    border-bottom-color: color('primary');
+    padding: units(1.5);
+    margin: units(1.5) 0;
+    text-decoration: none;
     &:hover {
       text-decoration: none;
-      @include link-size--expanded();
     }
-    &:active {
-      @include link-size--expanded();
+    &::after {
+      border: 3px solid color('primary');
+      content: '';
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 2px;
+      margin: 0;
     }
-    &:visited {
-      border-bottom-color: color('primary');
+    &:hover::after {
+      border-width: 5px;
+      bottom: 0;
     }
-  }
-  .footer__privacy,
-  .footer__terms {
-    a {
-      border-bottom-style: solid;
-      border-bottom-color: color('primary');
-      &:hover {
-        text-decoration: none;
-        @include link-size--expanded();
-      }
-      &:active {
-        @include link-size--expanded();
-      }
-      &:visited {
-        border-bottom-color: color('primary');
-      }
+    &:focus {
+      outline: none;
+    }
+    &:focus::after {
+      border-width: 5px;
+      bottom: 0;
     }
   }
 }

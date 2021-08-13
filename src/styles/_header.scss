@@ -60,8 +60,8 @@
             units(2)
           );
           &:hover {
-            border-left: units('05') solid color('secondary');
-            padding-left: units('05');
+            border-left: units(0.5) solid color('secondary');
+            padding-left: units(0.5);
           }
         }
       }
@@ -149,9 +149,10 @@
   }
 
   .usa-nav {
-    padding: units(2);
+    padding: units(1.5) 0;
     .usa-nav__inner {
       .usa-nav__primary-item {
+        margin-right: 16px;
         .usa-nav__submenu {
           @include u-bg('base-dark');
           .usa-nav__submenu-item {
@@ -190,7 +191,7 @@
           .nav-dropdown__label {
             p {
               margin: 0;
-              padding-right: units('105');
+              padding-right: units(1.5);
             }
             @include flex-center-space-between();
             .nav-dropdown__label-icon {
@@ -222,7 +223,7 @@
           .nav-dropdown__label {
             p {
               margin: 0;
-              padding-right: units('105');
+              padding-right: units(1.5);
             }
             @include flex-center-space-between();
             .nav-dropdown__label-icon {
@@ -267,16 +268,27 @@
     .font-heading-xs {
       margin: 0;
     }
+    .banner__logo {
+      height: units(1.5);
+      width: auto;
+    }
     // language selector nav button, which opens a dropdown menu
     .usa-accordion__button {
       background-image: none;
-      padding: units(2) units('105');
+      padding: units(2) units(1.5);
       p {
-        padding-left: units('105');
+        padding-left: units(1.5);
         margin: 0;
       }
       // language selector nav button when dropdown menu is closed
       &[aria-expanded='false'] {
+        &:focus {
+          outline: none;
+          @include u-text('accent-cool-lighter');
+          p {
+            @include u-text('accent-cool-lighter');
+          }
+        }
         @include u-text('base-dark');
         @include u-bg('primary');
         p {
@@ -289,11 +301,17 @@
             @include u-text('accent-cool-lighter');
           }
         }
+        &:active {
+          outline: none;
+        }
       }
       // language selector nav button when dropdown menu is open
       &[aria-expanded='true'] {
         @include u-text('accent-cool-lighter');
         @include u-bg('primary');
+        &:focus {
+          outline: none;
+        }
       }
     }
     // language buttons that look like links
@@ -320,7 +338,7 @@
       @include flex-center-space-between();
       .banner__language-selector-item {
         @include language-button--hover('primary');
-        margin: 0 units('105');
+        margin: 0 units(1.5);
         &:hover {
           padding-top: 0;
         }
