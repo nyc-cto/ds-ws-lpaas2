@@ -1,5 +1,16 @@
 # NYC Mayor's Office of the CTO Landing Page as a Service 2.0
 
+This is a proposed template repository for applications for future developments. This will help get you set up as you build your application.
+
+```
+.github
+  |- CONTRIBUTING.md
+  |- CODE_OF_CONDUCT.md
+  |- ISSUE_TEMPLATE
+  |- LICENCE.md
+  |- PULL_REQUEST_TEMPLATE.md
+```
+
 ## Requirements
 1. Operating System: macOS Sierra (10.12) or later, Windows 10, or Linux.
 1. Node.js 10.13.0 (LTS) or higher.
