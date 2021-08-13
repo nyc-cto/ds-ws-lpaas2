@@ -3,29 +3,45 @@ export const header = {
     // first dropdown start
     [
       {
-        label: 'navigation.dropdowns.0.linkLabels.0',
-        link: 'link-one',
+        LABEL: 'navigation.dropdowns.0.linkLabels.0',
+        LINK: 'link-one',
       },
       {
-        label: 'navigation.dropdowns.0.linkLabels.1',
-        link: 'link-two',
+        LABEL: 'navigation.dropdowns.0.linkLabels.1',
+        LINK: 'link-two',
       },
     ],
     // first dropdown end
     // second dropdown start
     [
       {
-        label: 'navigation.dropdowns.1.linkLabels.0',
-        link: 'link-three',
+        LABEL: 'navigation.dropdowns.1.linkLabels.0',
+        LINK: 'link-three',
       },
       {
-        label: 'navigation.dropdowns.1.linkLabels.1',
-        link: 'link-four',
+        LABEL: 'navigation.dropdowns.1.linkLabels.1',
+        LINK: 'link-four',
       },
     ],
     // second dropdown end
   ],
-  parentLinks: [{ label: 'navigation.parentLinkLabels.0', link: 'link-five' }], // parent (standalone) links
+  parentLinks: [{ LABEL: 'navigation.parentLinkLabels.0', LINK: 'link-five' }], // parent (standalone) links
+};
+
+export const landing = {
+  HERO_BUTTON_LINK: 'https://github.com/nyc-cto/LPaaS2/',
+  SECTION_BUTTON_LINK: 'https://www1.nyc.gov/assets/cto/#/contact',
+};
+
+
+export const footer = {
+  primary: header.navDropDowns
+    .flat() // turn nested array into flat/unnested array
+    .concat(header.parentLinks), // add parent links (taken directly from header; don't make change here)
+  secondary: {
+    TERMS: 'terms',
+    PRIVACY: 'privacy',
+  },
 };
 
 export const landing = {
@@ -33,12 +49,7 @@ export const landing = {
   sectionButtonLink: 'https://www1.nyc.gov/assets/cto/#/contact',
 };
 
-export const footer = {
-  primary: header.navDropDowns
-    .flat() // turn nested array into flat/unnested array
-    .concat(header.parentLinks), // add parent links (taken directly from header; don't make change here)
-  secondary: {
-    terms: 'terms',
-    privacy: 'privacy',
-  },
+export const page404 = {
+  HOME: '/',
+  CONTACT: 'https://www1.nyc.gov/assets/cto/#/contact',
 };
