@@ -1,44 +1,10 @@
 /* || LINKS */
 
 .usa-link {
-  // padding: units(1.5);
   text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
-  // &::after{
-  //   border: 3px solid color('primary');
-  //   content: "";
-  //   position: absolute;
-  //   left: 16px;
-  //   right: 16px;
-  //   bottom: 0;
-  //   margin: 0;
-  // }
-  // &:hover::after{
-  //   border: 5px solid color('primary');
-  // }
-  // @include link-theme(
-  //   'base-dark',
-  //   'base-dark',
-  //   'primary-darker',
-  //   'primary-darker'
-  // );
-  // text-decoration: none;
-  // width: fit-content;
-  // @include link-size();
-  // border-bottom-style: solid;
-  // border-bottom-color: color('primary');
-  // &:hover {
-  //   text-decoration: none;
-  //   @include link-size--expanded();
-  // }
-  // &:active {
-  //   @include link-size--expanded();
-  // }
-  // &:visited {
-  //   border-bottom-color: color('primary');
-  // }
 }
 
 .usa-link--light {

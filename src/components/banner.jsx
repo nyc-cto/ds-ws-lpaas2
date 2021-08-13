@@ -18,7 +18,7 @@ function Banner({ children, languageList, slug }) {
         <Grid row className="banner">
           <Grid row gap className="banner__logo-title">
             <Grid>
-              {logoBanner && <img src={logoBanner} alt={t('location')} className="banner__logo" />}
+              {logoBanner && <img className="banner__logo" src={logoBanner} alt={t('location')} />}
             </Grid>
             <Grid>
               <p className="banner__info font-heading-xs">{children}</p>
