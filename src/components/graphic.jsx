@@ -10,6 +10,7 @@ import { graphicImages } from '../images';
 
 function Graphic({ graphics }) {
   const { i18n } = useTranslation();
+
   return (
     <section className="usa-graphic-list usa-section usa-section--dark">
       <GridContainer>
