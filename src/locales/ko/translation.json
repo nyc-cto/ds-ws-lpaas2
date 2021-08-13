@@ -4,48 +4,32 @@
     "longformName": "[ko] NYC Mayor's Office of the Chief Technology Officer",
     "shortformName": "[ko] NYC CTO"
   },
-  "location": "[ht] NYC",
+  "location": "[ko] NYC",
+  "navigation": {
+    "dropdowns": [
+      {
+        "buttonLabel": "[ko] Nav Label 1",
+        "linkLabels": ["[ko] Simple link one", "[ko] Simple link two"]
+      },
+      {
+        "buttonLabel": "[ko] Nav Label 2",
+        "linkLabels": ["[ko] Simple link three", "[ko] Simple link four"]
+      }
+    ],
+    "parentLinkLabels": ["[ko] Parent link"]
+  },
   "header": {
     "banner": "[ko] An official website of New York City government",
     "language": "[ko] Language",
-    "nav": {
-      "dropdowns": [
-        {
-          "label": "[ko] Nav Label 1",
-          "simpleLinks": ["[ko] Simple link one", "[ko] Simple link two"]
-        },
-        {
-          "label": "[ko] Nav Label 2",
-          "simpleLinks": ["[ko] Simple link three", "[ko] Simple link four"]
-        }
-      ],
-      "menu": "[ko] Menu",
-      "parentLinks": ["[ko] Parent link"]
-    }
+    "menuMobileNav": "[ko] Menu"
   },
   "footer": {
     "returnToTop": "[ko] Return to top",
-    "primaryLinks": [
-      "[ko] Primary Link 1",
-      "[ko] Primary Link 2",
-      "[ko] Primary Link 3",
-      "[ko] Primary Link 4"
-    ],
     "copyright": "[ko] © 2021 City of New York. All Rights Reserved.",
     "trademark": "[ko] NYC is a trademark and service mark of the City of New York.",
-    "terms": "[ko] NYC Terms of Use",
-    "privacy": "[ko] NYC Privacy Policy",
-    "secondary": {
-      "heading": {
-        "logo": "[ko] Name of Agency",
-        "contact": "[ko] Agency Contact Center"
-      },
-      "socialLinks": ["[ko] Facebook", "[ko] Twitter", "[ko] YouTube", "[ko] Instagram", "[ko] RSS"],
-      "address": {
-        "phone": "[ko] (800) CALL-GOVT",
-        "email": "[ko] info@agency.gov"
-      }
+    "secondaryLinks": {
+      "terms": "[ko] NYC Terms of Use",
+      "privacy": "[ko] NYC Privacy Policy"
     }
-  },
-  "notFound": "[ko] 404: Page Not Found"
+  }
 }

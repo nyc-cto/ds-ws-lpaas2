@@ -1,24 +1,25 @@
+/* eslint-disable react/jsx-filename-extension */
+
+// DO NOT EDIT OR DELETE THIS FILE
+// DO NOT EDIT OR DELETE THIS FILE
+// DO NOT EDIT OR DELETE THIS FILE
+
 import React, { useEffect } from 'react';
 
-import { Redirect, Router } from '@reach/router';
 import { navigate } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 
-import i18next from '../components/i18n';
+import Layout from '../components/layout';
 
-function NotFound() {
+
+function Page404() {
   const { i18n } = useTranslation();
+
   useEffect(() => {
     navigate(`/${i18n.language}/404`);
   }, []);
 
-  return (
-    // eslint-disable-next-line react/jsx-filename-extension
-    <></>
-    // // <Router>
-    // //   <Redirect from="/" to={`/${i18n.language}/404`} noThrow />
-    // // </Router>
-  );
+  return <Layout languageList={[]} />; // for routing in layout component
 }
 
-export default NotFound;
+export default Page404;

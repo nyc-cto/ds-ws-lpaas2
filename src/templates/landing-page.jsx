@@ -1,21 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import { GridContainer } from '@trussworks/react-uswds';
 import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-// import React, { Suspense } from "react";
-// import { Redirect, Router } from "@reach/router";
 import { Helmet } from 'react-helmet';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 
 import {
   Graphic,
   Hero,
-  i18next,
   Layout,
   Section,
   Tagline,
 } from '../components';
+import i18next from '../i18n-config';
 
 import '@trussworks/react-uswds/lib/uswds.css';
 import '@trussworks/react-uswds/lib/index.css';
@@ -24,76 +20,34 @@ import '@fontsource/space-mono';
 
 import '../styles/index.scss';
 
-function Landing({ data, location }) {
+function Landing({ data, pageContext }) {
   const { i18n } = useTranslation();
 
-  // TODO: try to use LanguageDetector
-  useEffect(() => {
-    const path = location.pathname;
-    const lang = path.split('/')[1];
-    const route = path
-      .split('/')
-      .slice(2)
-      .filter((v) => v !== '')
-      .join('/');
-    if (lang.length === 0 && route.length === 0) {
-      // empty path
-      // not currently being used
-      // navigate(`/${i18n.language}/`);
-    } else if (lang.length !== 0 && route.length === 0) {
-      // only language given
-      if (lang !== i18n.language) i18n.changeLanguage(lang);
-    } else if (lang.length === 0 && route.length !== 0) {
-      // only route given
-      // not currently being used
-      // navigate(`${i18n.language}/${route}`);
-    } else if (lang !== i18n.language) {
-      // both language and route given
-      i18n.changeLanguage(lang);
-    }
-  }, [location.pathname]);
-
+  // data from the front matter of the markdown files
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
+  // list of languages used in the locales folder, passed by page context in gatsby-node.js
+  const { languageList } = pageContext;
 
   return (
-    // <Suspense fallback="loading">
     <>
-      {/* <Router basepath={i18n.language}> */}
-      {/* <Redirect from="/" to={`/${i18n.language}/home`} noThrow /> */}
-      {/* <NotFound default /> */}
-      {/* </Router> */}
       <I18nextProvider i18n={i18next}>
-        <Helmet title={frontmatter.pageTitle} htmlAttributes={{ lang: i18n.language }} />
-        <Layout slug={frontmatter.slug}>
+        <Helmet
+          title={frontmatter.pageTitle}
+          htmlAttributes={{ lang: i18n.language }}
+        />
+        <Layout languageList={languageList} slug={frontmatter.slug}>
           <main>
-            <GridContainer>
-              {frontmatter.hero && (
-                <Hero hero={frontmatter.hero} buttons={frontmatter.buttons} />
-              )}
-              {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
-              {frontmatter.graphics && (
-                <Graphic graphics={frontmatter.graphics} />
-              )}
-              {frontmatter.section && (
-                <Section
-                  section={frontmatter.section}
-                  buttons={frontmatter.buttons}
-                />
-              )}
-            </GridContainer>
+            {frontmatter.hero && (<Hero hero={frontmatter.hero} />)}
+            {frontmatter.tagline && <Tagline tagline={frontmatter.tagline} />}
+            {frontmatter.graphics && (<Graphic graphics={frontmatter.graphics} />)}
+            {frontmatter.section && (<Section section={frontmatter.section} />)}
           </main>
         </Layout>
       </I18nextProvider>
     </>
-    // </Suspense>
   );
 }
-
-Landing.propTypes = {
-  data: PropTypes.node.isRequired,
-  location: PropTypes.node.isRequired,
-};
 
 export const pageQuery = graphql`
   query Landing($lang: String!) {
@@ -105,20 +59,15 @@ export const pageQuery = graphql`
         slug
         pageTitle
         hero {
-          image
-          imageDescription
           heading
           text
-        }
-        buttons {
-          callToAction
+          buttonText
         }
         tagline {
           heading
           text
         }
         graphics {
-          image
           imageDescription
           heading
           text
@@ -126,6 +75,7 @@ export const pageQuery = graphql`
         section {
           heading
           text
+          buttonText
         }
       }
     }

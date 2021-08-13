@@ -1,100 +1,96 @@
 import React, { useState } from 'react';
 
 import { Menu, NavDropDownButton } from '@trussworks/react-uswds';
+import FeatherIcon from 'feather-icons-react';
 import { useTranslation } from 'react-i18next';
 
 import { Link } from '.';
-import { headerLinks as links } from '../constants/links';
+import { header as links } from '../constants/links';
 
 function NavDropDown() {
   const { t } = useTranslation();
 
   /* dynamically store dropdowns */
   const dropdowns = [];
-  const dropDownLinks = links.navDropDowns;
-  const constFileLength = dropDownLinks.length;
-  const dropDownLabels = t('header.nav.dropdowns');
-  const translationFileLength = dropDownLabels.length;
-  const length = translationFileLength > constFileLength
-    ? constFileLength
-    : translationFileLength;
-  /* take shorter length in case there is missing dropdowns in
-      `../constants/links.js` (constants file) or `../locales/` (translation files) */
+  const { navDropDowns } = links; // links + labels
+  const constFileLength = navDropDowns.length;
+  const navDropDownLabels = t('navigation.dropdowns'); // labels (used for verification only; labels are taken from navDropDowns)
+  const translationFileLength = navDropDownLabels.length;
+  // error message if there is missing dropdowns or dropdown labels
   if (translationFileLength !== constFileLength) {
     console.error(
-      'Different number of dropdowns in /src/constants/link.js and dropdown labels in /src/locales\n',
+      'Different number of dropdowns in /src/constants/link.js (under header.navDropDowns) and labels in /src/locales (under navigation.dropdowns)\n',
       `${constFileLength} dropdown${
-        constFileLength > 1 ? 's' : ''
+        constFileLength > 1 ? 's' : '' // plural or singular
       } in /src/constants/link.js\n`,
       `${translationFileLength} dropdown${
-        translationFileLength > 1 ? 's' : ''
+        translationFileLength > 1 ? 's' : '' // plural or singular
       } in /src/locales`,
     );
   }
-  // eslint-disable-next-line array-callback-return
-  dropDownLinks.map((_, i) => {
-    if (i < length) {
-      const navDropDownLinks = dropDownLinks[i];
-      const navDropDownLinksLength = navDropDownLinks.length;
-      const navDropDownLinkLabels = dropDownLabels[i].simpleLinks;
-      const navDropDownLinkLabelsLength = navDropDownLinkLabels.length;
-      const navDropDownLength = navDropDownLinksLength > navDropDownLinkLabelsLength
-        ? navDropDownLinkLabelsLength
-        : navDropDownLinksLength;
-      /* take shorter length in case there is a missing link
-        in `../constants/links.js` (constants file) or label in `../locales/` (translation files) */
-      if (navDropDownLinksLength !== navDropDownLinkLabelsLength) {
-        console.error(
-          `Different number of links in /src/constants/link.js and link labels in /src/locales for dropdown ${
-            i + 1
-          }\n`,
-          'Links: ',
-          navDropDownLinks,
-          '\n',
-          'Link labels: ',
-          navDropDownLinkLabels,
-          '\n',
-        );
-      }
-      dropdowns.push(
-        navDropDownLinks.map(
-          (element, j) => j < navDropDownLength && (
-          <Link to={element} key={element}>
-            {navDropDownLinkLabels[j]}
-          </Link>
-          ),
-        ),
+  navDropDowns.forEach((navDropDown, i) => {
+    const navDropDownLinksLength = navDropDown?.length;
+    const navDropDownLinkLabels = navDropDownLabels[i].linkLabels; // labels (used for verification only)
+    const navDropDownLinkLabelsLength = navDropDownLinkLabels.length;
+    if (navDropDownLinksLength !== navDropDownLinkLabelsLength) {
+      console.error(
+        `Different number of links in /src/constants/link.js (under header.navDropDowns[${i}]) and labels in /src/locales (under navigation.dropdowns[${i}].linkLabels) for dropdown ${
+          i + 1
+        }\n`,
+        'Links: ',
+        navDropDown,
+        '\n',
+        'Link labels: ',
+        navDropDownLinkLabels,
+        '\n',
       );
-    } else dropdowns.push([]);
+    }
+    dropdowns.push(
+      // generating links
+      navDropDown.map((linkAndLabel, _) => (
+        <Link to={linkAndLabel.LINK} key={`dropdown${i}Link${_}`}>
+          {t(linkAndLabel.LABEL)}
+        </Link>
+      )),
+    );
   });
 
-  /* dynamically create dropdowns */
+  // handling which dropdown is open
   const [isOpen, setIsOpen] = useState(undefined);
-  const navBarItems = dropdowns
-    .map((_, i) => {
-      const id = `navDropDown${i}`;
-      const iStr = i.toString();
-      /* dynamically create dropdowns in navigation bar */
-      return (
-        <>
-          <NavDropDownButton
-            onToggle={() => {
-              if (isOpen === id) setIsOpen(undefined);
-              else setIsOpen(id);
-            }}
-            menuId={id}
-            isOpen={isOpen === id}
-            label={t(`header.nav.dropdowns.${i}.label`)}
-          />
-          <Menu
-            id={id}
-            isOpen={isOpen === id}
-            items={dropdowns[i]}
-            key={iStr}
-          />
-        </>
-      );
-    });
+
+/* dynamically create dropdowns in navigation bar */
+  const navBarItems = dropdowns.map((_, i) => {
+    const id = `navDropDown${i}`;
+    return (
+      <>
+        <NavDropDownButton
+          onToggle={() => {
+            if (isOpen === id) setIsOpen(undefined); // close open dropdown if it is clicked on by closing all dropdowns
+            else setIsOpen(id); // open dropdown if it's closed and clicked on
+          }}
+          menuId={id}
+          isOpen={isOpen === id}
+          label={(
+            <div className="nav-dropdown__label">
+              <p>{navDropDownLabels[i].buttonLabel}</p>
+              <FeatherIcon
+                className="nav-dropdown__label-icon"
+                icon="chevron-down"
+                size={16}
+              />
+              <FeatherIcon
+                className="nav-dropdown__label-icon--expanded"
+                icon="chevron-up"
+                color="white"
+                size={16}
+              />
+            </div>
+          )}
+        />
+        <Menu id={id} isOpen={isOpen === id} items={dropdowns[i]} key={`dropdown${i}`} />
+      </>
+    );
+  });
   return navBarItems;
 }
 

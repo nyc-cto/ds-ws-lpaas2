@@ -1,51 +1,35 @@
 {
-  "title": "[es] Project Title",
+  "title": "Título del Proyecto",
   "agency": {
-    "longformName": "[es] NYC Mayor's Office of the Chief Technology Officer",
-    "shortformName": "[es] NYC CTO"
+    "longformName": "NYC Mayor's Office of the Chief Technology Officer",
+    "shortformName": "NYC CTO"
   },
-  "location": "[es] NYC",
+  "location": "NYC",
+  "navigation": {
+    "dropdowns": [
+      {
+        "buttonLabel": "Nav Label 1",
+        "linkLabels": ["Enlace Simple", "Enlace Simple Dos"]
+      },
+      {
+        "buttonLabel": "Nav Label 2",
+        "linkLabels": ["Enlace Simple tres", "Enlace Simple cuatro"]
+      }
+    ],
+    "parentLinkLabels": ["Parent link"]
+  },
   "header": {
-    "banner": "[es] An official website of New York City government",
-    "language": "[es] Language",
-    "nav": {
-      "dropdowns": [
-        {
-          "label": "[es] Nav Label 1",
-          "simpleLinks": ["[es] Simple link one", "[es] Simple link two"]
-        },
-        {
-          "label": "[es] Nav Label 2",
-          "simpleLinks": ["[es] Simple link three", "[es] Simple link four"]
-        }
-      ],
-      "menu": "[es] Menu",
-      "parentLinks": ["[es] Parent link"]
-    }
+    "banner": "Un sitio oficial del gobierno de la Ciudad de Nueva York",
+    "language": "Idioma",
+    "menuMobileNav": "Ménu"
   },
   "footer": {
-    "returnToTop": "[es] Return to top",
-    "primaryLinks": [
-      "[es] Primary Link 1",
-      "[es] Primary Link 2",
-      "[es] Primary Link 3",
-      "[es] Primary Link 4"
-    ],
-    "copyright": "[es] © 2021 City of New York. All Rights Reserved.",
-    "trademark": "[es] NYC is a trademark and service mark of the City of New York.",
-    "terms": "[es] NYC Terms of Use",
-    "privacy": "[es] NYC Privacy Policy",
-    "secondary": {
-      "heading": {
-        "logo": "[es] Name of Agency",
-        "contact": "[es] Agency Contact Center"
-      },
-      "socialLinks": ["[es] Facebook", "[es] Twitter", "[es] YouTube", "[es] Instagram", "[es] RSS"],
-      "address": {
-        "phone": "[es] (800) CALL-GOVT",
-        "email": "[es] info@agency.gov"
-      }
+    "returnToTop": "Regresar Arriba",
+    "copyright": "© 2021 Ciudad de Nueva York . Todos los derechos reservados.",
+    "trademark": "NYC is a trademark and service mark of the City of New York.",
+    "secondaryLinks": {
+      "terms": "NYC Términos y Condiciones",
+      "privacy": "NYC Política de Privacidad"
     }
-  },
-  "notFound": "[es] 404: Page Not Found"
+  }
 }

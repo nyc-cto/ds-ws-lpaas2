@@ -1,7 +1,7 @@
 /* || MOBILE */
 
 @media (min-width: units('mobile')) {
-  .header__logo-title {
+  .header-info {
     .usa-logo__text {
       @include u-font-size('body', 'md');
       font-family: 'Space Mono', monospace;
@@ -9,16 +9,16 @@
     }
   }
 
-  //hide language selector button, project title, and banner text
+  // hide language selector button, project title, and banner text
   .banner__language-selector,
-  .header__title,
+  .header-info__title,
   .banner__info {
     display: none;
   }
   .usa-nav {
     padding: 0;
     .usa-nav__inner {
-      //nav close button
+      // nav close button
       .usa-nav__close {
         margin: units(1);
         padding: units(1);
@@ -26,7 +26,7 @@
       .usa-nav__primary-item {
         border: none;
         width: fit-content;
-        //these submenu items are shown when a nav label is clicked and the accordion button expands
+        // these submenu items are shown when a nav label is clicked and the accordion button expands
         .usa-nav__submenu {
           @include u-bg('accent-cool-lighter');
           .usa-nav__submenu-item {
@@ -35,71 +35,91 @@
             border: none;
           }
         }
-        //links and nav label buttons in the nav menu
-        //styling applies when accordion buttons are open and closed
+        // links and nav label buttons in the nav menu
+        // styling applies when accordion buttons are open and closed
         a,
         .usa-accordion__button[aria-expanded='false'],
         .usa-accordion__button[aria-expanded='true'] {
-          @include hover-border(
-            'left',
-            'secondary',
-            'base-darker',
-            'accent-cool-lighter'
-          );
+          .nav-dropdown__label-icon,
+          .nav-dropdown__label-icon--expanded {
+            display: none;
+          }
+          .nav-dropdown__label {
+            p {
+              margin: 0;
+              padding: 0;
+            }
+          }
           @include nav-item(
             'base-darker',
             'base-darker',
             'normal',
             'bold',
             'accent-cool-lighter',
-            0 units(0.5),
-            units(1.5) units(2)
+            units(0.5),
+            units(2)
           );
+          &:hover {
+            border-left: units(0.5) solid color('secondary');
+            padding-left: units(0.5);
+          }
         }
       }
     }
   }
 
-  //header & nav
+  // header & nav
   .usa-navbar {
     @include flex-center-space-between();
     margin: units(4) 0 units(2) 0;
     //smaller logo size
-    .header__logo {
+    .header-info__logo {
       width: units('card');
       height: auto;
-      padding-left: units(2);
     }
-    //nav menu button
+    // nav menu button
     .usa-menu-btn {
       @include u-bg('secondary');
     }
   }
 
-  //languages in nav bar
+  // languages in nav bar
   .header__language-nav-container {
-    //position languages at the bottom
+    // position languages at the bottom
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     @include u-bg('base-dark');
     padding: units(1) 0;
-    //right align right to left languages
-    .header__language-nav-rtl {
+    // right align right to left languages
+    .header__language-nav-items--rtl {
       @include align-languages(flex-end);
     }
-    //left align left to right languages
-    .header__language-nav-ltr {
+    // left align left to right languages
+    .header__language-nav-items--ltr {
       @include align-languages(flex-start);
     }
-    //language button styling
-    .header__language-nav-items {
+    // language button styling
+    .header__language-nav-item--active {
       .usa-button--unstyled {
-        @include u-text('accent-cool-lighter');
+        @include u-text('primary');
+        border: units('2px') solid color('base-dark');
         &:hover {
           @include u-text('primary');
           @include u-bg('base-dark');
+          border: none;
+        }
+      }
+    }
+    .header__language-nav-item--inactive {
+      .usa-button--unstyled {
+        @include u-text('accent-cool-lighter');
+        border: none;
+        &:hover {
+          @include u-text('primary');
+          @include u-bg('base-dark');
+          border: none;
         }
       }
     }
@@ -109,52 +129,46 @@
 /* || DESKTOP */
 
 @media (min-width: units('desktop')) {
-  //show language selector button and project title
+  // show language selector button and project title
   .banner__language-selector,
-  .header__title,
+  .header-info__title,
   .banner__info {
     display: block;
+  }
+  .header-info {
+    @include flex-center-space-between();
   }
   .header__language-nav-container {
     display: none;
   }
-  .usa-nav {
-    margin-bottom: units(2);
-  }
-  .header__logo-title {
-    @include flex-center-space-between();
-  }
   .usa-navbar {
-    .header__logo {
+    .header-info__logo {
       width: units('card-lg');
       height: auto;
     }
   }
 
   .usa-nav {
-    padding: units(2);
+    padding: units(1.5) 0;
     .usa-nav__inner {
       .usa-nav__primary-item {
+        margin-right: 16px;
         .usa-nav__submenu {
-          @include u-bg('base-darker');
+          @include u-bg('base-dark');
           .usa-nav__submenu-item {
-            @include u-bg('base-darker');
+            @include u-bg('base-dark');
             a {
               @include u-text('accent-cool-lighter');
-              @include u-bg('base-darker');
+              @include u-bg('base-dark');
               @include u-text('normal');
+              &:hover {
+                border: none;
+              }
             }
           }
         }
-        //links and nav label buttons when accordion is closed
-        a,
-        .usa-accordion__button[aria-expanded='false'] {
-          @include hover-border(
-            'left',
-            'secondary',
-            'base-darker',
-            'accent-cool-lighter'
-          );
+        // nav links
+        .usa-nav__link {
           @include nav-item(
             'disabled-dark',
             'base-darker',
@@ -166,22 +180,66 @@
           );
           &:hover {
             border: none;
+            &::after {
+              border: 3px solid color('secondary');
+            }
           }
         }
+        // nav label buttons when accordion is closed
         .usa-accordion__button[aria-expanded='false'] {
+          background-image: none;
+          .nav-dropdown__label {
+            p {
+              margin: 0;
+              padding-right: units(1.5);
+            }
+            @include flex-center-space-between();
+            .nav-dropdown__label-icon {
+              display: block;
+            }
+            .nav-dropdown__label-icon--expanded {
+              display: none;
+            }
+          }
+          @include nav-item(
+            'disabled-dark',
+            'base-darker',
+            'bold',
+            'bold',
+            'accent-cool-lighter',
+            units(2) units(2) 0 units(2),
+            0
+          );
+          &:hover {
+            border: none;
+          }
           &::after {
-            border: units('2px') solid color('secondary');
+            border: 3px solid color('secondary');
           }
         }
-        //nav label buttons when accordion is closed
+        // nav label buttons when accordion is closed
         .usa-accordion__button[aria-expanded='true'] {
+          background-image: none;
+          .nav-dropdown__label {
+            p {
+              margin: 0;
+              padding-right: units(1.5);
+            }
+            @include flex-center-space-between();
+            .nav-dropdown__label-icon {
+              display: none;
+            }
+            .nav-dropdown__label-icon--expanded {
+              display: block;
+            }
+          }
           @include nav-item(
             'accent-cool-lighter',
             'accent-cool-lighter',
             'bold',
             'bold',
-            'base-darker',
-            units(2),
+            'base-dark',
+            units(2) units(2) 0 units(2),
             0
           );
           &:hover {
@@ -192,15 +250,15 @@
     }
   }
 
-  /*hide language buttons from nav in desktop view 
-  these buttons will be in the language selector dropdown
-  or they will be in the banner
-  in mobile view they are part of the nav menu */
+  /* Hide language buttons from nav bar in desktop view. 
+  In desktop view, these buttons will be in the language selector dropdown
+  or they will be in the banner, depending on the number of languages.
+  In mobile view, they are part of the nav menu. */
   .header__language-nav-items {
     display: none;
   }
 
-  //custom NYC banner
+  // custom NYC banner
   .banner {
     @include flex-center-space-between();
     .banner__logo-title,
@@ -210,67 +268,98 @@
     .font-heading-xs {
       margin: 0;
     }
-    //language nav button
+    .banner__logo {
+      height: units(1.5);
+      width: auto;
+    }
+    // language selector nav button, which opens a dropdown menu
     .usa-accordion__button {
       background-image: none;
-      padding: 0 units('105');
+      padding: units(2) units(1.5);
       p {
-        padding-left: units('105');
+        padding-left: units(1.5);
+        margin: 0;
       }
-      //language nav button when dropdown menu is closed
+      // language selector nav button when dropdown menu is closed
       &[aria-expanded='false'] {
+        &:focus {
+          outline: none;
+          @include u-text('accent-cool-lighter');
+          p {
+            @include u-text('accent-cool-lighter');
+          }
+        }
         @include u-text('base-dark');
         @include u-bg('primary');
         p {
           @include u-text('base-dark');
         }
+        &:hover {
+          @include u-text('accent-cool-lighter');
+          @include u-bg('primary');
+          p {
+            @include u-text('accent-cool-lighter');
+          }
+        }
+        &:active {
+          outline: none;
+        }
       }
-      //language nav button when dropdown menu is open
+      // language selector nav button when dropdown menu is open
       &[aria-expanded='true'] {
         @include u-text('accent-cool-lighter');
         @include u-bg('primary');
+        &:focus {
+          outline: none;
+        }
       }
     }
-    //language buttons that look like links
+    // language buttons that look like links
     .usa-button--unstyled {
       @include u-text('accent-cool-lighter');
+      @include u-bg('base-dark');
       text-decoration: none;
+      line-height: 25px;
     }
-    //right-to-left language buttons in dropdown menu
+
+    // right-to-left language buttons in dropdown menu
     .banner__language-selector-item--rtl {
+      @include language-button--hover('primary');
       display: flex;
       flex-direction: row-reverse;
-      @include hover-border(
-        'right',
-        'primary',
-        'accent-cool-lighter',
-        'base-dark'
-      );
     }
-    //left-to-right language buttons in dropdown menu
+    // left-to-right language buttons in dropdown menu
     .banner__language-selector-item--ltr {
-      @include hover-border(
-        'left',
-        'primary',
-        'accent-cool-lighter',
-        'base-dark'
-      );
+      @include language-button--hover('primary');
     }
-    //all language buttons when there are 5 or fewer languages
+    // all language buttons when there are 5 or fewer languages
+    // for 5 or fewer languages, the buttons are in the banner not the dropdown menu
     .banner__language-selector-button-group {
       @include flex-center-space-between();
       .banner__language-selector-item {
-        @include hover-border(
-          'top',
-          'primary',
-          'accent-cool-lighter',
-          'base-dark'
-        );
-        margin: 0 units('105');
+        @include language-button--hover('primary');
+        margin: 0 units(1.5);
         &:hover {
           padding-top: 0;
         }
       }
     }
+  }
+  // to indicate which language is in use or active, there is a bar on one side of the language button
+  // left-to-right languages active border, in dropdown language selector menu
+  .banner__language-selector-item--ltr.banner__language-selector-item--active {
+    @include language-button--active(left, 'primary', left);
+  }
+  // right-to-left languages active border, in dropdown language selector menu
+  .banner__language-selector-item--rtl.banner__language-selector-item--active {
+    @include language-button--active(right, 'primary', right);
+  }
+  // active border is on top when there are 5 or fewer languages, in banner
+  .banner__language-selector-item.banner__language-selector-item--active {
+    @include language-button--active(top, 'primary', bottom);
+  }
+  // set these styles so spacing is the same for active and inactive languages when there are less than 5 languages overall
+  .banner__language-selector-item.banner__language-selector-item--inactive {
+    @include language-button--active(top, 'base-dark', bottom);
   }
 }

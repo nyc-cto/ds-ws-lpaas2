@@ -9,6 +9,8 @@ const { languages } = require('./src/constants/languages');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
+
+  // redirects on the home path (i.e. en/home) for cleaner path on home page (i.e. en/)
   languages.map((lang) => createRedirect({
     fromPath: `/${lang.langKey}/home`,
     toPath: `/${lang.langKey}/`,
@@ -16,6 +18,7 @@ exports.createPages = ({ actions, graphql }) => {
     redirectInBrowser: true,
   }));
 
+  /* creating each page */
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -41,21 +44,46 @@ exports.createPages = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges;
 
+    // create a list of languages being used by seeing which language files are in src/locales
+    const getLanguages = () => {
+      const files = fs.readdirSync('./src/locales');
+      return languages.filter((lang) => files.includes(lang.langKey));
+    };
+
+    const languageList = getLanguages(); // this language list is passed by page context below
+
     posts.forEach((edge) => {
       const { id } = edge.node;
       if (edge.node.frontmatter.templateKey) {
         const lang = _.get(edge, 'node.frontmatter.lang', 'en');
 
-        createPage({
-          path: edge.node.fields.slug,
-          component: path.resolve(
-            `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`,
-          ),
-          context: {
-            id,
-            lang,
-          },
-        });
+        // Check if the page is a localized 404 (i.e. /en/404/)
+        if (edge.node.fields.slug.match(/^\/[a-z]{2}\/404\/$/)) {
+          // Match all paths starting with the language code (apart from other valid paths)
+          createPage({
+            path: edge.node.fields.slug,
+            matchPath: `/${lang}/*`,
+            component: path.resolve('src/templates/404-page.jsx'),
+            context: {
+              id,
+              lang,
+              languageList,
+            },
+          });
+        } else {
+          // If page is not a localized 404 (i.e. /en/404/), create the page normally
+          createPage({
+            path: edge.node.fields.slug,
+            component: path.resolve(
+              `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`,
+            ),
+            context: {
+              id,
+              lang,
+              languageList,
+            },
+          });
+        }
       }
     });
   });
@@ -72,7 +100,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: 'slug',
       node,
-      value: slug === 'home' ? `/${lang}` : `/${lang}/${slug}/`,
+      value: slug === 'home' ? `/${lang}` : `/${lang}/${slug}/`, // gets rid of slug on the home page for cleaner look (i.e. en/home --> en/)
       context: {
         lang,
       },

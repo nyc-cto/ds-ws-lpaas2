@@ -1,4 +1,4 @@
-const languages = [
+const languages = [ // order here is the same order in language selector
   {
     lang: 'বাংলা',
     langKey: 'bn',
@@ -40,15 +40,15 @@ const languages = [
     langKey: 'es',
   },
   {
-    lang: 'ةيبرعلا',
+    lang: 'العربية',
     langKey: 'ar',
   },
   {
-    lang: 'ودرا',
+    lang: 'اردو',
     langKey: 'ur',
   },
   {
-    lang: 'שידיי',
+    lang: 'ייִדיש',
     langKey: 'yi',
   },
 ];

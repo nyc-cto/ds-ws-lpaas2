@@ -1,3 +1,64 @@
+/* || HERO */
+
+//  background for hero callout
+.usa-hero__callout {
+  @include u-bg('base-dark');
+}
+
+/* || TAGLINE */
+
+.tagline__heading {
+  .font-heading-xl,
+  .tagline__heading-text {
+    margin: 0;
+  }
+}
+
+/* || GRAPHICS SECTION */
+
+// circular images in graphics section
+.graphic__image--circle {
+  border-radius: 50%;
+}
+
+// graphics section image and text
+.usa-media-block {
+  padding: units(1) 0;
+}
+
+// for mobile up to tablet view, the images are above the text
+@media (min-width: units('mobile')) {
+  // graphics section header and paragraph
+  .usa-media-block__body {
+    padding: 0;
+  }
+}
+
+// for tablet view and above, the images are to the left of the text
+@media (min-width: units('tablet')) {
+  // graphics section image
+  .usa-media-block__img {
+    margin-left: units(3);
+  }
+  .usa-media-block__body {
+    margin-left: units(2.5);
+  }
+}
+
+@media (min-width: units('desktop')) {
+  .usa-media-block__body {
+    margin-left: 0;
+  }
+}
+
+/* || DOCUMENTATION PAGE */
+
 .documentation__container {
+  padding-bottom: units(8);
+}
+
+/* || 404 PAGE */
+
+.not-found__container {
   padding-bottom: units(8);
 }

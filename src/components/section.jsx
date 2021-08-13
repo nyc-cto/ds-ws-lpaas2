@@ -1,29 +1,38 @@
 import React from 'react';
 
 import { Grid, GridContainer, Button } from '@trussworks/react-uswds';
-import PropTypes from 'prop-types';
+import { navigate } from 'gatsby';
 
-function Section({ buttons, section }) {
+import { landing as links } from '../constants/links';
+
+// update the content by editing the markdown files in src/markdown-pages
+// update the button link in src/constants/links.js
+
+function Section({ section }) {
   return (
-    <GridContainer className="usa-section">
-      <Grid row>
-        <Grid>
-          {section.heading && (
-            <h2 className="font-heading-xl">{section.heading}</h2>
-          )}
-          {section.text && <p className="usa-intro">{section.text}</p>}
-          {buttons.callToAction && (
-            <Button className="usa-button--big">{buttons.callToAction}</Button>
-          )}
+    <section className="usa-section">
+      <GridContainer>
+        <Grid row>
+          <Grid>
+            {section.heading && (
+              <h2 className="font-heading-xl">{section.heading}</h2>
+            )}
+            {section.text && <p className="usa-intro">{section.text}</p>}
+            {links.SECTION_BUTTON_LINK && section.buttonText && (
+              <Button
+                onClick={() => {
+                  navigate(links.SECTION_BUTTON_LINK);
+                }}
+                className="usa-button--big"
+              >
+                {section.buttonText}
+              </Button>
+            )}
+          </Grid>
         </Grid>
-      </Grid>
-    </GridContainer>
+      </GridContainer>
+    </section>
   );
 }
-
-Section.propTypes = {
-  section: PropTypes.node.isRequired,
-  buttons: PropTypes.node.isRequired,
-};
 
 export default Section;

@@ -1,40 +1,36 @@
 import React from 'react';
 
 import { Grid, GridContainer } from '@trussworks/react-uswds';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
 import { logoBanner } from '../images';
 import LanguageSelector from './language-selector';
 
-function Banner({ children, slug }) {
+// this is the banner at the top of the page
+// it includes the the language selector button(s)
+// update the text in the translation files in src/locales
+
+function Banner({ children, languageList, slug }) {
   const { t } = useTranslation();
   return (
-    <div className="usa-section--dark">
+    <section className="usa-section--dark">
       <GridContainer>
         <Grid row className="banner">
           <Grid row gap className="banner__logo-title">
             <Grid>
-              <div>
-                <img src={logoBanner} alt={t('location')} />
-              </div>
+              {logoBanner && <img className="banner__logo" src={logoBanner} alt={t('location')} />}
             </Grid>
             <Grid>
               <p className="banner__info font-heading-xs">{children}</p>
             </Grid>
           </Grid>
           <Grid>
-            <LanguageSelector slug={slug} />
+            <LanguageSelector languageList={languageList} slug={slug} />
           </Grid>
         </Grid>
       </GridContainer>
-    </div>
+    </section>
   );
 }
-
-Banner.propTypes = {
-  children: PropTypes.node.isRequired,
-  slug: PropTypes.string.isRequired,
-};
 
 export default Banner;

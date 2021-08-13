@@ -5,47 +5,31 @@
     "shortformName": "[ar] NYC CTO"
   },
   "location": "[ar] NYC",
+  "navigation": {
+    "dropdowns": [
+      {
+        "buttonLabel": "[ar] Nav Label 1",
+        "linkLabels": ["[ar] Simple link one", "[ar] Simple link two"]
+      },
+      {
+        "buttonLabel": "[ar] Nav Label 2",
+        "linkLabels": ["[ar] Simple link three", "[ar] Simple link four"]
+      }
+    ],
+    "parentLinkLabels": ["[ar] Parent link"]
+  },
   "header": {
     "banner": "[ar] An official website of New York City government",
     "language": "[ar] Language",
-    "nav": {
-      "dropdowns": [
-        {
-          "label": "[ar] Nav Label 1",
-          "simpleLinks": ["[ar] Simple link one", "[ar] Simple link two"]
-        },
-        {
-          "label": "[ar] Nav Label 2",
-          "simpleLinks": ["[ar] Simple link three", "[ar] Simple link four"]
-        }
-      ],
-      "menu": "[ar] Menu",
-      "parentLinks": ["[ar] Parent link"]
-    }
+    "menuMobileNav": "[ar] Menu"
   },
   "footer": {
     "returnToTop": "[ar] Return to top",
-    "primaryLinks": [
-      "[ar] Primary Link 1",
-      "[ar] Primary Link 2",
-      "[ar] Primary Link 3",
-      "[ar] Primary Link 4"
-    ],
     "copyright": "[ar] © 2021 City of New York. All Rights Reserved.",
     "trademark": "[ar] NYC is a trademark and service mark of the City of New York.",
-    "terms": "[ar] NYC Terms of Use",
-    "privacy": "[ar] NYC Privacy Policy",
-    "secondary": {
-      "heading": {
-        "logo": "[ar] Name of Agency",
-        "contact": "[ar] Agency Contact Center"
-      },
-      "socialLinks": ["[ar] Facebook", "[ar] Twitter", "[ar] YouTube", "[ar] Instagram", "[ar] RSS"],
-      "address": {
-        "phone": "[ar] (800) CALL-GOVT",
-        "email": "[ar] info@agency.gov"
-      }
+    "secondaryLinks": {
+      "terms": "[ar] NYC Terms of Use",
+      "privacy": "[ar] NYC Privacy Policy"
     }
-  },
-  "notFound": "[ar] 404: Page Not Found"
+  }
 }

@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 
 import {
@@ -6,28 +5,34 @@ import {
 } from '@trussworks/react-uswds';
 import FeatherIcon from 'feather-icons-react';
 import { navigate } from 'gatsby';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
-import { languages } from '../constants/languages';
-
-function LanguageSelector({ slug }) {
+function LanguageSelector({ languageList, slug }) {
   const { t, i18n } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(false);
 
+  /* when a language button is clicked, it navigates to the url
+  with the language code of the clicked button and the slug of the current page */
   const handleClick = (langKey) => {
     i18n.changeLanguage(langKey, navigate(`/${langKey}/${slug}`));
   };
 
-  const languageMenuItems = languages.map((language) => (
+  // create the language selector buttons based on the language list (languages used in src/locales)
+  // for 5 or less languages, the buttons are simply in the banner at the top of the page
+  // for more than 5 languages, the buttons are in a dropdown menu
+  const languageMenuItems = languageList.map((language) => (
     <div
       className={
-        languages.length <= 5
-          ? 'banner__language-selector-item'
-          : i18n.dir(language.langKey) === 'rtl'
-            ? 'banner__language-selector-item--rtl'
-            : 'banner__language-selector-item--ltr'
+        `${languageList.length <= 5 // are there 5 or less languages used in the locales folder
+          ? 'banner__language-selector-item' // 5 or less languages
+          : i18n.dir(language.langKey) === 'rtl' // if more than 5 languages, check if the language is right-to-left
+            ? 'banner__language-selector-item--rtl' // if right-to-left, the language buttons will be styled differently
+            : 'banner__language-selector-item--ltr'} ${
+          language.langKey === i18n.language // does button's language code match current language
+            ? 'banner__language-selector-item--active' // active language is the language being used on the current page
+            : 'banner__language-selector-item--inactive' // inactive languages are not being used on the current page
+        }`
       }
     >
       <Button
@@ -74,9 +79,5 @@ function LanguageSelector({ slug }) {
     </div>
   );
 }
-
-LanguageSelector.propTypes = {
-  slug: PropTypes.string.isRequired,
-};
 
 export default LanguageSelector;
