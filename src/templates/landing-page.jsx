@@ -68,7 +68,6 @@ export const pageQuery = graphql`
           text
         }
         graphics {
-          image
           imageDescription
           heading
           text
