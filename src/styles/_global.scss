@@ -2,10 +2,10 @@
 
 .usa-link {
   // padding: units(1.5);
-  // text-decoration: none;
-  // &:hover {
-  //   text-decoration: none;
-  // }
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
   // &::after{
   //   border: 3px solid color('primary');
   //   content: "";
