@@ -56,13 +56,15 @@
             'normal',
             'bold',
             'white',
-            units(0.5),
-            units(2)
+            units(2) units(0.5),
+            units(0.5) units(2)
           );
-          &:hover {
-            border-left: units(0.5) solid color('secondary');
-            padding-left: units(0.5);
-          }
+          // &:hover {
+          //   p {
+          //     border-left: units(0.5) solid color('secondary');
+          //     padding-left: units(0.5);
+          //   }
+          // }
         }
       }
     }
@@ -149,7 +151,6 @@
   }
 
   .usa-nav {
-    padding: units(1.5) 0;
     .usa-nav__inner {
       .usa-nav__primary-item {
         margin-right: 16px;
