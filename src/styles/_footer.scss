@@ -117,7 +117,7 @@
   }
 
   .usa-link.usa-footer__primary-link {
-    padding: units(1.5) 0 0 0;
+    padding: units(2) 0;
     margin: units(1.5) 0;
     text-decoration: none;
     &:hover {
@@ -129,19 +129,18 @@
       position: absolute;
       left: 16px;
       right: 16px;
-      bottom: 2px;
-      margin: 0;
+      bottom: 18px;
     }
     &:hover::after {
       border-width: 5px;
-      bottom: 0;
+      bottom: 16px;
     }
     &:focus {
       outline: none;
     }
     &:focus::after {
       border-width: 5px;
-      bottom: 0;
+      bottom: 16px;
     }
   }
 }
