@@ -17,10 +17,50 @@
   }
 
   .usa-footer__return-to-top {
-    padding: units(1.5) units(2);
     a {
       @include link-theme('base-dark', 'primary', 'base-dark', 'primary');
       margin: units(1.5) 0;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+      &::after {
+        border: 3px solid color('primary');
+        content: '';
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 2px;
+        margin: 0;
+      }
+      &:hover::after {
+        border-width: 5px;
+        bottom: 0px;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:focus::after {
+        border-width: 5px;
+        bottom: 0;
+      }
+    }
+  }
+
+  .footer-above {
+    display: flex;
+    justify-content: center;
+    .footer-above__return-to-top {
+      padding: units(1.5) units(2);
+      align-self: flex-start;
+      position: absolute;
+      right: 0;
+      a {
+        margin: units(1.5) 0;
+      }
+    }
+    .footer-above__feedback {
+      padding-top: units(6);
     }
   }
 
@@ -67,37 +107,6 @@
     }
   }
 
-  .usa-footer__return-to-top {
-    a {
-      @include link-theme('base-dark', 'primary', 'base-dark', 'primary');
-      margin: units(1.5) 0;
-      text-decoration: none;
-      &:hover {
-        text-decoration: none;
-      }
-      &::after {
-        border: 3px solid color('primary');
-        content: '';
-        position: absolute;
-        left: 16px;
-        right: 16px;
-        bottom: 2px;
-        margin: 0;
-      }
-      &:hover::after {
-        border-width: 5px;
-        bottom: 0px;
-      }
-      &:focus {
-        outline: none;
-      }
-      &:focus::after {
-        border-width: 5px;
-        bottom: 0;
-      }
-    }
-  }
-
   .footer__info {
     @include u-font-size('body', 1);
     @include u-text('bold');
@@ -107,8 +116,7 @@
     padding: units(3) 0;
   }
 
-  
-  .usa-link.usa-footer__primary-link  {
+  .usa-link.usa-footer__primary-link {
     padding: units(1.5) 0 0 0;
     margin: units(1.5) 0;
     text-decoration: none;

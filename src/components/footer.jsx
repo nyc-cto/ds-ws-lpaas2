@@ -48,9 +48,6 @@ function Footer() {
   return (
     <div>
       <div className="footer-above">
-        <div className="usa-footer__return-to-top footer-above__return-to-top">
-          <Link to="#top">{t('footer.returnToTop')}</Link>
-        </div>
         <div className="footer-above__feedback">
           <div
             id="feedback-widget"
@@ -62,6 +59,9 @@ function Footer() {
             src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js"
             type="text/javascript"
           />
+        </div>
+        <div className="usa-footer__return-to-top footer-above__return-to-top">
+          <Link to="#top">{t('footer.returnToTop')}</Link>
         </div>
       </div>
       <FooterUSWDS
