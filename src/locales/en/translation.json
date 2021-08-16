@@ -9,7 +9,7 @@
     "dropdowns": [
       {
         "buttonLabel": "Nav Label 1",
-        "linkLabels": ["Simple link one", "Simple link two"]
+        "linkLabels": ["Home", "Documentation"]
       },
       {
         "buttonLabel": "Nav Label 2",

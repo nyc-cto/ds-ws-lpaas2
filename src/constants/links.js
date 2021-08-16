@@ -4,11 +4,11 @@ export const header = {
     [
       {
         LABEL: 'navigation.dropdowns.0.linkLabels.0',
-        LINK: 'link-one',
+        LINK: 'home',
       },
       {
         LABEL: 'navigation.dropdowns.0.linkLabels.1',
-        LINK: 'link-two',
+        LINK: 'documentation',
       },
     ],
     // first dropdown end

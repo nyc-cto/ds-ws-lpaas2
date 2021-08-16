@@ -8,7 +8,7 @@ import { Link } from '.';
 import { header as links } from '../constants/links';
 
 function NavDropDown() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   /* dynamically store dropdowns */
   const dropdowns = [];
