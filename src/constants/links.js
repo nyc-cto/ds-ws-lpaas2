@@ -1,5 +1,6 @@
 export const header = {
-  navDropDowns: [ // dropdowns
+  navDropDowns: [
+    // dropdowns
     // first dropdown start
     [
       {
@@ -25,7 +26,10 @@ export const header = {
     ],
     // second dropdown end
   ],
-  parentLinks: [{ LABEL: 'navigation.parentLinkLabels.0', LINK: 'link-five' }], // parent (standalone) links
+  parentLinks: [
+    { LABEL: 'navigation.parentLinkLabels.0', LINK: 'home' },
+    { LABEL: 'navigation.parentLinkLabels.1', LINK: 'documentation' },
+  ], // parent (standalone) links
 };
 
 export const footer = {
