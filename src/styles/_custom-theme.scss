@@ -81,7 +81,7 @@ $theme-color-secondary-darker: $custom-secondary-darker;
 
 // currently, accent cool is the same as primary
 //if you have the need for accent color palettes, you can set them here
-$theme-color-accent-cool-lighter: white; //set to white in order to access white in mixins
+$theme-color-accent-cool-lighter: $custom-primary-lighter;
 $theme-color-accent-cool-light: $custom-primary-light;
 $theme-color-accent-cool: $custom-primary;
 $theme-color-accent-cool-dark: $custom-primary-dark;

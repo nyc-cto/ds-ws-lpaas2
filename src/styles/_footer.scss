@@ -4,14 +4,14 @@
   // footer nav links
   .usa-footer__primary-section {
     font-family: 'Space Mono';
-    @include u-text('accent-cool-lighter');
+    @include u-text('white');
     @include u-bg('base');
     margin-top: 0;
     padding: 0;
     .usa-link,
     .usa-link--external,
     .usa-footer__primary-link {
-      @include u-text('accent-cool-lighter');
+      @include u-text('white');
       padding: 0;
     }
   }
@@ -26,11 +26,11 @@
 
   // department logo, terms & policies, and copyright & trademarks
   .usa-footer__secondary-section {
-    @include u-text('accent-cool-lighter');
+    @include u-text('white');
     @include u-bg('base-dark');
     .usa-link,
     .usa-link--external {
-      @include u-text('accent-cool-lighter');
+      @include u-text('white');
     }
     .footer__logo {
       width: units('mobile');
