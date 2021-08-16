@@ -5,11 +5,11 @@ export const header = {
     [
       {
         LABEL: 'navigation.dropdowns.0.linkLabels.0',
-        LINK: 'home',
+        LINK: 'link-one',
       },
       {
         LABEL: 'navigation.dropdowns.0.linkLabels.1',
-        LINK: 'documentation',
+        LINK: 'link-two',
       },
     ],
     // first dropdown end

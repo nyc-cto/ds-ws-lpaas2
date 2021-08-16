@@ -16,7 +16,7 @@
         "linkLabels": ["Enlace Simple tres", "Enlace Simple cuatro"]
       }
     ],
-    "parentLinkLabels": ["Parent link"]
+    "parentLinkLabels": ["Página de Inicio", "Documentación Técnica"]
   },
   "header": {
     "banner": "Un sitio oficial del gobierno de la Ciudad de Nueva York",

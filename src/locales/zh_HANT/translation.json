@@ -16,7 +16,7 @@
         "linkLabels": ["[zh_HANT] Simple link three", "[zh_HANT] Simple link four"]
       }
     ],
-    "parentLinkLabels": ["[zh_HANT] Parent link"]
+    "parentLinkLabels": ["[zh_HANT] Home", "[zh_HANT] Documentation"]
   },
   "header": {
     "banner": "[zh_HANT] An official website of New York City government",
