@@ -48,8 +48,8 @@
     padding-top: units(2);
   }
 
-  .usa-footer__primary-link {
-    margin-left: units(2);
+  .usa-link.usa-footer__primary-link {
+    padding: units(2);
     border: none;
   }
 }
@@ -107,8 +107,9 @@
     padding: units(3) 0;
   }
 
-  .usa-footer__primary-link {
-    padding: units(1.5);
+  
+  .usa-link.usa-footer__primary-link  {
+    padding: units(1.5) 0 0 0;
     margin: units(1.5) 0;
     text-decoration: none;
     &:hover {
