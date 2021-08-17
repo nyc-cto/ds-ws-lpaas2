@@ -31,7 +31,7 @@ module.exports = {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
         trackingIds: [
-          'GA-TRACKING_ID', // Google Analytics / GA
+          'G-GRP8MPS3CX', // Google Analytics tracking or measurement key
         ],
       },
     },
