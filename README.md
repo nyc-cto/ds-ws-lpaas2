@@ -181,19 +181,7 @@ The LPAAS 2.0 template already contains placeholder translation and markdown fil
 1. To edit the links and associated labels for the links in a dropdown menu, see [Editing Navigation Links](#editing-navigation-links), [Adding Navigation Links](#adding-navigation-links), or [Deleting Navigation Links](#deleting-navigation-links).
 
 ### Adding Navigation Dropdown Menu
-1. Add a subarray to the header.navDropDowns array in `src/constants/links.js`. The elements of the subarray are objects with label and link keys. See the example below:
-  ```javascript 
-  [ 
-  { 
-    label: 'navigation.dropdowns.2.linkLabels.0', 
-    link: '/link-one', 
-  }, 
-  { 
-    label: 'navigation.dropdowns.2.linkLabels.1', 
-    link: '/link-two', 
-  }, 
-  ]
-  ```
+1. Add a subarray to the header.navDropDowns array in `src/constants/links.js`. The elements of the subarray are objects with label and link keys.
 1. Each label will correspond to a `linkLabel` in the `translation.json` files.
 1. Add the corresponding link labels in the `translation.json` files in `src/locales`.  In the translation files, each object in the `navigation.dropdowns` array corresponds to a dropdown  menu. The `buttonLabel` is the label of the dropdown button. The `linkLabels` array contains the labels of all of the links listed in the dropdown menu. See the example below:
   ```json
