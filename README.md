@@ -187,11 +187,12 @@ The LPAAS 2.0 template already contains placeholder translation and markdown fil
   ```json
   "navigation": { 
     "dropdowns": [ 
-    { 
-      "buttonLabel": "Nav Label 1",
-      "linkLabels": ["Simple link one", "Simple link two"] 
-    },
-    // the rest of the array is not shown for brevity
+      { 
+        "buttonLabel": "Nav Label 1",
+        "linkLabels": ["Simple link one", "Simple link two"] 
+      }
+    ]
+  }
   ```
 ### Deleting Navigation Dropdown Menu
 1. Delete the desired subarray to the `header.navDropDowns` array in `src/constants/links.js`. 
