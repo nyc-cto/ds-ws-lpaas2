@@ -85,8 +85,8 @@ The content that is unique to a specific page  (ex. `documentation` or `landing`
 1. If the content is in the front matter of the markdown file (if it is in between the three dashes `---`) only edit the text after the colon. The front matter follows YAML syntax. For instance, you can edit the text “Everything up to this point…”, but you should not edit `section:`, `heading`, or `text`. Also, do not edit the indents already in the front matter. 
   ```yaml
   section:
-  heading: Section heading
-  text: Everything up to this point should help people understand your agency or project who you are, your goal or mission, and how you approach it.
+    heading: Section heading
+    text: Everything up to this point should help people understand your agency or project who you are, your goal or mission, and how you approach it.
   ```
 1. If the content is below the three dashes, it uses [markdown syntax](https://www.markdownguide.org/basic-syntax/). 
 
@@ -100,7 +100,9 @@ The LPAAS 2.0 template already contains placeholder translation and markdown fil
 1. Within the new folder, create a `translation.json` file. 
 1. Copy and paste the JSON object from another translation file and replace all of the string values in the key-value pairs with the corresponding translations. Do not change any of the keys. In the following example, you can translate “Project Title”, but should not edit “title”.
   ```json
-  {"title": "Project Title"}
+  {
+    "title": "Project Title"
+  }
   ```
 1. In `src/i18n-config.js`, add the new language to resources. See the example below:
   ```javascript
@@ -116,8 +118,8 @@ The LPAAS 2.0 template already contains placeholder translation and markdown fil
 1. If the language you are adding is not one of the designated citywide languages under Local Law 30 and is not already included in `src/constants/languages.js`, add the language name and [language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) as key value pairs of an object in the languages array, as follows:
   ```javascript
   {
-   lang: 'English',
-   langKey: 'en',
+    lang: 'English',
+    langKey: 'en',
   }
   ```
 1. In `src/markdown-pages`, create a new markdown file for each template in your new language. For instance, if you were adding pages in Spanish, you would need to create a new file in each folder (`404`, `documentation`, `landing`, and any additional folders). We recommend that each of the new files should be named the same thing as the folder, followed by a dash, and language code: `src/markdown-pages/landing/landing-es.md` and `src/markdown-pages/documentation/documentation-es.md` 
@@ -196,12 +198,12 @@ The LPAAS 2.0 template already contains placeholder translation and markdown fil
 1. Add the corresponding link labels in the `translation.json` files in `src/locales`.  In the translation files, each object in the `navigation.dropdowns` array corresponds to a dropdown  menu. The `buttonLabel` is the label of the dropdown button. The `linkLabels` array contains the labels of all of the links listed in the dropdown menu. See the example below:
   ```json
   "navigation": { 
-  "dropdowns": [ 
-  { 
-    "buttonLabel": "Nav Label 1",
-    "linkLabels": ["Simple link one", "Simple link two"] 
-   },
-  // the rest of the array is not shown for brevity
+    "dropdowns": [ 
+    { 
+      "buttonLabel": "Nav Label 1",
+      "linkLabels": ["Simple link one", "Simple link two"] 
+    },
+    // the rest of the array is not shown for brevity
   ```
 ### Deleting Navigation Dropdown Menu
 1. Delete the desired subarray to the `header.navDropDowns` array in `src/constants/links.js`. 
