@@ -16,7 +16,7 @@
         "linkLabels": ["[yi] Simple link three", "[yi] Simple link four"]
       }
     ],
-    "parentLinkLabels": ["[yi] Parent link"]
+    "parentLinkLabels": ["[yi] Home", "[yi] Documentation"]
   },
   "header": {
     "banner": "[yi] An official website of New York City government",

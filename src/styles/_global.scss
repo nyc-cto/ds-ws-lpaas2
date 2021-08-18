@@ -10,8 +10,8 @@
 .usa-link--light {
   /* not currently being used */
   @include link-theme(
-    'accent-cool-lighter',
-    'accent-cool-lighter',
+    'white',
+    'white',
     'primary-lighter',
     'primary-lighter'
   );
@@ -24,8 +24,8 @@
   @include button-theme(
     'base-dark',
     'base-dark',
-    'accent-cool-lighter',
-    'accent-cool-lighter',
+    'white',
+    'white',
     'primary',
     'primary',
     'base-dark',
@@ -40,8 +40,8 @@
   @include button-theme(
     'base-dark',
     'base-dark',
-    'accent-cool-lighter',
-    'accent-cool-lighter',
+    'white',
+    'white',
     'secondary',
     'secondary',
     'secondary-darker',
@@ -56,12 +56,12 @@
   @include button-theme(
     'base-dark',
     'base-dark',
-    'accent-cool-lighter',
+    'white',
     'disabled-dark',
-    'accent-cool-lighter',
+    'white',
     'primary',
     'base-dark',
-    'accent-cool-lighter',
+    'white',
     'base-dark',
     'base-dark'
   );
@@ -71,8 +71,8 @@
   @include button-theme(
     'base-dark',
     'base-dark',
-    'accent-cool-lighter',
-    'accent-cool-lighter',
+    'white',
+    'white',
     'primary',
     'primary',
     'base-dark',

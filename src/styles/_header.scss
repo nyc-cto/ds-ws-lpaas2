@@ -28,10 +28,10 @@
         width: fit-content;
         // these submenu items are shown when a nav label is clicked and the accordion button expands
         .usa-nav__submenu {
-          @include u-bg('accent-cool-lighter');
+          @include u-bg('white');
           .usa-nav__submenu-item {
             @include u-text('base-darker');
-            @include u-bg('accent-cool-lighter');
+            @include u-bg('white');
             border: none;
           }
         }
@@ -55,14 +55,16 @@
             'base-darker',
             'normal',
             'bold',
-            'accent-cool-lighter',
-            units(0.5),
-            units(2)
+            'white',
+            units(2) units(0.5),
+            units(0.5) units(2)
           );
-          &:hover {
-            border-left: units(0.5) solid color('secondary');
-            padding-left: units(0.5);
-          }
+          // &:hover {
+          //   p {
+          //     border-left: units(0.5) solid color('secondary');
+          //     padding-left: units(0.5);
+          //   }
+          // }
         }
       }
     }
@@ -114,7 +116,7 @@
     }
     .header__language-nav-item--inactive {
       .usa-button--unstyled {
-        @include u-text('accent-cool-lighter');
+        @include u-text('white');
         border: none;
         &:hover {
           @include u-text('primary');
@@ -149,7 +151,6 @@
   }
 
   .usa-nav {
-    padding: units(1.5) 0;
     .usa-nav__inner {
       .usa-nav__primary-item {
         margin-right: 16px;
@@ -158,7 +159,7 @@
           .usa-nav__submenu-item {
             @include u-bg('base-dark');
             a {
-              @include u-text('accent-cool-lighter');
+              @include u-text('white');
               @include u-bg('base-dark');
               @include u-text('normal');
               &:hover {
@@ -174,7 +175,7 @@
             'base-darker',
             'bold',
             'bold',
-            'accent-cool-lighter',
+            'white',
             units(2),
             0
           );
@@ -206,7 +207,7 @@
             'base-darker',
             'bold',
             'bold',
-            'accent-cool-lighter',
+            'white',
             units(2) units(2) 0 units(2),
             0
           );
@@ -234,8 +235,8 @@
             }
           }
           @include nav-item(
-            'accent-cool-lighter',
-            'accent-cool-lighter',
+            'white',
+            'white',
             'bold',
             'bold',
             'base-dark',
@@ -284,9 +285,9 @@
       &[aria-expanded='false'] {
         &:focus {
           outline: none;
-          @include u-text('accent-cool-lighter');
+          @include u-text('white');
           p {
-            @include u-text('accent-cool-lighter');
+            @include u-text('white');
           }
         }
         @include u-text('base-dark');
@@ -295,10 +296,10 @@
           @include u-text('base-dark');
         }
         &:hover {
-          @include u-text('accent-cool-lighter');
+          @include u-text('white');
           @include u-bg('primary');
           p {
-            @include u-text('accent-cool-lighter');
+            @include u-text('white');
           }
         }
         &:active {
@@ -307,7 +308,7 @@
       }
       // language selector nav button when dropdown menu is open
       &[aria-expanded='true'] {
-        @include u-text('accent-cool-lighter');
+        @include u-text('white');
         @include u-bg('primary');
         &:focus {
           outline: none;
@@ -316,7 +317,7 @@
     }
     // language buttons that look like links
     .usa-button--unstyled {
-      @include u-text('accent-cool-lighter');
+      @include u-text('white');
       @include u-bg('base-dark');
       text-decoration: none;
       line-height: 25px;
