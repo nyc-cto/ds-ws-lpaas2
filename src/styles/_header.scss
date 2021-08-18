@@ -78,6 +78,7 @@
     .header-info__logo {
       width: units('card');
       height: auto;
+      padding-left: units(2);
     }
     // nav menu button
     .usa-menu-btn {
@@ -147,6 +148,7 @@
     .header-info__logo {
       width: units('card-lg');
       height: auto;
+      padding-left: 0;
     }
   }
 
