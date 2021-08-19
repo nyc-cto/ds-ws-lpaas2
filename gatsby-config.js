@@ -1,11 +1,9 @@
 const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
 
-// import .env.development based on environment
-if (activeEnv === 'development') {
-  require('dotenv').config({
-    path: '.env.development',
-  });
-}
+require('dotenv').config({
+  // import environmental variables based on environment
+  path: `.env.${activeEnv}`,
+});
 
 module.exports = {
   siteMetadata: {
