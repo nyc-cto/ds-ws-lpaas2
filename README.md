@@ -1,4 +1,4 @@
-# NYC Mayor's Office of the CTO Landing Page as a Service 2.0
+# NYC MOCTO Landing Page as a Service 2.0
 
 ## Requirements
 1. Operating System: macOS Sierra (10.12) or later, Windows 10, or Linux.
@@ -197,7 +197,7 @@ The LPAAS 2.0 template already contains placeholder translation and markdown fil
 To deploy your site using Azure, follow the [Publish a Gatsby site to Azure Static Web Apps tutorial](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-gatsby#deploy-your-web-app), starting at the Deploy your web app section. 
 
 ### Editing Application Settings Configuration
-In order to set environment variables, [follow the Configure application settings for Azure Static Web Apps tutorial](https://docs.microsoft.com/en-us/azure/static-web-apps/application-settings). Enter the environment variables (application settings) for `GATSBY_ENDPOINT` and `GATSBY_TITLE`.
+In order to set environment variables, follow the [Configure application settings for Azure Static Web Apps tutorial](https://docs.microsoft.com/en-us/azure/static-web-apps/application-settings). Enter the environment variables (application settings) for `GATSBY_ENDPOINT` and `GATSBY_TITLE`.
 
 ### Editing GitHub Actions Workflow
 To edit your site's GitHub Actions build workflow in `.github/workflows`, follow the [GitHub Actions workflows for Azure Static Web Apps tutorial](https://docs.microsoft.com/en-us/azure/static-web-apps/github-actions-workflow).
