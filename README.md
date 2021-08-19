@@ -79,6 +79,113 @@ The content that is unique to a specific page  (ex. `documentation` or `landing`
   ```
 1. If the content is below the three dashes, it uses [markdown syntax](https://www.markdownguide.org/basic-syntax/). 
 
+## Templates
+
+### Adding a New Template Page
+1. Create a new `.jsx` file in `src/templates/`. 
+1. Create corresponding markdown files for this template page as shown in `src/documentation/` and `src/landing/`.
+1. In the front matter of the new markdown files, include: `lang`, `templateKey`, `slug`, and `pageTitle`. These represent the language of the page (language code), the template being used in `src/templates` (file name), the path for this page (shown in the address bar), and the title of the page, respectively.
+  ```markdown
+  ---
+  lang: en
+  templateKey: documentation-page
+  slug: documentation
+  pageTitle: Project | Documentation
+  ---
+  ```
+1. In your newly created `.jsx` file from step one, do the following:
+  Create a new component (we recommend using a functional component) and export it by default.
+  ```javascript
+  import React from 'react';
+
+  function NewTemplatePage() {
+  }
+
+  export default NewTemplatePage;
+  ```
+1. Import the layout component `src/components/layout.jsx`. This includes the header, navigation, language selection, and footer. You must use this to make sure navigation takes place effectively from your page to other pages.
+  ```javascript
+  import { Layout } from '../components';
+
+  function NewTemplatePage() {
+    return (
+     <Layout>
+        {/* your stuff inside layout */}
+      </Layout>
+    );
+  }
+
+  export default NewTemplatePage;
+  ```
+1. Import GraphQL from Gatsby. Write a GraphQL query to get content from markdown files. See Gatsby’s [GraphQL Concepts](https://www.gatsbyjs.com/docs/conceptual/graphql-concepts/) for more information or check out existing templates. 
+  ```javascript 
+  import { graphql } from 'gatsby';
+  ```
+1. Include `data` as a prop in your template component. Using the following syntax, you will be able to access the elements of the front matter and markdown body:
+  ```javascript
+  const { markdownRemark } = data;
+  const { frontmatter, html } = markdownRemark;
+  ```
+  You can access front matter elements as properties of the frontmatter object, using object dot notation as follows: `frontmatter.pageTitle`. 
+
+  In the template’s JSX, you can set the HTML as follows: `<div dangerouslySetInnerHTML={{ __html: html }}/>`.
+  Include `pageContext` as a prop as well and use the following syntax to access the `languageList`, which is an array of all the languages used in the `src/locales` folder:
+  ```javascript
+  const { languageList } = pageContext;
+  ```
+1. Import `useTranslation` from `i18next`.
+  ```javascript 
+  import { useTranslation } from 'react-i18next';
+  ```
+1. Within the component use the following syntax to access the i18n object:
+  ```javascript 
+  const { i18n } = useTranslation();
+  ```
+1. Use React Helmet to set the page title and language:
+  ```javascript 
+  import { Helmet } from 'react-helmet'; 
+  import { useTranslation } from 'react-i18next';
+
+  function NewTemplatePage() {
+    const { i18n } = useTranslation();
+
+    return (
+      <Helmet
+        title={frontmatter.pageTitle} 
+        htmlAttributes={{ lang: i18n.language }} 
+      />
+      <Layout>
+  <main>
+    {/* use main tags to indicate the main content */}
+    {/* your code inside main */}
+  </main>
+      </Layout>
+    );
+  }
+  ```	
+1. Import components from `src/components/` as needed.
+1. Pass `languageList` and `frontmatter.slug` as props to the `Layout` component. You can also pass data from the front matter to other components as well. See the following example:
+  ```javascript 
+  function NewTemplatePage() {
+    const { i18n } = useTranslation();
+
+    return (
+      <Helmet
+        title={frontmatter.pageTitle} 
+        htmlAttributes={{ lang: i18n.language }} 
+      />
+      <Layout languageList={languageList} slug={frontmatter.slug}> 
+        <main>
+    <h1>{frontmatter.heading}</h1>
+          <p className="usa-intro">
+            {frontmatter.prose}
+          </p>
+  </main>
+      </Layout>
+    );
+  }
+  ```
+
 ## Language Access & Internationalization
 The `src/locales` folder contains folders for each language used, which are named according to their [language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Each of the language folders has a `translation.json` file, which contains the text for elements that are included in every page of the webapp, such as the header, footer, navigation bar, and language selector module. 
 
