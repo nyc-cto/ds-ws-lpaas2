@@ -95,8 +95,8 @@ section:
 ### Adding a New Template Page
 
 1. Create a new `.jsx` file in `src/templates/`.
-1. Create corresponding markdown files for this template page as shown in `src/documentation/` and `src/landing/`.
-1. In the front matter of the new markdown files, include: `lang`, `templateKey`, `slug`, and `pageTitle`. These represent the language of the page (language code), the template being used in `src/templates` (file name), the path for this page (shown in the address bar), and the title of the page, respectively.
+2. Create corresponding markdown files for this template page as shown in `src/documentation/` and `src/landing/`.
+3. In the front matter of the new markdown files, include: `lang`, `templateKey`, `slug`, and `pageTitle`. These represent the language of the page (language code), the template being used in `src/templates` (file name), the path for this page (shown in the address bar), and the title of the page, respectively.
 
 ```markdown
 ---
@@ -107,7 +107,7 @@ pageTitle: Project | Documentation
 ---
 ```
 
-1. In your newly created `.jsx` file from step one, do the following:
+4. In your newly created `.jsx` file from step one, do the following:
    Create a new component (we recommend using a functional component) and export it by default.
 
 ```javascript
@@ -116,7 +116,7 @@ function NewTemplatePage() {}
 export default NewTemplatePage;
 ```
 
-1. Import the layout component `src/components/layout.jsx`. This includes the header, navigation, language selection, and footer. You must use this to make sure navigation takes place effectively from your page to other pages.
+5. Import the layout component `src/components/layout.jsx`. This includes the header, navigation, language selection, and footer. You must use this to make sure navigation takes place effectively from your page to other pages.
 
 ```javascript
 import { Layout } from '../components';
@@ -126,13 +126,13 @@ function NewTemplatePage() {
 export default NewTemplatePage;
 ```
 
-1. Import GraphQL from Gatsby. Write a GraphQL query to get content from markdown files. See Gatsby’s [GraphQL Concepts](https://www.gatsbyjs.com/docs/conceptual/graphql-concepts/) for more information or check out existing templates.
+6. Import GraphQL from Gatsby. Write a GraphQL query to get content from markdown files. See Gatsby’s [GraphQL Concepts](https://www.gatsbyjs.com/docs/conceptual/graphql-concepts/) for more information or check out existing templates.
 
 ```javascript
 import { graphql } from 'gatsby';
 ```
 
-1. Include `data` as a prop in your template component. Using the following syntax, you will be able to access the elements of the front matter and markdown body:
+7. Include `data` as a prop in your template component. Using the following syntax, you will be able to access the elements of the front matter and markdown body:
 
 ```javascript
 const { markdownRemark } = data;
@@ -148,19 +148,19 @@ Include `pageContext` as a prop as well and use the following syntax to access t
 const { languageList } = pageContext;
 ```
 
-1. Import `useTranslation` from `i18next`.
+8. Import `useTranslation` from `i18next`.
 
 ```javascript
 import { useTranslation } from 'react-i18next';
 ```
 
-1. Within the component use the following syntax to access the i18n object:
+9. Within the component use the following syntax to access the i18n object:
 
 ```javascript
 const { i18n } = useTranslation();
 ```
 
-1. Use React Helmet to set the page title and language:
+10. Use React Helmet to set the page title and language:
 
 ```javascript
 import { Helmet } from 'react-helmet';
@@ -184,8 +184,8 @@ function NewTemplatePage() {
 }
 ```
 
-1. Import components from `src/components/` as needed.
-1. Pass `languageList` and `frontmatter.slug` as props to the `Layout` component. You can also pass data from the front matter to other components as well. See the following example:
+11. Import components from `src/components/` as needed.
+12. Pass `languageList` and `frontmatter.slug` as props to the `Layout` component. You can also pass data from the front matter to other components as well. See the following example:
 
 ```javascript
 function NewTemplatePage() {
