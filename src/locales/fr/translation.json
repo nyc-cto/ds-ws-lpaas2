@@ -1,5 +1,5 @@
 {
-  "title": "[fr] Project Title",
+  "title": "[fr] Landing Page as a Service",
   "agency": {
     "longformName": "[fr] NYC Mayor's Office of the Chief Technology Officer",
     "shortformName": "[fr] NYC CTO"
@@ -16,7 +16,7 @@
         "linkLabels": ["[fr] Simple link three", "[fr] Simple link four"]
       }
     ],
-    "parentLinkLabels": ["[fr] Parent link"]
+    "parentLinkLabels": ["[fr] Home", "[fr] Documentation"]
   },
   "header": {
     "banner": "[fr] An official website of New York City government",

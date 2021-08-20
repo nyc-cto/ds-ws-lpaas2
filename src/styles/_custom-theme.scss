@@ -32,11 +32,18 @@ $custom-disabled-dark: #7b7b7b;
 /* || CUSTOM TYPOGRAPHY */
 
 // text color
-$custom-text-color: "base-dark";
+$custom-text-color: 'base-dark';
 // sans serif font
-$custom-font-type-sans: "public-sans";
+$custom-font-type-sans: 'public-sans';
 // headings use sans serif font
-$custom-font-role-heading: "sans";
+$custom-font-role-heading: 'sans';
+
+/* || CUSTOM LINKS */
+
+$custom-link-color: 'base-dark';
+$custom-link-visited-color: 'primary-darker';
+$custom-link-hover-color: 'base-dark';
+$custom-link-active-color: 'base-dark';
 
 /* || OTHER CUSTOMIZATIONS  */
  
@@ -44,7 +51,7 @@ $custom-font-role-heading: "sans";
 $custom-hero-image: '../images/hero.png';
 
 // focus border color
-$custom-focus-color: "primary";
+$custom-focus-color: 'primary';
 
 /* ||  THEME SETTINGS */
 
@@ -74,7 +81,7 @@ $theme-color-secondary-darker: $custom-secondary-darker;
 
 // currently, accent cool is the same as primary
 //if you have the need for accent color palettes, you can set them here
-$theme-color-accent-cool-lighter: white; //set to white in order to access white in mixins
+$theme-color-accent-cool-lighter: $custom-primary-lighter;
 $theme-color-accent-cool-light: $custom-primary-light;
 $theme-color-accent-cool: $custom-primary;
 $theme-color-accent-cool-dark: $custom-primary-dark;
@@ -94,6 +101,11 @@ $theme-color-disabled-dark: $custom-disabled-dark;
 $theme-text-color: $custom-text-color;
 $theme-font-type-sans: $custom-font-type-sans;
 $theme-font-role-heading: $custom-font-role-heading;
+
+$theme-link-color: $custom-link-color;
+$theme-link-visited-color: $custom-link-visited-color;
+$theme-link-hover-color: $custom-link-hover-color;
+$theme-link-active-color: $custom-link-active-color;
 
 $theme-hero-image: $custom-hero-image;
 

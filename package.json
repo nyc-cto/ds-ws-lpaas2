@@ -15,6 +15,7 @@
     "fs-extra": "^10.0.0",
     "gatsby": "^2.29.3",
     "gatsby-awesome-pagination": "^0.3.6",
+    "gatsby-plugin-google-gtag": "^3.11.0",
     "gatsby-plugin-manifest": "^2.12.0",
     "gatsby-plugin-netlify-cms": "^4.7.0",
     "gatsby-plugin-offline": "^3.7.1",
@@ -49,7 +50,9 @@
     "cache": "gatsby clean",
     "clean": "npm run cache && rm -rf node_modules",
     "dev": "gatsby develop",
+    "devRestart": "npm run cache && npm run dev",
     "prod": "gatsby serve",
+    "prodRestart": "npm run cache && npm run build && npm run prod",
     "rebuild": "npm run reinstall && npm run build",
     "reinstall": "npm ci",
     "test": "echo \"Error: no test specified\" && exit 1"

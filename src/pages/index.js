@@ -7,10 +7,10 @@
 import React from 'react';
 
 import Layout from '../components/layout';
+import i18next from '../i18n-config'; // do not remove (affects routing)
 
 function Home() {
-  // nothing is displayed (only redirects from routing in layout component)
-  return <Layout languageList={[]} />;
+  return <Layout languageList={[]} />; // no body content is displayed
 }
 
 export default Home;
