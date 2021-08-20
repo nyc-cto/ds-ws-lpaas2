@@ -35,7 +35,7 @@ function Footer() {
       '\n'
     );
   }
-
+  
   // generating links
   const primaryLinkItems = primaryLinks.map((linkAndLabel, _) => (
     <Link className="usa-footer__primary-link" to={linkAndLabel.LINK} key={`primaryLink${_}`}>
@@ -48,9 +48,6 @@ function Footer() {
   return (
     <div>
       <div className="footer-above">
-        <div className="usa-footer__return-to-top footer-above__return-to-top">
-          <Link to="#top">{t('footer.returnToTop')}</Link>
-        </div>
         <div className="footer-above__feedback">
           <div
             id="feedback-widget"
@@ -63,11 +60,14 @@ function Footer() {
             type="text/javascript"
           />
         </div>
+        <div className="usa-footer__return-to-top footer-above__return-to-top">
+          <Link to="#top">{t('footer.returnToTop')}</Link>
+        </div>
       </div>
       <FooterUSWDS
         className="footer"
         size="medium"
-        primary={<FooterNav size="medium" links={primaryLinkItems} />}
+        primary={primaryLinkItems.length !== 0 ? <FooterNav size="medium" links={primaryLinkItems}/> : <></>}
         secondary={
           <Grid row gap>
             <Logo

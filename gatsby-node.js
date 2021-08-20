@@ -63,7 +63,7 @@ exports.createPages = ({ actions, graphql }) => {
           createPage({
             path: edge.node.fields.slug,
             matchPath: `/${lang}/*`,
-            component: path.resolve('src/templates/404-page.jsx'),
+            component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`),
             context: {
               id,
               lang,
@@ -74,9 +74,7 @@ exports.createPages = ({ actions, graphql }) => {
           // If page is not a localized 404 (i.e. /en/404/), create the page normally
           createPage({
             path: edge.node.fields.slug,
-            component: path.resolve(
-              `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`,
-            ),
+            component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`),
             context: {
               id,
               lang,
