@@ -35,7 +35,7 @@ function Footer() {
       '\n'
     );
   }
-
+  
   // generating links
   const primaryLinkItems = primaryLinks.map((linkAndLabel, _) => (
     <Link className="usa-footer__primary-link" to={linkAndLabel.LINK} key={`primaryLink${_}`}>
@@ -67,7 +67,7 @@ function Footer() {
       <FooterUSWDS
         className="footer"
         size="medium"
-        primary={<FooterNav size="medium" links={primaryLinkItems} />}
+        primary={primaryLinkItems.length !== 0 ? <FooterNav size="medium" links={primaryLinkItems}/> : <></>}
         secondary={
           <Grid row gap>
             <Logo

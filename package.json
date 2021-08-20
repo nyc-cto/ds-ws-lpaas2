@@ -50,7 +50,9 @@
     "cache": "gatsby clean",
     "clean": "npm run cache && rm -rf node_modules",
     "dev": "gatsby develop",
+    "devRestart": "npm run cache && npm run dev",
     "prod": "gatsby serve",
+    "prodRestart": "npm run cache && npm run build && npm run prod",
     "rebuild": "npm run reinstall && npm run build",
     "reinstall": "npm ci",
     "test": "echo \"Error: no test specified\" && exit 1"

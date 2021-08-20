@@ -2,7 +2,7 @@ const activeEnv =
   process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
 
 require('dotenv').config({
-  // import .env.development or .env.production based on environment
+  // import environmental variables based on environment
   path: `.env.${activeEnv}`,
 });
 
