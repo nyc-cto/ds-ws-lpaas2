@@ -94,8 +94,6 @@ section:
 
 ### Adding a New Template Page
 
-### Adding a New Template Page
-
 1. Create a new `.jsx` file in `src/templates/`.
 2. Create corresponding markdown files for this template page as shown in `src/documentation/` and `src/landing/`.
 3. In the front matter of the new markdown files, include: `lang`, `templateKey`, `slug`, and `pageTitle`. These represent the language of the page (language code), the template being used in `src/templates` (file name), the path for this page (shown in the address bar), and the title of the page, respectively.
