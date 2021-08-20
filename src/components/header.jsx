@@ -87,7 +87,7 @@ function Header({ languageList, slug }) {
   return (
     <HeaderUSWDS extended className="header">
       <SkipNavLink />
-      <Banner languageList={languageList} slug={slug}>{t('header.banner')}</Banner>
+      <Banner languageList={languageList} slug={slug}>Test</Banner>
       <div className="usa-navbar">
         <div className="header-info">
           <img
