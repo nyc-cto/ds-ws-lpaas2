@@ -367,4 +367,4 @@ If `node_modules` was not installed properly, you might have to run `​​npm i
 
 ## Thanks
 
-The Mayor's Office of the CTO would like to thank Anya Dunaif (@aannyyaa), Saiful Islam (@saifulislamdev), and Britney Johnson for their significant contributions to this project as a summer CIC Fellow in 2021.
+The Mayor's Office of the CTO would like to thank Anya Dunaif ([@aannyyaa](https://github.com/aannyyaa)), Saiful Islam ([@saifulislamdev](https://github.com/saifulislamdev)), and Britney Johnson for their significant contributions to this project as a summer CIC Fellow in 2021.
