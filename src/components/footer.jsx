@@ -53,7 +53,7 @@ function Footer() {
             id="feedback-widget"
             lang={i18n.language}
             pageTitle={t('title')}
-            endpoint={process.env.GATSBY_ENDPOINT}
+            endpoint="Test_client_1.xlsx"
           />
           <ScriptTag
             src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js"
