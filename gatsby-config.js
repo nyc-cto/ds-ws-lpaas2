@@ -27,13 +27,13 @@ module.exports = {
         icon: './src/images/favicon.svg',
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-gtag',
-      options: {
-        trackingIds: [
-          'G-GRP8MPS3CX', // Google Analytics tracking or measurement key
-        ],
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-google-gtag',
+    //   options: {
+    //     trackingIds: [
+    //       'G-GRP8MPS3CX', // Google Analytics tracking or measurement key
+    //     ],
+    //   },
+    // },
   ],
 };
