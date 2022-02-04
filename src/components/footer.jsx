@@ -50,7 +50,11 @@ function Footer() {
       <div className="footer-above">
         <div className="footer-above__feedback">
           <div
-            id="feedback-widget" lang="en" endpoint="xedh26krnxt1ti" gaid="G-GTL37H4YS0" theme="default"
+            id="feedback-widget"
+            lang={i18n.language}
+            pageTitle={t('title')}
+            gaid={'G-GTL37H4YS0'}
+            endpoint="Test_client_1.xlsx"
           />
           <ScriptTag
             src="https://d2ttz3as5y3dj0.cloudfront.net/feedback-module.min.js"
