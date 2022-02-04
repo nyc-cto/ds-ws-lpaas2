@@ -53,6 +53,7 @@ function Footer() {
             id="feedback-widget"
             lang={i18n.language}
             pageTitle={t('title')}
+            gaID={'G-GRP8MPS3CX'}
             endpoint="Test_client_1.xlsx"
           />
           <ScriptTag
